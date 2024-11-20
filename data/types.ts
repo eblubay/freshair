@@ -114,8 +114,8 @@ export interface HostDetails {
 	userId: string
 	isSuperhost: boolean
 	isVerified: boolean
-	profilePicture: string | null
-	stats: HostStats | null
+	profilePicture: string
+	stats: HostStats
 }
 
 export interface HostStats {
@@ -230,9 +230,9 @@ export interface GalleryImage {
 
 export interface Review {
 	id: string
-	rating: number | null
+	rating: number
 	date: string
-	comment: string | null
+	comment: string
 	reviewer: Reviewer
 	highlight: string | null
 	response: string | null
@@ -242,5 +242,5 @@ export interface Reviewer {
 	name: string
 	location: string | null
 	id: string
-	photo: string | null
+	photo: string
 }
