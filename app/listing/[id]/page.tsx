@@ -1,5 +1,6 @@
 import { Separator } from "@/components/ui/separator"
 import { getListing } from "@/lib/data"
+import { incrementPropertyViews } from "@/lib/properties"
 import { AboutSpace } from "../../_components/AboutSpace"
 import { Amenities } from "../../_components/Amenities"
 import { BookingCard } from "../../_components/BookingCard"
@@ -17,6 +18,9 @@ type Params = Promise<{ id: string }>
 
 export default async function ListingPage({ params }: { params: Params }) {
 	const listing = await getListing((await params).id)
+
+	// Increment views when the page loads
+	await incrementPropertyViews((await params).id)
 
 	if (!listing || !listing.data) {
 		return (

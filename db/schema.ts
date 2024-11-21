@@ -1,5 +1,12 @@
 import type { Listing } from "@/data/types"
-import { index, json, pgTable, text, timestamp } from "drizzle-orm/pg-core"
+import {
+	index,
+	integer,
+	json,
+	pgTable,
+	text,
+	timestamp
+} from "drizzle-orm/pg-core"
 
 export const properties = pgTable(
 	"properties",
@@ -7,7 +14,9 @@ export const properties = pgTable(
 		id: text("id").primaryKey(),
 		clerkId: text("clerk_id").notNull(),
 		url: text("url").notNull(),
-		listingData: json("listing_data").$type<Listing>()
+		listingData: json("listing_data").$type<Listing>(),
+		views: integer("views").notNull().default(0),
+		inquiries: integer("inquiries").notNull().default(0)
 	},
 	(table) => {
 		return {

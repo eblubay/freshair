@@ -52,7 +52,7 @@ export type VisualProperty = {
 			title: string
 			location: string
 			views: number
-			bookings: number
+			inquiries: number
 	  }
 )
 
@@ -70,8 +70,8 @@ export async function getProperties(): Promise<VisualProperty[]> {
 			location: sql<
 				string | null
 			>`(${properties.listingData}::json->'data'->'overview'->>'location')`,
-			views: sql<number>`0`,
-			bookings: sql<number>`0`,
+			views: properties.views,
+			inquiries: properties.inquiries,
 			hasListingData: sql<boolean>`${properties.listingData} IS NOT NULL`
 		})
 		.from(properties)
@@ -92,8 +92,8 @@ export async function getProperties(): Promise<VisualProperty[]> {
 			url: result.url,
 			title: result.title ?? "",
 			location: result.location ?? "",
-			views: result.views ?? 0,
-			bookings: result.bookings ?? 0
+			views: result.views,
+			inquiries: result.inquiries
 		}
 	})
 }
@@ -123,7 +123,7 @@ export type ExploreProperty = {
 	mainImage: string
 	stats: {
 		views: number
-		bookings: number
+		inquiries: number
 	}
 }
 
@@ -138,8 +138,8 @@ export async function getExploreProperties(): Promise<ExploreProperty[]> {
 			rating: sql<number>`(${properties.listingData}::json->'data'->'overview'->>'rating')`,
 			amenityCount: sql<number>`(${properties.listingData}::json->'data'->'amenities'->>'count')`,
 			mainImage: sql<string>`(${properties.listingData}::json->'data'->'overview'->>'imageUrl')`,
-			views: sql<number>`0`,
-			bookings: sql<number>`0`,
+			views: properties.views,
+			inquiries: properties.inquiries,
 			pricePerNight: sql<number>`150`
 		})
 		.from(properties)
@@ -156,8 +156,26 @@ export async function getExploreProperties(): Promise<ExploreProperty[]> {
 		mainImage: result.mainImage,
 		pricePerNight: result.pricePerNight,
 		stats: {
-			views: result.views ?? 0,
-			bookings: result.bookings ?? 0
+			views: result.views,
+			inquiries: result.inquiries
 		}
 	}))
+}
+
+export async function incrementPropertyViews(propertyId: string) {
+	await db
+		.update(properties)
+		.set({
+			views: sql`${properties.views} + 1`
+		})
+		.where(eq(properties.id, propertyId))
+}
+
+export async function incrementPropertyInquiries(propertyId: string) {
+	await db
+		.update(properties)
+		.set({
+			inquiries: sql`${properties.inquiries} + 1`
+		})
+		.where(eq(properties.id, propertyId))
 }

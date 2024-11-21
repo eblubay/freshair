@@ -8,6 +8,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Suspense } from "react"
 
+export const dynamic = "force-dynamic"
+
 function PropertyCard({ property }: { property: ExploreProperty }) {
 	return (
 		<Link href={`/listing/${property.id}`}>

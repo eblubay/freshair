@@ -115,9 +115,9 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 								</p>
 							</div>
 							<div>
-								<p className="text-sm text-gray-500">Bookings</p>
+								<p className="text-sm text-gray-500">Inquiries</p>
 								<p className="text-lg font-semibold">
-									{property.status === "loaded" ? property.bookings : "—"}
+									{property.status === "loaded" ? property.inquiries : "—"}
 								</p>
 							</div>
 						</div>
