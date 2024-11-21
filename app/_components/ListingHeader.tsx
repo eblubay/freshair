@@ -1,13 +1,15 @@
 interface ListingHeaderProps {
 	overview: {
 		propertyType: string
+		title: string
 		location: string
 		capacity: number
 	}
-	details: string[]
 }
 
-export function ListingHeader({ overview, details }: ListingHeaderProps) {
+export function ListingHeader({ overview }: ListingHeaderProps) {
+	const [mainTitle, ...details] = overview.title.split(" · ")
+
 	return (
 		<div>
 			<h2 className="text-2xl font-medium">

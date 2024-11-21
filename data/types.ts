@@ -11,6 +11,7 @@ export interface Metadata {
 }
 
 export interface ListingData {
+	h1Title: string
 	overview: Overview
 	amenities: Amenities
 	location: Location
