@@ -12,13 +12,24 @@ import {
 import type { VisualProperty } from "@/lib/properties"
 import { deleteProperty, updatePropertyPrice } from "@/lib/properties"
 import { motion } from "framer-motion"
+import debounce from "lodash.debounce"
 import { Home, Trash2 } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { useTransition } from "react"
+import { useCallback, useTransition } from "react"
 
 export function PropertyCard({ property }: { property: VisualProperty }) {
 	const router = useRouter()
 	const [isPending, startTransition] = useTransition()
+
+	const debouncedPriceUpdate = useCallback(
+		debounce((newPrice: number) => {
+			startTransition(async () => {
+				await updatePropertyPrice(property.id, newPrice)
+				router.refresh()
+			})
+		}, 1000),
+		[]
+	)
 
 	const handleDelete = (propertyId: string) => {
 		startTransition(async () => {
@@ -28,10 +39,7 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 	}
 
 	const handlePriceUpdate = (newPrice: number) => {
-		startTransition(async () => {
-			await updatePropertyPrice(property.id, newPrice)
-			router.refresh()
-		})
+		debouncedPriceUpdate(newPrice)
 	}
 
 	return (
@@ -115,9 +123,9 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 						</div>
 
 						{/* Stats Grid */}
-						<div className="grid grid-cols-3 gap-4">
+						<div className="grid grid-cols-2 gap-4">
 							<div>
-								<p className="text-sm text-gray-500">Views (30 days)</p>
+								<p className="text-sm text-gray-500">Views</p>
 								<p className="text-lg font-semibold">
 									{property.status === "loaded" ? property.views : "—"}
 								</p>
@@ -128,23 +136,28 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 									{property.status === "loaded" ? property.inquiries : "—"}
 								</p>
 							</div>
-							<div>
-								<p className="text-sm text-gray-500">Price per night</p>
-								<Input
-									type="number"
-									min="0"
-									value={property.pricePerNight}
-									onChange={(e) => {
-										const newPrice = Number.parseInt(e.target.value)
-										if (!Number.isNaN(newPrice)) {
-											handlePriceUpdate(newPrice)
-										}
-									}}
-									onClick={(e) => e.stopPropagation()}
-									className="w-24"
-									disabled={property.status === "pending" || isPending}
-								/>
-							</div>
+						</div>
+
+						{/* Price Input - Now on its own line */}
+						<div>
+							<p className="text-sm text-gray-500">Price per night</p>
+							<Input
+								type="number"
+								min="0"
+								value={property.pricePerNight}
+								onChange={(e) => {
+									e.stopPropagation()
+									const newPrice = Number.parseInt(e.target.value)
+									if (!Number.isNaN(newPrice)) {
+										handlePriceUpdate(newPrice)
+									}
+								}}
+								onMouseDown={(e) => e.stopPropagation()}
+								onClick={(e) => e.stopPropagation()}
+								onFocus={(e) => e.stopPropagation()}
+								className="w-32"
+								disabled={property.status === "pending" || isPending}
+							/>
 						</div>
 					</div>
 				</CardContent>
