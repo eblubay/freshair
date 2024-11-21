@@ -1,7 +1,9 @@
-import { scrapingJobs } from "@/db/schema"
+import { properties, scrapingJobs } from "@/db/schema"
 import { ApifyWebhookPayloadSchema, fetchAndStoreResults } from "@/lib/apify"
+import { getUserEmailAddresses } from "@/lib/clerk"
 import { db } from "@/lib/db"
 import { logger } from "@/lib/logger"
+import { FROM_EMAIL, postmark } from "@/lib/postmark"
 import { eq } from "drizzle-orm"
 import { NextResponse } from "next/server"
 
@@ -59,6 +61,33 @@ export async function POST(request: Request) {
 		}
 
 		await fetchAndStoreResults(runId)
+
+		// Get the job and associated property
+		const job = await db
+			.select()
+			.from(scrapingJobs)
+			.where(eq(scrapingJobs.runId, runId))
+			.innerJoin(properties, eq(scrapingJobs.propertyId, properties.id))
+			.limit(1)
+			.then(([job]) => job)
+
+		if (!job) {
+			logger.error("Job not found", { runId })
+			return NextResponse.json({ error: "Job not found" }, { status: 404 })
+		}
+
+		const userEmails = await getUserEmailAddresses(job.properties.clerkId)
+
+		if (userEmails.length > 0) {
+			await postmark.sendEmail({
+				From: FROM_EMAIL,
+				To: userEmails[0],
+				Subject: "Your property listing has been processed",
+				TextBody: `Your property listing at ${job.scraping_jobs.url} has been successfully processed and is now available in your dashboard.`
+			})
+			logger.info("Notification email sent", { to: userEmails[0] })
+		}
+
 		await db
 			.update(scrapingJobs)
 			.set({
