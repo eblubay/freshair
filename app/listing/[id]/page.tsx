@@ -13,17 +13,11 @@ import { Navbar } from "../../_components/Navbar"
 import { Reviews } from "../../_components/Reviews"
 import { ThingsToKnow } from "../../_components/ThingsToKnow"
 
-// Add type for the page props
-interface Props {
-	params: {
-		id: string
-	}
-	searchParams: { [key: string]: string | string[] | undefined }
-}
+type Params = Promise<{ id: string }>
 
 // Update component to receive props
-export default async function ListingPage({ params }: Props) {
-	const listing = getListing() // Later this will use params.id
+export default async function ListingPage({ params }: { params: Params }) {
+	const listing = getListing()
 	const pricePerNight = 150
 
 	// Flatten all images from all rooms into a single array
