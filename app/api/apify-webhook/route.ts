@@ -7,6 +7,10 @@ import { FROM_EMAIL, postmark } from "@/lib/postmark"
 import { eq } from "drizzle-orm"
 import { NextResponse } from "next/server"
 
+if (!process.env.VERCEL_URL) {
+	throw new Error("Missing VERCEL_URL environment variable")
+}
+
 export async function POST(request: Request) {
 	logger.info("Received webhook request", {
 		headers: Object.fromEntries(request.headers),
@@ -83,7 +87,11 @@ export async function POST(request: Request) {
 				From: FROM_EMAIL,
 				To: userEmails[0],
 				Subject: "Your property listing has been processed",
-				TextBody: `Your property listing at ${job.scraping_jobs.url} has been successfully processed and is now available in your dashboard.`
+				TextBody: `"${
+					job.properties.listingData?.data.h1Title as string
+				}" has been successfully processed and is now available in your dashboard.
+
+You can check out your listing at ${process.env.VERCEL_URL}/listing/${job.properties.id}`
 			})
 			logger.info("Notification email sent", { to: userEmails[0] })
 		}
