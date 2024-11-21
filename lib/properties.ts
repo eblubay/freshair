@@ -110,3 +110,56 @@ export async function deleteProperty(propertyId: string) {
 
 	return { success: true }
 }
+
+export type ExploreProperty = {
+	id: string
+	title: string
+	location: string
+	propertyType: string
+	capacity: number
+	rating: number | null
+	pricePerNight: number
+	amenityCount: number
+	mainImage?: string
+	stats: {
+		views: number
+		bookings: number
+	}
+}
+
+export async function getExploreProperties(): Promise<ExploreProperty[]> {
+	const { userId } = await auth()
+
+	const results = await db
+		.select({
+			id: properties.id,
+			title: sql<string>`(${properties.listingData}::json->'data'->>'h1Title')`,
+			location: sql<string>`(${properties.listingData}::json->'data'->'overview'->>'location')`,
+			propertyType: sql<string>`(${properties.listingData}::json->'data'->'overview'->>'propertyType')`,
+			capacity: sql<number>`(${properties.listingData}::json->'data'->'overview'->>'capacity')`,
+			rating: sql<number>`(${properties.listingData}::json->'data'->'overview'->>'rating')`,
+			amenityCount: sql<number>`(${properties.listingData}::json->'data'->'amenities'->>'count')`,
+			mainImage: sql<string>`(${properties.listingData}::json->'data'->'gallery'->'rooms'->0->'images'->0->>'url')`,
+			views: sql<number>`0`,
+			bookings: sql<number>`0`,
+			pricePerNight: sql<number>`150` // Hardcoded for now, you might want to store this in your DB
+		})
+		.from(properties)
+		.where(sql`${properties.listingData} IS NOT NULL`)
+
+	return results.map((result) => ({
+		id: result.id,
+		title: result.title ?? "Untitled Property",
+		location: result.location ?? "Unknown Location",
+		propertyType: result.propertyType ?? "Property",
+		capacity: result.capacity ?? 1,
+		rating: result.rating,
+		amenityCount: result.amenityCount ?? 0,
+		mainImage: result.mainImage,
+		pricePerNight: result.pricePerNight,
+		stats: {
+			views: result.views ?? 0,
+			bookings: result.bookings ?? 0
+		}
+	}))
+}
