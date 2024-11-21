@@ -1,5 +1,9 @@
+"use client"
+
 import DatePickerWithRange from "@/components/date-picker-with-range"
+import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
 import {
 	Select,
 	SelectContent,
@@ -7,13 +11,56 @@ import {
 	SelectTrigger,
 	SelectValue
 } from "@/components/ui/select"
+import { useToast } from "@/hooks/use-toast"
+import { createBooking } from "@/lib/bookings"
+import { useState } from "react"
+import type { DateRange } from "react-day-picker"
 
 interface BookingCardProps {
+	propertyId: string
 	pricePerNight: number
 	capacity: number
 }
 
-export function BookingCard({ pricePerNight, capacity }: BookingCardProps) {
+export function BookingCard({
+	propertyId,
+	pricePerNight,
+	capacity
+}: BookingCardProps) {
+	const [email, setEmail] = useState("")
+	const [guests, setGuests] = useState("1")
+	const [dates, setDates] = useState<DateRange | undefined>()
+	const { toast } = useToast()
+	const [isLoading, setIsLoading] = useState(false)
+
+	const handleBook = async () => {
+		if (!dates || !email) return
+
+		setIsLoading(true)
+		try {
+			await createBooking({
+				propertyId,
+				email,
+				guests: Number.parseInt(guests),
+				dates,
+				pricePerNight
+			})
+
+			toast({
+				title: "Booking Request Sent!",
+				description: "The property owner will contact you soon."
+			})
+		} catch (error) {
+			toast({
+				title: "Error",
+				description: "Failed to send booking request. Please try again.",
+				variant: "destructive"
+			})
+		} finally {
+			setIsLoading(false)
+		}
+	}
+
 	return (
 		<div className="col-span-1">
 			<Card className="sticky top-24">
@@ -23,8 +70,8 @@ export function BookingCard({ pricePerNight, capacity }: BookingCardProps) {
 						<span className="text-gray-500">night</span>
 					</div>
 					<div className="mt-4 space-y-4">
-						<DatePickerWithRange />
-						<Select defaultValue="1">
+						<DatePickerWithRange date={dates} onDateSelect={setDates} />
+						<Select defaultValue="1" onValueChange={setGuests}>
 							<SelectTrigger>
 								<SelectValue placeholder="Number of guests" />
 							</SelectTrigger>
@@ -39,13 +86,21 @@ export function BookingCard({ pricePerNight, capacity }: BookingCardProps) {
 								})}
 							</SelectContent>
 						</Select>
+						<Input
+							type="email"
+							placeholder="Your email address"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							required
+						/>
 					</div>
-					<button
-						type="button"
-						className="w-full bg-primary text-primary-foreground rounded-lg py-3 mt-4 font-medium"
+					<Button
+						className="w-full mt-4"
+						onClick={handleBook}
+						disabled={!email || !dates || isLoading}
 					>
-						Reserve
-					</button>
+						{isLoading ? "Sending..." : "Reserve"}
+					</Button>
 				</CardContent>
 			</Card>
 		</div>

@@ -72,6 +72,7 @@ export default async function ListingPage({ params }: { params: Params }) {
 						<BookingCard
 							pricePerNight={pricePerNight}
 							capacity={listing.data.overview.capacity}
+							propertyId={(await params).id}
 						/>
 					</div>
 				</div>
@@ -79,6 +80,7 @@ export default async function ListingPage({ params }: { params: Params }) {
 			<MobileBookingBar
 				pricePerNight={pricePerNight}
 				capacity={listing.data.overview.capacity}
+				propertyId={(await params).id}
 				className="lg:hidden"
 			/>
 		</div>

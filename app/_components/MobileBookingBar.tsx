@@ -7,6 +7,7 @@ import {
 	DialogTitle,
 	DialogTrigger
 } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
 import {
 	Select,
 	SelectContent,
@@ -14,19 +15,59 @@ import {
 	SelectTrigger,
 	SelectValue
 } from "@/components/ui/select"
+import { useToast } from "@/hooks/use-toast"
+import { createBooking } from "@/lib/bookings"
 import { cn } from "@/lib/utils"
+import { useState } from "react"
+import type { DateRange } from "react-day-picker"
 
 interface MobileBookingBarProps {
+	propertyId: string
 	pricePerNight: number
-	className?: string
 	capacity: number
+	className?: string
 }
 
 export function MobileBookingBar({
+	propertyId,
 	pricePerNight,
 	className,
 	capacity
 }: MobileBookingBarProps) {
+	const [email, setEmail] = useState("")
+	const [guests, setGuests] = useState("1")
+	const [dates, setDates] = useState<DateRange | undefined>()
+	const { toast } = useToast()
+	const [isLoading, setIsLoading] = useState(false)
+
+	const handleBook = async () => {
+		if (!dates || !email) return
+
+		setIsLoading(true)
+		try {
+			await createBooking({
+				propertyId,
+				email,
+				guests: Number.parseInt(guests),
+				dates,
+				pricePerNight
+			})
+
+			toast({
+				title: "Booking Request Sent!",
+				description: "The property owner will contact you soon."
+			})
+		} catch (error) {
+			toast({
+				title: "Error",
+				description: "Failed to send booking request. Please try again.",
+				variant: "destructive"
+			})
+		} finally {
+			setIsLoading(false)
+		}
+	}
+
 	return (
 		<div
 			className={cn(
@@ -52,8 +93,8 @@ export function MobileBookingBar({
 							<span className="text-2xl font-bold">${pricePerNight}</span>
 							<span className="text-gray-500">night</span>
 						</div>
-						<DatePickerWithRange />
-						<Select defaultValue="1">
+						<DatePickerWithRange date={dates} onDateSelect={setDates} />
+						<Select defaultValue="1" onValueChange={setGuests}>
 							<SelectTrigger>
 								<SelectValue placeholder="Number of guests" />
 							</SelectTrigger>
@@ -68,8 +109,20 @@ export function MobileBookingBar({
 								})}
 							</SelectContent>
 						</Select>
-						<Button className="w-full" size="lg">
-							Reserve
+						<Input
+							type="email"
+							placeholder="Your email address"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							required
+						/>
+						<Button
+							className="w-full"
+							size="lg"
+							onClick={handleBook}
+							disabled={!email || !dates || isLoading}
+						>
+							{isLoading ? "Sending..." : "Reserve"}
 						</Button>
 					</div>
 				</DialogContent>
