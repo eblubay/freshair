@@ -29,8 +29,18 @@ const client = new ApifyClient({ token: process.env.APIFY_API_TOKEN })
 const listingActor = await client.actor(ACTOR_ID)
 
 export const ApifyWebhookPayloadSchema = z.object({
-	runId: z.string(),
-	success: z.boolean()
+	userId: z.string(),
+	createdAt: z.string().datetime(),
+	eventType: z.enum(["ACTOR.RUN.SUCCEEDED", "ACTOR.RUN.FAILED"]),
+	eventData: z.object({
+		actorId: z.string(),
+		actorRunId: z.string()
+	}),
+	resource: z
+		.object({
+			id: z.string()
+		})
+		.passthrough()
 })
 
 export type ApifyWebhookPayload = z.infer<typeof ApifyWebhookPayloadSchema>
@@ -48,10 +58,6 @@ export async function queueScraping(url: string, propertyId: string) {
 				{
 					eventTypes: ["ACTOR.RUN.SUCCEEDED"],
 					requestUrl: WEBHOOK_URL,
-					payloadTemplate: JSON.stringify({
-						runId: "{{resource.id}} GARBLE GARBLE BAG",
-						success: true
-					} satisfies ApifyWebhookPayload),
 					idempotencyKey: propertyId
 				}
 			]

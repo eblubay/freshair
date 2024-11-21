@@ -32,21 +32,48 @@ export async function POST(request: Request) {
 			)
 		}
 
-		const { runId, success } = payload.data
+		const { eventType, resource } = payload.data
+		const runId = resource.id
 
-		if (success) {
-			await fetchAndStoreResults(runId)
+		if (eventType !== "ACTOR.RUN.SUCCEEDED") {
+			await db
+				.update(scrapingJobs)
+				.set({
+					status: "failed",
+					completedAt: new Date()
+				})
+				.where(eq(scrapingJobs.runId, runId))
+			logger.error("Actor run unsuccessful", { eventType, runId })
+			return NextResponse.json(
+				{
+					success: false,
+					error: "Actor run unsuccessful",
+					details: {
+						eventType,
+						runId,
+						message: "Check Apify console for run details"
+					}
+				},
+				{ status: 400 }
+			)
 		}
 
+		await fetchAndStoreResults(runId)
 		await db
 			.update(scrapingJobs)
 			.set({
-				status: success ? "complete" : "failed",
+				status: "complete",
 				completedAt: new Date()
 			})
 			.where(eq(scrapingJobs.runId, runId))
 
-		return NextResponse.json({ success: true })
+		return NextResponse.json({
+			success: true,
+			details: {
+				runId,
+				message: "Successfully processed actor run"
+			}
+		})
 	} catch (error) {
 		logger.error("Error processing webhook", { error })
 		return NextResponse.json(
