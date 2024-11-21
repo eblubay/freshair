@@ -18,10 +18,11 @@ interface Props {
 	params: {
 		id: string
 	}
+	searchParams: { [key: string]: string | string[] | undefined }
 }
 
 // Update component to receive props
-export default function ListingPage({ params }: Props) {
+export default async function ListingPage({ params }: Props) {
 	const listing = getListing() // Later this will use params.id
 	const pricePerNight = 150
 
