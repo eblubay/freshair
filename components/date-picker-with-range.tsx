@@ -52,7 +52,17 @@ export default function DatePickerWithRange({
 						)}
 					</Button>
 				</PopoverTrigger>
-				<PopoverContent className="w-auto p-0" align="start">
+				<PopoverContent className="w-auto p-0 md:min-w-[550px]" align="start">
+					<Calendar
+						initialFocus
+						mode="range"
+						defaultMonth={date?.from}
+						selected={date}
+						onSelect={onDateSelect}
+						numberOfMonths={1}
+						className="hidden md:block"
+						disabled={{ before: addDays(new Date(), 0) }}
+					/>
 					<Calendar
 						initialFocus
 						mode="range"
@@ -60,6 +70,7 @@ export default function DatePickerWithRange({
 						selected={date}
 						onSelect={onDateSelect}
 						numberOfMonths={2}
+						className="md:hidden"
 						disabled={{ before: addDays(new Date(), 0) }}
 					/>
 				</PopoverContent>
