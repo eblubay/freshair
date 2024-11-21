@@ -21,6 +21,12 @@ export function Navbar() {
 						<span className="text-foreground">Fresh</span>
 						<span className="text-primary">air</span>
 					</Link>
+					<Link
+						href="/explore"
+						className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+					>
+						Explore
+					</Link>
 				</div>
 				<div className="ml-auto flex items-center gap-4">
 					<SignedOut>
