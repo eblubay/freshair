@@ -49,7 +49,7 @@ export async function queueScraping(url: string, propertyId: string) {
 					eventTypes: ["ACTOR.RUN.SUCCEEDED"],
 					requestUrl: WEBHOOK_URL,
 					payloadTemplate: JSON.stringify({
-						runId: "{{eventData.actorRunId}}",
+						runId: "{{resource.id}}",
 						success: true
 					} satisfies ApifyWebhookPayload),
 					idempotencyKey: propertyId
