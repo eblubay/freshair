@@ -16,15 +16,15 @@ import { db } from "@/lib/db"
 import { and, eq } from "drizzle-orm"
 import { nanoid } from "nanoid"
 
-if (!process.env.NEXT_PUBLIC_APP_URL) {
-	throw new Error("NEXT_PUBLIC_APP_URL is not set")
+if (!process.env.VERCEL_URL) {
+	throw new Error("VERCEL_URL is not set")
 }
 
 if (!process.env.WEBHOOK_SECRET) {
 	throw new Error("WEBHOOK_SECRET is not set")
 }
 
-const WEBHOOK_URL = `${process.env.NEXT_PUBLIC_APP_URL}/api/apify-webhook?secret=${process.env.WEBHOOK_SECRET}`
+const WEBHOOK_URL = `${process.env.VERCEL_URL}/api/apify-webhook?secret=${process.env.WEBHOOK_SECRET}`
 
 export async function queueScraping(url: string, propertyId: string) {
 	const input = {
