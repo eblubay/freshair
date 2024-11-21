@@ -3,7 +3,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Card, CardContent } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { type ExploreProperty, getExploreProperties } from "@/lib/properties"
-import { Bed, MapPin, Star, Users } from "lucide-react"
+import { MapPin, Star, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Suspense } from "react"
@@ -13,18 +13,12 @@ function PropertyCard({ property }: { property: ExploreProperty }) {
 		<Link href={`/listing/${property.id}`}>
 			<Card className="overflow-hidden hover:shadow-lg transition-all">
 				<AspectRatio ratio={4 / 3}>
-					{property.mainImage ? (
-						<Image
-							src={property.mainImage}
-							alt={property.title}
-							fill
-							className="object-cover"
-						/>
-					) : (
-						<div className="w-full h-full bg-gray-100 flex items-center justify-center">
-							<Bed className="h-8 w-8 text-gray-400" />
-						</div>
-					)}
+					<Image
+						src={property.mainImage}
+						alt={property.title}
+						fill
+						className="object-cover"
+					/>
 				</AspectRatio>
 				<CardContent className="p-4">
 					<div className="flex items-start justify-between">

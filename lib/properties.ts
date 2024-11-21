@@ -120,7 +120,7 @@ export type ExploreProperty = {
 	rating: number | null
 	pricePerNight: number
 	amenityCount: number
-	mainImage?: string
+	mainImage: string
 	stats: {
 		views: number
 		bookings: number
@@ -128,8 +128,6 @@ export type ExploreProperty = {
 }
 
 export async function getExploreProperties(): Promise<ExploreProperty[]> {
-	const { userId } = await auth()
-
 	const results = await db
 		.select({
 			id: properties.id,
@@ -139,10 +137,10 @@ export async function getExploreProperties(): Promise<ExploreProperty[]> {
 			capacity: sql<number>`(${properties.listingData}::json->'data'->'overview'->>'capacity')`,
 			rating: sql<number>`(${properties.listingData}::json->'data'->'overview'->>'rating')`,
 			amenityCount: sql<number>`(${properties.listingData}::json->'data'->'amenities'->>'count')`,
-			mainImage: sql<string>`(${properties.listingData}::json->'data'->'gallery'->'rooms'->0->'images'->0->>'url')`,
+			mainImage: sql<string>`(${properties.listingData}::json->'data'->'overview'->>'imageUrl')`,
 			views: sql<number>`0`,
 			bookings: sql<number>`0`,
-			pricePerNight: sql<number>`150` // Hardcoded for now, you might want to store this in your DB
+			pricePerNight: sql<number>`150`
 		})
 		.from(properties)
 		.where(sql`${properties.listingData} IS NOT NULL`)
