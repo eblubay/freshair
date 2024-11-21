@@ -1,10 +1,16 @@
 import { scrapingJobs } from "@/db/schema"
 import { fetchAndStoreResults } from "@/lib/apify"
 import { db } from "@/lib/db"
+import { logger } from "@/lib/logger"
 import { and, eq } from "drizzle-orm"
 import { NextResponse } from "next/server"
 
 export async function POST(request: Request) {
+	logger.info("Received webhook request", {
+		headers: Object.fromEntries(request.headers),
+		url: request.url
+	})
+
 	// Verify the secret token
 	const url = new URL(request.url)
 	const secret = url.searchParams.get("secret")
@@ -15,6 +21,7 @@ export async function POST(request: Request) {
 
 	try {
 		const payload = await request.json()
+		logger.info("Webhook payload received", { payload })
 		const { propertyId, runId, success, datasetId } = payload
 
 		if (success && datasetId) {
@@ -36,7 +43,7 @@ export async function POST(request: Request) {
 
 		return NextResponse.json({ success: true })
 	} catch (error) {
-		console.error("Webhook handler error:", error)
+		logger.error("Error processing webhook", { error })
 		return NextResponse.json(
 			{ error: "Internal Server Error" },
 			{ status: 500 }
