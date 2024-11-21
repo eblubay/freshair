@@ -3,7 +3,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { auth } from "@clerk/nextjs/server"
-import { CreditCard, Home, Lock } from "lucide-react"
+import { Code2, Github, MessageSquare, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -19,24 +19,38 @@ export default async function MarketingPage() {
 				<section className="container mx-auto px-4 py-24 sm:px-6 md:px-8 lg:px-12 xl:px-24 2xl:px-40">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 						<div>
+							<div className="flex items-center gap-2 mb-6">
+								<span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full">
+									Open Source
+								</span>
+								<span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full">
+									Self-Hostable
+								</span>
+							</div>
 							<h1 className="text-5xl font-bold tracking-tight">
-								Own Your Rental Presence
+								Your Listings.{" "}
+								<span className="text-primary">Your Relationships.</span>
 							</h1>
 							<p className="mt-6 text-xl text-gray-600">
-								Export your Airbnb listing to your own domain. Maintain control
-								of your data and build direct relationships with your guests.
+								Import your Airbnb listings to Freshair. Connect directly with
+								guests, avoid fees, and take control of your rental business -
+								all while keeping your data yours.
 							</p>
 							<div className="mt-8 flex gap-4">
 								<Link href="/dashboard">
 									<Button size="lg">
-										{userId ? "View Dashboard" : "Get Started"}
+										{userId ? "View Dashboard" : "Get Started Free"}
 									</Button>
 								</Link>
-								{!userId && (
+								<Link
+									href="https://github.com/bjornpagen/freshair"
+									target="_blank"
+								>
 									<Button size="lg" variant="outline">
-										View Demo
+										<Github className="mr-2 h-5 w-5" />
+										Star on GitHub
 									</Button>
-								)}
+								</Link>
 							</div>
 						</div>
 						<div className="rounded-xl border bg-background shadow-lg">
@@ -60,24 +74,53 @@ export default async function MarketingPage() {
 					</div>
 				</section>
 
+				{/* Stats Section */}
+				<section className="border-y bg-muted/30">
+					<div className="container mx-auto px-4 py-12 sm:px-6 md:px-8 lg:px-12 xl:px-24 2xl:px-40">
+						<div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+							<div>
+								<div className="text-4xl font-bold text-primary">100%</div>
+								<div className="mt-2 text-sm text-gray-600">
+									Fee-Free Bookings
+								</div>
+							</div>
+							<div>
+								<div className="text-4xl font-bold text-primary">1-Click</div>
+								<div className="mt-2 text-sm text-gray-600">Airbnb Import</div>
+							</div>
+							<div>
+								<div className="text-4xl font-bold text-primary">∞</div>
+								<div className="mt-2 text-sm text-gray-600">
+									Self-Hosting Options
+								</div>
+							</div>
+							<div>
+								<div className="text-4xl font-bold text-primary">0BSD</div>
+								<div className="mt-2 text-sm text-gray-600">Licensed</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
 				{/* Features Section */}
-				<section className="bg-gray-50">
+				<section className="bg-background">
 					<div className="container mx-auto px-4 py-24 sm:px-6 md:px-8 lg:px-12 xl:px-24 2xl:px-40">
 						<h2 className="text-3xl font-bold text-center">
-							Everything You Need to Run Your Rental
+							Built for Independent Hosts
 						</h2>
 						<div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
 							<Card>
 								<CardContent className="pt-6">
 									<div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center">
-										<Home className="h-6 w-6 text-primary" />
+										<MessageSquare className="h-6 w-6 text-primary" />
 									</div>
 									<h3 className="mt-4 text-xl font-semibold">
-										Your Domain, Your Rules
+										Direct Guest Communication
 									</h3>
 									<p className="mt-2 text-gray-600">
-										Host your listing on your own domain and customize every
-										aspect of the experience.
+										Connect with guests directly through your preferred
+										channels. Build lasting relationships without platform
+										restrictions.
 									</p>
 								</CardContent>
 							</Card>
@@ -85,14 +128,14 @@ export default async function MarketingPage() {
 							<Card>
 								<CardContent className="pt-6">
 									<div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center">
-										<Lock className="h-6 w-6 text-primary" />
+										<Code2 className="h-6 w-6 text-primary" />
 									</div>
 									<h3 className="mt-4 text-xl font-semibold">
-										Data Sovereignty
+										Self-Host & Customize
 									</h3>
 									<p className="mt-2 text-gray-600">
-										Own your listing data and guest relationships without
-										depending on third-party platforms.
+										Deploy Freshair on your own infrastructure. Modify the code
+										to match your exact needs. Your platform, your way.
 									</p>
 								</CardContent>
 							</Card>
@@ -100,14 +143,14 @@ export default async function MarketingPage() {
 							<Card>
 								<CardContent className="pt-6">
 									<div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center">
-										<CreditCard className="h-6 w-6 text-primary" />
+										<Users className="h-6 w-6 text-primary" />
 									</div>
 									<h3 className="mt-4 text-xl font-semibold">
-										Custom Payments
+										Community-Driven
 									</h3>
 									<p className="mt-2 text-gray-600">
-										Set up your own payment processing and keep more of your
-										rental income.
+										Join a community of independent hosts. Share experiences,
+										contribute code, and help shape the future of Freshair.
 									</p>
 								</CardContent>
 							</Card>
@@ -120,14 +163,24 @@ export default async function MarketingPage() {
 					<div className="bg-primary rounded-2xl text-primary-foreground p-12 text-center">
 						<h2 className="text-3xl font-bold">Ready to Take Control?</h2>
 						<p className="mt-4 text-xl opacity-90">
-							Join thousands of hosts who have already claimed their
-							independence.
+							Join the community of hosts who've embraced true independence.
 						</p>
-						<Link href="/dashboard">
-							<Button size="lg" variant="secondary" className="mt-8">
-								{userId ? "View Dashboard" : "Get Started Now"}
-							</Button>
-						</Link>
+						<div className="mt-8 flex justify-center gap-4">
+							<Link href="/dashboard">
+								<Button size="lg" variant="secondary">
+									{userId ? "View Dashboard" : "Get Started Free"}
+								</Button>
+							</Link>
+							<Link href="/explore">
+								<Button
+									size="lg"
+									variant="outline"
+									className="bg-primary/10 hover:bg-primary/20"
+								>
+									Explore Listings
+								</Button>
+							</Link>
+						</div>
 					</div>
 				</section>
 			</main>
