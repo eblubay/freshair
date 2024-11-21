@@ -22,7 +22,7 @@ if (!process.env.WEBHOOK_SECRET) {
 	throw new Error("WEBHOOK_SECRET is not set")
 }
 
-const WEBHOOK_URL = `${process.env.VERCEL_URL}/api/apify-webhook?secret=${process.env.WEBHOOK_SECRET}`
+const WEBHOOK_URL = `https://${process.env.VERCEL_URL}/api/apify-webhook?secret=${process.env.WEBHOOK_SECRET}`
 
 const client = new ApifyClient({ token: process.env.APIFY_API_TOKEN })
 const listingActor = await client.actor(ACTOR_ID)
