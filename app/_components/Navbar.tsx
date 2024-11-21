@@ -1,5 +1,12 @@
 "use client"
 import { Button } from "@/components/ui/button"
+import {
+	SignInButton,
+	SignUpButton,
+	SignedIn,
+	SignedOut,
+	UserButton
+} from "@clerk/nextjs"
 import Link from "next/link"
 
 export function Navbar() {
@@ -16,8 +23,17 @@ export function Navbar() {
 					</Link>
 				</div>
 				<div className="ml-auto flex items-center gap-4">
-					<Button variant="ghost">Sign Up</Button>
-					<Button>Sign In</Button>
+					<SignedOut>
+						<SignInButton>
+							<Button variant="ghost">Sign In</Button>
+						</SignInButton>
+						<SignUpButton>
+							<Button>Sign Up</Button>
+						</SignUpButton>
+					</SignedOut>
+					<SignedIn>
+						<UserButton afterSignOutUrl="/" />
+					</SignedIn>
 				</div>
 			</div>
 		</nav>

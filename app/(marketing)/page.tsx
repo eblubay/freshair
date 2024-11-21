@@ -2,10 +2,14 @@ import { Navbar } from "@/app/_components/Navbar"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { auth } from "@clerk/nextjs/server"
 import { CreditCard, Home, Lock } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
-export default function MarketingPage() {
+export default async function MarketingPage() {
+	const { userId } = await auth()
+
 	return (
 		<div>
 			<Navbar />
@@ -23,10 +27,16 @@ export default function MarketingPage() {
 								of your data and build direct relationships with your guests.
 							</p>
 							<div className="mt-8 flex gap-4">
-								<Button size="lg">Get Started</Button>
-								<Button size="lg" variant="outline">
-									View Demo
-								</Button>
+								<Link href="/dashboard">
+									<Button size="lg">
+										{userId ? "View Dashboard" : "Get Started"}
+									</Button>
+								</Link>
+								{!userId && (
+									<Button size="lg" variant="outline">
+										View Demo
+									</Button>
+								)}
 							</div>
 						</div>
 						<div className="rounded-xl border bg-background shadow-lg">
@@ -113,9 +123,11 @@ export default function MarketingPage() {
 							Join thousands of hosts who have already claimed their
 							independence.
 						</p>
-						<Button size="lg" variant="secondary" className="mt-8">
-							Get Started Now
-						</Button>
+						<Link href="/dashboard">
+							<Button size="lg" variant="secondary" className="mt-8">
+								{userId ? "View Dashboard" : "Get Started Now"}
+							</Button>
+						</Link>
 					</div>
 				</section>
 			</main>
