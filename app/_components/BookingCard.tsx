@@ -11,17 +11,12 @@ import {
 interface BookingCardProps {
 	pricePerNight: number
 	capacity: number
-	mobile?: boolean
 }
 
-export function BookingCard({
-	pricePerNight,
-	capacity,
-	mobile = false
-}: BookingCardProps) {
+export function BookingCard({ pricePerNight, capacity }: BookingCardProps) {
 	return (
-		<div className={mobile ? "" : "col-span-1"}>
-			<Card className={`${mobile ? "border-0 shadow-none" : "sticky top-24"}`}>
+		<div className="col-span-1">
+			<Card className="sticky top-24">
 				<CardContent className="p-6">
 					<div className="flex items-baseline gap-1">
 						<span className="text-2xl font-bold">${pricePerNight}</span>
