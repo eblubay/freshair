@@ -33,9 +33,11 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 			transition={{ type: "spring", stiffness: 400, damping: 17 }}
 		>
 			<Card
-				onClick={() => property.id && router.push(`/listing/${property.id}`)}
+				onClick={() =>
+					property.status === "loaded" && router.push(`/listing/${property.id}`)
+				}
 				className={`${
-					property.id
+					property.status === "loaded"
 						? "cursor-pointer hover:shadow-lg transition-shadow"
 						: "opacity-50"
 				}`}
@@ -46,10 +48,14 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 						<div className="flex justify-between items-start">
 							<div>
 								<h3 className="font-semibold">
-									{property.name ?? "Property is loading..."}
+									{property.status === "loaded"
+										? property.title
+										: "Property is loading..."}
 								</h3>
 								<p className="text-sm text-gray-500">
-									{property.location ?? "Check back soon!"}
+									{property.status === "loaded"
+										? property.location
+										: "Check back soon!"}
 								</p>
 							</div>
 							<TooltipProvider>
@@ -80,11 +86,13 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 												size="icon"
 												onClick={(e) => {
 													e.stopPropagation()
-													property.id && handleDelete(property.id)
+													handleDelete(property.id)
 												}}
-												disabled={!property.id || isPending}
+												disabled={property.status === "pending" || isPending}
 												className={
-													!property.id ? "opacity-50 cursor-not-allowed" : ""
+													property.status === "pending"
+														? "opacity-50 cursor-not-allowed"
+														: ""
 												}
 											>
 												<Trash2 className="h-4 w-4 text-red-500" />
@@ -102,12 +110,14 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 						<div className="grid grid-cols-2 gap-4">
 							<div>
 								<p className="text-sm text-gray-500">Views (30 days)</p>
-								<p className="text-lg font-semibold">{property.views ?? "—"}</p>
+								<p className="text-lg font-semibold">
+									{property.status === "loaded" ? property.views : "—"}
+								</p>
 							</div>
 							<div>
 								<p className="text-sm text-gray-500">Bookings</p>
 								<p className="text-lg font-semibold">
-									{property.bookings ?? "—"}
+									{property.status === "loaded" ? property.bookings : "—"}
 								</p>
 							</div>
 						</div>

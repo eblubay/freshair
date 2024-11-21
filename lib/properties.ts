@@ -43,13 +43,18 @@ export async function createProperty(url: string) {
 }
 
 export type VisualProperty = {
-	id: string | null
-	name: string | null
-	location: string | null
-	views: number | null
-	bookings: number | null
+	id: string
 	url: string
-}
+} & (
+	| { status: "pending" }
+	| {
+			status: "loaded"
+			title: string
+			location: string
+			views: number
+			bookings: number
+	  }
+)
 
 export async function getProperties(): Promise<VisualProperty[]> {
 	const { userId } = await auth()
@@ -57,23 +62,40 @@ export async function getProperties(): Promise<VisualProperty[]> {
 
 	const results = await db
 		.select({
-			id: sql<
+			id: properties.id,
+			url: properties.url,
+			title: sql<
 				string | null
-			>`CASE WHEN ${properties.listingData} IS NULL THEN NULL ELSE ${properties.id} END`,
-			name: sql<
-				string | null
-			>`NULLIF((${properties.listingData}::json->'data'->'overview'->>'title')::text, '')`,
+			>`NULLIF((${properties.listingData}::json->'data'-->'h1Title')::text, '')`,
 			location: sql<
 				string | null
 			>`NULLIF((${properties.listingData}::json->'data'->'overview'->>'location')::text, '')`,
-			views: sql<number | null>`NULL`,
-			bookings: sql<number | null>`NULL`,
-			url: properties.url
+			views: sql<number>`0`,
+			bookings: sql<number>`0`,
+			hasListingData: sql<boolean>`${properties.listingData} IS NOT NULL`
 		})
 		.from(properties)
 		.where(eq(properties.clerkId, userId))
 
-	return results
+	return results.map((result) => {
+		if (!result.hasListingData) {
+			return {
+				id: result.id,
+				url: result.url,
+				status: "pending" as const
+			}
+		}
+
+		return {
+			status: "loaded" as const,
+			id: result.id,
+			url: result.url,
+			title: result.title ?? "",
+			location: result.location ?? "",
+			views: result.views ?? 0,
+			bookings: result.bookings ?? 0
+		}
+	})
 }
 
 export async function deleteProperty(propertyId: string) {
