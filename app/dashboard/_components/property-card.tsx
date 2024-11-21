@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tooltip"
 import type { VisualProperty } from "@/lib/properties"
 import { deleteProperty } from "@/lib/properties"
-import { ExternalLink, Home, Trash2 } from "lucide-react"
+import { Home, Trash2 } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useTransition } from "react"
 
@@ -26,7 +26,14 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 	}
 
 	return (
-		<Card>
+		<Card
+			onClick={() => property.id && router.push(`/listing/${property.id}`)}
+			className={`${
+				property.id
+					? "cursor-pointer hover:shadow-lg transition-shadow"
+					: "opacity-50"
+			}`}
+		>
 			<CardContent className="p-6">
 				<div className="flex flex-col gap-4">
 					{/* Title, Location, and Top Buttons */}
@@ -46,7 +53,10 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 										<Button
 											variant="ghost"
 											size="icon"
-											onClick={() => window.open(property.url, "_blank")}
+											onClick={(e) => {
+												e.stopPropagation()
+												window.open(property.url, "_blank")
+											}}
 											className="text-[#FF385C] hover:text-[#FF385C] hover:bg-[#FF385C]/10"
 										>
 											<Home className="h-4 w-4" />
@@ -62,28 +72,10 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 										<Button
 											variant="ghost"
 											size="icon"
-											onClick={() =>
-												property.id && router.push(`/listing/${property.id}`)
-											}
-											disabled={!property.id || isPending}
-											className={
-												!property.id ? "opacity-50 cursor-not-allowed" : ""
-											}
-										>
-											<ExternalLink className="h-4 w-4" />
-										</Button>
-									</TooltipTrigger>
-									<TooltipContent>
-										<p>View property details</p>
-									</TooltipContent>
-								</Tooltip>
-
-								<Tooltip>
-									<TooltipTrigger asChild>
-										<Button
-											variant="ghost"
-											size="icon"
-											onClick={() => property.id && handleDelete(property.id)}
+											onClick={(e) => {
+												e.stopPropagation()
+												property.id && handleDelete(property.id)
+											}}
 											disabled={!property.id || isPending}
 											className={
 												!property.id ? "opacity-50 cursor-not-allowed" : ""

@@ -13,13 +13,15 @@ export function HostDetails({ host }: HostDetailsProps) {
 			<div className="mt-6 space-y-6">
 				{/* Host info and stats */}
 				<div className="flex items-start gap-6">
-					<Image
-						src={host.host.profilePicture}
-						alt={host.host.name}
-						width={150}
-						height={150}
-						className="rounded-full"
-					/>
+					<div className="h-[150px] w-[150px] overflow-hidden rounded-full">
+						<Image
+							src={host.host.profilePicture}
+							alt={host.host.name}
+							width={150}
+							height={150}
+							className="h-full w-full object-cover"
+						/>
+					</div>
 					<div className="space-y-4">
 						<div>
 							<h3 className="text-xl font-medium">{host.host.name}</h3>
