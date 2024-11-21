@@ -6,6 +6,7 @@ import { eq, sql } from "drizzle-orm"
 import { nanoid } from "nanoid"
 import "server-only"
 import { z } from "zod"
+import { queueScraping } from "./apify"
 import { db } from "./db"
 
 // TODO: lock this down to only allow airbnb.com/rooms/ URLs
@@ -29,14 +30,14 @@ export async function createProperty(url: string) {
 		id: nanoid(),
 		clerkId: userId,
 		url: validatedUrl,
-		// listingData will be null initially and populated later
-		listingData: null,
-		createdAt: new Date(),
-		updatedAt: new Date()
+		listingData: null
 	}
 
-	// Insert into database
+	// First insert into database
 	await db.insert(properties).values(newProperty)
+
+	// Then queue scraping
+	await queueScraping(validatedUrl, newProperty.id)
 
 	return { success: true }
 }

@@ -3,6 +3,8 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
 const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"])
 
 export default clerkMiddleware(async (auth, req) => {
+	if (req.url.includes("/api/apify-webhook")) return
+
 	if (isProtectedRoute(req)) await auth.protect()
 })
 
