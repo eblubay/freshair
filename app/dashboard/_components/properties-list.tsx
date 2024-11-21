@@ -1,5 +1,5 @@
 // This is a Server Component (no 'use client' directive)
-import { getProperties } from "@/lib/db"
+import { getProperties } from "@/lib/properties"
 import { PropertyCard } from "./property-card"
 
 export async function PropertiesList() {

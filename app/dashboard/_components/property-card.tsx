@@ -8,8 +8,8 @@ import {
 	TooltipProvider,
 	TooltipTrigger
 } from "@/components/ui/tooltip"
-import type { VisualProperty } from "@/lib/db"
-import { deleteProperty } from "@/lib/db"
+import type { VisualProperty } from "@/lib/properties"
+import { deleteProperty } from "@/lib/properties"
 import { ExternalLink, Home, Trash2 } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useTransition } from "react"
@@ -33,10 +33,10 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 					<div className="flex justify-between items-start">
 						<div>
 							<h3 className="font-semibold">
-								{property.name ?? "Unnamed Property"}
+								{property.name ?? "Property is loading..."}
 							</h3>
 							<p className="text-sm text-gray-500">
-								{property.location ?? "Location unknown"}
+								{property.location ?? "Check back soon!"}
 							</p>
 						</div>
 						<TooltipProvider>
