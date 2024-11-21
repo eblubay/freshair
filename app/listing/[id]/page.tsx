@@ -15,9 +15,25 @@ import { ThingsToKnow } from "../../_components/ThingsToKnow"
 
 type Params = Promise<{ id: string }>
 
-// Update component to receive props
 export default async function ListingPage({ params }: { params: Params }) {
-	const listing = getListing()
+	const listing = await getListing((await params).id)
+
+	if (!listing || !listing.data) {
+		return (
+			<div className="min-h-screen flex flex-col">
+				<Navbar />
+				<main className="flex-1 container mx-auto px-4 flex items-center justify-center">
+					<div className="text-center">
+						<h1 className="text-2xl font-semibold mb-4">Listing Not Found</h1>
+						<p className="text-gray-600">
+							The listing you're looking for doesn't exist or has been removed.
+						</p>
+					</div>
+				</main>
+			</div>
+		)
+	}
+
 	const pricePerNight = 150
 
 	// Flatten all images from all rooms into a single array
