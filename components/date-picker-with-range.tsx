@@ -18,8 +18,8 @@ export default function DatePickerWithRange({
 	className
 }: React.HTMLAttributes<HTMLDivElement>) {
 	const [date, setDate] = React.useState<DateRange | undefined>({
-		from: new Date(2022, 0, 20),
-		to: addDays(new Date(2022, 0, 20), 20)
+		from: new Date(),
+		to: addDays(new Date(), 7)
 	})
 
 	return (
@@ -57,6 +57,7 @@ export default function DatePickerWithRange({
 						selected={date}
 						onSelect={setDate}
 						numberOfMonths={2}
+						disabled={{ before: addDays(new Date(), 0) }}
 					/>
 				</PopoverContent>
 			</Popover>
