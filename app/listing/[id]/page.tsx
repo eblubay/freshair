@@ -39,12 +39,11 @@ export default async function ListingPage({ params }: { params: Params }) {
 	// Flatten all images from all rooms into a single array
 	const allImages = listing.data.gallery.rooms.flatMap((room) => room.images)
 
-	const h1Title = listing.data.h1Title
 	return (
 		<div>
 			<Navbar />
 			<main className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 2xl:px-40 pb-20 md:pb-40">
-				<h1 className="text-3xl font-semibold pt-8">{h1Title}</h1>
+				<h1 className="text-3xl font-semibold pt-8">{listing.data.h1Title}</h1>
 				<Gallery
 					images={allImages}
 					className="mt-8 max-h-[600px] overflow-hidden"
