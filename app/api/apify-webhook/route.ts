@@ -1,8 +1,8 @@
 import { scrapingJobs } from "@/db/schema"
-import { fetchAndStoreResults } from "@/lib/apify"
+import { ApifyWebhookPayloadSchema, fetchAndStoreResults } from "@/lib/apify"
 import { db } from "@/lib/db"
 import { logger } from "@/lib/logger"
-import { and, eq } from "drizzle-orm"
+import { eq } from "drizzle-orm"
 import { NextResponse } from "next/server"
 
 export async function POST(request: Request) {
@@ -20,12 +20,22 @@ export async function POST(request: Request) {
 	}
 
 	try {
-		const payload = await request.json()
-		logger.info("Webhook payload received", { payload })
-		const { propertyId, runId, success, datasetId } = payload
+		const rawPayload = await request.json()
+		logger.info("Webhook payload received", { payload: rawPayload })
 
-		if (success && datasetId) {
-			await fetchAndStoreResults(runId, datasetId, propertyId)
+		const payload = ApifyWebhookPayloadSchema.safeParse(rawPayload)
+		if (!payload.success) {
+			logger.error("Invalid webhook payload", { errors: payload.error })
+			return NextResponse.json(
+				{ error: "Invalid webhook payload" },
+				{ status: 400 }
+			)
+		}
+
+		const { runId, success } = payload.data
+
+		if (success) {
+			await fetchAndStoreResults(runId)
 		}
 
 		await db
@@ -34,12 +44,7 @@ export async function POST(request: Request) {
 				status: success ? "complete" : "failed",
 				completedAt: new Date()
 			})
-			.where(
-				and(
-					eq(scrapingJobs.propertyId, propertyId),
-					eq(scrapingJobs.runId, runId)
-				)
-			)
+			.where(eq(scrapingJobs.runId, runId))
 
 		return NextResponse.json({ success: true })
 	} catch (error) {

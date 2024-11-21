@@ -7,6 +7,7 @@ import { logger } from "@/lib/logger"
 import { ApifyClient } from "apify-client"
 import { eq } from "drizzle-orm"
 import { nanoid } from "nanoid"
+import { z } from "zod"
 
 const ACTOR_ID = "PD6Eb2AlmsXqGxffs"
 
@@ -27,6 +28,13 @@ const WEBHOOK_URL = `https://${process.env.VERCEL_URL}/api/apify-webhook?secret=
 const client = new ApifyClient({ token: process.env.APIFY_API_TOKEN })
 const listingActor = await client.actor(ACTOR_ID)
 
+export const ApifyWebhookPayloadSchema = z.object({
+	runId: z.string(),
+	success: z.boolean()
+})
+
+export type ApifyWebhookPayload = z.infer<typeof ApifyWebhookPayloadSchema>
+
 export async function queueScraping(url: string, propertyId: string) {
 	logger.info("Starting scraping job", { url, propertyId })
 
@@ -41,11 +49,9 @@ export async function queueScraping(url: string, propertyId: string) {
 					eventTypes: ["ACTOR.RUN.SUCCEEDED"],
 					requestUrl: WEBHOOK_URL,
 					payloadTemplate: JSON.stringify({
-						propertyId,
 						runId: "{{eventData.actorRunId}}",
-						success: true,
-						datasetId: "{{eventData.defaultDatasetId}}"
-					}),
+						success: true
+					} satisfies ApifyWebhookPayload),
 					idempotencyKey: propertyId
 				}
 			]
@@ -80,14 +86,28 @@ export async function queueScraping(url: string, propertyId: string) {
 	}
 }
 
-export async function fetchAndStoreResults(
-	runId: string,
-	datasetId: string,
-	propertyId: string
-) {
-	logger.info("Fetching scraping results", { runId, datasetId, propertyId })
+export async function fetchAndStoreResults(runId: string) {
+	logger.info("Fetching scraping results", { runId })
 
 	try {
+		const job = await db
+			.select()
+			.from(scrapingJobs)
+			.where(eq(scrapingJobs.runId, runId))
+			.limit(1)
+			.then((jobs) => jobs[0])
+		if (!job) {
+			throw new Error("Job not found")
+		}
+
+		const runs = await listingActor.runs()
+		const list = await runs.list()
+		const run = list.items.find((r) => r.id === runId)
+		const datasetId = run?.defaultDatasetId
+		if (!datasetId) {
+			throw new Error("Dataset ID not found")
+		}
+
 		const { items } = await client.dataset(datasetId).listItems()
 		logger.info("Retrieved dataset from Apify", {
 			itemCount: items.length,
@@ -99,18 +119,16 @@ export async function fetchAndStoreResults(
 		await db
 			.update(properties)
 			.set({ listingData: listingData as unknown as Listing })
-			.where(eq(properties.id, propertyId))
+			.where(eq(properties.id, job.propertyId))
 
 		logger.info("Updated property with scraped data", {
-			propertyId,
+			propertyId: job.propertyId,
 			runId
 		})
 	} catch (error) {
 		logger.error("Failed to fetch and store results", {
 			error,
-			runId,
-			datasetId,
-			propertyId
+			runId
 		})
 		throw error
 	}
