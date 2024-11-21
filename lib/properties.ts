@@ -1,5 +1,6 @@
 "use server"
 
+import type { Listing } from "@/data/types"
 import { type NewProperty, properties } from "@/db/schema"
 import { auth } from "@clerk/nextjs/server"
 import { eq, sql } from "drizzle-orm"
@@ -45,6 +46,7 @@ export async function createProperty(url: string) {
 export type VisualProperty = {
 	id: string
 	url: string
+	pricePerNight: number
 } & (
 	| { status: "pending" }
 	| {
@@ -72,7 +74,8 @@ export async function getProperties(): Promise<VisualProperty[]> {
 			>`(${properties.listingData}::json->'data'->'overview'->>'location')`,
 			views: properties.views,
 			inquiries: properties.inquiries,
-			hasListingData: sql<boolean>`${properties.listingData} IS NOT NULL`
+			hasListingData: sql<boolean>`${properties.listingData} IS NOT NULL`,
+			pricePerNight: properties.pricePerNight
 		})
 		.from(properties)
 		.where(eq(properties.clerkId, userId))
@@ -82,6 +85,7 @@ export async function getProperties(): Promise<VisualProperty[]> {
 			return {
 				id: result.id,
 				url: result.url,
+				pricePerNight: result.pricePerNight,
 				status: "pending" as const
 			}
 		}
@@ -93,7 +97,8 @@ export async function getProperties(): Promise<VisualProperty[]> {
 			title: result.title ?? "",
 			location: result.location ?? "",
 			views: result.views,
-			inquiries: result.inquiries
+			inquiries: result.inquiries,
+			pricePerNight: result.pricePerNight
 		}
 	})
 }
@@ -140,7 +145,7 @@ export async function getExploreProperties(): Promise<ExploreProperty[]> {
 			mainImage: sql<string>`(${properties.listingData}::json->'data'->'overview'->>'imageUrl')`,
 			views: properties.views,
 			inquiries: properties.inquiries,
-			pricePerNight: sql<number>`150`
+			pricePerNight: properties.pricePerNight
 		})
 		.from(properties)
 		.where(sql`${properties.listingData} IS NOT NULL`)
@@ -178,4 +183,63 @@ export async function incrementPropertyInquiries(propertyId: string) {
 			inquiries: sql`${properties.inquiries} + 1`
 		})
 		.where(eq(properties.id, propertyId))
+}
+
+export async function updatePropertyPrice(propertyId: string, price: number) {
+	const { userId } = await auth()
+	if (!userId) throw new Error("Unauthorized")
+
+	await db
+		.update(properties)
+		.set({ pricePerNight: price })
+		.where(
+			sql`${properties.id} = ${propertyId} AND ${properties.clerkId} = ${userId}`
+		)
+
+	return { success: true }
+}
+
+export async function getPropertyPrice(propertyId: string): Promise<number> {
+	const result = await db
+		.select({ pricePerNight: properties.pricePerNight })
+		.from(properties)
+		.where(eq(properties.id, propertyId))
+		.limit(1)
+
+	return result[0]?.pricePerNight ?? 0
+}
+
+export type ListingWithPrice = {
+	data: Listing["data"]
+	pricePerNight: number
+}
+
+export async function getListing(id: string): Promise<ListingWithPrice | null> {
+	const property = await db
+		.select({
+			listingData: properties.listingData,
+			pricePerNight: properties.pricePerNight
+		})
+		.from(properties)
+		.where(eq(properties.id, id))
+		.limit(1)
+		.then((rows) => rows[0])
+
+	if (!property || !property.listingData) {
+		return null
+	}
+
+	const listing = property.listingData as Listing
+	for (const room of listing.data.gallery.rooms) {
+		for (const image of room.images) {
+			image.orientation = image.orientation.toUpperCase() as
+				| "LANDSCAPE"
+				| "PORTRAIT"
+		}
+	}
+
+	return {
+		data: listing.data,
+		pricePerNight: property.pricePerNight
+	}
 }

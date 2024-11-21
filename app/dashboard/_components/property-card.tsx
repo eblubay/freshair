@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
 import {
 	Tooltip,
 	TooltipContent,
@@ -9,7 +10,7 @@ import {
 	TooltipTrigger
 } from "@/components/ui/tooltip"
 import type { VisualProperty } from "@/lib/properties"
-import { deleteProperty } from "@/lib/properties"
+import { deleteProperty, updatePropertyPrice } from "@/lib/properties"
 import { motion } from "framer-motion"
 import { Home, Trash2 } from "lucide-react"
 import { useRouter } from "next/navigation"
@@ -22,6 +23,13 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 	const handleDelete = (propertyId: string) => {
 		startTransition(async () => {
 			await deleteProperty(propertyId)
+			router.refresh()
+		})
+	}
+
+	const handlePriceUpdate = (newPrice: number) => {
+		startTransition(async () => {
+			await updatePropertyPrice(property.id, newPrice)
 			router.refresh()
 		})
 	}
@@ -107,7 +115,7 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 						</div>
 
 						{/* Stats Grid */}
-						<div className="grid grid-cols-2 gap-4">
+						<div className="grid grid-cols-3 gap-4">
 							<div>
 								<p className="text-sm text-gray-500">Views (30 days)</p>
 								<p className="text-lg font-semibold">
@@ -119,6 +127,23 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 								<p className="text-lg font-semibold">
 									{property.status === "loaded" ? property.inquiries : "—"}
 								</p>
+							</div>
+							<div>
+								<p className="text-sm text-gray-500">Price per night</p>
+								<Input
+									type="number"
+									min="0"
+									value={property.pricePerNight}
+									onChange={(e) => {
+										const newPrice = Number.parseInt(e.target.value)
+										if (!Number.isNaN(newPrice)) {
+											handlePriceUpdate(newPrice)
+										}
+									}}
+									onClick={(e) => e.stopPropagation()}
+									className="w-24"
+									disabled={property.status === "pending" || isPending}
+								/>
 							</div>
 						</div>
 					</div>

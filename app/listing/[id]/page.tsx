@@ -1,6 +1,5 @@
 import { Separator } from "@/components/ui/separator"
-import { getListing } from "@/lib/data"
-import { incrementPropertyViews } from "@/lib/properties"
+import { getListing, incrementPropertyViews } from "@/lib/properties"
 import { AboutSpace } from "../../_components/AboutSpace"
 import { Amenities } from "../../_components/Amenities"
 import { BookingCard } from "../../_components/BookingCard"
@@ -22,7 +21,7 @@ export default async function ListingPage({ params }: { params: Params }) {
 	// Increment views when the page loads
 	await incrementPropertyViews((await params).id)
 
-	if (!listing || !listing.data) {
+	if (!listing) {
 		return (
 			<div className="min-h-screen flex flex-col">
 				<Navbar />
@@ -37,8 +36,6 @@ export default async function ListingPage({ params }: { params: Params }) {
 			</div>
 		)
 	}
-
-	const pricePerNight = 150
 
 	// Flatten all images from all rooms into a single array
 	const allImages = listing.data.gallery.rooms.flatMap((room) => room.images)
@@ -74,7 +71,7 @@ export default async function ListingPage({ params }: { params: Params }) {
 					</div>
 					<div className="hidden lg:block">
 						<BookingCard
-							pricePerNight={pricePerNight}
+							pricePerNight={listing.pricePerNight}
 							capacity={listing.data.overview.capacity}
 							propertyId={(await params).id}
 						/>
@@ -82,7 +79,7 @@ export default async function ListingPage({ params }: { params: Params }) {
 				</div>
 			</main>
 			<MobileBookingBar
-				pricePerNight={pricePerNight}
+				pricePerNight={listing.pricePerNight}
 				capacity={listing.data.overview.capacity}
 				propertyId={(await params).id}
 				className="lg:hidden"
