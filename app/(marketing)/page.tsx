@@ -28,7 +28,8 @@ export default async function MarketingPage() {
 								</span>
 							</div>
 							<h1 className="text-5xl font-bold tracking-tight">
-								Your Listings.{" "}
+								Your Listings.
+								<br />
 								<span className="text-primary">Your Relationships.</span>
 							</h1>
 							<p className="mt-6 text-xl text-gray-600">
