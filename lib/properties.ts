@@ -66,10 +66,10 @@ export async function getProperties(): Promise<VisualProperty[]> {
 			url: properties.url,
 			title: sql<
 				string | null
-			>`NULLIF((${properties.listingData}::json->'data'-->'h1Title')::text, '')`,
+			>`NULLIF(${properties.listingData}->>'data'->>'h1Title', '')`,
 			location: sql<
 				string | null
-			>`NULLIF((${properties.listingData}::json->'data'->'overview'->>'location')::text, '')`,
+			>`NULLIF(${properties.listingData}->'data'->'overview'->>'location', '')`,
 			views: sql<number>`0`,
 			bookings: sql<number>`0`,
 			hasListingData: sql<boolean>`${properties.listingData} IS NOT NULL`
