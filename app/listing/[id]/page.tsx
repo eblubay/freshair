@@ -1,20 +1,28 @@
 import { Separator } from "@/components/ui/separator"
 import { getListing } from "@/lib/data"
-import { AboutSpace } from "./_components/AboutSpace"
-import { Amenities } from "./_components/Amenities"
-import { BookingCard } from "./_components/BookingCard"
-import { Gallery } from "./_components/Gallery"
-import { HostDetails } from "./_components/HostDetails"
-import { HostIntroduction } from "./_components/HostIntroduction"
-import { ListingHeader } from "./_components/ListingHeader"
-import { LocationSection } from "./_components/Location"
-import { MobileBookingBar } from "./_components/MobileBookingBar"
-import { Navbar } from "./_components/Navbar"
-import { Reviews } from "./_components/Reviews"
-import { ThingsToKnow } from "./_components/ThingsToKnow"
+import { AboutSpace } from "../../_components/AboutSpace"
+import { Amenities } from "../../_components/Amenities"
+import { BookingCard } from "../../_components/BookingCard"
+import { Gallery } from "../../_components/Gallery"
+import { HostDetails } from "../../_components/HostDetails"
+import { HostIntroduction } from "../../_components/HostIntroduction"
+import { ListingHeader } from "../../_components/ListingHeader"
+import { LocationSection } from "../../_components/Location"
+import { MobileBookingBar } from "../../_components/MobileBookingBar"
+import { Navbar } from "../../_components/Navbar"
+import { Reviews } from "../../_components/Reviews"
+import { ThingsToKnow } from "../../_components/ThingsToKnow"
 
-export default function Home() {
-	const listing = getListing()
+// Add type for the page props
+interface Props {
+	params: {
+		id: string
+	}
+}
+
+// Update component to receive props
+export default function ListingPage({ params }: Props) {
+	const listing = getListing() // Later this will use params.id
 	const pricePerNight = 150
 
 	// Flatten all images from all rooms into a single array
