@@ -34,8 +34,8 @@ export default async function MarketingPage() {
 							</h1>
 							<p className="mt-6 text-xl text-gray-600">
 								Import your Airbnb listings to Freshair. Connect directly with
-								guests, avoid fees, and take control of your rental business -
-								all while keeping your data yours.
+								guests, avoid fees, and take control of your rental business—all
+								while keeping your data yours.
 							</p>
 							<div className="mt-8 flex gap-4">
 								<Link href="/dashboard">
