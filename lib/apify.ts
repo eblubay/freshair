@@ -47,6 +47,7 @@ export type ApifyWebhookPayload = z.infer<typeof ApifyWebhookPayloadSchema>
 
 export async function queueScraping(url: string, propertyId: string) {
 	logger.info("Starting scraping job", { url, propertyId })
+	const id = nanoid()
 
 	const input = {
 		startUrls: [{ url }]
@@ -58,7 +59,7 @@ export async function queueScraping(url: string, propertyId: string) {
 				{
 					eventTypes: ["ACTOR.RUN.SUCCEEDED"],
 					requestUrl: WEBHOOK_URL,
-					idempotencyKey: propertyId
+					idempotencyKey: id
 				}
 			]
 		})
@@ -70,7 +71,7 @@ export async function queueScraping(url: string, propertyId: string) {
 		})
 
 		await db.insert(scrapingJobs).values({
-			id: nanoid(),
+			id,
 			propertyId,
 			runId: run.id,
 			status: "pending",

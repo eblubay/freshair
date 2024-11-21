@@ -20,10 +20,10 @@ export const scrapingJobs = pgTable(
 	"scraping_jobs",
 	{
 		id: text("id").primaryKey(),
+		runId: text("run_id").notNull().unique(),
 		propertyId: text("property_id")
 			.references(() => properties.id)
 			.notNull(),
-		runId: text("run_id").notNull(),
 		status: text("status", {
 			enum: ["pending", "complete", "failed"]
 		}).notNull(),
