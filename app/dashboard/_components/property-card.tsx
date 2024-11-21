@@ -20,13 +20,8 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 
 	const handleDelete = (propertyId: string) => {
 		startTransition(async () => {
-			try {
-				await deleteProperty(propertyId)
-				router.refresh()
-			} catch (error) {
-				console.error("Failed to delete property:", error)
-				// Optionally add toast/notification here
-			}
+			await deleteProperty(propertyId)
+			router.refresh()
 		})
 	}
 
@@ -73,12 +68,9 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 										<Button
 											variant="ghost"
 											size="icon"
-											onClick={async (e) => {
-												e.preventDefault()
+											onClick={(e) => {
 												e.stopPropagation()
-												if (property.id) {
-													await handleDelete(property.id)
-												}
+												property.id && handleDelete(property.id)
 											}}
 											disabled={isPending}
 										>
