@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { useToast } from "@/hooks/use-toast"
 import { createProperty } from "@/lib/properties"
 import { Home } from "lucide-react"
 import { useRouter } from "next/navigation"
@@ -21,6 +22,7 @@ export function AddPropertyForm() {
 	const [url, setUrl] = useState("")
 	const [error, setError] = useState<string | null>(null)
 	const [isPending, startTransition] = useTransition()
+	const { toast } = useToast()
 
 	const handleSubmit = async (event?: React.FormEvent) => {
 		if (event) event.preventDefault()
@@ -31,6 +33,10 @@ export function AddPropertyForm() {
 			startTransition(async () => {
 				await createProperty(url)
 				setUrl("")
+				toast({
+					title: "Property Added",
+					description: "You'll receive an email when your listing is ready."
+				})
 				router.refresh()
 			})
 		} catch (e) {
