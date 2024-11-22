@@ -58,11 +58,20 @@ function PriceInput({
 export function PropertyCard({ property }: { property: VisualProperty }) {
 	const router = useRouter()
 
+	const handleCardClick = (e: React.MouseEvent) => {
+		if (e.target === e.currentTarget || e.target instanceof HTMLDivElement) {
+			if (property.status === "loaded") {
+				window.open(property.url, "_blank")
+			}
+		}
+	}
+
 	return (
 		<motion.div
 			whileHover={{ scale: 1.02 }}
 			whileTap={{ scale: 0.98 }}
 			transition={{ type: "spring", stiffness: 400, damping: 17 }}
+			onClick={handleCardClick}
 		>
 			<Card
 				className={`${
