@@ -13,6 +13,7 @@ import type { VisualProperty } from "@/lib/properties"
 import { deleteProperty, updatePropertyPrice } from "@/lib/properties"
 import { motion } from "framer-motion"
 import { Home, Trash2 } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 function PriceInput({
@@ -55,6 +56,8 @@ function PriceInput({
 }
 
 export function PropertyCard({ property }: { property: VisualProperty }) {
+	const router = useRouter()
+
 	return (
 		<motion.div
 			whileHover={{ scale: 1.02 }}
@@ -110,9 +113,16 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 											<Button
 												variant="ghost"
 												size="icon"
-												onClick={(e) => {
+												onClick={async (e) => {
 													e.stopPropagation()
-													deleteProperty(property.id)
+													if (
+														window.confirm(
+															"Are you sure you want to delete this property?"
+														)
+													) {
+														await deleteProperty(property.id)
+														router.refresh()
+													}
 												}}
 												disabled={property.status === "pending"}
 												className={
