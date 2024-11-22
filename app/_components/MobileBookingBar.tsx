@@ -1,5 +1,5 @@
 "use client"
-import DatePickerWithRange from "@/components/date-picker-with-range"
+import MobileDatePickerWithRange from "@/components/mobile-date-picker-with-range"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -96,7 +96,7 @@ export function MobileBookingBar({
 							<span className="text-2xl font-bold">${pricePerNight}</span>
 							<span className="text-gray-500">night</span>
 						</div>
-						<DatePickerWithRange date={dates} onDateSelect={setDates} />
+						<MobileDatePickerWithRange date={dates} onDateSelect={setDates} />
 						<Select defaultValue="1" onValueChange={setGuests}>
 							<SelectTrigger>
 								<SelectValue placeholder="Number of guests" />
