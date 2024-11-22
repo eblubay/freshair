@@ -1,11 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/hooks/use-toast"
 import { createProperty } from "@/lib/properties"
-import { motion } from "framer-motion"
 import { Home } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useState, useTransition } from "react"
@@ -50,11 +49,7 @@ export function AddPropertyForm() {
 	}
 
 	return (
-		<motion.div
-			whileHover={{ scale: 1.02 }}
-			whileTap={{ scale: 0.98 }}
-			transition={{ type: "spring", stiffness: 400, damping: 17 }}
-		>
+		<Card>
 			<CardContent className="p-6">
 				<h2 className="text-xl font-semibold mb-4">Add New Property</h2>
 				<form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -74,6 +69,6 @@ export function AddPropertyForm() {
 					{error && <p className="text-sm text-red-500">{error}</p>}
 				</form>
 			</CardContent>
-		</motion.div>
+		</Card>
 	)
 }

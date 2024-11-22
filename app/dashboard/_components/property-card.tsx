@@ -12,37 +12,29 @@ import {
 import type { VisualProperty } from "@/lib/properties"
 import { deleteProperty, updatePropertyPrice } from "@/lib/properties"
 import { motion } from "framer-motion"
-import debounce from "lodash.debounce"
 import { Home, Trash2 } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { useCallback, useEffect, useState, useTransition } from "react"
+import { useState, useTransition } from "react"
 
 export function PropertyCard({ property }: { property: VisualProperty }) {
 	const router = useRouter()
 	const [isPending, startTransition] = useTransition()
 	const [localPrice, setLocalPrice] = useState(property.pricePerNight)
 
-	const debouncedPriceUpdate = useCallback(
-		debounce((newPrice: number) => {
-			startTransition(async () => {
-				await updatePropertyPrice(property.id, newPrice)
-				router.refresh()
-			})
-		}, 1000),
-		[]
-	)
-
-	useEffect(() => {
-		return () => {
-			debouncedPriceUpdate.cancel()
-		}
-	}, [debouncedPriceUpdate])
-
 	const handleDelete = (propertyId: string) => {
 		startTransition(async () => {
 			await deleteProperty(propertyId)
 			router.refresh()
 		})
+	}
+
+	const handlePriceUpdate = (newPrice: number) => {
+		if (!Number.isNaN(newPrice)) {
+			startTransition(async () => {
+				await updatePropertyPrice(property.id, newPrice)
+				router.refresh()
+			})
+		}
 	}
 
 	return (
@@ -152,15 +144,22 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 									e.stopPropagation()
 									const newPrice = Number(e.target.value)
 									setLocalPrice(newPrice)
-									if (!Number.isNaN(newPrice)) {
-										debouncedPriceUpdate(newPrice)
+								}}
+								onBlur={(e) => {
+									const newPrice = Number(e.target.value)
+									handlePriceUpdate(newPrice)
+								}}
+								onKeyDown={(e) => {
+									if (e.key === "Enter") {
+										e.currentTarget.blur() // This will trigger onBlur
+										// Or alternatively:
+										// handlePriceUpdate(Number(e.currentTarget.value))
 									}
 								}}
 								onMouseDown={(e) => e.stopPropagation()}
 								onClick={(e) => e.stopPropagation()}
 								onFocus={(e) => e.stopPropagation()}
 								className="w-full"
-								disabled={property.status === "pending" || isPending}
 							/>
 						</div>
 					</div>
