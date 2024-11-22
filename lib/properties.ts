@@ -3,7 +3,7 @@
 import type { Listing } from "@/data/types"
 import { type NewProperty, properties } from "@/db/schema"
 import { auth } from "@clerk/nextjs/server"
-import { eq, sql } from "drizzle-orm"
+import { desc, eq, sql } from "drizzle-orm"
 import { nanoid } from "nanoid"
 import "server-only"
 import { z } from "zod"
@@ -79,6 +79,7 @@ export async function getProperties(): Promise<VisualProperty[]> {
 		})
 		.from(properties)
 		.where(eq(properties.clerkId, userId))
+		.orderBy(desc(properties.createdAt))
 
 	return results.map((result) => {
 		if (!result.hasListingData) {
@@ -149,6 +150,7 @@ export async function getExploreProperties(): Promise<ExploreProperty[]> {
 		})
 		.from(properties)
 		.where(sql`${properties.listingData} IS NOT NULL`)
+		.orderBy(desc(properties.createdAt))
 
 	return results.map((result) => ({
 		id: result.id,

@@ -17,7 +17,8 @@ export const properties = pgTable(
 		listingData: json("listing_data").$type<Listing>(),
 		views: integer("views").notNull().default(0),
 		inquiries: integer("inquiries").notNull().default(0),
-		pricePerNight: integer("price_per_night").notNull().default(0)
+		pricePerNight: integer("price_per_night").notNull().default(0),
+		createdAt: timestamp("created_at").notNull().defaultNow()
 	},
 	(table) => {
 		return {
