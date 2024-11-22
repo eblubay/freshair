@@ -32,7 +32,7 @@ export const scrapingJobs = pgTable(
 		id: text("id").primaryKey(),
 		runId: text("run_id").notNull().unique(),
 		propertyId: text("property_id")
-			.references(() => properties.id)
+			.references(() => properties.id, { onDelete: "cascade" })
 			.notNull(),
 		status: text("status", {
 			enum: ["pending", "complete", "failed"]
