@@ -11,17 +11,17 @@ import { z } from "zod"
 
 const ACTOR_ID = "PD6Eb2AlmsXqGxffs"
 
-if (!process.env.APIFY_API_TOKEN) {
-	throw new Error("APIFY_API_TOKEN is not set")
-}
+// if (!process.env.APIFY_API_TOKEN) {
+// 	throw new Error("APIFY_API_TOKEN is not set")
+// }
 
-if (!process.env.VERCEL_URL) {
-	throw new Error("VERCEL_URL is not set")
-}
+// if (!process.env.VERCEL_URL) {
+// 	throw new Error("VERCEL_URL is not set")
+// }
 
-if (!process.env.WEBHOOK_SECRET) {
-	throw new Error("WEBHOOK_SECRET is not set")
-}
+// if (!process.env.WEBHOOK_SECRET) {
+// 	throw new Error("WEBHOOK_SECRET is not set")
+// }
 
 const WEBHOOK_URL = `https://${process.env.VERCEL_URL}/api/apify-webhook?secret=${process.env.WEBHOOK_SECRET}`
 

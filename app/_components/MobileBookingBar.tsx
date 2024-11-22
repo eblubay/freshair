@@ -1,12 +1,6 @@
 "use client"
 import DatePickerWithRange from "@/components/date-picker-with-range"
 import { Button } from "@/components/ui/button"
-import {
-	Dialog,
-	DialogContent,
-	DialogTitle,
-	DialogTrigger
-} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import {
 	Select,
@@ -15,6 +9,13 @@ import {
 	SelectTrigger,
 	SelectValue
 } from "@/components/ui/select"
+import {
+	Sheet,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger
+} from "@/components/ui/sheet"
 import { useToast } from "@/hooks/use-toast"
 import { createBooking } from "@/lib/bookings"
 import { cn } from "@/lib/utils"
@@ -80,15 +81,17 @@ export function MobileBookingBar({
 				<span className="text-base text-muted-foreground">per night</span>
 			</div>
 
-			<Dialog>
-				<DialogTrigger asChild>
+			<Sheet>
+				<SheetTrigger asChild>
 					<Button size="lg">Reserve</Button>
-				</DialogTrigger>
-				<DialogContent className="max-h-screen h-screen sm:max-w-[425px] p-6">
-					<DialogTitle className="text-xl font-semibold mb-6">
-						Reserve your stay
-					</DialogTitle>
-					<div className="space-y-6">
+				</SheetTrigger>
+				<SheetContent side="bottom" className="h-[90%] sm:h-[90%] w-full">
+					<SheetHeader>
+						<SheetTitle className="text-xl font-semibold">
+							Reserve your stay
+						</SheetTitle>
+					</SheetHeader>
+					<div className="mt-6 space-y-6">
 						<div className="flex items-baseline gap-1">
 							<span className="text-2xl font-bold">${pricePerNight}</span>
 							<span className="text-gray-500">night</span>
@@ -125,8 +128,8 @@ export function MobileBookingBar({
 							{isLoading ? "Sending..." : "Reserve"}
 						</Button>
 					</div>
-				</DialogContent>
-			</Dialog>
+				</SheetContent>
+			</Sheet>
 		</div>
 	)
 }
