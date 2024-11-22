@@ -31,7 +31,15 @@ export const metadata: Metadata = {
 		title: "Freshair - Property Management Platform",
 		description:
 			"Import your Airbnb listings to Freshair. Connect directly with guests, avoid fees, and take control of your rental business.",
-		siteName: "Freshair"
+		siteName: "Freshair",
+		images: [
+			{
+				url: "/opengraph.jpg",
+				width: 1200,
+				height: 630,
+				alt: "Freshair - Property Management Platform"
+			}
+		]
 	},
 	viewport: {
 		width: "device-width",
@@ -40,6 +48,13 @@ export const metadata: Metadata = {
 	robots: {
 		index: true,
 		follow: true
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Freshair - Property Management Platform",
+		description:
+			"Import your Airbnb listings to Freshair. Connect directly with guests, avoid fees, and take control of your rental business.",
+		images: ["/opengraph.jpg"]
 	}
 }
 
