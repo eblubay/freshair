@@ -13,8 +13,7 @@ import type { VisualProperty } from "@/lib/properties"
 import { deleteProperty, updatePropertyPrice } from "@/lib/properties"
 import { motion } from "framer-motion"
 import { Home, Trash2 } from "lucide-react"
-import { useRouter } from "next/navigation"
-import { useState, useTransition } from "react"
+import { useState } from "react"
 
 function PriceInput({
 	propertyId,
@@ -23,16 +22,12 @@ function PriceInput({
 	propertyId: string
 	initialPrice: number
 }) {
-	const router = useRouter()
-	const [isPending, startTransition] = useTransition()
 	const [localPrice, setLocalPrice] = useState(initialPrice)
 
 	const handlePriceUpdate = (newPrice: number) => {
 		if (!Number.isNaN(newPrice) && newPrice !== initialPrice) {
-			startTransition(async () => {
-				await updatePropertyPrice(propertyId, newPrice)
-				router.refresh()
-			})
+			updatePropertyPrice(propertyId, newPrice)
+			setLocalPrice(newPrice)
 		}
 	}
 
@@ -54,23 +49,12 @@ function PriceInput({
 			onMouseDown={(e) => e.stopPropagation()}
 			onClick={(e) => e.stopPropagation()}
 			onFocus={(e) => e.stopPropagation()}
-			disabled={isPending}
 			className="w-full"
 		/>
 	)
 }
 
 export function PropertyCard({ property }: { property: VisualProperty }) {
-	const router = useRouter()
-	const [isPending, startTransition] = useTransition()
-
-	const handleDelete = (propertyId: string) => {
-		startTransition(async () => {
-			await deleteProperty(propertyId)
-			router.refresh()
-		})
-	}
-
 	return (
 		<motion.div
 			whileHover={{ scale: 1.02 }}
@@ -78,9 +62,6 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 			transition={{ type: "spring", stiffness: 400, damping: 17 }}
 		>
 			<Card
-				onClick={() =>
-					property.status === "loaded" && router.push(`/listing/${property.id}`)
-				}
 				className={`${
 					property.status === "loaded"
 						? "cursor-pointer hover:shadow-lg transition-shadow"
@@ -131,9 +112,9 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 												size="icon"
 												onClick={(e) => {
 													e.stopPropagation()
-													handleDelete(property.id)
+													deleteProperty(property.id)
 												}}
-												disabled={property.status === "pending" || isPending}
+												disabled={property.status === "pending"}
 												className={
 													property.status === "pending"
 														? "opacity-50 cursor-not-allowed"
