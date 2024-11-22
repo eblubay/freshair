@@ -85,13 +85,13 @@ export function MobileBookingBar({
 				<SheetTrigger asChild>
 					<Button size="lg">Reserve</Button>
 				</SheetTrigger>
-				<SheetContent side="bottom" className="h-[90%] sm:h-[90%] w-full">
-					<SheetHeader>
+				<SheetContent side="bottom" className="p-4">
+					<SheetHeader className="mb-6">
 						<SheetTitle className="text-xl font-semibold">
 							Reserve your stay
 						</SheetTitle>
 					</SheetHeader>
-					<div className="mt-6 space-y-6">
+					<div className="space-y-6">
 						<div className="flex items-baseline gap-1">
 							<span className="text-2xl font-bold">${pricePerNight}</span>
 							<span className="text-gray-500">night</span>
