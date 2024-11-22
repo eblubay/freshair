@@ -59,10 +59,13 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 	const router = useRouter()
 
 	const handleCardClick = (e: React.MouseEvent) => {
-		if (e.target === e.currentTarget || e.target instanceof HTMLDivElement) {
-			if (property.status === "loaded") {
-				window.open(property.url, "_blank")
-			}
+		const target = e.target as HTMLElement
+		if (target.closest("button") || target.closest("input")) {
+			return
+		}
+
+		if (property.status === "loaded") {
+			window.open(property.url, "_blank")
 		}
 	}
 
