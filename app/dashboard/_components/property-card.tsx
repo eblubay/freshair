@@ -16,25 +16,59 @@ import { Home, Trash2 } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useState, useTransition } from "react"
 
+function PriceInput({
+	propertyId,
+	initialPrice
+}: {
+	propertyId: string
+	initialPrice: number
+}) {
+	const router = useRouter()
+	const [isPending, startTransition] = useTransition()
+	const [localPrice, setLocalPrice] = useState(initialPrice)
+
+	const handlePriceUpdate = (newPrice: number) => {
+		if (!Number.isNaN(newPrice) && newPrice !== initialPrice) {
+			startTransition(async () => {
+				await updatePropertyPrice(propertyId, newPrice)
+				router.refresh()
+			})
+		}
+	}
+
+	return (
+		<Input
+			type="number"
+			min="0"
+			value={localPrice || ""}
+			onChange={(e) => {
+				e.stopPropagation()
+				setLocalPrice(Number(e.target.value))
+			}}
+			onBlur={() => handlePriceUpdate(localPrice)}
+			onKeyDown={(e) => {
+				if (e.key === "Enter") {
+					e.currentTarget.blur()
+				}
+			}}
+			onMouseDown={(e) => e.stopPropagation()}
+			onClick={(e) => e.stopPropagation()}
+			onFocus={(e) => e.stopPropagation()}
+			disabled={isPending}
+			className="w-full"
+		/>
+	)
+}
+
 export function PropertyCard({ property }: { property: VisualProperty }) {
 	const router = useRouter()
 	const [isPending, startTransition] = useTransition()
-	const [localPrice, setLocalPrice] = useState(property.pricePerNight)
 
 	const handleDelete = (propertyId: string) => {
 		startTransition(async () => {
 			await deleteProperty(propertyId)
 			router.refresh()
 		})
-	}
-
-	const handlePriceUpdate = (newPrice: number) => {
-		if (!Number.isNaN(newPrice)) {
-			startTransition(async () => {
-				await updatePropertyPrice(property.id, newPrice)
-				router.refresh()
-			})
-		}
 	}
 
 	return (
@@ -133,33 +167,12 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 							</div>
 						</div>
 
-						{/* Price Input - Now on its own line */}
+						{/* Price Input */}
 						<div>
 							<p className="text-sm text-gray-500">Price per night</p>
-							<Input
-								type="number"
-								min="0"
-								value={localPrice}
-								onChange={(e) => {
-									e.stopPropagation()
-									const newPrice = Number(e.target.value)
-									setLocalPrice(newPrice)
-								}}
-								onBlur={(e) => {
-									const newPrice = Number(e.target.value)
-									handlePriceUpdate(newPrice)
-								}}
-								onKeyDown={(e) => {
-									if (e.key === "Enter") {
-										e.currentTarget.blur() // This will trigger onBlur
-										// Or alternatively:
-										// handlePriceUpdate(Number(e.currentTarget.value))
-									}
-								}}
-								onMouseDown={(e) => e.stopPropagation()}
-								onClick={(e) => e.stopPropagation()}
-								onFocus={(e) => e.stopPropagation()}
-								className="w-full"
+							<PriceInput
+								propertyId={property.id}
+								initialPrice={property.pricePerNight}
 							/>
 						</div>
 					</div>

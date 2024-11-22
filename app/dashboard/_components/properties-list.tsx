@@ -22,8 +22,8 @@ export async function PropertiesList() {
 
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{properties.map((property) => (
-				<PropertyCard key={property.id} property={property} />
+			{properties.map((property, index) => (
+				<PropertyCard key={`${property.id}-${index}`} property={property} />
 			))}
 		</div>
 	)
