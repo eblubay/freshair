@@ -3,7 +3,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { auth } from "@clerk/nextjs/server"
-import { Code2, Github, MessageSquare, Users } from "lucide-react"
+import { Code2, MessageSquare, Search, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -43,13 +43,10 @@ export default async function MarketingPage() {
 										{userId ? "View Dashboard" : "Get Started Free"}
 									</Button>
 								</Link>
-								<Link
-									href="https://github.com/bjornpagen/freshair"
-									target="_blank"
-								>
+								<Link href="/explore">
 									<Button size="lg" variant="outline">
-										<Github className="mr-2 h-5 w-5" />
-										Star on GitHub
+										<Search className="mr-2 h-5 w-5" />
+										Explore Listings
 									</Button>
 								</Link>
 							</div>
