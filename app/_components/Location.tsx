@@ -27,7 +27,11 @@ export function LocationSection({ location }: LocationSectionProps) {
 							<h3 className="font-medium mb-2">{detail.title}</h3>
 						)}
 						{detail.content && (
-							<p className="text-gray-600">{detail.content}</p>
+							<p
+								className="text-gray-600"
+								// biome-ignore lint/security/noDangerouslySetInnerHtml: content is pre-sanitized
+								dangerouslySetInnerHTML={{ __html: detail.content }}
+							/>
 						)}
 					</div>
 				))}
