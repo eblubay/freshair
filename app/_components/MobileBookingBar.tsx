@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/select"
 import {
 	Sheet,
+	SheetClose,
 	SheetContent,
 	SheetHeader,
 	SheetTitle,
@@ -20,7 +21,7 @@ import { useToast } from "@/hooks/use-toast"
 import { createBooking } from "@/lib/bookings"
 import { incrementPropertyInquiries } from "@/lib/properties"
 import { cn } from "@/lib/utils"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import type { DateRange } from "react-day-picker"
 
 interface MobileBookingBarProps {
@@ -41,6 +42,7 @@ export function MobileBookingBar({
 	const [dates, setDates] = useState<DateRange | undefined>()
 	const { toast } = useToast()
 	const [isLoading, setIsLoading] = useState(false)
+	const sheetCloseRef = useRef<HTMLButtonElement>(null)
 
 	const handleBook = async () => {
 		if (!dates || !email) return
@@ -61,6 +63,8 @@ export function MobileBookingBar({
 				title: "Booking Request Sent!",
 				description: "The property owner will contact you soon."
 			})
+
+			sheetCloseRef.current?.click()
 		} catch (error) {
 			toast({
 				title: "Error",
@@ -89,6 +93,7 @@ export function MobileBookingBar({
 					<Button size="lg">Reserve</Button>
 				</SheetTrigger>
 				<SheetContent side="bottom" className="p-4">
+					<SheetClose ref={sheetCloseRef} className="hidden" />
 					<SheetHeader className="mb-6">
 						<SheetTitle className="text-xl font-semibold">
 							Reserve your stay
