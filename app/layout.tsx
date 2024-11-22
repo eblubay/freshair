@@ -52,6 +52,7 @@ export default function RootLayout({
 		<ClerkProvider>
 			<html lang="en">
 				<head>
+					<link rel="icon" type="image/png" href="/favicon.png" />
 					<link rel="stylesheet" href="https://use.typekit.net/gnn8txw.css" />
 				</head>
 				<body>
