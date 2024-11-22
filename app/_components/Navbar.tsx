@@ -22,6 +22,12 @@ export function Navbar() {
 						<span className="text-primary">air</span>
 					</Link>
 					<Link
+						href="/dashboard"
+						className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+					>
+						Dashboard
+					</Link>
+					<Link
 						href="/explore"
 						className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 					>
