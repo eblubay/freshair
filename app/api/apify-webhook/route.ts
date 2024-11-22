@@ -91,7 +91,7 @@ export async function POST(request: Request) {
 					job.properties.listingData?.data.h1Title as string
 				}" has been successfully processed and is now available in your dashboard.
 
-You can check out your listing at https://${process.env.VERCEL_URL}/listing/${job.properties.id}`
+You can check out your listing at https://freshair.vercel.app/listing/${job.properties.id}`
 			})
 			logger.info("Notification email sent", { to: userEmails[0] })
 		}
