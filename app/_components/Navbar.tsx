@@ -23,13 +23,13 @@ export function Navbar() {
 					</Link>
 					<Link
 						href="/dashboard"
-						className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+						className="hidden md:block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 					>
 						Dashboard
 					</Link>
 					<Link
 						href="/explore"
-						className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+						className="hidden md:block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 					>
 						Explore
 					</Link>
