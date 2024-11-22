@@ -15,29 +15,34 @@ import { motion } from "framer-motion"
 import debounce from "lodash.debounce"
 import { Home, Trash2 } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { useState, useTransition } from "react"
+import { useCallback, useEffect, useState, useTransition } from "react"
 
 export function PropertyCard({ property }: { property: VisualProperty }) {
 	const router = useRouter()
 	const [isPending, startTransition] = useTransition()
 	const [localPrice, setLocalPrice] = useState(property.pricePerNight)
 
-	const debouncedPriceUpdate = debounce((newPrice: number) => {
-		startTransition(async () => {
-			await updatePropertyPrice(property.id, newPrice)
-			router.refresh()
-		})
-	}, 1000)
+	const debouncedPriceUpdate = useCallback(
+		debounce((newPrice: number) => {
+			startTransition(async () => {
+				await updatePropertyPrice(property.id, newPrice)
+				router.refresh()
+			})
+		}, 1000),
+		[]
+	)
+
+	useEffect(() => {
+		return () => {
+			debouncedPriceUpdate.cancel()
+		}
+	}, [debouncedPriceUpdate])
 
 	const handleDelete = (propertyId: string) => {
 		startTransition(async () => {
 			await deleteProperty(propertyId)
 			router.refresh()
 		})
-	}
-
-	const handlePriceUpdate = (newPrice: number) => {
-		debouncedPriceUpdate(newPrice)
 	}
 
 	return (
@@ -154,7 +159,7 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 								onMouseDown={(e) => e.stopPropagation()}
 								onClick={(e) => e.stopPropagation()}
 								onFocus={(e) => e.stopPropagation()}
-								className="w-32"
+								className="w-full"
 								disabled={property.status === "pending" || isPending}
 							/>
 						</div>
