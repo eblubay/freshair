@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card"
 import { Suspense } from "react"
 import { Navbar } from "../_components/Navbar"
 import { AddPropertyForm } from "./_components/add-property-form"
+import { AnimatedWave } from "./_components/animated-wave"
 import { PropertyCardSkeleton } from "./_components/loading-skeleton"
 import { PropertiesList } from "./_components/properties-list"
 
@@ -12,7 +13,9 @@ export default function Dashboard() {
 			<main className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 2xl:px-40">
 				{/* Welcome Section */}
 				<section className="py-8">
-					<h1 className="text-3xl font-bold">Welcome back! 👋</h1>
+					<h1 className="text-3xl font-bold">
+						Welcome back! <AnimatedWave />
+					</h1>
 					<p className="mt-2 text-gray-600">
 						Manage your properties and track their performance
 					</p>
