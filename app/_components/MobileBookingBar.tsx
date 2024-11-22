@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/sheet"
 import { useToast } from "@/hooks/use-toast"
 import { createBooking } from "@/lib/bookings"
+import { incrementPropertyInquiries } from "@/lib/properties"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
 import type { DateRange } from "react-day-picker"
@@ -53,6 +54,8 @@ export function MobileBookingBar({
 				dates,
 				pricePerNight
 			})
+
+			await incrementPropertyInquiries(propertyId)
 
 			toast({
 				title: "Booking Request Sent!",
