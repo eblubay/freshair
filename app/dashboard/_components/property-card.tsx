@@ -15,21 +15,19 @@ import { motion } from "framer-motion"
 import debounce from "lodash.debounce"
 import { Home, Trash2 } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { useCallback, useTransition } from "react"
+import { useState, useTransition } from "react"
 
 export function PropertyCard({ property }: { property: VisualProperty }) {
 	const router = useRouter()
 	const [isPending, startTransition] = useTransition()
+	const [localPrice, setLocalPrice] = useState(property.pricePerNight)
 
-	const debouncedPriceUpdate = useCallback(
-		debounce((newPrice: number) => {
-			startTransition(async () => {
-				await updatePropertyPrice(property.id, newPrice)
-				router.refresh()
-			})
-		}, 1000),
-		[]
-	)
+	const debouncedPriceUpdate = debounce((newPrice: number) => {
+		startTransition(async () => {
+			await updatePropertyPrice(property.id, newPrice)
+			router.refresh()
+		})
+	}, 1000)
 
 	const handleDelete = (propertyId: string) => {
 		startTransition(async () => {
@@ -144,12 +142,13 @@ export function PropertyCard({ property }: { property: VisualProperty }) {
 							<Input
 								type="number"
 								min="0"
-								value={property.pricePerNight}
+								value={localPrice}
 								onChange={(e) => {
 									e.stopPropagation()
-									const newPrice = Number.parseInt(e.target.value)
+									const newPrice = Number(e.target.value)
+									setLocalPrice(newPrice)
 									if (!Number.isNaN(newPrice)) {
-										handlePriceUpdate(newPrice)
+										debouncedPriceUpdate(newPrice)
 									}
 								}}
 								onMouseDown={(e) => e.stopPropagation()}
