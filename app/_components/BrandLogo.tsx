@@ -40,11 +40,12 @@ export function BrandLogo({
 
 export function BrandLogoLink({
 	height = 48,
-	priority = false
+	priority = false,
+	className
 }: BrandLogoProps) {
 	return (
 		<Link href="/" aria-label={BRAND_NAME} className="inline-flex items-center">
-			<BrandLogo height={height} priority={priority} />
+			<BrandLogo height={height} priority={priority} className={className} />
 		</Link>
 	)
 }
