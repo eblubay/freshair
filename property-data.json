@@ -1,0 +1,713 @@
+{
+  "id": "eLTu4qs5GJAD3DZzvAvT-",
+  "clerkId": "user_3HhckyUgz0AqtjGWC70Q223lEjo",
+  "url": "https://www.airbnb.com/rooms/1674100477282192013",
+  "listingData": {
+    "id": "1674100477282192013",
+    "coordinates": {
+      "latitude": 33.90517,
+      "longitude": -118.41958
+    },
+    "descriptionOriginalLanguage": "en",
+    "metaDescription": "Aug 10, 2026 · Entire rental unit · Welcome to Your Manhattan Beach Escape-Just one and a half blocks from the sand. Enjoy this bright 2BR/2BA lower duplex near the beach & surf. Feat...",
+    "seoTitle": "Shell St Beach Retreat: Bright 2BR Near the Beach - Apartments for Rent in Manhattan Beach, California, United States - Airbnb",
+    "sharingConfigTitle": "Rental unit in Manhattan Beach · ★4.93 · 2 bedrooms · 2 beds · 2 baths",
+    "thumbnail": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/b059d7bc-6c10-4887-aca4-0d6cb930e90f.png",
+    "url": "https://www.airbnb.com/rooms/1674100477282192013?locale=en-US&currency=USD",
+    "androidLink": "airbnb://rooms/1674100477282192013",
+    "iosLink": "airbnb://rooms/1674100477282192013",
+    "propertyType": "Entire rental unit",
+    "roomType": "Entire home/apt",
+    "homeTier": 1,
+    "personCapacity": 4,
+    "rating": {
+      "accuracy": 5,
+      "checking": 5,
+      "cleanliness": 5,
+      "communication": 5,
+      "location": 4.93,
+      "value": 4.86,
+      "guestSatisfaction": 4.93,
+      "reviewsCount": 14
+    },
+    "host": null,
+    "coHosts": [],
+    "locationDescriptions": [
+      {
+        "content": null
+      }
+    ],
+    "title": "Shell St Beach Retreat: Bright 2BR Near the Beach",
+    "description": "",
+    "htmlDescription": null,
+    "subDescription": {
+      "title": "Entire rental unit in Manhattan Beach, California",
+      "items": [
+        "4 guests",
+        "2 bedrooms",
+        "2 beds",
+        "2 baths"
+      ]
+    },
+    "isAvailable": false,
+    "price": {
+      "label": "To get prices, specify check-in and check-out date in the input. Price will be returned only if the accommodation is available for the selected dates."
+    },
+    "brandHighlights": {
+      "subtitle": null,
+      "hasGoldenLaurel": null
+    },
+    "images": [
+      {
+        "caption": "Living room image 1",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/c5dc2017-9eb9-42f5-ab22-31533c9b36d6.jpeg",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Living room image 2",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/5350dce5-be1f-4d6b-939c-361981452168.jpeg",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Living room image 3",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/c6f63ed5-9bd9-457a-a213-25c9599dc1e9.png",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Stocked with pots, pans, plates, utensils, basic spices and sugar",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/03d7478a-6c06-4fa0-b0de-9a4d076f3640.jpeg",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Open-design kitchen with ample counter space",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/5e2538b7-886a-418d-9ee4-6c4febc6266a.jpeg",
+        "orientation": "PORTRAIT"
+      },
+      {
+        "caption": "Dishwasher, toaster oven, microwave, full gas stove/oven, refrigerator with filtered water",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/c6b39797-13b1-42f9-87c2-ea22761dd0d5.jpeg",
+        "orientation": "PORTRAIT"
+      },
+      {
+        "caption": "Fully stocked and equipped kitchen",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/b8fb30f9-8740-4ddd-88a8-48e3a80c9855.jpeg",
+        "orientation": "PORTRAIT"
+      },
+      {
+        "caption": "complimentary coffee and tea pods and assorted brewing teas",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/f7eb09c4-fd83-4def-b452-19397004cfc7.png",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Dining area image 1",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/b059d7bc-6c10-4887-aca4-0d6cb930e90f.png",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Dining area image 2",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/2a783eb4-3aec-4787-aba7-80840e2c7308.jpeg",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Dining area image 3",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/8b257982-22ad-4418-8ed7-7d4c3fb7c6c4.jpeg",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Bedroom 1 image 1",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/9af24ae0-0862-446e-8eaa-8a2b57ccce9b.png",
+        "orientation": "PORTRAIT"
+      },
+      {
+        "caption": "Queen Bed, Large TV, walk-in closet and attached full bath",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/485d8a76-3f6c-466d-94fa-ed58b9c1355c.png",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "48\" TV, small balcony, black-out curtains",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/c074afaa-e2ea-4672-9168-017a61b1ca8d.png",
+        "orientation": "PORTRAIT"
+      },
+      {
+        "caption": "Full Bath",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/267d185d-ffc2-445e-bd20-849a3b68b593.jpeg",
+        "orientation": "PORTRAIT"
+      },
+      {
+        "caption": "Full Bath",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/8ebd2a2e-1304-4be4-9524-ef9288e93f84.png",
+        "orientation": "PORTRAIT"
+      },
+      {
+        "caption": "Entire lower unit in a duplex.  You will need to go up 2 short flights of stairs to reach the unit.  Parking for 1 car is available in the enclosed garage.",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/6718cba8-a84d-40c3-a7cc-ee899e67463e.jpeg",
+        "orientation": "PORTRAIT"
+      },
+      {
+        "caption": "Enjoy your morning coffee on the balcony with the ocean view or sip on wine or cocktails while you enjoy the sunset.  The balcony seats 2 and there is also an additional comfy chair to relax on.",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/b02828df-8c66-4616-bdfd-1f5777ff35f6.jpeg",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Beach chairs, boogie boards, books and sand toys for your use are located in the garage",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/47b5dce7-3f15-46f1-a69a-02de5ff4ac4b.png",
+        "orientation": "LANDSCAPE"
+      },
+      {
+        "caption": "Street View (standing in front of the garage)",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/4f80c930-53d2-4639-84c8-94ecbfc6d08b.jpeg",
+        "orientation": "PORTRAIT"
+      },
+      {
+        "caption": "This beautiful beach is just a quick one and a half block walk.",
+        "imageUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1674100477282192013/original/11f1bcde-3d53-41bd-9209-f560904761ed.jpeg",
+        "orientation": "LANDSCAPE"
+      }
+    ],
+    "breadcrumbs": [],
+    "highlights": [
+      {
+        "title": "In El Porto, steps from the sand",
+        "subtitle": "About a 5-min walk to Manhattan Beach and El Segundo Beach, with the Strand bike path just a block away",
+        "icon": "SYSTEM_BEACH",
+        "type": "LISTING_CUSTOM_OFFLINE_GENERATED"
+      },
+      {
+        "title": "Private balcony with ocean view",
+        "subtitle": "A private balcony with seating and a partial ocean view for morning coffee or evening unwinding",
+        "icon": "SYSTEM_VIEW_OCEAN",
+        "type": "LISTING_CUSTOM_OFFLINE_GENERATED"
+      },
+      {
+        "title": "Guests love the beach access",
+        "subtitle": "Guests highlight the spacious layout, easy check-in, and how close the beach is",
+        "icon": "SYSTEM_BEACH",
+        "type": "LISTING_CUSTOM_OFFLINE_GENERATED"
+      }
+    ],
+    "houseRules": {
+      "additional": null,
+      "general": [
+        {
+          "title": "Checking in and out",
+          "values": [
+            {
+              "title": "Check-in after 3:00 PM",
+              "icon": "SYSTEM_CLOCK",
+              "additionalInfo": null
+            },
+            {
+              "title": "Checkout before 10:00 AM",
+              "icon": "SYSTEM_CLOCK",
+              "additionalInfo": null
+            },
+            {
+              "title": "Self check-in with keypad",
+              "icon": "SYSTEM_CHECK_IN",
+              "additionalInfo": null
+            }
+          ]
+        },
+        {
+          "title": "During your stay",
+          "values": [
+            {
+              "title": "4 guests maximum",
+              "icon": "SYSTEM_FAMILY",
+              "additionalInfo": null
+            },
+            {
+              "title": "No pets",
+              "icon": "SYSTEM_NO_PETS",
+              "additionalInfo": null
+            },
+            {
+              "title": "Quiet hours",
+              "icon": "SYSTEM_EVENING",
+              "additionalInfo": "10:00 PM - 8:00 AM"
+            },
+            {
+              "title": "No parties or events",
+              "icon": "SYSTEM_NO_EVENTS",
+              "additionalInfo": null
+            },
+            {
+              "title": "No commercial photography",
+              "icon": "SYSTEM_NO_CAMERA",
+              "additionalInfo": null
+            },
+            {
+              "title": "No smoking",
+              "icon": "SYSTEM_SMOKING_NOT_ALLOWED",
+              "additionalInfo": null
+            },
+            {
+              "title": "Additional rules",
+              "icon": "SYSTEM_CLIPBOARD",
+              "additionalInfo": null
+            }
+          ]
+        },
+        {
+          "title": "Before you leave",
+          "values": [
+            {
+              "title": "Gather used towels",
+              "icon": "SYSTEM_TOWEL",
+              "additionalInfo": null
+            },
+            {
+              "title": "Throw trash away",
+              "icon": "SYSTEM_TRASH",
+              "additionalInfo": null
+            },
+            {
+              "title": "Turn things off",
+              "icon": "SYSTEM_POWER_SWITCH",
+              "additionalInfo": null
+            },
+            {
+              "title": "Return keys",
+              "icon": "SYSTEM_HOST_OWNERS",
+              "additionalInfo": null
+            },
+            {
+              "title": "Lock up",
+              "icon": "SYSTEM_LOCK",
+              "additionalInfo": null
+            }
+          ]
+        }
+      ]
+    },
+    "cancellationPolicies": [
+      {
+        "policyName": "Limited",
+        "policyId": 16
+      }
+    ],
+    "amenities": [
+      {
+        "title": "Bathroom",
+        "values": [
+          {
+            "title": "Bathtub",
+            "subtitle": "",
+            "icon": "SYSTEM_BATHTUB",
+            "available": true
+          },
+          {
+            "title": "Hair dryer",
+            "subtitle": "",
+            "icon": "SYSTEM_HAIRDRYER",
+            "available": true
+          },
+          {
+            "title": "Cleaning products",
+            "subtitle": "",
+            "icon": "SYSTEM_CLEANING_SUPPLIES",
+            "available": true
+          },
+          {
+            "title": "Shampoo",
+            "subtitle": "",
+            "icon": "SYSTEM_SHAMPOO",
+            "available": true
+          },
+          {
+            "title": "Conditioner",
+            "subtitle": "",
+            "icon": "SYSTEM_SHAMPOO",
+            "available": true
+          },
+          {
+            "title": "Body soap",
+            "subtitle": "",
+            "icon": "SYSTEM_SOAP",
+            "available": true
+          },
+          {
+            "title": "Hot water",
+            "subtitle": "",
+            "icon": "SYSTEM_HOT_WATER",
+            "available": true
+          },
+          {
+            "title": "Shower gel",
+            "subtitle": "",
+            "icon": "SYSTEM_SOAP",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Bedroom and laundry",
+        "values": [
+          {
+            "title": "Washer",
+            "subtitle": "",
+            "icon": "SYSTEM_WASHER",
+            "available": true
+          },
+          {
+            "title": "Free dryer – In building",
+            "subtitle": "",
+            "icon": "SYSTEM_DRYER",
+            "available": true
+          },
+          {
+            "title": "Hangers",
+            "subtitle": "",
+            "icon": "SYSTEM_HANGERS",
+            "available": true
+          },
+          {
+            "title": "Bed linens",
+            "subtitle": "",
+            "icon": "SYSTEM_BLANKETS",
+            "available": true
+          },
+          {
+            "title": "Extra pillows and blankets",
+            "subtitle": "",
+            "icon": "SYSTEM_PILLOW",
+            "available": true
+          },
+          {
+            "title": "Room-darkening shades",
+            "subtitle": "",
+            "icon": "SYSTEM_BLACKOUT_SHADES",
+            "available": true
+          },
+          {
+            "title": "Iron",
+            "subtitle": "",
+            "icon": "SYSTEM_IRON",
+            "available": true
+          },
+          {
+            "title": "Clothing storage",
+            "subtitle": "",
+            "icon": "SYSTEM_WARDROBE",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Entertainment",
+        "values": [
+          {
+            "title": "TV",
+            "subtitle": "",
+            "icon": "SYSTEM_TV",
+            "available": true
+          },
+          {
+            "title": "Books and reading material",
+            "subtitle": "",
+            "icon": "SYSTEM_BOOK",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Family",
+        "values": [
+          {
+            "title": "Fireplace guards",
+            "subtitle": "",
+            "icon": "SYSTEM_FIREPLACE_GUARD",
+            "available": true
+          },
+          {
+            "title": "Board games",
+            "subtitle": "",
+            "icon": "SYSTEM_BOARD_GAMES",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Heating and cooling",
+        "values": [
+          {
+            "title": "Indoor fireplace",
+            "subtitle": "",
+            "icon": "SYSTEM_FIREPLACE",
+            "available": true
+          },
+          {
+            "title": "Ceiling fan",
+            "subtitle": "",
+            "icon": "SYSTEM_FAN_CEILING",
+            "available": true
+          },
+          {
+            "title": "Portable fans",
+            "subtitle": "",
+            "icon": "SYSTEM_FAN_PORTABLE",
+            "available": true
+          },
+          {
+            "title": "Heating",
+            "subtitle": "",
+            "icon": "SYSTEM_THERMOMETER",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Home safety",
+        "values": [
+          {
+            "title": "Smoke alarm",
+            "subtitle": "",
+            "icon": "SYSTEM_DETECTOR_SMOKE",
+            "available": true
+          },
+          {
+            "title": "Carbon monoxide alarm",
+            "subtitle": "",
+            "icon": "SYSTEM_DETECTOR_CO",
+            "available": true
+          },
+          {
+            "title": "Fire extinguisher",
+            "subtitle": "",
+            "icon": "SYSTEM_FIRE_EXTINGUISHER",
+            "available": true
+          },
+          {
+            "title": "First aid kit",
+            "subtitle": "",
+            "icon": "SYSTEM_FIRST_AID_KIT",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Internet and office",
+        "values": [
+          {
+            "title": "Wifi",
+            "subtitle": "",
+            "icon": "SYSTEM_WI_FI",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Kitchen and dining",
+        "values": [
+          {
+            "title": "Kitchen",
+            "subtitle": "Space where guests can cook their own meals",
+            "icon": "SYSTEM_COOKING_BASICS",
+            "available": true
+          },
+          {
+            "title": "Refrigerator",
+            "subtitle": "",
+            "icon": "SYSTEM_REFRIGERATOR",
+            "available": true
+          },
+          {
+            "title": "Microwave",
+            "subtitle": "",
+            "icon": "SYSTEM_MICROWAVE",
+            "available": true
+          },
+          {
+            "title": "Cooking basics",
+            "subtitle": "Pots and pans, oil, salt and pepper",
+            "icon": "SYSTEM_COOKING_BASICS",
+            "available": true
+          },
+          {
+            "title": "Dishes and silverware",
+            "subtitle": "Bowls, chopsticks, plates, cups, etc.",
+            "icon": "SYSTEM_DISHES_AND_SILVERWARE",
+            "available": true
+          },
+          {
+            "title": "Freezer",
+            "subtitle": "",
+            "icon": "SYSTEM_REFRIGERATOR",
+            "available": true
+          },
+          {
+            "title": "Dishwasher",
+            "subtitle": "",
+            "icon": "SYSTEM_DISHWASHER",
+            "available": true
+          },
+          {
+            "title": "Stove",
+            "subtitle": "",
+            "icon": "SYSTEM_STOVE",
+            "available": true
+          },
+          {
+            "title": "Oven",
+            "subtitle": "",
+            "icon": "SYSTEM_OVEN",
+            "available": true
+          },
+          {
+            "title": "Hot water kettle",
+            "subtitle": "",
+            "icon": "SYSTEM_WATER_KETTLE",
+            "available": true
+          },
+          {
+            "title": "Coffee maker",
+            "subtitle": "",
+            "icon": "SYSTEM_COFFEE_MAKER",
+            "available": true
+          },
+          {
+            "title": "Wine glasses",
+            "subtitle": "",
+            "icon": "SYSTEM_MAPS_BAR",
+            "available": true
+          },
+          {
+            "title": "Toaster",
+            "subtitle": "",
+            "icon": "SYSTEM_TOASTER",
+            "available": true
+          },
+          {
+            "title": "Baking sheet",
+            "subtitle": "",
+            "icon": "SYSTEM_BAKING_SHEET",
+            "available": true
+          },
+          {
+            "title": "Blender",
+            "subtitle": "",
+            "icon": "SYSTEM_BLENDER",
+            "available": true
+          },
+          {
+            "title": "Dining table",
+            "subtitle": "",
+            "icon": "SYSTEM_DINING_TABLE",
+            "available": true
+          },
+          {
+            "title": "Coffee",
+            "subtitle": "",
+            "icon": "SYSTEM_COFFEE_MAKER",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Location features",
+        "values": [
+          {
+            "title": "Private entrance",
+            "subtitle": "Separate street or building entrance",
+            "icon": "SYSTEM_DOOR",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Outdoor",
+        "values": [
+          {
+            "title": "Private patio or balcony",
+            "subtitle": "",
+            "icon": "SYSTEM_PATIO_BALCONY",
+            "available": true
+          },
+          {
+            "title": "Outdoor furniture",
+            "subtitle": "",
+            "icon": "SYSTEM_ROOFTOP_DECK",
+            "available": true
+          },
+          {
+            "title": "Outdoor dining area",
+            "subtitle": "",
+            "icon": "SYSTEM_ROOFTOP_DECK",
+            "available": true
+          },
+          {
+            "title": "Beach essentials",
+            "subtitle": "Beach gear such as towels, chairs, and an umbrella",
+            "icon": "SYSTEM_MAPS_RESORT",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Parking and facilities",
+        "values": [
+          {
+            "title": "Free parking on premises",
+            "subtitle": "",
+            "icon": "SYSTEM_MAPS_CAR_RENTAL",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Services",
+        "values": [
+          {
+            "title": "Long term stays allowed",
+            "subtitle": "Allow stay for 28 days or more",
+            "icon": "SYSTEM_CALENDAR",
+            "available": true
+          },
+          {
+            "title": "Self check-in",
+            "subtitle": "",
+            "icon": "SYSTEM_KEY",
+            "available": true
+          },
+          {
+            "title": "Keypad",
+            "subtitle": "Check yourself into the home with a door code",
+            "icon": "SYSTEM_BUZZER",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Not included",
+        "values": [
+          {
+            "title": "Exterior security cameras on property",
+            "subtitle": "",
+            "icon": "SYSTEM_NO_SURVEILLANCE",
+            "available": false
+          },
+          {
+            "title": "Air conditioning",
+            "subtitle": "",
+            "icon": "SYSTEM_NO_AIR_CONDITIONING",
+            "available": false
+          },
+          {
+            "title": "Essentials",
+            "subtitle": "",
+            "icon": "SYSTEM_NO_ESSENTIALS",
+            "available": false
+          }
+        ]
+      }
+    ],
+    "timestamp": "2026-08-10T02:31:07.616Z",
+    "language": "en",
+    "checkIn": null,
+    "checkOut": null
+  },
+  "views": 0,
+  "inquiries": 0,
+  "pricePerNight": 0,
+  "createdAt": "2026-08-10T02:31:00.823Z"
+}

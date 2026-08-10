@@ -7,6 +7,7 @@ import {
 	SignedOut,
 	UserButton
 } from "@clerk/nextjs"
+import Image from "next/image"
 import Link from "next/link"
 
 export function Navbar() {
@@ -16,22 +17,21 @@ export function Navbar() {
 				<div className="flex items-center gap-12">
 					<Link
 						href="/"
-						className="font-display text-2xl font-bold tracking-tight"
+						className="flex items-center"
 					>
-						<span className="text-foreground">Fresh</span>
-						<span className="text-primary">air</span>
+						<Image
+							src="/branding/logo.png"
+							alt="Shell By The Shore"
+							width={140}
+							height={47}
+							className="h-8 w-auto"
+						/>
 					</Link>
 					<Link
 						href="/dashboard"
 						className="hidden md:block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 					>
 						Dashboard
-					</Link>
-					<Link
-						href="/explore"
-						className="hidden md:block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-					>
-						Explore
 					</Link>
 				</div>
 				<div className="ml-auto flex items-center gap-4">
