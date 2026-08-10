@@ -41,6 +41,7 @@ export default async function Dashboard() {
 					<p className="mt-2 text-gray-600">
 						Manage your properties and track their performance
 					</p>
+					<a href="/dashboard/cleaning" className="mt-4 inline-block text-sm font-semibold text-[#28323b] underline underline-offset-4">Open private cleaning operations →</a>
 				</section>
 
 				{/* Add Property Section */}

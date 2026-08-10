@@ -1,0 +1,75 @@
+{
+  "name": "ShellByTheShore Cleaning Bot",
+  "nodes": [
+    {
+      "parameters": { "path": "shellbytheshore-cleaning", "httpMethod": "POST", "responseMode": "lastNode" },
+      "name": "Calendar event trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.SHELLBYTHESHORE_APP_URL + '/api/internal/cleaning/recalculate'}}",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [{ "name": "x-automation-secret", "value": "={{$env.CALENDAR_SYNC_SECRET}}" }] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { checkoutReservationId: $json.body.checkoutReservationId, reason: $json.body.reason || 'CALENDAR_SYNC' } }}"
+      },
+      "name": "Recalculate authoritative turnover",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [510, 300]
+    },
+    {
+      "parameters": {
+        "conditions": { "options": { "caseSensitive": true }, "conditions": [{ "leftValue": "={{$json.taskId}}", "operator": { "type": "string", "operation": "notEmpty", "singleValue": true } }] }
+      },
+      "name": "Task created or updated?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [760, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "={{$env.CLEANER_TELEGRAM_CHAT_ID}}",
+        "text": "={{ $json.sameDayTurnover ? '🚨 SAME-DAY TURNOVER' : '🧹 ShellByTheShore Cleaning' }}\nNext arrival: {{$json.nextArrival || 'No upcoming arrival'}}\nDeadline: {{$json.deadline || 'Owner-configured follow-up'}}\nUse approved task-action callbacks to confirm, start, complete, or report a problem."
+      },
+      "name": "Notify assigned cleaner",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [1010, 220]
+    },
+    {
+      "parameters": { "amount": 15, "unit": "minutes" },
+      "name": "Wait before acknowledgement check",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1010, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.SHELLBYTHESHORE_APP_URL + '/api/internal/cleaning/action'}}",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [{ "name": "x-automation-secret", "value": "={{$env.CALENDAR_SYNC_SECRET}}" }] }
+      },
+      "name": "Validated cleaner callback action",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1260, 220]
+    }
+  ],
+  "connections": {
+    "Calendar event trigger": { "main": [[{ "node": "Recalculate authoritative turnover", "type": "main", "index": 0 }]] },
+    "Recalculate authoritative turnover": { "main": [[{ "node": "Task created or updated?", "type": "main", "index": 0 }]] },
+    "Task created or updated?": { "main": [[{ "node": "Notify assigned cleaner", "type": "main", "index": 0 }], [{ "node": "Wait before acknowledgement check", "type": "main", "index": 0 }]] },
+    "Notify assigned cleaner": { "main": [[{ "node": "Validated cleaner callback action", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "versionId": "cleaning-bot-template-v1",
+  "meta": { "templateCredsSetupCompleted": false, "description": "Credential-free import template. App APIs own next-arrival and deadline calculation; n8n orchestrates notifications only." }
+}

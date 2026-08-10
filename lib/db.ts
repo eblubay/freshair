@@ -11,4 +11,4 @@ if (!connectionString) throw new Error("POSTGRES_URL is not set")
 const queryClient = postgres(connectionString)
 const db = drizzle(queryClient)
 
-export { db }
+export { db, queryClient }
