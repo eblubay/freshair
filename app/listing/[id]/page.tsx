@@ -13,6 +13,7 @@ type Params = Promise<{ id: string }>
 
 const NAV = [
 	{ label: "Home", href: "/" },
+	{ label: "Local Guide", href: "/guide" },
 	{ label: "The Stay", href: "#the-stay" },
 	{ label: "Gallery", href: "#gallery" },
 	{ label: "Amenities", href: "#amenities" },

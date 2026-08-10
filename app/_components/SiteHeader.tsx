@@ -38,8 +38,8 @@ export function SiteHeader({ nav, ctaHref }: SiteHeaderProps) {
 					: "bg-[#fdfbf7]/80 backdrop-blur-sm"
 			}`}
 		>
-			<div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-5 sm:px-8 lg:px-14">
-				<BrandLogoLink height={64} priority />
+			<div className="mx-auto flex h-28 max-w-[1400px] items-center justify-between px-5 sm:px-8 lg:px-14">
+				<BrandLogoLink height={112} priority />
 
 				<nav className="hidden items-center gap-9 lg:flex">
 					{nav.map((item) => (

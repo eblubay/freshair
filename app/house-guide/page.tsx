@@ -1,0 +1,5 @@
+import { SiteFooter } from "@/app/_components/SiteFooter"
+import { SiteHeader } from "@/app/_components/SiteHeader"
+import Link from "next/link"
+
+export default function HouseGuidePage() { return <div className="min-h-screen bg-[#fdfbf7] text-[#28323b]"><SiteHeader nav={[{ label: "Home", href: "/" }, { label: "Local Guide", href: "/guide" }]} ctaHref="/guide"/><main className="mx-auto flex min-h-[75vh] max-w-3xl items-center px-5 py-36 text-center sm:px-8"><section><p className="text-[11px] uppercase tracking-[.28em] text-[#8d7c66]">ShellByTheShore · Guest Guide</p><h1 className="mt-5 font-serif text-5xl leading-tight">House details, thoughtfully shared.</h1><p className="mx-auto mt-7 max-w-xl text-[17px] leading-[1.8] text-[#5d6b78]">Arrival instructions and house information are shared privately with confirmed guests. This keeps access, security, and stay-specific details protected.</p><Link href="/guide" className="mt-10 inline-block border border-[#28323b] px-7 py-4 text-[11px] uppercase tracking-[.18em]">Explore the Local Guide</Link></section></main><SiteFooter location="Manhattan Beach, California"/></div> }

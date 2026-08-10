@@ -9,6 +9,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 const NAV = [
+	{ label: "Local Guide", href: "/guide" },
 	{ label: "The Stay", href: "#the-stay" },
 	{ label: "Gallery", href: "#gallery" },
 	{ label: "Amenities", href: "#amenities" },
@@ -85,6 +86,12 @@ export default async function HomePage() {
 								className="border border-[#fdfbf7] px-8 py-4 text-[11px] uppercase tracking-[0.2em] text-[#fdfbf7] transition-colors hover:bg-[#fdfbf7]/10"
 							>
 								View full details
+							</Link>
+							<Link
+								href="/guide"
+								className="border border-[#fdfbf7] px-8 py-4 text-[11px] uppercase tracking-[0.2em] text-[#fdfbf7] transition-colors hover:bg-[#fdfbf7]/10"
+							>
+								Explore the Local Guide
 							</Link>
 						</div>
 					</div>
