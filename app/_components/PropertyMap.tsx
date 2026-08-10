@@ -45,7 +45,10 @@ import("maplibre-gl")
 		// while zero `.pbf` tiles were ever requested — the blank basemap.
 		// The worker (and its shared chunk) are therefore served verbatim
 		// from `public/maplibre/`.
-		maplibregl.setWorkerUrl("/maplibre/maplibre-gl-worker.mjs")
+		// Hostinger serves `.mjs` static files as `text/plain`, which browsers
+		// reject for a module worker. The identical ES module files use `.js` so
+		// Hostinger returns a JavaScript MIME type in production.
+		maplibregl.setWorkerUrl("/maplibre/maplibre-gl-worker.js")
 
 
 				const map = new maplibregl.Map({
