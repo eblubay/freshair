@@ -1,5 +1,9 @@
 # HOSTINGER STAGING DEPLOYMENT GUIDE
 
+> Security: configure credentials only in hPanel environment variables. This
+> document intentionally contains placeholders and must never contain real
+> database, SMTP, Clerk, payment, or automation secrets.
+
 ## REPOSITORY
 - GitHub: eblubay/freshair
 - Branch: `hostinger-deploy-ready`
@@ -45,9 +49,9 @@ In hPanel → Node.js App → Environment Variables, add:
 
 ```
 # Database (Supabase)
-DATABASE_URL=postgresql://postgres.hlcrpdcabbkjzlqfzduq:fUYL0DsKPGHwll9d@aws-0-us-east-2.pooler.supabase.com:5432/postgres
-POSTGRES_URL=postgresql://postgres.hlcrpdcabbkjzlqfzduq:fUYL0DsKPGHwll9d@aws-0-us-east-2.pooler.supabase.com:6543/postgres?sslmode=require
-POSTGRES_URL_NON_POOLING=postgresql://postgres.hlcrpdcabbkjzlqfzduq:fUYL0DsKPGHwll9d@aws-0-us-east-2.pooler.supabase.com:5432/postgres?sslmode=require
+DATABASE_URL=[your_supabase_connection_string]
+POSTGRES_URL=[your_supabase_pooler_connection_string]
+POSTGRES_URL_NON_POOLING=[your_supabase_direct_connection_string]
 
 # Clerk Authentication
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=[your_clerk_publishable_key]
