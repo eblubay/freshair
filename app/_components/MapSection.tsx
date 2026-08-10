@@ -1,7 +1,7 @@
 "use client"
 
-import mapboxgl from "mapbox-gl"
-import "mapbox-gl/dist/mapbox-gl.css"
+import * as maplibregl from "maplibre-gl"
+import "maplibre-gl/dist/maplibre-gl.css"
 import { useEffect, useRef } from "react"
 
 interface MapSectionProps {
@@ -14,7 +14,7 @@ interface MapSectionProps {
 
 export function MapSection({ coordinates, radiusInMeters }: MapSectionProps) {
 	const mapContainer = useRef<HTMLDivElement>(null)
-	const map = useRef<mapboxgl.Map | null>(null)
+	const map = useRef<maplibregl.Map | null>(null)
 
 	useEffect(() => {
 		// Initialize the map only once
@@ -23,12 +23,29 @@ export function MapSection({ coordinates, radiusInMeters }: MapSectionProps) {
 		// Check if the map container exists
 		if (!mapContainer.current) return
 
-		// Replace with your Mapbox access token
-		mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || ""
-
-		map.current = new mapboxgl.Map({
+		// Use OpenFreeMap tiles (no API key required)
+		map.current = new maplibregl.Map({
 			container: mapContainer.current,
-			style: "mapbox://styles/mapbox/streets-v12",
+			style: {
+				version: 8,
+				sources: {
+					osm: {
+						type: "raster",
+						tiles: ["https://tiles.openfreemap.org/styles/liberty/{z}/{x}/{y}.png"],
+						tileSize: 256,
+						attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+					}
+				},
+				layers: [
+					{
+						id: "osm",
+						type: "raster",
+						source: "osm",
+						minzoom: 0,
+						maxzoom: 19
+					}
+				]
+			},
 			center: [coordinates.longitude, coordinates.latitude],
 			zoom: 13
 		})
@@ -37,7 +54,7 @@ export function MapSection({ coordinates, radiusInMeters }: MapSectionProps) {
 		map.current.scrollZoom.disable()
 
 		// Add a marker at the specified coordinates
-		new mapboxgl.Marker()
+		new maplibregl.Marker()
 			.setLngLat([coordinates.longitude, coordinates.latitude])
 			.addTo(map.current)
 
@@ -60,13 +77,13 @@ export function MapSection({ coordinates, radiusInMeters }: MapSectionProps) {
 				type: "circle",
 				source: "radius",
 				paint: {
-					"circle-radius": {
-						stops: [
-							[0, 0],
-							[20, radiusInMeters / 0.075] // Approximate pixel conversion
-						],
-						base: 2
-					},
+					"circle-radius": [
+						"interpolate",
+						["exponential", 2],
+						["zoom"],
+						0, 0,
+						20, radiusInMeters / 0.075
+					],
 					"circle-color": "#007cbf",
 					"circle-opacity": 0.2
 				}

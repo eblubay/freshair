@@ -3,7 +3,7 @@ import { ApifyWebhookPayloadSchema, fetchAndStoreResults } from "@/lib/apify"
 import { getUserEmailAddresses } from "@/lib/clerk"
 import { db } from "@/lib/db"
 import { logger } from "@/lib/logger"
-import { FROM_EMAIL, postmark } from "@/lib/postmark"
+import { FROM_EMAIL, transporter } from "@/lib/postmark"
 import { eq } from "drizzle-orm"
 import { NextResponse } from "next/server"
 
@@ -83,11 +83,11 @@ export async function POST(request: Request) {
 		const userEmails = await getUserEmailAddresses(job.properties.clerkId)
 
 		if (userEmails.length > 0) {
-			await postmark.sendEmail({
-				From: FROM_EMAIL,
-				To: userEmails[0],
-				Subject: "Your property listing has been processed",
-				TextBody: `"${
+			await transporter.sendMail({
+				from: FROM_EMAIL,
+				to: userEmails[0],
+				subject: "Your property listing has been processed",
+				text: `"${
 					job.properties.listingData?.data.h1Title as string
 				}" has been successfully processed and is now available in your dashboard.
 

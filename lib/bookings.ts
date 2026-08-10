@@ -1,7 +1,7 @@
 "use server"
 
 import { getHostEmailAddress } from "@/lib/clerk"
-import { FROM_EMAIL, postmark } from "@/lib/postmark"
+import { FROM_EMAIL, transporter } from "@/lib/postmark"
 import type { DateRange } from "react-day-picker"
 
 interface BookingData {
@@ -15,12 +15,12 @@ interface BookingData {
 export async function createBooking(data: BookingData) {
 	const hostEmail = await getHostEmailAddress(data.propertyId)
 
-	// Send email to host using Postmark directly
-	await postmark.sendEmail({
-		From: FROM_EMAIL,
-		To: hostEmail,
-		Subject: "New Booking Request",
-		TextBody: `
+	// Send email to host using SMTP
+	await transporter.sendMail({
+		from: FROM_EMAIL,
+		to: hostEmail,
+		subject: "New Booking Request",
+		text: `
             New booking request:
             Guest Email: ${data.email}
             Guests: ${data.guests}
