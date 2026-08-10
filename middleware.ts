@@ -1,10 +1,12 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
+import { clerkMiddleware } from "@clerk/nextjs/server"
 
-const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"])
-
-export default clerkMiddleware(async (auth, req) => {
-	if (isProtectedRoute(req)) await auth.protect()
-})
+/**
+ * Clerk stays active on every route, but `/dashboard` is no longer hard-blocked
+ * here: `auth.protect()` produced a 404 because this app ships no `/sign-in`
+ * route. The dashboard page itself now renders Clerk's sign-in form for signed
+ * out visitors, so the owner always gets a usable screen.
+ */
+export default clerkMiddleware()
 
 export const config = {
 	matcher: [

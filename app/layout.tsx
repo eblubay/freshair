@@ -5,45 +5,39 @@ import "./globals.css"
 
 export const metadata: Metadata = {
 	title: {
-		default: "Freshair - Property Management Platform",
-		template: "%s | Freshair"
+		default: "ShellByTheShore — Manhattan Beach Coastal Retreat",
+		template: "%s | ShellByTheShore"
 	},
 	description:
-		"Import your Airbnb listings to Freshair. Connect directly with guests, avoid fees, and take control of your rental business—all while keeping your data yours.",
+		"A bright coastal retreat a short walk from the sand in Manhattan Beach, California. Check dates and request availability directly with the owner.",
 	keywords: [
-		"property management",
-		"vacation rentals",
-		"airbnb import",
-		"direct bookings",
-		"rental management",
-		"host platform"
+		"Manhattan Beach vacation rental",
+		"El Porto beach house",
+		"direct booking",
+		"coastal retreat",
+		"ShellByTheShore"
 	],
 	authors: [
 		{
-			name: "Freshair"
+			name: "ShellByTheShore"
 		}
 	],
-	creator: "Freshair",
+	creator: "ShellByTheShore",
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "https://freshair.vercel.app",
-		title: "Freshair - Property Management Platform",
+		title: "ShellByTheShore — Manhattan Beach Coastal Retreat",
 		description:
-			"Import your Airbnb listings to Freshair. Connect directly with guests, avoid fees, and take control of your rental business.",
-		siteName: "Freshair",
+			"A bright coastal retreat a short walk from the sand in Manhattan Beach, California.",
+		siteName: "ShellByTheShore",
 		images: [
 			{
-				url: "/opengraph.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Freshair - Property Management Platform"
+				url: "/branding/logo.png",
+				width: 1024,
+				height: 1536,
+				alt: "ShellByTheShore"
 			}
 		]
-	},
-	viewport: {
-		width: "device-width",
-		initialScale: 1
 	},
 	robots: {
 		index: true,
@@ -51,10 +45,10 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Freshair - Property Management Platform",
+		title: "ShellByTheShore — Manhattan Beach Coastal Retreat",
 		description:
-			"Import your Airbnb listings to Freshair. Connect directly with guests, avoid fees, and take control of your rental business.",
-		images: ["/opengraph.jpg"]
+			"A bright coastal retreat a short walk from the sand in Manhattan Beach, California.",
+		images: ["/branding/logo.png"]
 	},
 	icons: [
 		{
@@ -63,6 +57,11 @@ export const metadata: Metadata = {
 			url: "/favicon.jpg"
 		}
 	]
+}
+
+export const viewport = {
+	width: "device-width",
+	initialScale: 1
 }
 
 export default function RootLayout({

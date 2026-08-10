@@ -3,7 +3,7 @@ import { ApifyWebhookPayloadSchema, fetchAndStoreResults } from "@/lib/apify"
 import { getUserEmailAddresses } from "@/lib/clerk"
 import { db } from "@/lib/db"
 import { logger } from "@/lib/logger"
-import { FROM_EMAIL, transporter } from "@/lib/postmark"
+import { getFromEmail, getTransporter, isSmtpConfigured } from "@/lib/postmark"
 import { eq } from "drizzle-orm"
 import { NextResponse } from "next/server"
 
@@ -82,9 +82,9 @@ export async function POST(request: Request) {
 
 		const userEmails = await getUserEmailAddresses(job.properties.clerkId)
 
-		if (userEmails.length > 0) {
-			await transporter.sendMail({
-				from: FROM_EMAIL,
+		if (userEmails.length > 0 && isSmtpConfigured()) {
+			await getTransporter().sendMail({
+				from: getFromEmail(),
 				to: userEmails[0],
 				subject: "Your property listing has been processed",
 				text: `"${

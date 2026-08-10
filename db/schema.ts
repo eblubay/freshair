@@ -49,8 +49,31 @@ export const scrapingJobs = pgTable(
 	})
 )
 
+export const inquiries = pgTable(
+	"inquiries",
+	{
+		id: text("id").primaryKey(),
+		propertyId: text("property_id").notNull(),
+		checkIn: text("check_in").notNull(),
+		checkOut: text("check_out").notNull(),
+		guests: integer("guests").notNull().default(1),
+		name: text("name").notNull(),
+		email: text("email").notNull(),
+		phone: text("phone"),
+		message: text("message"),
+		status: text("status").notNull().default("new"),
+		emailSent: text("email_sent").notNull().default("pending"),
+		createdAt: timestamp("created_at").notNull().defaultNow()
+	},
+	(table) => ({
+		inquiryPropertyIdx: index("inquiry_property_idx").on(table.propertyId)
+	})
+)
+
 // Types for type safety
 export type Property = typeof properties.$inferSelect
 export type NewProperty = typeof properties.$inferInsert
 export type ScrapingJob = typeof scrapingJobs.$inferSelect
 export type NewScrapingJob = typeof scrapingJobs.$inferInsert
+export type Inquiry = typeof inquiries.$inferSelect
+export type NewInquiry = typeof inquiries.$inferInsert
