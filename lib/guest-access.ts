@@ -47,7 +47,9 @@ export async function getGuestPortalReservation(token: string) {
 		JOIN reservations r ON r.id=t.reservation_id
 		JOIN booking_settings b ON b.property_id=r.property_id
 		LEFT JOIN reservation_private_details d ON d.reservation_id=r.id
-		WHERE t.token_hash=${hashGuestToken(token)} AND t.expires_at > now()
+		WHERE t.token_hash=${hashGuestToken(token)}
+			AND t.expires_at > now()
+			AND t.revoked_at IS NULL
 	`
 	if (!row) return null
 	const releaseAt = new Date(`${row.check_in}T00:00:00.000Z`).getTime() - Number(row.guest_secret_release_hours) * 3_600_000

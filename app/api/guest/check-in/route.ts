@@ -20,7 +20,12 @@ export async function POST(request: Request) {
 	if (!rateLimit.allowed) return NextResponse.json({ error: "Too many check-in attempts. Please try again shortly." }, { status: 429, headers: { "Cache-Control": "private, no-store", "Retry-After": String(rateLimit.retryAfterSeconds) } })
 	try {
 		const data = schema.parse(await request.json())
-		const [access] = await queryClient`SELECT reservation_id FROM guest_access_tokens WHERE token_hash=${hashGuestToken(data.token)} AND expires_at > now()`
+		const [access] = await queryClient`
+			SELECT reservation_id FROM guest_access_tokens
+			WHERE token_hash=${hashGuestToken(data.token)}
+				AND expires_at > now()
+				AND revoked_at IS NULL
+		`
 		if (!access) return NextResponse.json({ error: "This guest access link is invalid or expired." }, { status: 404, headers: { "Cache-Control": "private, no-store" } })
 		const [reservation] = await queryClient`SELECT total_guests FROM reservations WHERE id=${access.reservation_id}`
 		if (!reservation || data.occupants > Number(reservation.total_guests)) return NextResponse.json({ error: "Occupants cannot exceed the reservation guest count." }, { status: 400, headers: { "Cache-Control": "private, no-store" } })
