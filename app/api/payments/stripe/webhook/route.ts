@@ -13,7 +13,9 @@ export async function POST(request: Request) {
 		const [duplicate] = await queryClient`SELECT 1 FROM processed_webhook_events WHERE provider='STRIPE' AND event_id=${event.id}`
 		if (duplicate) return NextResponse.json({ received: true, duplicate: true })
 		await queryClient`INSERT INTO processed_webhook_events (provider,event_id,payload) VALUES ('STRIPE',${event.id},${JSON.stringify({ type: event.type })}::jsonb)`
-		if (event.data.object.object === "payment_intent") await applyStripePaymentIntent(event.data.object as Stripe.PaymentIntent)
+		if (["payment_intent.succeeded", "payment_intent.payment_failed", "payment_intent.canceled"].includes(event.type) && event.data.object.object === "payment_intent") {
+			await applyStripePaymentIntent(event.data.object as Stripe.PaymentIntent)
+		}
 		return NextResponse.json({ received: true })
 	} catch { return NextResponse.json({ error: "Invalid Stripe webhook." }, { status: 400 }) }
 }

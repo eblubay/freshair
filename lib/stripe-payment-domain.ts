@@ -7,6 +7,7 @@ import { nanoid } from "nanoid"
 import { z } from "zod"
 
 const schema = z.object({ reservationId: z.string().min(8), idempotencyKey: z.string().uuid() })
+const refundSchema = z.object({ reservationId: z.string().min(8), amount: z.coerce.number().int().positive().optional(), reason: z.string().trim().max(500).optional() })
 
 /** Creates, but never confirms, a PaymentIntent. Client-side Stripe Elements owns card entry. */
 export async function createStripePaymentIntent(input: unknown) {
@@ -44,4 +45,34 @@ export async function applyStripePaymentIntent(intent: { id: string; status: str
 		if (["payment_failed", "canceled"].includes(intent.status)) await tx`UPDATE payments SET status='FAILED',provider_status=${intent.status},updated_at=now() WHERE id=${payment.id}`
 		return { confirmed: false }
 	})
+}
+
+export async function refundStripePayment(input: unknown) {
+	const data = refundSchema.parse(input)
+	if (!stripePaymentsAreServerEnabled()) throw new BookingDomainError("Stripe is not enabled for this environment.", 503)
+	const [payment] = await queryClient`
+		SELECT id,provider_transaction_id,amount,refunded_amount
+		FROM payments WHERE reservation_id=${data.reservationId} AND provider='STRIPE'
+		ORDER BY created_at DESC LIMIT 1
+	`
+	if (!payment?.provider_transaction_id) throw new BookingDomainError("A refundable Stripe payment was not found.", 404)
+	const remaining = Number(payment.amount) - Number(payment.refunded_amount)
+	const amount = data.amount ?? remaining
+	if (amount > remaining) throw new BookingDomainError("Refund amount exceeds the captured payment balance.")
+	const refund = await getStripeClient().refunds.create({ payment_intent: payment.provider_transaction_id as string, amount, metadata: { reservationId: data.reservationId, reason: data.reason ?? "" } })
+	await queryClient.begin(async (tx) => {
+		await tx`UPDATE payments SET refunded_amount=refunded_amount+${amount},status=CASE WHEN refunded_amount+${amount} >= amount THEN 'REFUNDED' ELSE 'PARTIALLY_REFUNDED' END,provider_status=${refund.status},updated_at=now() WHERE id=${payment.id}`
+		await tx`UPDATE reservations SET payment_status=CASE WHEN amount_paid-${amount} <= 0 THEN 'REFUNDED' ELSE 'PARTIALLY_REFUNDED' END,amount_paid=GREATEST(0,amount_paid-${amount}),amount_due=amount_due+${amount},updated_at=now() WHERE id=${data.reservationId}`
+		await tx`INSERT INTO booking_events (id,reservation_id,event_type,payload) VALUES (${nanoid()},${data.reservationId},'STRIPE_REFUND_SUBMITTED',${JSON.stringify({ amount, refundId: refund.id, reason: data.reason ?? null })}::jsonb)`
+	})
+	return { status: amount === remaining ? "REFUNDED" : "PARTIALLY_REFUNDED", refundId: refund.id }
+}
+
+export async function confirmStripePaymentIntent(reservationId: string, paymentIntentId: string) {
+	if (!stripePaymentsAreServerEnabled()) throw new BookingDomainError("Stripe is not enabled for this environment.", 503)
+	const [payment] = await queryClient`SELECT 1 FROM payments WHERE reservation_id=${reservationId} AND provider='STRIPE' AND provider_transaction_id=${paymentIntentId}`
+	if (!payment) throw new BookingDomainError("Stripe payment intent was not found for this reservation.", 404)
+	const intent = await getStripeClient().paymentIntents.retrieve(paymentIntentId)
+	if (intent.metadata.reservationId !== reservationId) throw new BookingDomainError("Stripe payment intent does not match this reservation.", 409)
+	return applyStripePaymentIntent(intent)
 }

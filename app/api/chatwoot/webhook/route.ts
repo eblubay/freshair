@@ -1,4 +1,5 @@
 import { allowDurableRateLimitedRequest } from "@/lib/rate-limit"
+import { notifyHostOfChatwootHandoff } from "@/lib/conversation-notifications"
 import { queryClient } from "@/lib/db"
 import { nanoid } from "nanoid"
 import { NextResponse } from "next/server"
@@ -37,7 +38,9 @@ export async function POST(request: Request) {
 		if (requiresHandoff) {
 			await queryClient`UPDATE chat_conversations SET ai_enabled=false,human_handoff=true,handoff_at=now(),updated_at=now() WHERE provider_conversation_id=${conversationId}`
 			await queryClient`UPDATE integration_events SET status='HANDOFF' WHERE provider='CHATWOOT' AND event_id=${eventId}`
-			return NextResponse.json({ handoff: true, conversationId, reason: hostRequest(content) ? "HOST_REQUEST" : "QUESTION_THRESHOLD" })
+			const reason = hostRequest(content) ? "HOST_REQUEST" : "QUESTION_THRESHOLD"
+			const delivery = await notifyHostOfChatwootHandoff({ conversationId, reason }).catch(() => ({ chatwoot: false, telegram: false }))
+			return NextResponse.json({ handoff: true, conversationId, reason, delivery })
 		}
 		if (!state.ai_enabled || state.human_handoff) return NextResponse.json({ ignored: true, reason: "HUMAN_HANDOFF_ACTIVE" })
 		await queryClient`UPDATE chat_conversations SET question_count=question_count+1,updated_at=now() WHERE provider_conversation_id=${conversationId}`

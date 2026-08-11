@@ -42,11 +42,14 @@ export async function getGuestPortalReservation(token: string) {
 	const [row] = await queryClient`
 		SELECT r.confirmation_code, r.guest_first_name, r.check_in::text, r.check_out::text,
 			b.guest_secret_release_hours, d.door_code_ciphertext, d.wifi_name_ciphertext,
-			d.wifi_password_ciphertext, d.private_checkin_notes_ciphertext, d.parking_private_notes_ciphertext
+			d.wifi_password_ciphertext, d.private_checkin_notes_ciphertext, d.parking_private_notes_ciphertext,
+			pd.door_code_ciphertext AS default_door_code_ciphertext,pd.wifi_name_ciphertext AS default_wifi_name_ciphertext,
+			pd.wifi_password_ciphertext AS default_wifi_password_ciphertext,pd.private_checkin_notes_ciphertext AS default_private_checkin_notes_ciphertext,pd.parking_private_notes_ciphertext AS default_parking_private_notes_ciphertext
 		FROM guest_access_tokens t
 		JOIN reservations r ON r.id=t.reservation_id
 		JOIN booking_settings b ON b.property_id=r.property_id
 		LEFT JOIN reservation_private_details d ON d.reservation_id=r.id
+		LEFT JOIN property_private_defaults pd ON pd.property_id=r.property_id
 		WHERE t.token_hash=${hashGuestToken(token)}
 			AND t.expires_at > now()
 			AND t.revoked_at IS NULL
@@ -60,12 +63,12 @@ export async function getGuestPortalReservation(token: string) {
 		checkIn: row.check_in as string,
 		checkOut: row.check_out as string,
 		privateDetailsAvailable: canShowPrivateDetails,
-		privateDetails: canShowPrivateDetails && row.door_code_ciphertext ? {
-			doorCode: decryptGuestDetail(row.door_code_ciphertext as string),
-			wifiName: row.wifi_name_ciphertext ? decryptGuestDetail(row.wifi_name_ciphertext as string) : null,
-			wifiPassword: row.wifi_password_ciphertext ? decryptGuestDetail(row.wifi_password_ciphertext as string) : null,
-			checkinNotes: row.private_checkin_notes_ciphertext ? decryptGuestDetail(row.private_checkin_notes_ciphertext as string) : null,
-			parkingNotes: row.parking_private_notes_ciphertext ? decryptGuestDetail(row.parking_private_notes_ciphertext as string) : null
+		privateDetails: canShowPrivateDetails && (row.door_code_ciphertext || row.default_door_code_ciphertext) ? {
+			doorCode: decryptGuestDetail((row.door_code_ciphertext ?? row.default_door_code_ciphertext) as string),
+			wifiName: (row.wifi_name_ciphertext ?? row.default_wifi_name_ciphertext) ? decryptGuestDetail((row.wifi_name_ciphertext ?? row.default_wifi_name_ciphertext) as string) : null,
+			wifiPassword: (row.wifi_password_ciphertext ?? row.default_wifi_password_ciphertext) ? decryptGuestDetail((row.wifi_password_ciphertext ?? row.default_wifi_password_ciphertext) as string) : null,
+			checkinNotes: (row.private_checkin_notes_ciphertext ?? row.default_private_checkin_notes_ciphertext) ? decryptGuestDetail((row.private_checkin_notes_ciphertext ?? row.default_private_checkin_notes_ciphertext) as string) : null,
+			parkingNotes: (row.parking_private_notes_ciphertext ?? row.default_parking_private_notes_ciphertext) ? decryptGuestDetail((row.parking_private_notes_ciphertext ?? row.default_parking_private_notes_ciphertext) as string) : null
 		} : null
 	}
 }

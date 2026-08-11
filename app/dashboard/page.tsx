@@ -48,6 +48,7 @@ export default async function Dashboard() {
 
 				{/* Add Property Section */}
 				<section className="py-6">
+					<a href="/dashboard/health" className="text-sm underline underline-offset-4">Open operations health →</a>
 					<AddPropertyForm />
 				</section>
 

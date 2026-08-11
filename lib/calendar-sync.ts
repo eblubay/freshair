@@ -9,6 +9,7 @@ const maxCalendarBytes = 2_000_000
 const otaSource = (provider: string) => provider === "AIRBNB" ? "AIRBNB" : provider === "BOOKING_COM" ? "BOOKING_COM" : "OTHER_OTA"
 
 export async function syncExternalCalendar(calendarId: string) {
+	try {
 	const [calendar] = await queryClient`SELECT id,property_id,provider,url,enabled,etag,last_modified FROM external_calendars WHERE id=${calendarId}`
 	if (!calendar?.enabled) throw new Error("External calendar is not available for sync.")
 	const headers: Record<string, string> = { Accept: "text/calendar, text/plain;q=0.9" }
@@ -51,4 +52,19 @@ export async function syncExternalCalendar(calendarId: string) {
 	})
 	await Promise.all(changedReservationIds.map((id) => recalculateCleaningForReservationChange(id, "ICAL_SYNC").catch(() => null)))
 	return { calendarId, unchanged: false, events: events.length }
+	} catch (error) {
+		const message = error instanceof Error ? error.message.slice(0, 1000) : "Calendar sync failed."
+		await queryClient`UPDATE external_calendars SET last_sync_at=now(),last_sync_status='ERROR',last_error=${message} WHERE id=${calendarId}`.catch(() => null)
+		throw error
+	}
+}
+
+export async function syncEnabledExternalCalendars() {
+	const calendars = await queryClient`SELECT id FROM external_calendars WHERE enabled=true ORDER BY last_sync_at NULLS FIRST LIMIT 100`
+	const results = await Promise.allSettled(calendars.map((calendar) => syncExternalCalendar(calendar.id as string)))
+	return {
+		total: calendars.length,
+		succeeded: results.filter((result) => result.status === "fulfilled").length,
+		failed: results.filter((result) => result.status === "rejected").length
+	}
 }

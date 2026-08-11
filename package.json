@@ -9,6 +9,7 @@
 		"lint": "next lint",
 		"test:cleaning": "tsx --test tests/cleaning-rules.test.ts",
 		"test:calendar": "tsx --test tests/ical.test.ts",
+		"test": "tsx --test tests/*.test.ts",
 		"db:migrate:booking": "node scripts/apply-direct-booking-migration.mjs"
 	},
 	"dependencies": {

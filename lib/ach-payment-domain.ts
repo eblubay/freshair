@@ -43,7 +43,9 @@ export async function settleAchPayment(providerReference: string, settled: boole
 			await tx`UPDATE inventory_days SET status='CONFIRMED',hold_expires_at=NULL WHERE reservation_id=${payment.reservation_id}`
 		} else {
 			await tx`UPDATE payments SET status='FAILED',provider_status='FAILED',updated_at=now() WHERE id=${payment.id}`
-			await tx`UPDATE reservations SET payment_status='FAILED',updated_at=now() WHERE id=${payment.reservation_id}`
+			await tx`UPDATE reservations SET booking_status='CANCELLED',payment_status='FAILED',cancelled_at=now(),updated_at=now() WHERE id=${payment.reservation_id}`
+			await tx`DELETE FROM inventory_days WHERE reservation_id=${payment.reservation_id} AND status='HOLD'`
+			await tx`INSERT INTO booking_events (id,reservation_id,event_type,payload) VALUES (${nanoid()},${payment.reservation_id},'ACH_SETTLEMENT_FAILED',${JSON.stringify({ providerReference })}::jsonb)`
 		}
 		return { settled }
 	})

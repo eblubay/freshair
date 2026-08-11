@@ -2,9 +2,9 @@
   "name": "ShellByTheShore — Calendar Sync",
   "nodes": [
     { "parameters": { "rule": { "interval": [{ "field": "hours", "hoursInterval": 1 }] } }, "id": "schedule", "name": "Hourly calendar sync", "type": "n8n-nodes-base.scheduleTrigger", "typeVersion": 1, "position": [260, 300] },
-    { "parameters": { "url": "={{$env.SHELLBYTHESHORE_BASE_URL + '/api/internal/calendar/sync'}}", "sendBody": true, "contentType": "json", "jsonBody": "={\"calendarId\": $json.calendarId}", "options": {} }, "id": "sync", "name": "Call authorized calendar sync", "type": "n8n-nodes-base.httpRequest", "typeVersion": 4, "position": [500, 300] }
+    { "parameters": { "method": "POST", "url": "={{$env.SHELLBYTHESHORE_BASE_URL + '/api/internal/automation/calendar-sync'}}", "sendHeaders": true, "headerParameters": { "parameters": [{ "name": "x-automation-secret", "value": "={{$env.AUTOMATION_SECRET}}" }] }, "options": {} }, "id": "sync", "name": "Run protected calendar sync", "type": "n8n-nodes-base.httpRequest", "typeVersion": 4, "position": [500, 300] }
   ],
-  "connections": { "Hourly calendar sync": { "main": [[{ "node": "Call authorized calendar sync", "type": "main", "index": 0 }]] } },
+  "connections": { "Hourly calendar sync": { "main": [[{ "node": "Run protected calendar sync", "type": "main", "index": 0 }]] } },
   "settings": { "executionOrder": "v1" },
   "active": false,
   "versionId": "calendar-sync-template"
