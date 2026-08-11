@@ -3,7 +3,11 @@ import { ClerkProvider } from "@clerk/nextjs"
 import type { Metadata } from "next"
 import "./globals.css"
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shellbytheshore.com"
+const isProductionCanonical = siteUrl === "https://shellbytheshore.com"
+
 export const metadata: Metadata = {
+	metadataBase: new URL(siteUrl),
 	title: {
 		default: "ShellByTheShore — Manhattan Beach Coastal Retreat",
 		template: "%s | ShellByTheShore"
@@ -40,8 +44,8 @@ export const metadata: Metadata = {
 		]
 	},
 	robots: {
-		index: true,
-		follow: true
+		index: isProductionCanonical,
+		follow: isProductionCanonical
 	},
 	twitter: {
 		card: "summary_large_image",

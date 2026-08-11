@@ -14,7 +14,7 @@ export function SiteFooter({ location }: SiteFooterProps) {
 						<Link href="/" aria-label="ShellByTheShore" className="inline-flex">
 							<BrandLogo height={64} />
 						</Link>
-						<p className="mt-5 text-sm text-[#5d6b78]">{location}</p>
+						<p className="mt-5 text-sm text-[#5d6b78]">Shell By The Shore<br/>Manhattan Beach, California</p>
 					</div>
 
 					<div className="text-sm text-[#5d6b78]">
@@ -24,6 +24,13 @@ export function SiteFooter({ location }: SiteFooterProps) {
 						>
 							Request availability
 						</a>
+						<nav aria-label="Legal and contact" className="mt-4 grid gap-2">
+							<Link href="/privacy-policy" className="transition-colors hover:text-[#c2683f]">Privacy Policy</Link>
+							<Link href="/terms-and-conditions" className="transition-colors hover:text-[#c2683f]">Terms &amp; Conditions</Link>
+							<Link href="/accessibility" className="transition-colors hover:text-[#c2683f]">Accessibility</Link>
+							<Link href="/privacy-choices" className="transition-colors hover:text-[#c2683f]">Privacy Choices / Do Not Sell or Share</Link>
+							<Link href="/privacy-choices" className="transition-colors hover:text-[#c2683f]">Contact — REQUIRED BEFORE LIVE</Link>
+						</nav>
 						<Link
 							href="/dashboard"
 							className="mt-3 block text-[13px] text-[#a3988b] transition-colors hover:text-[#5d6b78]"

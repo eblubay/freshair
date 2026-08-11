@@ -16,7 +16,10 @@ const protectedTables = [
 	"cleaning_tasks",
 	"coupons",
 	"referrals",
-	"audit_events"
+	"audit_events",
+	"booking_consents",
+	"privacy_requests",
+	"data_retention_settings"
 ]
 
 async function scalar(client, statement) {

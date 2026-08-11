@@ -6,8 +6,9 @@ import { z } from "zod"
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/)
 export const quoteInputSchema = z.object({ propertyId: z.string().min(1), checkIn: isoDate, checkOut: isoDate, adults: z.coerce.number().int().min(1).max(16), children: z.coerce.number().int().min(0).max(16), couponCode: z.string().trim().max(64).optional(), referralCode: z.string().trim().max(64).optional() })
-export type Quote = { quoteId: string; expiresAt: string; nights: number; currency: string; nightly: { date: string; amount: number }[]; subtotal: number; cleaningFee: number; taxes: number; discount: number; total: number; directBookingEnabled: boolean; paymentsEnabled: boolean; paymentProvider: "BRAINTREE" | "STRIPE" }
+export type Quote = { quoteId: string; expiresAt: string; nights: number; currency: string; nightly: { date: string; amount: number }[]; subtotal: number; cleaningFee: number; taxes: number; discount: number; total: number; directBookingEnabled: boolean; paymentsEnabled: boolean; paymentProvider: "BRAINTREE" | "STRIPE"; cancellationPolicy: string | null; bookingPolicyConfigured: boolean }
 export const guestSchema = z.object({ firstName: z.string().trim().min(1).max(80), lastName: z.string().trim().min(1).max(80), email: z.string().trim().email().max(254), phone: z.string().trim().max(40).optional() })
+export const bookingConsentSchema = z.object({ termsAccepted: z.literal(true), privacyAcknowledged: z.literal(true), termsVersion: z.literal("2026-08-11"), privacyVersion: z.literal("2026-08-11") })
 export class BookingDomainError extends Error { constructor(message: string, public readonly status = 400) { super(message) } }
 
 const addDays = (date: string, count: number) => { const value = new Date(`${date}T00:00:00Z`); value.setUTCDate(value.getUTCDate() + count); return value.toISOString().slice(0, 10) }
@@ -39,14 +40,16 @@ export async function createQuote(input: unknown): Promise<Quote> {
 	}
 	const taxable = Math.max(0, subtotal + settings.cleaning_fee - discount)
 	const taxes = Math.floor(taxable * settings.tax_rate_basis_points / 10_000)
-	return { quoteId: nanoid(), expiresAt: new Date(Date.now() + 10 * 60_000).toISOString(), nights, currency: settings.currency, nightly, subtotal, cleaningFee: settings.cleaning_fee, taxes, discount, total: taxable + taxes, directBookingEnabled: settings.direct_booking_enabled, paymentsEnabled: settings.payments_enabled, paymentProvider: settings.payment_provider === "STRIPE" ? "STRIPE" : "BRAINTREE" }
+	const cancellationPolicy = typeof settings.cancellation_policy_text === "string" && settings.cancellation_policy_text.trim() ? settings.cancellation_policy_text.trim() : null
+	return { quoteId: nanoid(), expiresAt: new Date(Date.now() + 10 * 60_000).toISOString(), nights, currency: settings.currency, nightly, subtotal, cleaningFee: settings.cleaning_fee, taxes, discount, total: taxable + taxes, directBookingEnabled: settings.direct_booking_enabled, paymentsEnabled: settings.payments_enabled, paymentProvider: settings.payment_provider === "STRIPE" ? "STRIPE" : "BRAINTREE", cancellationPolicy, bookingPolicyConfigured: Boolean(cancellationPolicy) }
 }
 
-export async function createHold(input: unknown, rawGuest: unknown, clientRequestId: string) {
+export async function createHold(input: unknown, rawGuest: unknown, clientRequestId: string, rawConsent: unknown, evidence: { ipHash?: string; userAgent?: string } = {}) {
 	const quote = await createQuote(input)
 	if (!quote.directBookingEnabled) throw new BookingDomainError("Direct booking is not configured yet. Please request availability.", 503)
 	const data = quoteInputSchema.parse(input)
 	const guest = guestSchema.parse(rawGuest)
+	const consent = bookingConsentSchema.parse(rawConsent)
 	const reservationId = nanoid(); const code = `SBS-${nanoid(8).toUpperCase()}`
 	const [settings] = await queryClient`SELECT booking_hold_minutes FROM booking_settings WHERE property_id = ${data.propertyId}`
 	const holdMinutes = Math.min(30, Math.max(5, Number(settings?.booking_hold_minutes ?? 15)))
@@ -105,6 +108,7 @@ export async function createHold(input: unknown, rawGuest: unknown, clientReques
 			referralId = String(referral.id)
 		}
 		await tx`INSERT INTO reservations (id,confirmation_code,property_id,client_request_id,guest_first_name,guest_last_name,guest_email,guest_phone,check_in,check_out,adults,children,total_guests,booking_status,payment_status,currency,subtotal,cleaning_fee,taxes,discount_amount,total_amount,amount_due,price_snapshot) VALUES (${reservationId},${code},${data.propertyId},${clientRequestId},${guest.firstName},${guest.lastName},${guest.email},${guest.phone ?? null},${data.checkIn}::date,${data.checkOut}::date,${data.adults},${data.children},${data.adults + data.children},'HOLD','NOT_STARTED',${quote.currency},${quote.subtotal},${quote.cleaningFee},${quote.taxes},${quote.discount},${quote.total},${quote.total},${JSON.stringify(quote)}::jsonb)`
+		await tx`INSERT INTO booking_consents (reservation_id,terms_version,privacy_version,terms_accepted,privacy_acknowledged,terms_effective_date,privacy_effective_date,evidence) VALUES (${reservationId},${consent.termsVersion},${consent.privacyVersion},true,true,'2026-08-11'::date,'2026-08-11'::date,${JSON.stringify(evidence)}::jsonb)`
 		if (referralId) {
 			await tx`UPDATE referrals SET referred_email=${guest.email},qualifying_reservation_id=${reservationId},status='PENDING' WHERE id=${referralId}`
 			await tx`INSERT INTO audit_events (id,actor_type,actor_id,event_type,reservation_id,metadata) VALUES (${nanoid()},'GUEST',${guest.email},'REFERRAL_PENDING',${reservationId},${JSON.stringify({ referralId })}::jsonb)`

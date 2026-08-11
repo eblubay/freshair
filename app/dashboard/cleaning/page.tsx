@@ -1,4 +1,6 @@
 import { SignIn } from "@clerk/nextjs"
+
+export const metadata = { robots: { index: false, follow: false } }
 import { auth } from "@clerk/nextjs/server"
 import { queryClient } from "@/lib/db"
 import Link from "next/link"

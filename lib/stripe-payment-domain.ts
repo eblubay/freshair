@@ -16,6 +16,8 @@ export async function createStripePaymentIntent(input: unknown) {
 	const result = await queryClient.begin(async (tx) => {
 		const [reservation] = await tx`SELECT id,confirmation_code,total_amount,currency,booking_status FROM reservations WHERE id=${data.reservationId} FOR UPDATE`
 		if (!reservation) throw new BookingDomainError("Reservation not found.", 404)
+		const [consent] = await tx`SELECT 1 FROM booking_consents WHERE reservation_id=${data.reservationId} AND terms_accepted=true AND privacy_acknowledged=true`
+		if (!consent) throw new BookingDomainError("Terms and Privacy Policy acceptance is required before payment.", 409)
 		if (reservation.booking_status !== "HOLD") throw new BookingDomainError("This reservation is no longer awaiting payment.", 409)
 		const [held] = await tx`SELECT 1 FROM inventory_days WHERE reservation_id=${data.reservationId} AND status='HOLD' AND hold_expires_at > now() LIMIT 1`
 		if (!held) throw new BookingDomainError("This booking hold has expired.", 409)

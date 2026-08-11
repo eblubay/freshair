@@ -6,6 +6,8 @@ import { AddPropertyForm } from "./_components/add-property-form"
 import { PropertyCardSkeleton } from "./_components/loading-skeleton"
 import { PropertiesList } from "./_components/properties-list"
 
+export const metadata = { robots: { index: false, follow: false } }
+
 /**
  * Owner dashboard.
  *

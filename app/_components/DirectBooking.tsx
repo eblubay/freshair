@@ -5,7 +5,7 @@ import { StripeCheckout } from "@/app/_components/StripeCheckout"
 import { useMemo, useRef, useState } from "react"
 
 type DirectBookingProps = { propertyId: string; maxGuests: number }
-type Quote = { quoteId: string; expiresAt: string; nights: number; currency: string; subtotal: number; cleaningFee: number; taxes: number; discount: number; total: number; directBookingEnabled: boolean; paymentsEnabled: boolean; paymentProvider: "BRAINTREE" | "STRIPE" }
+type Quote = { quoteId: string; expiresAt: string; nights: number; currency: string; subtotal: number; cleaningFee: number; taxes: number; discount: number; total: number; directBookingEnabled: boolean; paymentsEnabled: boolean; paymentProvider: "BRAINTREE" | "STRIPE"; cancellationPolicy: string | null; bookingPolicyConfigured: boolean }
 type Hold = { reservationId: string; confirmationCode: string; holdExpiresAt: string }
 
 const money = (value: number, currency: string) => new Intl.NumberFormat("en-US", { style: "currency", currency }).format(value / 100)
@@ -19,6 +19,7 @@ export function DirectBooking({ propertyId, maxGuests }: DirectBookingProps) {
 	const [children, setChildren] = useState("0")
 	const [couponCode, setCouponCode] = useState("")
 	const [referralCode, setReferralCode] = useState("")
+	const [legalConsent, setLegalConsent] = useState(false)
 	const [quote, setQuote] = useState<Quote | null>(null)
 	const [hold, setHold] = useState<Hold | null>(null)
 	const [state, setState] = useState<"idle" | "loading" | "error" | "confirmed">("idle")
@@ -42,10 +43,11 @@ export function DirectBooking({ propertyId, maxGuests }: DirectBookingProps) {
 	async function holdDates() {
 		if (!quote) return
 		if (!guest.firstName || !guest.lastName || !guest.email) return setError("Enter your name and email before continuing.")
+		if (!legalConsent) return setError("You must agree to the Terms & Conditions and acknowledge the Privacy Policy before payment.")
 		setState("loading"); setError(null)
 		try {
 			requestId.current ??= crypto.randomUUID()
-			const response = await fetch("/api/bookings/hold", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ quoteInput: input(), guest, clientRequestId: requestId.current }) })
+			const response = await fetch("/api/bookings/hold", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ quoteInput: input(), guest, consent: { termsAccepted: true, privacyAcknowledged: true, termsVersion: "2026-08-11", privacyVersion: "2026-08-11" }, clientRequestId: requestId.current }) })
 			const data = await response.json()
 			if (!response.ok) throw new Error(data.error ?? "Unable to hold dates.")
 			setHold(data); setState("idle")
@@ -63,7 +65,7 @@ export function DirectBooking({ propertyId, maxGuests }: DirectBookingProps) {
 		<button type="button" disabled={state === "loading"} onClick={getQuote} className="mt-4 w-full bg-[#28323b] px-5 py-3 text-xs uppercase tracking-[.16em] text-white disabled:opacity-60">{state === "loading" ? "Checking…" : "Check availability"}</button>
 		{error && <p role="alert" className="mt-4 text-sm text-[#b33939]">{error}</p>}
 		{quote && <><div className="mt-6 border-y border-[#e6ddcf] py-4 text-sm text-[#5d6b78]">{quote.discount > 0 && <p className="mb-2">Discount <span className="float-right">−{money(quote.discount, quote.currency)}</span></p>}<p>{quote.nights} nights <span className="float-right">{money(quote.subtotal, quote.currency)}</span></p><p className="mt-2">Cleaning <span className="float-right">{money(quote.cleaningFee, quote.currency)}</span></p><p className="mt-2">Taxes <span className="float-right">{money(quote.taxes, quote.currency)}</span></p><p className="mt-3 font-semibold text-[#28323b]">Total <span className="float-right">{money(quote.total, quote.currency)}</span></p></div>
-			{quote.directBookingEnabled && !hold && <div className="mt-5 grid gap-3"><div className="grid grid-cols-2 gap-3"><input className={field} placeholder="First name" value={guest.firstName} onChange={(event) => setGuest({ ...guest, firstName: event.target.value })}/><input className={field} placeholder="Last name" value={guest.lastName} onChange={(event) => setGuest({ ...guest, lastName: event.target.value })}/></div><input className={field} type="email" placeholder="Email address" value={guest.email} onChange={(event) => setGuest({ ...guest, email: event.target.value })}/><input className={field} type="tel" placeholder="Phone (optional)" value={guest.phone} onChange={(event) => setGuest({ ...guest, phone: event.target.value })}/><button type="button" disabled={state === "loading"} onClick={holdDates} className="w-full border border-[#28323b] px-5 py-3 text-xs uppercase tracking-[.16em] text-[#28323b] disabled:opacity-60">{state === "loading" ? "Holding dates…" : "Continue to secure payment"}</button></div>}
+			{quote.directBookingEnabled && !hold && <div className="mt-5 grid gap-3"><div className="grid grid-cols-2 gap-3"><input aria-label="First name" className={field} placeholder="First name" value={guest.firstName} onChange={(event) => setGuest({ ...guest, firstName: event.target.value })}/><input aria-label="Last name" className={field} placeholder="Last name" value={guest.lastName} onChange={(event) => setGuest({ ...guest, lastName: event.target.value })}/></div><input aria-label="Email address" className={field} type="email" placeholder="Email address" value={guest.email} onChange={(event) => setGuest({ ...guest, email: event.target.value })}/><input aria-label="Phone number" className={field} type="tel" placeholder="Phone (optional)" value={guest.phone} onChange={(event) => setGuest({ ...guest, phone: event.target.value })}/>{quote.cancellationPolicy ? <p className="border-l-2 border-[#c2683f] pl-3 text-sm leading-relaxed text-[#5d6b78]"><strong className="text-[#28323b]">Cancellation policy:</strong> {quote.cancellationPolicy}</p> : <p className="border-l-2 border-[#c2683f] pl-3 text-sm font-semibold text-[#8d5a3e]">Cancellation policy: REQUIRED_BEFORE_LIVE. Direct booking should not be enabled for production until the owner publishes this policy.</p>}<label className="flex items-start gap-3 text-sm leading-relaxed text-[#5d6b78]"><input aria-describedby="legal-consent-description" className="mt-1 h-4 w-4 accent-[#c2683f]" type="checkbox" checked={legalConsent} onChange={(event) => setLegalConsent(event.target.checked)}/><span id="legal-consent-description">I agree to the <a className="underline underline-offset-4" href="/terms-and-conditions" target="_blank" rel="noreferrer">Terms &amp; Conditions</a> and acknowledge the <a className="underline underline-offset-4" href="/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a>.</span></label><button type="button" disabled={state === "loading" || !legalConsent} onClick={holdDates} className="w-full border border-[#28323b] px-5 py-3 text-xs uppercase tracking-[.16em] text-[#28323b] disabled:opacity-60">{state === "loading" ? "Holding dates…" : "Continue to secure payment"}</button></div>}
 			{quote.directBookingEnabled && hold && <><p className="mt-5 text-sm text-[#5d6b78]">Dates are temporarily held until {new Date(hold.holdExpiresAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}. Complete secure payment before the hold expires.</p>{quote.paymentProvider === "STRIPE" ? <StripeCheckout reservationId={hold.reservationId} onSuccess={() => setState("confirmed")}/> : <BraintreeCheckout reservationId={hold.reservationId} onSuccess={() => setState("confirmed")}/>}</>}
 			{!quote.directBookingEnabled && <p className="mt-5 text-sm leading-relaxed text-[#5d6b78]">Direct booking is not live yet. Please use the availability request below.</p>}</>}
 	</section>

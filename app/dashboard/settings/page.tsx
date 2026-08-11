@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs/server"
 import { queryClient } from "@/lib/db"
 import Link from "next/link"
 import { SettingsForm } from "./SettingsForm"
+
 import { PrivateArrivalDefaults } from "./PrivateArrivalDefaults"
 
 export const metadata = { title: "Owner settings | ShellByTheShore", robots: { index: false, follow: false } }
