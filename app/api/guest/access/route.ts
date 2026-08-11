@@ -1,12 +1,12 @@
 import { getGuestPortalReservation } from "@/lib/guest-access"
-import { allowRateLimitedRequest } from "@/lib/rate-limit"
+import { allowDurableRateLimitedRequest } from "@/lib/rate-limit"
 import { NextResponse } from "next/server"
 import { z } from "zod"
 
 const schema = z.object({ token: z.string().min(32).max(128) })
 
 export async function POST(request: Request) {
-	const rateLimit = allowRateLimitedRequest("guest-access", request, 8)
+	const rateLimit = await allowDurableRateLimitedRequest("guest-access", request, 8)
 	if (!rateLimit.allowed) return NextResponse.json({ error: "Too many access attempts. Please try again shortly." }, { status: 429, headers: { "Cache-Control": "private, no-store", "Retry-After": String(rateLimit.retryAfterSeconds) } })
 	try {
 		const { token } = schema.parse(await request.json())

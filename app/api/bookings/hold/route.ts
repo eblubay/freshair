@@ -1,5 +1,5 @@
 import { BookingDomainError, createHold } from "@/lib/booking-domain"
-import { allowRateLimitedRequest } from "@/lib/rate-limit"
+import { allowDurableRateLimitedRequest } from "@/lib/rate-limit"
 import { NextResponse } from "next/server"
 import { z } from "zod"
 
@@ -10,7 +10,7 @@ const schema = z.object({
 })
 
 export async function POST(request: Request) {
-	const rateLimit = allowRateLimitedRequest("booking-hold", request, 6)
+	const rateLimit = await allowDurableRateLimitedRequest("booking-hold", request, 6)
 	if (!rateLimit.allowed) return NextResponse.json({ error: "Too many booking attempts. Please try again shortly." }, { status: 429, headers: { "Cache-Control": "no-store", "Retry-After": String(rateLimit.retryAfterSeconds) } })
 	try {
 		const data = schema.parse(await request.json())

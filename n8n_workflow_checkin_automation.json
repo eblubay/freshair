@@ -1,0 +1,11 @@
+{
+  "name": "ShellByTheShore — Pre-arrival and Check-in Automation",
+  "nodes": [
+    { "parameters": { "rule": { "interval": [{ "field": "hours", "hoursInterval": 1 }] } }, "id": "schedule", "name": "Hourly reservation scan", "type": "n8n-nodes-base.scheduleTrigger", "typeVersion": 1, "position": [260, 300] },
+    { "parameters": { "url": "={{$env.SHELLBYTHESHORE_BASE_URL + '/api/internal/automation/checkin'}}", "options": {} }, "id": "automation", "name": "Run check-in automation", "type": "n8n-nodes-base.httpRequest", "typeVersion": 4, "position": [500, 300] }
+  ],
+  "connections": { "Hourly reservation scan": { "main": [[{ "node": "Run check-in automation", "type": "main", "index": 0 }]] } },
+  "settings": { "executionOrder": "v1" },
+  "active": false,
+  "versionId": "checkin-automation-template"
+}

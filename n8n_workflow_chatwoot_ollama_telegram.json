@@ -1,0 +1,11 @@
+{
+  "name": "ShellByTheShore — Chatwoot, Ollama, Telegram Handoff",
+  "nodes": [
+    { "parameters": { "path": "shellbytheshore-chatwoot", "httpMethod": "POST", "responseMode": "onReceived" }, "id": "webhook", "name": "Chatwoot webhook", "type": "n8n-nodes-base.webhook", "typeVersion": 2, "position": [260, 300] },
+    { "parameters": { "url": "={{$env.SHELLBYTHESHORE_BASE_URL + '/api/chatwoot/webhook'}}", "sendBody": true, "contentType": "json", "jsonBody": "={{JSON.stringify($json.body)}}", "options": {} }, "id": "process", "name": "Validate and route conversation", "type": "n8n-nodes-base.httpRequest", "typeVersion": 4, "position": [500, 300] }
+  ],
+  "connections": { "Chatwoot webhook": { "main": [[{ "node": "Validate and route conversation", "type": "main", "index": 0 }]] } },
+  "settings": { "executionOrder": "v1" },
+  "active": false,
+  "versionId": "chatwoot-ollama-telegram-template"
+}

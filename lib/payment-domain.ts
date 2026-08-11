@@ -56,3 +56,40 @@ export async function captureBraintreePayment(input: unknown) {
 	})
 	return result
 }
+
+const refundSchema = z.object({ reservationId: z.string().min(8).max(128), amount: z.coerce.number().int().positive().optional(), reason: z.string().trim().max(500).optional() })
+
+export async function refundBraintreePayment(input: unknown) {
+	const data = refundSchema.parse(input)
+	if (!paymentsAreServerEnabled()) throw new BookingDomainError("Online payment is not enabled for this environment.", 503)
+	const [payment] = await queryClient`SELECT id,reservation_id,provider_transaction_id,amount,refunded_amount,status FROM payments WHERE reservation_id=${data.reservationId} AND provider='BRAINTREE' ORDER BY created_at DESC LIMIT 1`
+	if (!payment?.provider_transaction_id) throw new BookingDomainError("A refundable Braintree payment was not found.", 404)
+	const remaining = Number(payment.amount) - Number(payment.refunded_amount)
+	const amount = data.amount ?? remaining
+	if (amount > remaining) throw new BookingDomainError("Refund amount exceeds the unsettled payment balance.")
+	const gateway = getBraintreeGateway()
+	const result = await gateway.transaction.refund(payment.provider_transaction_id as string, asCurrency(amount))
+	if (!result.success || !result.transaction) throw new BookingDomainError("Refund could not be submitted.", 402)
+	await queryClient.begin(async (tx) => {
+		await tx`UPDATE payments SET refunded_amount=refunded_amount+${amount},status=CASE WHEN refunded_amount+${amount} >= amount THEN 'REFUNDED' ELSE 'PARTIALLY_REFUNDED' END,provider_status=${result.transaction.status},updated_at=now() WHERE id=${payment.id}`
+		await tx`UPDATE reservations SET payment_status=CASE WHEN amount_paid-${amount} <= 0 THEN 'REFUNDED' ELSE 'PARTIALLY_REFUNDED' END,amount_paid=GREATEST(0,amount_paid-${amount}),amount_due=amount_due+${amount},updated_at=now() WHERE id=${data.reservationId}`
+		await tx`INSERT INTO booking_events (id,reservation_id,event_type,payload) VALUES (${nanoid()},${data.reservationId},'PAYMENT_REFUND_SUBMITTED',${JSON.stringify({ amount, reason: data.reason ?? null, transactionId: result.transaction?.id })}::jsonb)`
+	})
+	return { status: amount === remaining ? "REFUNDED" : "PARTIALLY_REFUNDED", refundTransactionId: result.transaction.id }
+}
+
+export async function voidBraintreePayment(reservationId: string) {
+	if (!paymentsAreServerEnabled()) throw new BookingDomainError("Online payment is not enabled for this environment.", 503)
+	const [payment] = await queryClient`SELECT id,provider_transaction_id FROM payments WHERE reservation_id=${reservationId} AND provider='BRAINTREE' AND status IN ('AUTHORIZED','SUBMITTED_FOR_SETTLEMENT') ORDER BY created_at DESC LIMIT 1`
+	if (!payment?.provider_transaction_id) throw new BookingDomainError("A voidable Braintree payment was not found.", 404)
+	const gateway = getBraintreeGateway()
+	const result = await gateway.transaction.void(payment.provider_transaction_id as string)
+	if (!result.success) throw new BookingDomainError("Payment void could not be submitted.", 402)
+	await queryClient.begin(async (tx) => {
+		await tx`UPDATE payments SET status='VOIDED',provider_status=${result.transaction?.status ?? "VOIDED"},updated_at=now() WHERE id=${payment.id}`
+		await tx`UPDATE reservations SET booking_status='CANCELLED',payment_status='VOIDED',cancelled_at=now(),updated_at=now() WHERE id=${reservationId}`
+		await tx`DELETE FROM inventory_days WHERE reservation_id=${reservationId}`
+		await tx`INSERT INTO booking_events (id,reservation_id,event_type,payload) VALUES (${nanoid()},${reservationId},'PAYMENT_VOIDED',${JSON.stringify({ transactionId: payment.provider_transaction_id })}::jsonb)`
+	})
+	return { status: "VOIDED" }
+}

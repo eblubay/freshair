@@ -1,0 +1,11 @@
+{
+  "name": "ShellByTheShore — Loyalty and Referral",
+  "nodes": [
+    { "parameters": { "path": "shellbytheshore-loyalty", "httpMethod": "POST", "responseMode": "onReceived" }, "id": "webhook", "name": "Completed stay webhook", "type": "n8n-nodes-base.webhook", "typeVersion": 2, "position": [260, 300] },
+    { "parameters": { "url": "={{$env.SHELLBYTHESHORE_BASE_URL + '/api/internal/loyalty/process'}}", "sendBody": true, "contentType": "json", "jsonBody": "={{JSON.stringify($json.body)}}", "options": {} }, "id": "process", "name": "Process reward safely", "type": "n8n-nodes-base.httpRequest", "typeVersion": 4, "position": [500, 300] }
+  ],
+  "connections": { "Completed stay webhook": { "main": [[{ "node": "Process reward safely", "type": "main", "index": 0 }]] } },
+  "settings": { "executionOrder": "v1" },
+  "active": false,
+  "versionId": "loyalty-referral-template"
+}

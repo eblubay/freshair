@@ -8,6 +8,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"test:cleaning": "tsx --test tests/cleaning-rules.test.ts",
+		"test:calendar": "tsx --test tests/ical.test.ts",
 		"db:migrate:booking": "node scripts/apply-direct-booking-migration.mjs"
 	},
 	"dependencies": {
@@ -22,6 +23,7 @@
 		"@radix-ui/react-slot": "^1.1.0",
 		"@radix-ui/react-toast": "^1.2.2",
 		"@radix-ui/react-tooltip": "^1.1.4",
+		"@stripe/stripe-js": "^9.13.0",
 		"@types/lodash.debounce": "^4.0.9",
 		"apify-client": "^2.10.0",
 		"braintree": "^3.39.0",
@@ -40,6 +42,7 @@
 		"react": "19.0.0-rc-66855b96-20241106",
 		"react-day-picker": "8.10.1",
 		"react-dom": "19.0.0-rc-66855b96-20241106",
+		"stripe": "^22.5.0",
 		"tailwind-merge": "^2.5.4",
 		"tailwindcss-animate": "^1.0.7",
 		"zod": "^3.23.8"

@@ -43,6 +43,7 @@ export default async function Dashboard() {
 					</p>
 					<a href="/dashboard/cleaning" className="mt-4 inline-block text-sm font-semibold text-[#28323b] underline underline-offset-4">Open private cleaning operations →</a>
 					<a href="/dashboard/bookings" className="ml-5 inline-block text-sm font-semibold text-[#28323b] underline underline-offset-4">Open booking calendar →</a>
+					<a href="/dashboard/settings" className="ml-5 inline-block text-sm font-semibold text-[#28323b] underline underline-offset-4">Open owner settings →</a>
 				</section>
 
 				{/* Add Property Section */}

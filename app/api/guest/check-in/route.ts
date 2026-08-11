@@ -1,6 +1,6 @@
 import { hashGuestToken } from "@/lib/guest-access"
 import { queryClient } from "@/lib/db"
-import { allowRateLimitedRequest } from "@/lib/rate-limit"
+import { allowDurableRateLimitedRequest } from "@/lib/rate-limit"
 import { nanoid } from "nanoid"
 import { NextResponse } from "next/server"
 import { z } from "zod"
@@ -16,7 +16,7 @@ const schema = z.object({
 })
 
 export async function POST(request: Request) {
-	const rateLimit = allowRateLimitedRequest("guest-checkin", request, 6)
+	const rateLimit = await allowDurableRateLimitedRequest("guest-checkin", request, 6)
 	if (!rateLimit.allowed) return NextResponse.json({ error: "Too many check-in attempts. Please try again shortly." }, { status: 429, headers: { "Cache-Control": "private, no-store", "Retry-After": String(rateLimit.retryAfterSeconds) } })
 	try {
 		const data = schema.parse(await request.json())
