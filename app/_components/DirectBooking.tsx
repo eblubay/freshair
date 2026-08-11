@@ -18,6 +18,7 @@ export function DirectBooking({ propertyId, maxGuests }: DirectBookingProps) {
 	const [adults, setAdults] = useState("2")
 	const [children, setChildren] = useState("0")
 	const [couponCode, setCouponCode] = useState("")
+	const [referralCode, setReferralCode] = useState("")
 	const [quote, setQuote] = useState<Quote | null>(null)
 	const [hold, setHold] = useState<Hold | null>(null)
 	const [state, setState] = useState<"idle" | "loading" | "error" | "confirmed">("idle")
@@ -25,7 +26,7 @@ export function DirectBooking({ propertyId, maxGuests }: DirectBookingProps) {
 	const [guest, setGuest] = useState({ firstName: "", lastName: "", email: "", phone: "" })
 	const requestId = useRef<string | null>(null)
 	const canQuote = useMemo(() => Boolean(checkIn && checkOut && checkOut > checkIn && Number(adults) + Number(children) <= maxGuests), [adults, checkIn, checkOut, children, maxGuests])
-	const input = () => ({ propertyId, checkIn, checkOut, adults: Number(adults), children: Number(children), couponCode: couponCode.trim() || undefined })
+	const input = () => ({ propertyId, checkIn, checkOut, adults: Number(adults), children: Number(children), couponCode: couponCode.trim() || undefined, referralCode: referralCode.trim() || undefined })
 
 	function resetQuote() { setQuote(null); setHold(null); setError(null); requestId.current = null }
 	async function getQuote() {
@@ -58,6 +59,7 @@ export function DirectBooking({ propertyId, maxGuests }: DirectBookingProps) {
 		<p className="text-[11px] uppercase tracking-[.18em] text-[#8d7c66]">Direct booking</p><h3 className="mt-2 font-serif text-2xl">Check dates and pricing</h3>
 		<div className="mt-6 grid grid-cols-2 gap-3"><input aria-label="Direct booking check-in" className={field} type="date" min={isoToday()} value={checkIn} onChange={(event) => { setCheckIn(event.target.value); resetQuote() }} /><input aria-label="Direct booking check-out" className={field} type="date" min={checkIn || isoTomorrow()} value={checkOut} onChange={(event) => { setCheckOut(event.target.value); resetQuote() }} /><select aria-label="Adults" className={field} value={adults} onChange={(event) => { setAdults(event.target.value); resetQuote() }}>{Array.from({ length: maxGuests }, (_, i) => <option key={i + 1} value={i + 1}>{i + 1} adult{i ? "s" : ""}</option>)}</select><select aria-label="Children" className={field} value={children} onChange={(event) => { setChildren(event.target.value); resetQuote() }}>{Array.from({ length: maxGuests }, (_, i) => <option key={i} value={i}>{i} children</option>)}</select></div>
 		<input aria-label="Coupon code" className={`${field} mt-3`} placeholder="Coupon code (optional)" value={couponCode} onChange={(event) => { setCouponCode(event.target.value); resetQuote() }} />
+		<input aria-label="Referral code" className={`${field} mt-3`} placeholder="Referral code (optional)" value={referralCode} onChange={(event) => { setReferralCode(event.target.value); resetQuote() }} />
 		<button type="button" disabled={state === "loading"} onClick={getQuote} className="mt-4 w-full bg-[#28323b] px-5 py-3 text-xs uppercase tracking-[.16em] text-white disabled:opacity-60">{state === "loading" ? "Checking…" : "Check availability"}</button>
 		{error && <p role="alert" className="mt-4 text-sm text-[#b33939]">{error}</p>}
 		{quote && <><div className="mt-6 border-y border-[#e6ddcf] py-4 text-sm text-[#5d6b78]">{quote.discount > 0 && <p className="mb-2">Discount <span className="float-right">−{money(quote.discount, quote.currency)}</span></p>}<p>{quote.nights} nights <span className="float-right">{money(quote.subtotal, quote.currency)}</span></p><p className="mt-2">Cleaning <span className="float-right">{money(quote.cleaningFee, quote.currency)}</span></p><p className="mt-2">Taxes <span className="float-right">{money(quote.taxes, quote.currency)}</span></p><p className="mt-3 font-semibold text-[#28323b]">Total <span className="float-right">{money(quote.total, quote.currency)}</span></p></div>

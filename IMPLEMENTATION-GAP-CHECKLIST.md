@@ -1,30 +1,30 @@
 # ShellByTheShore implementation gap checklist
 
-Status is based on the committed baseline [`46bf938`](middleware.ts:1), inspected on 2026-08-10. “Verified” means a real automated local or staging check has been run; configuration scaffolding alone is not marked verified.
+Status reflects the `hostinger-deploy-ready` implementation after the additive [`0006_loyalty_referral_lifecycle.sql`](db/migrations/0006_loyalty_referral_lifecycle.sql) migration and local verification on 2026-08-11. `DONE + VERIFIED` requires a completed local code or database verification; external providers remain configuration-gated.
 
 | Area | Status | Current state / remaining work |
 |---|---|---|
-| Next.js/Hostinger build consistency | DONE + VERIFIED | Clean staging browser run no longer reports missing Next CSS/chunks; immutable static assets are preserved while documents are no-store. |
-| Direct booking schema, quote and hold | IMPLEMENTED BUT NOT VERIFIED | Server quote/hold foundation exists; guest UI is connected, but conflict/expiry integration tests remain. |
-| Direct booking guest UI | IMPLEMENTED BUT NOT VERIFIED | Listing page supports dates, guest count, server quote, guest details and temporary holds; payment checkout/certification remain. |
-| Braintree server capture | IMPLEMENTED BUT NOT VERIFIED | Nonce capture/idempotency, Hosted Fields, signed webhook parser, owner void/refund endpoints exist; sandbox provider run remains. |
-| Stripe fallback | IMPLEMENTED BUT NOT VERIFIED | Environment-gated PaymentIntent adapter and signature-verified webhook are present; Payment Element UI and sandbox run remain. |
-| ACH | IMPLEMENTED BUT NOT VERIFIED | Provider-reference pending lifecycle keeps inventory held and only settles after trusted provider settlement input; provider integration/webhook remains. |
-| Owner calendar and OTA iCal import | IMPLEMENTED BUT NOT VERIFIED | Owner URL management, manual sync, safe iCal parser, event reconciliation, inventory blocks and cleaning recalc are present; scheduled authenticated runner and live OTA feeds remain. |
-| Guest portal/secrets/check-in | IMPLEMENTED BUT NOT VERIFIED | Token hash/AES-GCM API, noindex guest portal and versioned digital check-in acknowledgement exist; owner secret management and secure session exchange remain. |
-| Cleaning Bot | IMPLEMENTED BUT NOT VERIFIED | Schema, scheduling rules, private list, actions and n8n template exist; configuration UI, callback signing, reminders/escalation, full notifications remain. |
-| Chatwoot/Ollama/Telegram | IMPLEMENTED BUT NOT VERIFIED | Ollama fallback, signed Chatwoot intake, dedupe and persisted handoff state exist; outbound Chatwoot/Telegram delivery remains. |
-| Pre-arrival automation/n8n exports | IMPLEMENTED BUT NOT VERIFIED | Credential-free calendar, check-in, loyalty and Chatwoot workflow templates now exist; server-side automation runner and credential connection remain. |
-| Loyalty/referrals | IMPLEMENTED BUT NOT VERIFIED | Owner switches, completed-stay idempotent WELCOMEBACK generation and referral creation exist; qualifying-referred-stay reward/email remains. |
-| Weather | IMPLEMENTED BUT NOT VERIFIED | Server-side NWS forecast lookup, cache, API route and Local Guide snapshot exist; fallback coverage and live verification remain. |
-| OTA comparison | MISSING | No manual verified-price entry or freshness validation surface. |
-| Admin control center/health | IMPLEMENTED BUT NOT VERIFIED | Owner booking calendar, settings UI/API and credential-safe health API exist; private-detail/cleaner CRUD surfaces remain. |
-| Transactional email suite | MISSING | Existing SMTP inquiry notification only. |
-| RLS/rate limiting/webhook validation | IMPLEMENTED BUT NOT VERIFIED | Public sensitive routes use durable PostgreSQL buckets with local fallback; Stripe/Braintree webhook validation exists; RLS policy deployment and full provider tests remain. |
-| Test suite | IMPLEMENTED BUT NOT VERIFIED | Five cleaning-rule tests pass; booking/payment/iCal/portal/AI/loyalty/weather test coverage remains. |
+| Next.js/Hostinger build consistency | DONE + VERIFIED | Existing stale-asset mitigation is preserved; external Hostinger redeploy/browser proof is still required. |
+| Direct booking quote, hold, and coupon locking | DONE + VERIFIED | Server-authoritative quote, transactional hold, coupon lock/increment, and expired-hold release are implemented. |
+| Direct booking guest UI | DONE + VERIFIED | Date/guest inputs, coupon and referral-code inputs, holds, Braintree, and Stripe checkout selection are connected. |
+| Braintree | AWAITING_CREDENTIAL | Hosted Fields, capture, refund/void, signature validation, and idempotency are code complete; sandbox credentials/run are required. |
+| Stripe | AWAITING_CREDENTIAL | Payment Element, server-authoritative intents/confirmation, signature-verified webhook, and partial/full refund paths are code complete; sandbox credentials/run are required. |
+| ACH | AWAITING_CREDENTIAL | Pending-to-settled lifecycle, authenticated/deduplicated webhook, and failed/returned inventory release are code complete; provider adapter credentials/run are required. |
+| Owner calendar and iCal reconciliation | DONE + VERIFIED | Authenticated scheduler, parser, normalized reconciliation, stale/error state, and Cleaning Bot recalculation are implemented. Live OTA feed validation is external. |
+| Guest portal, encrypted secrets, and check-in | DONE + VERIFIED | AES-GCM storage, hash-only/revocable tokens, release-window gating, no-store access, and digital check-in are implemented. |
+| Cleaning Bot | DONE + VERIFIED | Deadline rules have local automated coverage; cleaner callback authorization/HMAC and event dedupe are implemented. Telegram delivery activation is external. |
+| Chatwoot/Ollama/Telegram handoff | AWAITING_CREDENTIAL | Signed intake, persisted handoff, optional Chatwoot reply and Telegram escalation are code complete; provider endpoints/secrets are required. |
+| Pre-arrival automation and n8n exports | DONE + VERIFIED | Credential-free inactive templates use protected automation endpoints and valid JSON. Scheduler activation requires deployment variables. |
+| Loyalty lifecycle | DONE + VERIFIED | Eligible completed-stay WELCOMEBACK creation, refund/cancel disqualification, duplicate prevention, audit records, and SMTP-gated reward notification are implemented. |
+| Referral lifecycle | DONE + VERIFIED | `CREATED → PENDING → QUALIFIED → REWARDED / REJECTED`, unique codes/qualifying stay, self-referral and duplicate prevention, atomic reward issuance, audit records, email event, and protected n8n template are implemented. |
+| Weather | DONE + VERIFIED | Server-side NWS lookup, cache/fallback behavior, and public minimal response are implemented. |
+| OTA comparison | DONE + VERIFIED | Owner-entered fresh comparable observations only; public route does not fabricate a comparison or expose owner notes. |
+| Owner control center and health | DONE + VERIFIED | Owner authorization, booking/calendar/configuration screens, encrypted private defaults, and conservative health statuses are implemented. |
+| RLS / cross-role direct database access | DONE + VERIFIED | `npm run test:rls` verified RLS on protected tables; `anon`/`authenticated` have zero direct reservation visibility; `service_role` is the intended bypass. Sensitive tables remain deny-by-default and server routes enforce Clerk property ownership. |
+| Automated test suite | DONE + VERIFIED | `npm test` passes current deterministic unit tests and `npm run test:rls` passes live role-semantic RLS checks. External payment/provider acceptance tests require credentials. |
 
-## Required-before-live values
+## External activation still required
 
-Rates, fees, tax, cancellation policy, cleaner/host destinations and provider credentials are owner-configurable inputs. They must stay unconfigured and visible as `REQUIRED_BEFORE_LIVE` or `AWAITING_CREDENTIAL` until supplied; no business amount is inferred.
+Configure property rates/fees/taxes/cancellation policy and provider credentials; activate SMTP, Braintree/Stripe/ACH, Chatwoot, Telegram, calendar feeds, scheduler secret, and n8n credentials. Perform a clean-browser Hostinger deployment verification after the final push.
 
 `APIFY RUNS = 0`

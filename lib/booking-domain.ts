@@ -5,7 +5,7 @@ import { nanoid } from "nanoid"
 import { z } from "zod"
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/)
-export const quoteInputSchema = z.object({ propertyId: z.string().min(1), checkIn: isoDate, checkOut: isoDate, adults: z.coerce.number().int().min(1).max(16), children: z.coerce.number().int().min(0).max(16), couponCode: z.string().trim().max(64).optional() })
+export const quoteInputSchema = z.object({ propertyId: z.string().min(1), checkIn: isoDate, checkOut: isoDate, adults: z.coerce.number().int().min(1).max(16), children: z.coerce.number().int().min(0).max(16), couponCode: z.string().trim().max(64).optional(), referralCode: z.string().trim().max(64).optional() })
 export type Quote = { quoteId: string; expiresAt: string; nights: number; currency: string; nightly: { date: string; amount: number }[]; subtotal: number; cleaningFee: number; taxes: number; discount: number; total: number; directBookingEnabled: boolean; paymentsEnabled: boolean; paymentProvider: "BRAINTREE" | "STRIPE" }
 export const guestSchema = z.object({ firstName: z.string().trim().min(1).max(80), lastName: z.string().trim().min(1).max(80), email: z.string().trim().email().max(254), phone: z.string().trim().max(40).optional() })
 export class BookingDomainError extends Error { constructor(message: string, public readonly status = 400) { super(message) } }
@@ -73,6 +73,7 @@ export async function createHold(input: unknown, rawGuest: unknown, clientReques
 		const conflict = await tx`SELECT 1 FROM inventory_days WHERE property_id=${data.propertyId} AND date >= ${data.checkIn}::date AND date < ${data.checkOut}::date FOR UPDATE`
 		if (conflict.length) throw new BookingDomainError("Those dates have just been reserved. Please choose different dates.", 409)
 		let couponId: string | null = null
+		let referralId: string | null = null
 		if (data.couponCode) {
 			const [coupon] = await tx`
 				SELECT id,discount_type,discount_value FROM coupons
@@ -87,7 +88,27 @@ export async function createHold(input: unknown, rawGuest: unknown, clientReques
 			couponId = coupon.id as string
 			await tx`UPDATE coupons SET current_uses=current_uses+1 WHERE id=${couponId}`
 		}
+		if (data.referralCode) {
+			const [referral] = await tx`
+				SELECT f.id,f.referrer_email,f.status,f.referred_email,r.property_id
+				FROM referrals f
+				JOIN reservations r ON r.id=f.source_reservation_id
+				WHERE upper(f.referral_code)=upper(${data.referralCode})
+				FOR UPDATE
+			`
+			if (!referral || referral.property_id !== data.propertyId || referral.status !== "CREATED" || referral.referred_email) {
+				throw new BookingDomainError("That referral code is no longer available.", 409)
+			}
+			if (String(referral.referrer_email).toLowerCase() === guest.email.toLowerCase()) {
+				throw new BookingDomainError("You cannot apply your own referral code.", 400)
+			}
+			referralId = String(referral.id)
+		}
 		await tx`INSERT INTO reservations (id,confirmation_code,property_id,client_request_id,guest_first_name,guest_last_name,guest_email,guest_phone,check_in,check_out,adults,children,total_guests,booking_status,payment_status,currency,subtotal,cleaning_fee,taxes,discount_amount,total_amount,amount_due,price_snapshot) VALUES (${reservationId},${code},${data.propertyId},${clientRequestId},${guest.firstName},${guest.lastName},${guest.email},${guest.phone ?? null},${data.checkIn}::date,${data.checkOut}::date,${data.adults},${data.children},${data.adults + data.children},'HOLD','NOT_STARTED',${quote.currency},${quote.subtotal},${quote.cleaningFee},${quote.taxes},${quote.discount},${quote.total},${quote.total},${JSON.stringify(quote)}::jsonb)`
+		if (referralId) {
+			await tx`UPDATE referrals SET referred_email=${guest.email},qualifying_reservation_id=${reservationId},status='PENDING' WHERE id=${referralId}`
+			await tx`INSERT INTO audit_events (id,actor_type,actor_id,event_type,reservation_id,metadata) VALUES (${nanoid()},'GUEST',${guest.email},'REFERRAL_PENDING',${reservationId},${JSON.stringify({ referralId })}::jsonb)`
+		}
 		if (couponId) await tx`INSERT INTO coupon_redemptions (id,coupon_id,reservation_id,amount) VALUES (${nanoid()},${couponId},${reservationId},${quote.discount})`
 		for (let index = 0; index < quote.nights; index++) await tx`INSERT INTO inventory_days (property_id,date,reservation_id,source,status,hold_expires_at) VALUES (${data.propertyId},${addDays(data.checkIn,index)}::date,${reservationId},'DIRECT','HOLD',now() + (${holdMinutes} * interval '1 minute'))`
 		await tx`INSERT INTO booking_events (id,reservation_id,event_type,payload) VALUES (${nanoid()},${reservationId},'BOOKING_HOLD_CREATED',${JSON.stringify({ quoteId: quote.quoteId })}::jsonb)`
