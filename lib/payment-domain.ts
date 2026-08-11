@@ -46,7 +46,7 @@ export async function captureBraintreePayment(input: unknown) {
 		await tx`UPDATE reservations SET booking_status='CONFIRMED', payment_status='PAID', payment_provider='BRAINTREE', provider_transaction_id=${charge.transaction.id}, amount_paid=total_amount, amount_due=0, confirmed_at=now(), updated_at=now() WHERE id=${data.reservationId}`
 		await tx`UPDATE inventory_days SET status='CONFIRMED', hold_expires_at=NULL WHERE reservation_id=${data.reservationId}`
 		await tx`INSERT INTO booking_events (id,reservation_id,event_type,payload) VALUES (${nanoid()},${data.reservationId},'PAYMENT_CAPTURED',${JSON.stringify({ provider: "BRAINTREE", transactionId: charge.transaction.id })}::jsonb)`
-		return { paymentId, transactionId: charge.transaction.id, status: "CONFIRMED", reused: false }
+		return { paymentId, transactionId: charge.transaction.id, confirmationCode: reservation.confirmation_code as string, status: "CONFIRMED", reused: false }
 	})
 	// Turnover automation must never roll back an already authorized payment.
 	// Recalculation is triggered immediately, but failures are retriable by the

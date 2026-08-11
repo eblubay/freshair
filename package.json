@@ -25,6 +25,7 @@
 		"@types/lodash.debounce": "^4.0.9",
 		"apify-client": "^2.10.0",
 		"braintree": "^3.39.0",
+		"braintree-web": "^3.144.0",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"date-fns": "^4.1.0",
@@ -46,6 +47,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/braintree": "^3.4.4",
+		"@types/braintree-web": "^3.96.17",
 		"@types/node": "^20.17.6",
 		"@types/nodemailer": "^8.0.1",
 		"@types/react": "^18.3.12",

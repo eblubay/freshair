@@ -1,4 +1,5 @@
 import { AmenitiesPanel } from "@/app/_components/AmenitiesPanel"
+import { DirectBooking } from "@/app/_components/DirectBooking"
 import { AvailabilityRequest } from "@/app/_components/AvailabilityRequest"
 import { PhotoGallery } from "@/app/_components/PhotoGallery"
 import { PropertyMap } from "@/app/_components/PropertyMap"
@@ -257,10 +258,13 @@ export default async function ListingPage({ params }: { params: Params }) {
 
 					{/* Availability request */}
 					<aside id="availability" className="scroll-mt-24 lg:sticky lg:top-28 lg:self-start">
+						<DirectBooking propertyId={property.id} maxGuests={property.guests} />
+						<div className="mt-6">
 						<AvailabilityRequest
 							propertyId={property.id}
 							maxGuests={property.guests}
 						/>
+						</div>
 						<Link
 							href="/"
 							className="mt-6 block text-center text-[12px] uppercase tracking-[0.16em] text-[#8d7c66] transition-colors hover:text-[#c2683f]"
