@@ -1,74 +1,69 @@
 "use client"
-
 import "maplibre-gl/dist/maplibre-gl.css"
 import { useEffect, useMemo, useRef, useState } from "react"
 
-export const GUIDE_CATEGORIES = [
-	"Beaches",
-	"Food",
-	"Coffee",
-	"Groceries",
-	"Parking",
-	"Shopping",
-	"Activities",
-	"Attractions",
-	"Airports"
-] as const
-
+export const GUIDE_CATEGORIES = ["Beaches", "Food", "Coffee", "Breakfast", "Groceries", "Parking", "Shopping", "Activities", "Attractions", "Airports"] as const
 type Category = (typeof GUIDE_CATEGORIES)[number]
-type Poi = { name: string; category: Category; area: string; description: string; lat: number; lng: number }
+type Poi = { name: string; category: Category; area: string; description: string; lat: number; lng: number; tag?: "ShellByTheShore Pick" | "Everyday Grocery" | "Premium & Organic" | "Local Market" }
 
+// Coordinates were checked against public map listings; coordinates are map points only, not business claims.
 export const GUIDE_POIS: Poi[] = [
-	{ name: "Manhattan Beach", category: "Beaches", area: "Manhattan Beach", description: "Wide sand, volleyball courts, and an easy place to settle in for the day.", lat: 33.8847, lng: -118.4109 },
-	{ name: "Manhattan Beach Pier", category: "Attractions", area: "Manhattan Beach", description: "A classic walk over the Pacific from the heart of downtown.", lat: 33.8844, lng: -118.4114 },
+	{ name: "Manhattan Beach", category: "Beaches", area: "Manhattan Beach", description: "Classic South Bay beach with the Strand, volleyball, walking and cycling.", lat: 33.8847, lng: -118.4109 },
+	{ name: "Manhattan Beach Pier", category: "Attractions", area: "Manhattan Beach", description: "Landmark pier at the center of downtown Manhattan Beach with beach and ocean views.", lat: 33.8844, lng: -118.4114, tag: "ShellByTheShore Pick" },
+	{ name: "El Porto Beach", category: "Beaches", area: "Manhattan Beach", description: "North Manhattan Beach surf area and one of the closest beach experiences to Shell By The Shore.", lat: 33.9031, lng: -118.4202, tag: "ShellByTheShore Pick" },
 	{ name: "The Strand", category: "Activities", area: "South Bay", description: "The oceanfront path for strolling, running, cycling, and people-watching.", lat: 33.8905, lng: -118.4148 },
 	{ name: "Manhattan Village", category: "Shopping", area: "Manhattan Beach", description: "An open-air shopping destination with a range of stores and dining.", lat: 33.8792, lng: -118.395 },
-	{ name: "Manhattan Beach Farmers Market", category: "Food", area: "Manhattan Beach", description: "A local market held weekly in downtown Manhattan Beach.", lat: 33.8849, lng: -118.4101 },
-	{ name: "Two Guns Espresso", category: "Coffee", area: "Manhattan Beach", description: "A well-known local coffee stop near the beach.", lat: 33.9031, lng: -118.4201 },
-	{ name: "Bristol Farms", category: "Groceries", area: "Manhattan Beach", description: "A full-service grocery option for stocking the kitchen.", lat: 33.8838, lng: -118.4048 },
+	{ name: "Manhattan Beach Farmers Market", category: "Food", area: "Manhattan Beach", description: "A local market held in downtown Manhattan Beach; check current information before visiting.", lat: 33.8849, lng: -118.4101 },
+	{ name: "Two Guns Espresso", category: "Coffee", area: "Manhattan Beach", description: "A local coffee stop near the beach.", lat: 33.9031, lng: -118.4201 },
+	{ name: "Trader Joe's", category: "Groceries", area: "Manhattan Beach", description: "Convenient option for everyday groceries, snacks, prepared foods and beach-trip essentials.", lat: 33.8768, lng: -118.3949, tag: "Everyday Grocery" },
+	{ name: "Gelson's Manhattan Beach", category: "Groceries", area: "Manhattan Beach", description: "Premium supermarket with groceries, prepared foods and specialty items.", lat: 33.8804, lng: -118.3945, tag: "Premium & Organic" },
+	{ name: "Erewhon Manhattan Beach", category: "Groceries", area: "Manhattan Beach", description: "Organic-focused market with prepared foods, smoothies and specialty grocery items.", lat: 33.8844, lng: -118.4043, tag: "Premium & Organic" },
+	{ name: "Bristol Farms", category: "Groceries", area: "Manhattan Beach", description: "Premium grocery market with prepared foods, produce and specialty items.", lat: 33.8838, lng: -118.4048, tag: "Premium & Organic" },
+	{ name: "Fishing With Dynamite", category: "Food", area: "Manhattan Beach", description: "Popular downtown Manhattan Beach seafood and oyster spot near the Pier.", lat: 33.8844, lng: -118.4100, tag: "ShellByTheShore Pick" },
+	{ name: "Manhattan Beach Post", category: "Food", area: "Manhattan Beach", description: "Downtown restaurant known for shared plates, brunch and cocktails.", lat: 33.8847, lng: -118.4100, tag: "ShellByTheShore Pick" },
+	{ name: "The Strand House", category: "Food", area: "Manhattan Beach", description: "Coastal dining near Manhattan Beach Pier with ocean views.", lat: 33.8841, lng: -118.4107 },
+	{ name: "The Arthur J", category: "Food", area: "Manhattan Beach", description: "Manhattan Beach steakhouse for a more upscale dinner.", lat: 33.8848, lng: -118.4102 },
+	{ name: "Rockefeller - Manhattan Beach", category: "Food", area: "Manhattan Beach", description: "Casual gastropub option for brunch, dinner and cocktails.", lat: 33.8839, lng: -118.4096 },
+	{ name: "Uncle Bill's Pancake House", category: "Breakfast", area: "Manhattan Beach", description: "Classic Manhattan Beach breakfast spot near downtown and the beach.", lat: 33.8840, lng: -118.4121, tag: "ShellByTheShore Pick" },
+	{ name: "Bluestone Lane Manhattan Beach Café", category: "Breakfast", area: "Manhattan Beach", description: "Coffee, breakfast and brunch near downtown Manhattan Beach.", lat: 33.8843, lng: -118.4078 },
+	{ name: "Verve Coffee Roasters", category: "Coffee", area: "Manhattan Beach", description: "Specialty coffee stop in the downtown and Metlox area.", lat: 33.8843, lng: -118.4065 },
+	{ name: "Sloopy's Beach Cafe", category: "Breakfast", area: "Manhattan Beach", description: "Casual North Manhattan Beach breakfast and lunch option close to the coast.", lat: 33.9048, lng: -118.4205 },
+	{ name: "The Hive", category: "Breakfast", area: "Manhattan Beach", description: "Healthy café option for bowls, smoothies, coffee and lighter breakfast choices.", lat: 33.9024, lng: -118.4195 },
 	{ name: "Manhattan Beach Public Parking", category: "Parking", area: "Manhattan Beach", description: "Public beach-area parking; check posted rules and availability on arrival.", lat: 33.884, lng: -118.4125 },
-	{ name: "Hermosa Beach Pier", category: "Attractions", area: "Hermosa Beach", description: "A relaxed pier and beach hub with nearby dining and nightlife.", lat: 33.8621, lng: -118.4008 },
-	{ name: "Redondo Beach Pier", category: "Attractions", area: "Redondo Beach", description: "Waterfront promenades, pier views, and access to the marina area.", lat: 33.8367, lng: -118.3914 },
-	{ name: "Venice Beach Boardwalk", category: "Activities", area: "Venice", description: "The lively oceanfront promenade for a distinctly Venice walk.", lat: 33.985, lng: -118.4695 },
-	{ name: "Venice Canals", category: "Attractions", area: "Venice", description: "A quiet residential canal walk a short distance from the beach.", lat: 33.984, lng: -118.4651 },
-	{ name: "Abbot Kinney Boulevard", category: "Shopping", area: "Venice", description: "Independent shops, galleries, coffee, and dining along a walkable corridor.", lat: 33.9918, lng: -118.4662 },
-	{ name: "Santa Monica Pier", category: "Attractions", area: "Santa Monica", description: "A landmark Pacific stop with beach access and ocean views.", lat: 34.0099, lng: -118.4962 },
-	{ name: "Third Street Promenade", category: "Shopping", area: "Santa Monica", description: "A pedestrian-oriented downtown shopping and walking area.", lat: 34.0172, lng: -118.4975 },
-	{ name: "Malibu Surfrider Beach", category: "Beaches", area: "Malibu", description: "An iconic Malibu shoreline beside the pier and historic lagoon area.", lat: 34.0356, lng: -118.677 },
-	{ name: "Malibu Pier", category: "Attractions", area: "Malibu", description: "A scenic stop for Pacific views and a stroll over the water.", lat: 34.0362, lng: -118.6777 },
-	{ name: "Los Angeles International Airport", category: "Airports", area: "LAX", description: "The closest major airport for most ShellByTheShore guests.", lat: 33.9416, lng: -118.4085 }
+	{ name: "Hermosa Beach", category: "Beaches", area: "Hermosa Beach", description: "Wide sandy beach with volleyball, the Strand and easy access to Pier Avenue.", lat: 33.8617, lng: -118.3997, tag: "ShellByTheShore Pick" },
+	{ name: "Hermosa Beach Pier", category: "Attractions", area: "Hermosa Beach", description: "Central Hermosa Beach landmark at the end of Pier Avenue.", lat: 33.8621, lng: -118.4008 },
+	{ name: "Longfellow Beach", category: "Beaches", area: "Hermosa Beach", description: "Quieter stretch toward North Hermosa, convenient from Manhattan Beach.", lat: 33.8786, lng: -118.4073 },
+	{ name: "Boccato's Groceries", category: "Groceries", area: "Hermosa Beach", description: "Neighborhood grocery and deli option near the beach.", lat: 33.8617, lng: -118.3982, tag: "Local Market" },
+	{ name: "Trader Joe's - Hermosa Beach", category: "Groceries", area: "Hermosa Beach", description: "Convenient grocery option along Pacific Coast Highway.", lat: 33.8614, lng: -118.3912, tag: "Everyday Grocery" },
+	{ name: "Lazy Acres Market - Hermosa Beach", category: "Groceries", area: "Hermosa Beach", description: "Organic and specialty grocery market with prepared foods.", lat: 33.8593, lng: -118.3926, tag: "Premium & Organic" },
+	{ name: "Baran's 2239", category: "Food", area: "Hermosa Beach", description: "Small South Bay restaurant known for creative contemporary dishes.", lat: 33.8573, lng: -118.3893, tag: "ShellByTheShore Pick" },
+	{ name: "Radici", category: "Food", area: "Hermosa Beach", description: "Italian dining option near the Hermosa Beach Pier area.", lat: 33.8627, lng: -118.4001, tag: "ShellByTheShore Pick" },
+	{ name: "Steak & Whisky American Tavern", category: "Food", area: "Hermosa Beach", description: "Steakhouse and cocktail destination in Hermosa Beach.", lat: 33.8619, lng: -118.4002 },
+	{ name: "Good Stuff - Hermosa Beach", category: "Breakfast", area: "Hermosa Beach", description: "Relaxed breakfast and brunch option directly by the beach.", lat: 33.8636, lng: -118.4021, tag: "ShellByTheShore Pick" },
+	{ name: "Martha's Hermosa Beach", category: "Breakfast", area: "Hermosa Beach", description: "Longtime local breakfast and brunch spot close to the Strand.", lat: 33.8628, lng: -118.4014, tag: "ShellByTheShore Pick" },
+	{ name: "The Source Café", category: "Breakfast", area: "Hermosa Beach", description: "Café offering coffee, juices, bakery items and lighter breakfast choices.", lat: 33.8611, lng: -118.3993 },
+	{ name: "Hi-Fi Espresso - Hermosa Beach", category: "Coffee", area: "Hermosa Beach", description: "Specialty coffee stop serving the South Bay.", lat: 33.8608, lng: -118.3993 },
+	{ name: "Cafe Minerva", category: "Breakfast", area: "Hermosa Beach", description: "Local café with coffee and casual breakfast options.", lat: 33.8621, lng: -118.4000 },
+	{ name: "Redondo Beach", category: "Beaches", area: "Redondo Beach", description: "South Bay beach area with walking, ocean access and waterfront activities.", lat: 33.8434, lng: -118.3929 },
+	{ name: "Redondo Beach Pier", category: "Attractions", area: "Redondo Beach", description: "Waterfront pier area with restaurants, harbor views and walking.", lat: 33.8367, lng: -118.3914, tag: "ShellByTheShore Pick" },
+	{ name: "King Harbor", category: "Attractions", area: "Redondo Beach", description: "Marina and waterfront area for harbor walks and coastal views.", lat: 33.8442, lng: -118.3912 },
+	{ name: "Seaside Lagoon", category: "Beaches", area: "Redondo Beach", description: "Seasonal family-oriented waterfront swimming area; check current operating information before visiting.", lat: 33.8399, lng: -118.3898 },
+	{ name: "Trader Joe's - Redondo Beach", category: "Groceries", area: "Redondo Beach", description: "Convenient grocery option serving the Riviera Village area.", lat: 33.8264, lng: -118.3847, tag: "Everyday Grocery" },
+	{ name: "Whole Foods Market", category: "Groceries", area: "Redondo Beach", description: "Organic and specialty grocery option with prepared foods.", lat: 33.8251, lng: -118.3872, tag: "Premium & Organic" },
+	{ name: "Vons", category: "Groceries", area: "Redondo Beach", description: "Full-service supermarket for everyday grocery needs.", lat: 33.8257, lng: -118.3824, tag: "Everyday Grocery" },
+	{ name: "Riviera Village Farmers Market", category: "Shopping", area: "Redondo Beach", description: "Local market option when operating; check current information before visiting.", lat: 33.8232, lng: -118.3850, tag: "Local Market" },
+	{ name: "Jus' Poke", category: "Food", area: "Redondo Beach", description: "Casual South Bay poke stop well suited to a beach lunch.", lat: 33.8271, lng: -118.3867, tag: "ShellByTheShore Pick" },
+	{ name: "Bettolino Kitchen", category: "Food", area: "Redondo Beach", description: "Italian restaurant near Riviera Village.", lat: 33.8260, lng: -118.3861, tag: "ShellByTheShore Pick" },
+	{ name: "Riviera House", category: "Food", area: "Redondo Beach", description: "Coastal restaurant and cocktail option in the Riviera Village area.", lat: 33.8261, lng: -118.3851 },
+	{ name: "Dominique's Kitchen", category: "Food", area: "Redondo Beach", description: "Small French-inspired neighborhood restaurant.", lat: 33.8260, lng: -118.3840 },
+	{ name: "Bluewater Grill", category: "Food", area: "Redondo Beach", description: "Seafood restaurant near King Harbor and the Redondo waterfront.", lat: 33.8425, lng: -118.3914 },
+	{ name: "Offset Coffee Roasters", category: "Coffee", area: "Redondo Beach", description: "Specialty coffee option near Riviera Village.", lat: 33.8262, lng: -118.3850, tag: "ShellByTheShore Pick" },
+	{ name: "Pursue Coffee", category: "Coffee", area: "Redondo Beach", description: "Local specialty coffee shop in Redondo Beach.", lat: 33.8354, lng: -118.3795 },
+	{ name: "Hi-Fi Espresso - Redondo Beach", category: "Coffee", area: "Redondo Beach", description: "South Bay specialty coffee option.", lat: 33.8290, lng: -118.3830 },
+	{ name: "Good Stuff - Redondo Beach", category: "Breakfast", area: "Redondo Beach", description: "Casual breakfast and brunch option near the coast.", lat: 33.8384, lng: -118.3915 },
+	{ name: "La Terraza", category: "Breakfast", area: "Redondo Beach", description: "Local breakfast and coffee option in Redondo Beach.", lat: 33.8380, lng: -118.3911 },
+	{ name: "Venice Beach Boardwalk", category: "Activities", area: "Venice", description: "The lively oceanfront promenade for a distinctly Venice walk.", lat: 33.985, lng: -118.4695 }, { name: "Venice Canals", category: "Attractions", area: "Venice", description: "A quiet residential canal walk a short distance from the beach.", lat: 33.984, lng: -118.4651 }, { name: "Abbot Kinney Boulevard", category: "Shopping", area: "Venice", description: "Independent shops, galleries, coffee, and dining along a walkable corridor.", lat: 33.9918, lng: -118.4662 }, { name: "Santa Monica Pier", category: "Attractions", area: "Santa Monica", description: "A landmark Pacific stop with beach access and ocean views.", lat: 34.0099, lng: -118.4962 }, { name: "Third Street Promenade", category: "Shopping", area: "Santa Monica", description: "A pedestrian-oriented downtown shopping and walking area.", lat: 34.0172, lng: -118.4975 }, { name: "Malibu Surfrider Beach", category: "Beaches", area: "Malibu", description: "An iconic Malibu shoreline beside the pier and historic lagoon area.", lat: 34.0356, lng: -118.677 }, { name: "Malibu Pier", category: "Attractions", area: "Malibu", description: "A scenic stop for Pacific views and a stroll over the water.", lat: 34.0362, lng: -118.6777 }, { name: "Los Angeles International Airport", category: "Airports", area: "LAX", description: "The closest major airport for most ShellByTheShore guests.", lat: 33.9416, lng: -118.4085 }
 ]
-
-const COLOURS: Record<Category, string> = { Beaches: "#287c91", Food: "#c2683f", Coffee: "#7a5842", Groceries: "#59765b", Parking: "#536d9d", Shopping: "#9b6a88", Activities: "#b7843b", Attractions: "#6e7d68", Airports: "#495766" }
-
-export function LocalGuideMap() {
-	const node = useRef<HTMLDivElement>(null)
-	const mapRef = useRef<{ remove(): void; fitBounds(bounds: unknown, options?: unknown): void } | null>(null)
-	const markers = useRef<{ remove(): void }[]>([])
-	const [selected, setSelected] = useState<Category | "All">("All")
-	const visible = useMemo(() => selected === "All" ? GUIDE_POIS : GUIDE_POIS.filter((poi) => poi.category === selected), [selected])
-
-	useEffect(() => {
-		let closed = false
-		void import("maplibre-gl").then((module) => {
-			if (closed || !node.current) return
-			const maplibregl = (module as { default?: typeof module }).default ?? module
-			maplibregl.setWorkerUrl("/maplibre/maplibre-gl-worker.js")
-			const map = new maplibregl.Map({ container: node.current, style: "https://tiles.openfreemap.org/styles/liberty", center: [-118.43, 33.94], zoom: 10.5, attributionControl: { compact: true } })
-			map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right")
-			mapRef.current = map
-		})
-		return () => { closed = true; markers.current.forEach((marker) => marker.remove()); mapRef.current?.remove(); mapRef.current = null }
-	}, [])
-
-	useEffect(() => {
-		void import("maplibre-gl").then((module) => {
-			if (!mapRef.current) return
-			const maplibregl = (module as { default?: typeof module }).default ?? module
-			markers.current.forEach((marker) => marker.remove())
-			markers.current = visible.map((poi) => new maplibregl.Marker({ color: COLOURS[poi.category] }).setLngLat([poi.lng, poi.lat]).setPopup(new maplibregl.Popup({ offset: 24 }).setHTML(`<strong>${poi.name}</strong><br/><span>${poi.area}</span><br/><small>${poi.description}</small>`)).addTo(mapRef.current as never))
-		})
-	}, [visible])
-
-	return <section aria-labelledby="guide-map-heading" className="overflow-hidden border border-[#e6ddcf] bg-white shadow-[0_16px_45px_rgba(40,50,59,0.05)]"><div className="border-b border-[#e6ddcf] p-5 sm:p-8"><div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between"><div><p className="text-[11px] uppercase tracking-[.24em] text-[#8d7c66]">Explore nearby</p><h2 id="guide-map-heading" className="mt-2 font-serif text-3xl sm:text-4xl">The local map</h2></div><div className="-mx-1 flex max-w-full gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:thin]">{(["All", ...GUIDE_CATEGORIES] as const).map((category) => <button key={category} type="button" onClick={() => setSelected(category)} className={`shrink-0 border px-3 py-2.5 text-[11px] uppercase tracking-[.12em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2683f] ${selected === category ? "border-[#28323b] bg-[#28323b] text-white" : "border-[#d8cdba] bg-white text-[#3d4b57] hover:border-[#28323b]"}`}>{category}</button>)}</div></div></div><div ref={node} className="h-[330px] w-full bg-[#f8f4f0] sm:h-[430px]" aria-label="Interactive local guide map"/><div className="grid gap-x-8 gap-y-0 p-5 sm:grid-cols-2 sm:p-8 lg:grid-cols-3">{visible.map((poi) => <article key={poi.name} className="border-b border-[#e6ddcf] py-5 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0"><p className="text-[11px] uppercase tracking-[.14em]" style={{ color: COLOURS[poi.category] }}>{poi.category} · {poi.area}</p><h3 className="mt-2 font-serif text-xl">{poi.name}</h3><p className="mt-2 text-sm leading-relaxed text-[#5d6b78]">{poi.description}</p><a className="mt-4 inline-flex min-h-10 items-center text-[11px] uppercase tracking-[.16em] text-[#3d4b57] underline decoration-[#c2683f] decoration-1 underline-offset-4 transition-colors hover:text-[#c2683f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2683f]" target="_blank" rel="noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(poi.name + " " + poi.area + " California")}`}>Directions <span className="ml-1" aria-hidden="true">↗</span></a></article>)}</div></section>
-}
+const COLOURS: Record<Category, string> = { Beaches: "#287c91", Food: "#c2683f", Coffee: "#7a5842", Breakfast: "#b7843b", Groceries: "#59765b", Parking: "#536d9d", Shopping: "#9b6a88", Activities: "#b7843b", Attractions: "#6e7d68", Airports: "#495766" }
+const directions = (poi: Poi) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${poi.lat},${poi.lng}`)}`
+export function LocalGuideMap() { const node = useRef<HTMLDivElement>(null); const mapRef = useRef<{ remove(): void } | null>(null); const markers = useRef<{ remove(): void }[]>([]); const [selected, setSelected] = useState<Category | "All">("All"); const visible = useMemo(() => selected === "All" ? GUIDE_POIS : GUIDE_POIS.filter((poi) => poi.category === selected), [selected]); const grouped = useMemo(() => Object.entries(visible.reduce<Record<string, Poi[]>>((groups, poi) => { (groups[`${poi.area} · ${poi.category}`] ??= []).push(poi); return groups }, {})), [visible]); useEffect(() => { let closed = false; void import("maplibre-gl").then((module) => { if (closed || !node.current) return; const maplibregl = (module as { default?: typeof module }).default ?? module; maplibregl.setWorkerUrl("/maplibre/maplibre-gl-worker.js"); mapRef.current = new maplibregl.Map({ container: node.current, style: "https://tiles.openfreemap.org/styles/liberty", center: [-118.43, 33.94], zoom: 10.5, attributionControl: { compact: true } }); }); return () => { closed = true; markers.current.forEach((marker) => marker.remove()); mapRef.current?.remove(); mapRef.current = null } }, []); useEffect(() => { void import("maplibre-gl").then((module) => { if (!mapRef.current) return; const maplibregl = (module as { default?: typeof module }).default ?? module; markers.current.forEach((marker) => marker.remove()); markers.current = visible.map((poi) => new maplibregl.Marker({ color: COLOURS[poi.category] }).setLngLat([poi.lng, poi.lat]).setPopup(new maplibregl.Popup({ offset: 24 }).setHTML(`<strong>${poi.name}</strong><br/><small>${poi.area}</small>`)).addTo(mapRef.current as never)) }) }, [visible]); return <section aria-labelledby="guide-map-heading" className="overflow-hidden border border-[#e6ddcf] bg-white shadow-[0_16px_45px_rgba(40,50,59,0.05)]"><div className="border-b border-[#e6ddcf] p-5 sm:p-8"><p className="text-[11px] uppercase tracking-[.24em] text-[#8d7c66]">Explore nearby</p><h2 id="guide-map-heading" className="mt-2 font-serif text-3xl sm:text-4xl">The local map</h2><p className="mt-2 text-sm text-[#5d6b78]">ShellByTheShore Picks are independent local suggestions. No partnership or sponsorship is implied unless specifically stated.</p><div className="-mx-1 mt-5 flex max-w-full gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:thin]">{(["All", ...GUIDE_CATEGORIES] as const).map((category) => <button key={category} type="button" onClick={() => setSelected(category)} className={`min-h-10 shrink-0 border px-3 py-2 text-[11px] uppercase tracking-[.12em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2683f] ${selected === category ? "border-[#28323b] bg-[#28323b] text-white" : "border-[#d8cdba] bg-white text-[#3d4b57]"}`}>{category}</button>)}</div></div><div ref={node} className="h-[330px] w-full bg-[#f8f4f0] sm:h-[430px]" aria-label="Interactive local guide map"/><div className="space-y-9 p-5 sm:p-8">{grouped.map(([heading, pois]) => <section key={heading}><h3 className="border-b border-[#e6ddcf] pb-2 text-[11px] uppercase tracking-[.18em] text-[#8d7c66]">{heading}</h3><div className="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">{pois.map((poi) => <article key={poi.name} className="border-b border-[#e6ddcf] py-5"><p className="text-[11px] uppercase tracking-[.14em]" style={{ color: COLOURS[poi.category] }}>{poi.category} · {poi.area}</p><h4 className="mt-2 font-serif text-xl">{poi.name}</h4>{poi.tag && <p className="mt-2 inline-flex bg-[#f4ece2] px-2 py-1 text-[10px] uppercase tracking-[.1em] text-[#8d5a3e]">{poi.tag}</p>}<p className="mt-2 text-sm leading-relaxed text-[#5d6b78]">{poi.description}</p><a className="mt-4 inline-flex min-h-10 items-center text-[11px] uppercase tracking-[.16em] text-[#3d4b57] underline decoration-[#c2683f] underline-offset-4" href={directions(poi)} target="_blank" rel="noreferrer">Directions</a></article>)}</div></section>)}</div></section> }

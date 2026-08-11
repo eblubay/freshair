@@ -11,6 +11,7 @@
 		"test:calendar": "tsx --test tests/ical.test.ts",
 		"test": "tsx --test tests/*.test.ts",
 		"test:rls": "node scripts/verify-rls-roles.mjs",
+		"verify:guide": "node scripts/verify-guide-coordinates.mjs",
 		"db:migrate:booking": "node scripts/apply-direct-booking-migration.mjs"
 	},
 	"dependencies": {
