@@ -6,7 +6,7 @@ import { z } from "zod"
 const schema = z.object({
 	quoteInput: z.unknown(),
 	guest: z.object({ firstName: z.string().trim().min(1), lastName: z.string().trim().min(1), email: z.string().email(), phone: z.string().max(40).optional() }),
-	consent: z.object({ termsAccepted: z.literal(true), privacyAcknowledged: z.literal(true), termsVersion: z.literal("2026-08-11"), privacyVersion: z.literal("2026-08-11") }),
+	consent: z.object({ termsAccepted: z.literal(true), privacyAcknowledged: z.literal(true), houseRulesAccepted: z.literal(true), termsVersion: z.literal("2026-08-11"), privacyVersion: z.literal("2026-08-11"), houseRulesVersion: z.literal("2026-08-11") }),
 	clientRequestId: z.string().uuid()
 })
 

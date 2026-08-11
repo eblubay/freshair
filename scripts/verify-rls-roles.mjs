@@ -19,7 +19,8 @@ const protectedTables = [
 	"audit_events",
 	"booking_consents",
 	"privacy_requests",
-	"data_retention_settings"
+	"data_retention_settings",
+	"cancellation_requests"
 ]
 
 async function scalar(client, statement) {

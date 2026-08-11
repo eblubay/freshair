@@ -39,7 +39,7 @@ export async function applyStripePaymentIntent(intent: { id: string; status: str
 		if (!payment) return { ignored: true }
 		if (intent.status === "succeeded" && payment.status !== "PAID") {
 			await tx`UPDATE payments SET status='PAID',provider_status=${intent.status},settled_at=now(),updated_at=now() WHERE id=${payment.id}`
-			await tx`UPDATE reservations SET booking_status='CONFIRMED',payment_status='PAID',payment_provider='STRIPE',provider_transaction_id=${intent.id},amount_paid=${intent.amount_received},amount_due=GREATEST(0,total_amount-${intent.amount_received}),confirmed_at=now(),updated_at=now() WHERE id=${reservationId} AND booking_status='HOLD'`
+			await tx`UPDATE reservations SET booking_status='CONFIRMED',payment_status='PAID',payment_provider='STRIPE',provider_transaction_id=${intent.id},amount_paid=${intent.amount_received},amount_due=GREATEST(0,total_amount-${intent.amount_received}),confirmed_at=now(),california_grace_period_eligible=(scheduled_checkin_at >= now() + interval '72 hours'),california_grace_period_expires_at=CASE WHEN scheduled_checkin_at >= now() + interval '72 hours' THEN now() + interval '24 hours' ELSE NULL END,updated_at=now() WHERE id=${reservationId} AND booking_status='HOLD'`
 			await tx`UPDATE inventory_days SET status='CONFIRMED',hold_expires_at=NULL WHERE reservation_id=${reservationId} AND status='HOLD'`
 			await tx`INSERT INTO booking_events (id,reservation_id,event_type,payload) VALUES (${nanoid()},${reservationId},'STRIPE_PAYMENT_SUCCEEDED',${JSON.stringify({ paymentIntentId: intent.id })}::jsonb)`
 			return { confirmed: true }
