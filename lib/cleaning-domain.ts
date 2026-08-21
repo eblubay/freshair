@@ -21,6 +21,7 @@ export async function recalculateCleaningTaskForCheckout(checkoutReservationId: 
 		SELECT id, property_id, booking_source, check_in::text, check_out::text
 		FROM reservations
 		WHERE id=${checkoutReservationId} AND booking_status IN ('CONFIRMED','COMPLETED')
+			AND booking_source IN ('DIRECT_MANUAL','AIRBNB','DIRECT','MANUAL','BOOKING_COM','OTHER_OTA')
 	`
 	if (!checkout) return null
 
@@ -38,6 +39,7 @@ export async function recalculateCleaningTaskForCheckout(checkoutReservationId: 
 		FROM reservations
 		WHERE property_id=${checkout.property_id}
 			AND booking_status IN ('CONFIRMED','COMPLETED')
+			AND booking_source IN ('DIRECT_MANUAL','AIRBNB','DIRECT','MANUAL','BOOKING_COM','OTHER_OTA')
 			AND check_in >= ${checkout.check_out}::date
 			AND id <> ${checkout.id}
 		ORDER BY check_in ASC, created_at ASC

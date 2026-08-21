@@ -5,6 +5,7 @@ import { PhotoGallery } from "@/app/_components/PhotoGallery"
 import { PropertyMap } from "@/app/_components/PropertyMap"
 import { SiteFooter } from "@/app/_components/SiteFooter"
 import { SiteHeader } from "@/app/_components/SiteHeader"
+import { isDirectBookingEnabled } from "@/lib/launch-config"
 import { getPropertyView } from "@/lib/view-model"
 import Image from "next/image"
 import Link from "next/link"
@@ -258,8 +259,10 @@ export default async function ListingPage({ params }: { params: Params }) {
 
 					{/* Availability request */}
 					<aside id="availability" className="scroll-mt-24 lg:sticky lg:top-28 lg:self-start">
-						<DirectBooking propertyId={property.id} maxGuests={property.guests} />
-						<div className="mt-6">
+						{isDirectBookingEnabled() && (
+							<DirectBooking propertyId={property.id} maxGuests={property.guests} />
+						)}
+						<div className={isDirectBookingEnabled() ? "mt-6" : undefined}>
 						<AvailabilityRequest
 							propertyId={property.id}
 							maxGuests={property.guests}

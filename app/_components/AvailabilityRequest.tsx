@@ -37,10 +37,13 @@ export function AvailabilityRequest({
 	const [checkIn, setCheckIn] = useState("")
 	const [checkOut, setCheckOut] = useState("")
 	const [guests, setGuests] = useState("2")
-	const [name, setName] = useState("")
+	const [firstName, setFirstName] = useState("")
+	const [lastName, setLastName] = useState("")
 	const [email, setEmail] = useState("")
 	const [phone, setPhone] = useState("")
 	const [message, setMessage] = useState("")
+	const [website, setWebsite] = useState("")
+	const [idempotencyKey] = useState(() => crypto.randomUUID())
 
 	const [submitting, setSubmitting] = useState(false)
 	const [error, setError] = useState<string | null>(null)
@@ -68,7 +71,8 @@ export function AvailabilityRequest({
 		if (!checkIn) return setError("Please choose your check-in date.")
 		if (!checkOut) return setError("Please choose your check-out date.")
 		if (checkOut <= checkIn) return setError("Check-out must be after check-in.")
-		if (name.trim().length < 2) return setError("Please enter your full name.")
+		if (!firstName.trim()) return setError("Please enter your first name.")
+		if (!lastName.trim()) return setError("Please enter your last name.")
 		if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim()))
 			return setError("Please enter a valid email address.")
 
@@ -80,10 +84,13 @@ export function AvailabilityRequest({
 				checkIn,
 				checkOut,
 				guests: Number(guests),
-				name: name.trim(),
+				firstName: firstName.trim(),
+				lastName: lastName.trim(),
 				email: email.trim(),
 				phone: phone.trim(),
-				message: message.trim()
+				message: message.trim(),
+				website,
+				idempotencyKey
 			})
 
 			if (result.ok) {
@@ -107,8 +114,8 @@ export function AvailabilityRequest({
 				</div>
 				<h3 className="font-serif text-2xl text-[#28323b]">Request received</h3>
 				<p className="mx-auto mt-4 max-w-sm text-[15px] leading-relaxed text-[#5d6b78]">
-					Your availability request has been received. This is not a confirmed
-					reservation yet. We&apos;ll confirm availability shortly.
+					Your availability request has been received. This request does not create
+					or confirm a reservation. We&apos;ll reply with availability and pricing.
 				</p>
 				<p className="mt-4 text-sm text-[#8d7c66]">
 					A reply will be sent to {email}
@@ -130,7 +137,8 @@ export function AvailabilityRequest({
 		>
 			<h3 className="font-serif text-2xl text-[#28323b]">Request availability</h3>
 			<p className="mt-2 text-sm leading-relaxed text-[#5d6b78]">
-				Tell us your dates and we&apos;ll confirm availability by email.
+				This is an availability request only and does not create or confirm a
+				reservation. We will reply with availability and pricing.
 			</p>
 
 			<div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -195,19 +203,24 @@ export function AvailabilityRequest({
 				</div>
 
 				<div>
-					<label className={labelClass} htmlFor="name">
-						Full name
+					<label className={labelClass} htmlFor="firstName">
+						First name
 					</label>
 					<input
-						id="name"
-						name="name"
+						id="firstName"
+						name="firstName"
 						type="text"
 						required
-						autoComplete="name"
-						value={name}
-						onChange={(event) => setName(event.target.value)}
+						autoComplete="given-name"
+						value={firstName}
+						onChange={(event) => setFirstName(event.target.value)}
 						className={fieldClass}
 					/>
+				</div>
+
+				<div>
+					<label className={labelClass} htmlFor="lastName">Last name</label>
+					<input id="lastName" name="lastName" type="text" required autoComplete="family-name" value={lastName} onChange={(event) => setLastName(event.target.value)} className={fieldClass} />
 				</div>
 
 				<div className="sm:col-span-2">
@@ -224,6 +237,10 @@ export function AvailabilityRequest({
 						onChange={(event) => setEmail(event.target.value)}
 						className={fieldClass}
 					/>
+				</div>
+				<div className="absolute -left-[10000px]" aria-hidden="true">
+					<label htmlFor="website">Website</label>
+					<input id="website" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} />
 				</div>
 
 				<div className="sm:col-span-2">

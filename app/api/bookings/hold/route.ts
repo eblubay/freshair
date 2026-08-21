@@ -1,6 +1,7 @@
 import { BookingDomainError, createHold } from "@/lib/booking-domain"
 import { allowDurableRateLimitedRequest } from "@/lib/rate-limit"
 import { NextResponse } from "next/server"
+import { isDirectBookingEnabled } from "@/lib/launch-config"
 import { z } from "zod"
 
 const schema = z.object({
@@ -11,6 +12,7 @@ const schema = z.object({
 })
 
 export async function POST(request: Request) {
+	if (!isDirectBookingEnabled()) return NextResponse.json({ error: "Direct checkout is unavailable. Please request availability." }, { status: 404, headers: { "Cache-Control": "no-store" } })
 	const rateLimit = await allowDurableRateLimitedRequest("booking-hold", request, 6)
 	if (!rateLimit.allowed) return NextResponse.json({ error: "Too many booking attempts. Please try again shortly." }, { status: 429, headers: { "Cache-Control": "no-store", "Retry-After": String(rateLimit.retryAfterSeconds) } })
 	try {

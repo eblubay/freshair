@@ -1,0 +1,20 @@
+{
+  "name": "ShellByTheShore Inquiry Host Operations",
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "nodes": [
+    { "id": "inquiry", "name": "Website Inquiry Trigger", "type": "n8n-nodes-base.webhook", "typeVersion": 2, "position": [0, 0], "parameters": { "path": "sbs-inquiry", "httpMethod": "POST" } },
+    { "id": "telegram", "name": "Host Telegram Alert", "type": "n8n-nodes-base.telegram", "typeVersion": 1.2, "position": [260, 0], "parameters": { "chatId": "={{$env.TELEGRAM_HOST_CHAT_ID}}", "text": "={{$json.telegramAlert}}" } },
+    { "id": "imap", "name": "Guest Email IMAP", "type": "n8n-nodes-base.emailReadImap", "typeVersion": 2, "position": [0, 220], "parameters": { "postProcessAction": "nothing", "format": "simple" } },
+    { "id": "normalize", "name": "Normalize and Sanitize Email", "type": "n8n-nodes-base.code", "typeVersion": 2, "position": [260, 220], "parameters": { "jsCode": "return items.map(i => ({json:{messageId:i.json.messageId,from:i.json.from?.value?.[0]?.address,subject:i.json.subject||'',text:(i.json.text||'').slice(0,100000),inReplyTo:i.json.inReplyTo,references:i.json.references}}));" } },
+    { "id": "inbound", "name": "Protected Inbound Endpoint", "type": "n8n-nodes-base.httpRequest", "typeVersion": 4.2, "position": [520, 220], "parameters": { "method": "POST", "url": "={{$env.SITE_URL}}/api/internal/email/inbound", "sendHeaders": true, "headerParameters": { "parameters": [{ "name": "Authorization", "value": "=Bearer {{$env.AUTOMATION_SECRET}}" }] }, "sendBody": true, "contentType": "raw", "rawContentType": "application/json", "body": "={{JSON.stringify($json)}}" } },
+    { "id": "calendar", "name": "Airbnb Poll Schedule", "type": "n8n-nodes-base.scheduleTrigger", "typeVersion": 1.2, "position": [0, 440], "parameters": { "rule": { "interval": [{ "field": "minutes", "minutesInterval": 30 }] } } },
+    { "id": "sync", "name": "Protected Airbnb Pull Sync", "type": "n8n-nodes-base.httpRequest", "typeVersion": 4.2, "position": [260, 440], "parameters": { "method": "POST", "url": "={{$env.SITE_URL}}/api/internal/airbnb-calendar/sync", "sendHeaders": true, "headerParameters": { "parameters": [{ "name": "Authorization", "value": "=Bearer {{$env.AUTOMATION_SECRET}}" }] } } }
+  ],
+  "connections": {
+    "Website Inquiry Trigger": { "main": [[{ "node": "Host Telegram Alert", "type": "main", "index": 0 }]] },
+    "Guest Email IMAP": { "main": [[{ "node": "Normalize and Sanitize Email", "type": "main", "index": 0 }]] },
+    "Normalize and Sanitize Email": { "main": [[{ "node": "Protected Inbound Endpoint", "type": "main", "index": 0 }]] },
+    "Airbnb Poll Schedule": { "main": [[{ "node": "Protected Airbnb Pull Sync", "type": "main", "index": 0 }]] }
+  }
+}

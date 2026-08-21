@@ -20,7 +20,7 @@ export function isSmtpConfigured(): boolean {
 	return Boolean(
 		process.env.SMTP_HOST &&
 			process.env.SMTP_PORT &&
-			process.env.SMTP_USER &&
+			(process.env.SMTP_USERNAME || process.env.SMTP_USER) &&
 			process.env.SMTP_PASSWORD
 	)
 }
@@ -34,9 +34,9 @@ export function getTransporter(): Transporter {
 		cached = nodemailer.createTransport({
 			host: process.env.SMTP_HOST,
 			port: Number.parseInt(process.env.SMTP_PORT as string, 10),
-			secure: process.env.SMTP_PORT === "465",
+			secure: process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : process.env.SMTP_PORT === "465",
 			auth: {
-				user: process.env.SMTP_USER as string,
+				user: (process.env.SMTP_USERNAME || process.env.SMTP_USER) as string,
 				pass: process.env.SMTP_PASSWORD as string
 			}
 		})
@@ -52,11 +52,11 @@ export function getTransporter(): Transporter {
  * fallback.
  */
 export function getFromEmail(): string {
-	const configured = (process.env.FROM_EMAIL ?? "").trim()
+	const configured = (process.env.SMTP_FROM_EMAIL ?? process.env.FROM_EMAIL ?? "stay@shellbytheshore.com").trim()
 
 	if (EMAIL.test(configured)) return configured
 
-	const user = (process.env.SMTP_USER ?? "").trim()
+	const user = (process.env.SMTP_USERNAME ?? process.env.SMTP_USER ?? "").trim()
 
 	if (configured.length > 0 && EMAIL.test(user)) {
 		console.warn(

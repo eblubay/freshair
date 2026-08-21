@@ -29,7 +29,7 @@ export function SiteFooter({ location }: SiteFooterProps) {
 							<Link href="/terms-and-conditions" className="transition-colors hover:text-[#c2683f]">Terms &amp; Conditions</Link>
 							<Link href="/accessibility" className="transition-colors hover:text-[#c2683f]">Accessibility</Link>
 							<Link href="/privacy-choices" className="transition-colors hover:text-[#c2683f]">Privacy Choices / Do Not Sell or Share</Link>
-							<Link href="/privacy-choices" className="transition-colors hover:text-[#c2683f]">Contact — REQUIRED BEFORE LIVE</Link>
+							<a href="mailto:stay@shellbytheshore.com" className="transition-colors hover:text-[#c2683f]">stay@shellbytheshore.com</a>
 						</nav>
 						<Link
 							href="/dashboard"

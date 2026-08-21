@@ -1,7 +1,9 @@
 import { createClientPaymentToken } from "@/lib/payment-providers"
+import { isDirectBookingEnabled } from "@/lib/launch-config"
 import { NextResponse } from "next/server"
 
 export async function POST() {
+	if (!isDirectBookingEnabled()) return NextResponse.json({ error: "Direct checkout is unavailable." }, { status: 404 })
 	try {
 		const token = await createClientPaymentToken()
 		return NextResponse.json(token, { headers: { "Cache-Control": "no-store" } })

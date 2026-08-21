@@ -24,7 +24,7 @@ test("booking consent is mandatory and versioned", () => {
 test("footer exposes legal choices without invented licensing", () => {
 	const footer = read("app/_components/SiteFooter.tsx")
 	for (const href of ["/privacy-policy", "/terms-and-conditions", "/accessibility", "/privacy-choices"]) assert.match(footer, new RegExp(href))
-	assert.match(footer, /REQUIRED BEFORE LIVE/)
+	assert.match(footer, /mailto:stay@shellbytheshore\.com/)
 	assert.doesNotMatch(footer, /permit|license/i)
 })
 
