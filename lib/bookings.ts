@@ -10,15 +10,17 @@ import { getConfiguredMaxOccupancy, PUBLIC_GUEST_EMAIL } from "@/lib/launch-conf
 import { getFromEmail, getTransporter, isSmtpConfigured } from "@/lib/postmark"
 import { eq, sql } from "drizzle-orm"
 import { nanoid } from "nanoid"
+import { telegramCallbackData } from "@/lib/telegram-host-api"
 
 const publicReference = () => `SBS-${randomBytes(4).toString("hex").toUpperCase()}`
 const formatDate = (value: string) => new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${value}T00:00:00Z`))
 
-async function sendTelegramOwnerAlert(message: string) {
+async function sendTelegramOwnerAlert(message: string, inquiryId: string) {
 	const token = process.env.TELEGRAM_HOST_BOT_TOKEN
 	const chatId = process.env.TELEGRAM_HOST_CHAT_ID
 	if (!token || !chatId) return false
-	const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ chat_id: chatId, text: message, reply_markup: { inline_keyboard: [[{ text: "Reply", callback_data: "noop" }, { text: "AI Draft", callback_data: "noop" }], [{ text: "Available", callback_data: "noop" }, { text: "Not Available", callback_data: "noop" }]] } }) })
+	const button = (text: string, action: string) => ({ text, callback_data: telegramCallbackData(action, inquiryId) })
+	const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ chat_id: chatId, text: message, reply_markup: { inline_keyboard: [[button("Reply", "REPLY"), button("AI Draft", "AI_DRAFT")], [button("Set Price", "SET_PRICE"), button("Available", "AVAILABLE")], [button("Not Available", "NOT_AVAILABLE"), button("Mark Replied", "MARK_REPLIED")], [button("Guest Confirmed", "GUEST_CONFIRMED"), button("Create Booking", "CREATE_BOOKING")]] } }) })
 	return response.ok
 }
 
@@ -49,7 +51,7 @@ export async function requestAvailability(input: AvailabilityRequestInput): Prom
 	}
 	await db.update(properties).set({ inquiries: sql`${properties.inquiries} + 1` }).where(eq(properties.id, data.propertyId)).catch(() => undefined)
 	const advisoryLabel = advisory.advisory === "APPEARS_AVAILABLE" ? "🟢 APPEARS AVAILABLE" : advisory.advisory === "APPEARS_UNAVAILABLE" ? "🔴 APPEARS UNAVAILABLE" : "⚠️ UNKNOWN / STALE"
-	await sendTelegramOwnerAlert(["🏖 NEW AVAILABILITY REQUEST", "", `Ref: ${reference}`, `Guest: ${data.firstName} ${data.lastName}`, `Dates: ${formatDate(data.checkIn)} – ${formatDate(data.checkOut)}`, `Guests: ${data.guests}`, `Email: ${data.email}`, `Phone: ${data.phone || "—"}`, `Message: ${data.message || "—"}`, "", "AIRBNB CALENDAR:", advisoryLabel, `Last successful sync: ${advisory.lastSuccessfulSync?.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }) ?? "Not available"}`, "", "⚠️ MANUAL VERIFICATION REQUIRED", "", "Status: NEW"].join("\n")).catch(() => false)
+	await sendTelegramOwnerAlert(["🏖 NEW AVAILABILITY REQUEST", "", `Ref: ${reference}`, `Guest: ${data.firstName} ${data.lastName}`, `Dates: ${formatDate(data.checkIn)} – ${formatDate(data.checkOut)}`, `Guests: ${data.guests}`, `Email: ${data.email}`, `Phone: ${data.phone || "—"}`, `Message: ${data.message || "—"}`, "", "AIRBNB CALENDAR:", advisoryLabel, `Last successful sync: ${advisory.lastSuccessfulSync?.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }) ?? "Not available"}`, "", "⚠️ MANUAL VERIFICATION REQUIRED", "", "Status: NEW"].join("\n"), inquiryId).catch(() => false)
 	let emailSent = false
 	if (isSmtpConfigured()) {
 		try {

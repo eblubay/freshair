@@ -25,6 +25,31 @@ test("Telegram text only drafts; delivery requires explicit owner callback and i
 	assert.match(source, /if \(!claim\.length\) return/)
 })
 
+test("Telegram webhook uses server environment secrets and exposes only safe status", () => {
+	const api = readFileSync("lib/telegram-host-api.ts", "utf8")
+	const setup = readFileSync("app/api/internal/telegram/setup-webhook/route.ts", "utf8")
+	const status = readFileSync("app/api/internal/telegram/webhook-status/route.ts", "utf8")
+	assert.match(api, /process\.env\.TELEGRAM_HOST_BOT_TOKEN/)
+	assert.match(api, /process\.env\.SITE_URL/)
+	assert.match(api, /allowed_updates: \["callback_query", "message"\]/)
+	assert.doesNotMatch(setup, /request\.json|searchParams/)
+	assert.match(setup, /await auth\(\)/)
+	assert.match(status, /getTelegramWebhookStatus/)
+	assert.doesNotMatch(status, /token:/)
+})
+
+test("Telegram callback maps real buttons, messages and visible action responses", () => {
+	const callback = readFileSync("lib/telegram-host-update.ts", "utf8")
+	const outbound = readFileSync("lib/bookings.ts", "utf8")
+	for (const action of ["REPLY", "AI_DRAFT", "SET_PRICE", "AVAILABLE", "NOT_AVAILABLE", "MARK_REPLIED", "GUEST_CONFIRMED", "CREATE_BOOKING"]) assert.match(outbound, new RegExp(`button\\([^\\n]+\\"${action}\\"`))
+	assert.match(callback, /callback_query/)
+	assert.match(callback, /message: z\.object/)
+	assert.match(callback, /PRICE_TEXT/)
+	assert.match(callback, /AI Draft is currently disabled/)
+	assert.match(callback, /CONFIRM_CREATE_BOOKING/)
+	assert.match(callback, /answerTelegramCallback/)
+})
+
 test("Airbnb classification creates only verified stays without guest messaging or paid status", () => {
 	const source = readFileSync("lib/host-bot.ts", "utf8")
 	assert.match(source, /data\.action === "AIRBNB_STAY_CONFIRMED"/)
