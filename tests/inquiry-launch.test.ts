@@ -6,7 +6,25 @@ import { getBookingMode, PUBLIC_GUEST_EMAIL } from "../lib/launch-config"
 
 const valid = { propertyId: "property", checkIn: "2099-09-10", checkOut: "2099-09-14", guests: 3, firstName: "John", lastName: "Smith", email: "john@example.com", phone: "", message: "Question", website: "", idempotencyKey: "123e4567-e89b-12d3-a456-426614174000" }
 
-test("inquiry validation is server-side Zod", () => { const source = readFileSync("lib/bookings.ts", "utf8"); assert.match(source, /inquirySchema = z\.object/); assert.match(source, /\.email\(/); assert.match(source, /checkOut <= checkIn/); assert.match(source, /checkIn < today/) })
+test("inquiry validation is server-side Zod", () => { const action = readFileSync("lib/bookings.ts", "utf8"); const validation = readFileSync("lib/inquiry-validation.ts", "utf8"); assert.match(action, /inquirySchema\.safeParse/); assert.match(validation, /inquirySchema = z\.object/); assert.match(validation, /\.email\(/); assert.match(action, /checkOut <= checkIn/); assert.match(action, /checkIn < today/) })
+
+test("use server modules export only async functions", () => {
+	for (const path of ["lib/bookings.ts", "lib/properties.ts"]) {
+		const source = readFileSync(path, "utf8")
+		assert.match(source, /^["']use server["']/)
+		assert.doesNotMatch(source, /export\s+(?:const|let|var|class|enum)\s+/)
+		assert.doesNotMatch(source, /export\s*\{[^}]+\}/)
+		for (const match of source.matchAll(/export\s+(?:default\s+)?function\s+(\w+)/g)) assert.match(match[0], /async\s+function/, `${path}: ${match[1]} must be async`)
+	}
+})
+
+test("Request Availability imports a single valid server action and keeps schema in a normal module", () => {
+	const component = readFileSync("app/_components/AvailabilityRequest.tsx", "utf8")
+	const action = readFileSync("lib/bookings.ts", "utf8")
+	assert.match(component, /import \{ requestAvailability \} from "@\/lib\/bookings"/)
+	assert.match(action, /export async function requestAvailability/)
+	assert.doesNotMatch(action, /export const inquirySchema/)
+})
 
 test("inquiry mode is the launch-safe default", () => {
 	const previousMode = process.env.BOOKING_MODE; const previousFlag = process.env.DIRECT_BOOKING_ENABLED
