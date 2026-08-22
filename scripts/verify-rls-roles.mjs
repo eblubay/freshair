@@ -36,6 +36,26 @@ async function scalar(client, statement) {
 	return row?.count ?? 0
 }
 
+async function asRole(name, callback) {
+	return admin.begin(async (transaction) => {
+		await transaction.unsafe(`SET LOCAL ROLE ${name}`)
+		const [identity] = await transaction.unsafe("SELECT current_user, session_user")
+		if (identity?.current_user !== name) throw new Error(`Role switch to ${name} was not applied.`)
+		return callback(transaction)
+	})
+}
+
+async function assertReadDenied(name, table) {
+	try {
+		await asRole(name, async (transaction) => {
+			const count = await scalar(transaction, `SELECT count(*)::int AS count FROM ${table}`)
+			if (Number(count) !== 0) throw new Error(`${name} can read ${table}.`)
+		})
+	} catch (error) {
+		if (error?.code !== "42501") throw error
+	}
+}
+
 try {
 	const rls = await admin.unsafe(`
 		SELECT tablename, rowsecurity
@@ -54,28 +74,19 @@ try {
 
 	const target = protectedTables.join(",")
 	for (const name of ["anon", "authenticated"]) {
-		const client = postgres(connectionString, { connection: { options: `-c role=${name}` } })
-		try {
-			for (const table of protectedTables) {
-				const count = await scalar(client, `SELECT count(*)::int AS count FROM ${table}`)
-				if (Number(count) !== 0) throw new Error(`${name} can read ${table}.`)
-				const [privileges] = await admin.unsafe(`SELECT has_table_privilege('${name}','public.${table}','INSERT') AS ins,has_table_privilege('${name}','public.${table}','UPDATE') AS upd,has_table_privilege('${name}','public.${table}','DELETE') AS del`)
-				if (privileges.ins || privileges.upd || privileges.del) {
-					const policies = await admin.unsafe(`SELECT 1 FROM pg_policies WHERE schemaname='public' AND tablename='${table}' AND (roles @> ARRAY['${name}']::name[] OR roles @> ARRAY['public']::name[]) AND cmd IN ('ALL','INSERT','UPDATE','DELETE') LIMIT 1`)
-					if (policies.length) throw new Error(`${name} has a mutation policy on ${table}.`)
-				}
+		for (const table of protectedTables) {
+			await assertReadDenied(name, table)
+			const [privileges] = await admin.unsafe(`SELECT has_table_privilege('${name}','public.${table}','INSERT') AS ins,has_table_privilege('${name}','public.${table}','UPDATE') AS upd,has_table_privilege('${name}','public.${table}','DELETE') AS del`)
+			if (privileges.ins || privileges.upd || privileges.del) {
+				const policies = await admin.unsafe(`SELECT 1 FROM pg_policies WHERE schemaname='public' AND tablename='${table}' AND (roles @> ARRAY['${name}']::name[] OR roles @> ARRAY['public']::name[]) AND cmd IN ('ALL','INSERT','UPDATE','DELETE') LIMIT 1`)
+				if (policies.length) throw new Error(`${name} has a mutation policy on ${table}.`)
 			}
-		} finally {
-			await client.end({ timeout: 1 })
 		}
 	}
 
-	const service = postgres(connectionString, { connection: { options: "-c role=service_role" } })
-	try {
-		for (const table of protectedTables) await scalar(service, `SELECT count(*)::int AS count FROM ${table}`)
-	} finally {
-		await service.end({ timeout: 1 })
-	}
+	await asRole("service_role", async (transaction) => {
+		for (const table of protectedTables) await scalar(transaction, `SELECT count(*)::int AS count FROM ${table}`)
+	})
 
 	console.log(JSON.stringify({ verified: true, protectedTables: target.split(","), roles: ["anon", "authenticated", "service_role"] }))
 } finally {
