@@ -71,9 +71,14 @@ test("protected calendar automation includes one env-backed Airbnb shadow source
 	assert.match(source, /WHERE provider='AIRBNB'/)
 	assert.match(source, /'AIRBNB',\$\{url\},true,'Airbnb — Import Only \/ Read Only'/)
 	assert.match(source, /ON CONFLICT \(id\) DO UPDATE/)
-	assert.match(source, /syncs\.unshift\(syncAirbnbShadowCalendar\(\)\)/)
+	assert.match(source, /const airbnbConfigured = Boolean\(process\.env\.AIRBNB_ICAL_URL\?\.trim\(\)\)/)
+	assert.ok(source.indexOf("await ensureAirbnbShadowSource()") < source.indexOf("SELECT id FROM external_calendars WHERE enabled=true"))
+	assert.match(source, /syncs\.unshift\(airbnbBootstrapFailed \? Promise\.reject/)
 	assert.match(source, /provider <> 'AIRBNB'/)
 	assert.match(source, /total: syncs\.length/)
+	assert.match(source, /airbnbConfigured,/)
+	assert.match(source, /direction: "IMPORT_ONLY", readOnly: true/)
+	assert.match(source, /AIRBNB_SOURCE_BOOTSTRAP_FAILED/)
 	assert.doesNotMatch(source, /return\s+\{[^}]*url/)
 })
 
@@ -92,7 +97,21 @@ test("missing Airbnb env remains safely not configured", () => {
 	assert.match(source, /if \(!url\) return \{ health: "NOT_CONFIGURED"/)
 	const automation = readFileSync("lib/calendar-sync.ts", "utf8")
 	assert.match(automation, /if \(!url\) return null/)
-	assert.match(automation, /if \(airbnbSourceId\)/)
+	assert.match(automation, /AIRBNB_NOT_CONFIGURED/)
+})
+
+test("configured Airbnb is counted in the same execution even when bootstrap fails", () => {
+	const source = readFileSync("lib/calendar-sync.ts", "utf8")
+	assert.match(source, /if \(airbnbConfigured\) syncs\.unshift/)
+	assert.match(source, /airbnbBootstrapFailed \? Promise\.reject/)
+	assert.match(source, /total: syncs\.length/)
+	assert.doesNotMatch(source, /console\.(?:log|error|warn).*AIRBNB_ICAL_URL/)
+})
+
+test("automation route returns only the safe calendar-sync result", () => {
+	const route = readFileSync("app/api/internal/automation/calendar-sync/route.ts", "utf8")
+	assert.match(route, /NextResponse\.json\(await syncEnabledExternalCalendars\(\)/)
+	assert.doesNotMatch(route, /AIRBNB_ICAL_URL/)
 })
 
 test("unverified Airbnb blocks never become operational reservations", () => {

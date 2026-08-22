@@ -82,14 +82,23 @@ export async function syncEnabledExternalCalendars() {
 	// AIRBNB_ICAL_URL is the authoritative initial-launch Airbnb source. It is
 	// intentionally never copied into a response or log and uses the conservative
 	// shadow importer rather than the legacy reservation-producing OTA importer.
-	const airbnbSourceId = await ensureAirbnbShadowSource()
+	const airbnbConfigured = Boolean(process.env.AIRBNB_ICAL_URL?.trim())
+	let airbnbBootstrapFailed = false
+	if (airbnbConfigured) {
+		try { await ensureAirbnbShadowSource() }
+		catch { airbnbBootstrapFailed = true }
+	}
 	const calendars = await queryClient`SELECT id FROM external_calendars WHERE enabled=true AND provider <> 'AIRBNB' ORDER BY last_sync_at NULLS FIRST LIMIT 99`
 	const syncs: Array<Promise<unknown>> = calendars.map((calendar) => syncExternalCalendar(calendar.id as string))
-	if (airbnbSourceId) syncs.unshift(syncAirbnbShadowCalendar())
+	if (airbnbConfigured) syncs.unshift(airbnbBootstrapFailed ? Promise.reject(new Error("Airbnb source bootstrap failed.")) : syncAirbnbShadowCalendar())
 	const results = await Promise.allSettled(syncs)
+	const failed = results.filter((result) => result.status === "rejected").length
 	return {
+		airbnbConfigured,
+		airbnbSource: airbnbConfigured ? { source: "AIRBNB", direction: "IMPORT_ONLY", readOnly: true, enabled: !airbnbBootstrapFailed } : null,
 		total: syncs.length,
 		succeeded: results.filter((result) => result.status === "fulfilled").length,
-		failed: results.filter((result) => result.status === "rejected").length
+		failed,
+		status: airbnbBootstrapFailed ? "AIRBNB_SOURCE_BOOTSTRAP_FAILED" : failed ? "SYNC_PARTIAL_FAILURE" : airbnbConfigured ? "READY" : "AIRBNB_NOT_CONFIGURED"
 	}
 }
