@@ -26,6 +26,13 @@ test("Request Availability imports a single valid server action and keeps schema
 	assert.doesNotMatch(action, /export const inquirySchema/)
 })
 
+test("owner settings reads the property title from the actual properties schema", () => {
+	const source = readFileSync("app/dashboard/settings/page.tsx", "utf8")
+	assert.match(source, /json_extract_path_text\(p\.listing_data,'data','h1Title'\)/)
+	assert.doesNotMatch(source, /p\.name/)
+	assert.match(source, /<TelegramWebhookControl\s*\/>/)
+})
+
 test("inquiry mode is the launch-safe default", () => {
 	const previousMode = process.env.BOOKING_MODE; const previousFlag = process.env.DIRECT_BOOKING_ENABLED
 	delete process.env.BOOKING_MODE; delete process.env.DIRECT_BOOKING_ENABLED
