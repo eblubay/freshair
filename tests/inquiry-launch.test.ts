@@ -64,6 +64,37 @@ test("Airbnb integration is pull-only and keeps removed history", () => {
 	assert.doesNotMatch(source, /method:\s*["'](?:PUT|PATCH|DELETE|POST)["']/)
 })
 
+test("protected calendar automation includes one env-backed Airbnb shadow source", () => {
+	const source = readFileSync("lib/calendar-sync.ts", "utf8")
+	assert.match(source, /ensureAirbnbShadowSource\(\)/)
+	assert.match(source, /pg_advisory_xact_lock/)
+	assert.match(source, /WHERE provider='AIRBNB'/)
+	assert.match(source, /'AIRBNB',\$\{url\},true,'Airbnb — Import Only \/ Read Only'/)
+	assert.match(source, /ON CONFLICT \(id\) DO UPDATE/)
+	assert.match(source, /syncs\.unshift\(syncAirbnbShadowCalendar\(\)\)/)
+	assert.match(source, /provider <> 'AIRBNB'/)
+	assert.match(source, /total: syncs\.length/)
+	assert.doesNotMatch(source, /return\s+\{[^}]*url/)
+})
+
+test("Airbnb shadow sync is idempotent, updates freshness, and exposes no write path", () => {
+	const source = readFileSync("lib/airbnb-shadow.ts", "utf8")
+	const migration = readFileSync("db/migrations/0009_inquiry_launch_airbnb_shadow_host_bot.sql", "utf8")
+	assert.match(source, /ON CONFLICT \(external_uid\) DO UPDATE/)
+	assert.match(source, /last_successful_sync/)
+	assert.match(source, /airbnb_sync_history/)
+	assert.match(migration, /external_uid text NOT NULL UNIQUE/)
+	assert.doesNotMatch(source, /method:\s*["'](?:PUT|PATCH|DELETE|POST)["']/)
+})
+
+test("missing Airbnb env remains safely not configured", () => {
+	const source = readFileSync("lib/airbnb-shadow.ts", "utf8")
+	assert.match(source, /if \(!url\) return \{ health: "NOT_CONFIGURED"/)
+	const automation = readFileSync("lib/calendar-sync.ts", "utf8")
+	assert.match(automation, /if \(!url\) return null/)
+	assert.match(automation, /if \(airbnbSourceId\)/)
+})
+
 test("unverified Airbnb blocks never become operational reservations", () => {
 	const source = readFileSync("lib/host-bot.ts", "utf8")
 	const bridge = source.slice(source.indexOf('data.action === "AIRBNB_STAY_CONFIRMED"'))

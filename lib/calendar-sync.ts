@@ -1,5 +1,6 @@
 import "server-only"
 
+import { syncAirbnbShadowCalendar } from "@/lib/airbnb-shadow"
 import { recalculateCleaningForReservationChange } from "@/lib/cleaning-domain"
 import { parseIcalEvents } from "@/lib/ical"
 import { queryClient } from "@/lib/db"
@@ -7,6 +8,24 @@ import { nanoid } from "nanoid"
 
 const maxCalendarBytes = 2_000_000
 const otaSource = (provider: string) => provider === "AIRBNB" ? "AIRBNB" : provider === "BOOKING_COM" ? "BOOKING_COM" : "OTHER_OTA"
+
+async function ensureAirbnbShadowSource() {
+	const url = process.env.AIRBNB_ICAL_URL
+	if (!url) return null
+	return queryClient.begin(async (tx) => {
+		await tx`SELECT pg_advisory_xact_lock(hashtext('AIRBNB_ENV_SHADOW_SOURCE'))`
+		const [existing] = await tx`SELECT id FROM external_calendars WHERE provider='AIRBNB' ORDER BY id LIMIT 1 FOR UPDATE`
+		if (existing) {
+			await tx`UPDATE external_calendars SET url=${url},enabled=true,display_name='Airbnb — Import Only / Read Only' WHERE id=${existing.id}`
+			return existing.id as string
+		}
+		const [property] = await tx`SELECT id FROM properties ORDER BY created_at LIMIT 1`
+		if (!property) throw new Error("No property is configured for the Airbnb calendar source.")
+		const id = "airbnb-env-shadow"
+		await tx`INSERT INTO external_calendars (id,property_id,provider,url,enabled,display_name) VALUES (${id},${property.id},'AIRBNB',${url},true,'Airbnb — Import Only / Read Only') ON CONFLICT (id) DO UPDATE SET url=EXCLUDED.url,enabled=true,display_name=EXCLUDED.display_name`
+		return id
+	})
+}
 
 export async function syncExternalCalendar(calendarId: string) {
 	try {
@@ -60,10 +79,16 @@ export async function syncExternalCalendar(calendarId: string) {
 }
 
 export async function syncEnabledExternalCalendars() {
-	const calendars = await queryClient`SELECT id FROM external_calendars WHERE enabled=true ORDER BY last_sync_at NULLS FIRST LIMIT 100`
-	const results = await Promise.allSettled(calendars.map((calendar) => syncExternalCalendar(calendar.id as string)))
+	// AIRBNB_ICAL_URL is the authoritative initial-launch Airbnb source. It is
+	// intentionally never copied into a response or log and uses the conservative
+	// shadow importer rather than the legacy reservation-producing OTA importer.
+	const airbnbSourceId = await ensureAirbnbShadowSource()
+	const calendars = await queryClient`SELECT id FROM external_calendars WHERE enabled=true AND provider <> 'AIRBNB' ORDER BY last_sync_at NULLS FIRST LIMIT 99`
+	const syncs: Array<Promise<unknown>> = calendars.map((calendar) => syncExternalCalendar(calendar.id as string))
+	if (airbnbSourceId) syncs.unshift(syncAirbnbShadowCalendar())
+	const results = await Promise.allSettled(syncs)
 	return {
-		total: calendars.length,
+		total: syncs.length,
 		succeeded: results.filter((result) => result.status === "fulfilled").length,
 		failed: results.filter((result) => result.status === "rejected").length
 	}
