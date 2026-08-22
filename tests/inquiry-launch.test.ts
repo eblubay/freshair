@@ -108,10 +108,22 @@ test("configured Airbnb is counted in the same execution even when bootstrap fai
 	assert.doesNotMatch(source, /console\.(?:log|error|warn).*AIRBNB_ICAL_URL/)
 })
 
-test("automation route returns only the safe calendar-sync result", () => {
+test("exact automation route enforces its safe HTTP response contract", () => {
 	const route = readFileSync("app/api/internal/automation/calendar-sync/route.ts", "utf8")
-	assert.match(route, /NextResponse\.json\(await syncEnabledExternalCalendars\(\)/)
-	assert.doesNotMatch(route, /AIRBNB_ICAL_URL/)
+	assert.match(route, /const airbnbConfigured = Boolean\(process\.env\.AIRBNB_ICAL_URL\?\.trim\(\)\)/)
+	assert.match(route, /calendarSyncVersion: "airbnb-shadow-v3"/)
+	assert.match(route, /\.\.\.result/)
+	assert.match(route, /calendarSyncVersion: "airbnb-shadow-v3", airbnbConfigured, status:/)
+	assert.match(route, /total: airbnbConfigured \? 1 : 0, succeeded: 0, failed: 1/)
+	assert.doesNotMatch(route, /AIRBNB_ICAL_URL[^\n]*(?:return|console)/)
+})
+
+test("only one route handles protected automation calendar-sync POST", () => {
+	const expected = "app/api/internal/automation/calendar-sync/route.ts"
+	assert.equal(readFileSync(expected, "utf8").includes("export async function POST"), true)
+	const other = readFileSync("app/api/internal/calendar/sync/route.ts", "utf8")
+	assert.match(other, /syncExternalCalendar/)
+	assert.doesNotMatch(other, /syncEnabledExternalCalendars/)
 })
 
 test("unverified Airbnb blocks never become operational reservations", () => {
