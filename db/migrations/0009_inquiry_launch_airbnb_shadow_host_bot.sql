@@ -47,6 +47,20 @@ CREATE TABLE IF NOT EXISTS airbnb_shadow_events (
 );
 CREATE INDEX IF NOT EXISTS airbnb_shadow_active_dates_idx ON airbnb_shadow_events(active,start_at,end_at);
 
+-- Airbnb iCal does not contain trustworthy guest identity or pricing.  The
+-- operational reservation model therefore permits those fields to remain
+-- unknown for an owner-verified Airbnb stay instead of fabricating values.
+ALTER TABLE reservations ALTER COLUMN guest_first_name DROP NOT NULL;
+ALTER TABLE reservations ALTER COLUMN guest_last_name DROP NOT NULL;
+ALTER TABLE reservations ALTER COLUMN guest_email DROP NOT NULL;
+ALTER TABLE reservations ALTER COLUMN total_guests DROP NOT NULL;
+ALTER TABLE reservations ALTER COLUMN currency DROP NOT NULL;
+ALTER TABLE reservations ALTER COLUMN subtotal DROP NOT NULL;
+ALTER TABLE reservations ALTER COLUMN cleaning_fee DROP NOT NULL;
+ALTER TABLE reservations ALTER COLUMN taxes DROP NOT NULL;
+ALTER TABLE reservations ALTER COLUMN total_amount DROP NOT NULL;
+ALTER TABLE reservations ALTER COLUMN amount_due DROP NOT NULL;
+
 CREATE TABLE IF NOT EXISTS airbnb_calendar_state (
   source text PRIMARY KEY DEFAULT 'AIRBNB_ICAL',
   last_sync_attempt timestamptz,

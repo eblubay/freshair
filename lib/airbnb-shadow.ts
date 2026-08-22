@@ -36,12 +36,16 @@ export async function syncAirbnbShadowCalendar() {
 			for (const event of parsed) {
 				const stableUid = createHash("sha256").update(event.uid).digest("hex")
 				seen.push(stableUid)
-				const [existing] = await tx`SELECT source_hash,start_at::text,end_at::text FROM airbnb_shadow_events WHERE external_uid=${stableUid}`
+				const [existing] = await tx`SELECT id,reservation_id,source_hash,start_at::text,end_at::text FROM airbnb_shadow_events WHERE external_uid=${stableUid}`
 				if (!existing) added += 1
-				else if (existing.source_hash !== event.rawHash || existing.start_at !== event.checkIn || existing.end_at !== event.checkOut) changed += 1
+				else if (existing.source_hash !== event.rawHash || existing.start_at !== event.checkIn || existing.end_at !== event.checkOut) {
+					changed += 1
+					if (existing.reservation_id) await tx`INSERT INTO operational_health_alerts (alert_key,kind,severity,message) VALUES (${`AIRBNB_EVENT_CHANGED:${existing.id}`},'AIRBNB_MANUAL_VERIFICATION','WARNING','A verified Airbnb calendar event changed. Confirm dates manually; the linked operational stay was not modified automatically.') ON CONFLICT (alert_key) DO UPDATE SET occurrence_count=operational_health_alerts.occurrence_count+1,last_seen_at=now(),resolved_at=NULL`
+				}
 				await tx`INSERT INTO airbnb_shadow_events (id,external_uid,start_at,end_at,summary_sanitized,source_hash) VALUES (${nanoid()},${stableUid},${event.checkIn}::date,${event.checkOut}::date,${safeSummary(event.summary)},${event.rawHash}) ON CONFLICT (external_uid) DO UPDATE SET start_at=EXCLUDED.start_at,end_at=EXCLUDED.end_at,summary_sanitized=EXCLUDED.summary_sanitized,source_hash=EXCLUDED.source_hash,active=true,last_seen_at=now(),last_sync_at=now(),removed_from_feed_at=NULL`
 			}
 			const removedRows = seen.length ? await tx`UPDATE airbnb_shadow_events SET active=false,removed_from_feed_at=COALESCE(removed_from_feed_at,now()),last_sync_at=now() WHERE active=true AND NOT (external_uid = ANY(${seen}::text[])) RETURNING id,reservation_id` : await tx`UPDATE airbnb_shadow_events SET active=false,removed_from_feed_at=COALESCE(removed_from_feed_at,now()),last_sync_at=now() WHERE active=true RETURNING id,reservation_id`
+			for (const removed of removedRows) if (removed.reservation_id) await tx`INSERT INTO operational_health_alerts (alert_key,kind,severity,message) VALUES (${`AIRBNB_EVENT_MISSING:${removed.id}`},'AIRBNB_MANUAL_VERIFICATION','WARNING','A verified Airbnb event disappeared from iCal. The linked operational stay remains confirmed until the owner verifies cancellation.') ON CONFLICT (alert_key) DO UPDATE SET occurrence_count=operational_health_alerts.occurrence_count+1,last_seen_at=now(),resolved_at=NULL`
 			const active = parsed.length
 			const material = added + changed + removedRows.length > 0
 			await tx`INSERT INTO airbnb_calendar_state (source,last_sync_attempt,last_successful_sync,last_sync_success,last_duration_ms,active_events,consecutive_failures,feed_last_modified_at,last_material_change_at,last_error_sanitized,updated_at) VALUES ('AIRBNB_ICAL',now(),now(),true,${Date.now()-started},${active},0,${feedModified}::timestamptz,${material ? new Date().toISOString() : null}::timestamptz,NULL,now()) ON CONFLICT (source) DO UPDATE SET last_sync_attempt=now(),last_successful_sync=now(),last_sync_success=true,last_duration_ms=EXCLUDED.last_duration_ms,active_events=EXCLUDED.active_events,consecutive_failures=0,feed_last_modified_at=EXCLUDED.feed_last_modified_at,last_material_change_at=COALESCE(EXCLUDED.last_material_change_at,airbnb_calendar_state.last_material_change_at),last_error_sanitized=NULL,updated_at=now()`

@@ -45,3 +45,25 @@ test("Airbnb integration is pull-only and keeps removed history", () => {
 	assert.match(source, /removed_from_feed_at/)
 	assert.doesNotMatch(source, /method:\s*["'](?:PUT|PATCH|DELETE|POST)["']/)
 })
+
+test("unverified Airbnb blocks never become operational reservations", () => {
+	const source = readFileSync("lib/host-bot.ts", "utf8")
+	const bridge = source.slice(source.indexOf('data.action === "AIRBNB_STAY_CONFIRMED"'))
+	assert.doesNotMatch(bridge.slice(0, bridge.indexOf("await tx`INSERT INTO telegram_interactions")), /data\.action === "UNKNOWN_BLOCK"/)
+	assert.match(source, /BLOCKED_DATES_ONLY.*owner_classification/s)
+})
+
+test("verified Airbnb stays use imported dates and trigger Cleaning Bot recalculation", () => {
+	const source = readFileSync("lib/host-bot.ts", "utf8")
+	assert.match(source, /shadow\.start_at/)
+	assert.match(source, /shadow\.end_at/)
+	assert.match(source, /AIRBNB_STAY_VERIFIED/)
+	assert.match(source, /recalculateCleaningForReservationChange/)
+	assert.match(readFileSync("lib/cleaning-domain.ts", "utf8"), /booking_source IN \('DIRECT_MANUAL','AIRBNB'/)
+})
+
+test("pre-arrival messaging excludes reservations with missing guest identity", () => {
+	const source = readFileSync("lib/pre-arrival-automation.ts", "utf8")
+	assert.match(source, /NULLIF\(trim\(r\.guest_first_name\),' '\)|NULLIF\(trim\(r\.guest_first_name\),''\)/)
+	assert.match(source, /NULLIF\(trim\(r\.guest_email\),''\)/)
+})

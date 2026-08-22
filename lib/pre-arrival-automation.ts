@@ -76,6 +76,8 @@ export async function runPreArrivalAutomation() {
 		FROM reservations r
 		JOIN booking_settings b ON b.property_id=r.property_id
 		WHERE r.booking_status='CONFIRMED'
+			AND NULLIF(trim(r.guest_first_name),'') IS NOT NULL
+			AND NULLIF(trim(r.guest_email),'') IS NOT NULL
 			AND (
 				r.check_in=current_date + 3
 				OR r.check_in=current_date + 1
