@@ -1,6 +1,8 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { readFileSync } from "node:fs"
+import { existsSync, readFileSync } from "node:fs"
+
+import { GET as robotsResponse } from "../app/robots.txt/route"
 
 const read = (path: string) => readFileSync(path, "utf8")
 
@@ -36,11 +38,8 @@ test("private routes remain noindex and legal base URL is configured", () => {
 })
 
 test("staging is blocked from indexing and production has a controlled sitemap", () => {
-	const robots = readFileSync("app/robots.ts", "utf8")
 	const sitemap = readFileSync("app/sitemap.ts", "utf8")
 	const middleware = readFileSync("middleware.ts", "utf8")
-	assert.match(robots, /siteUrl !== productionUrl/)
-	assert.match(robots, /disallow: "\/"/)
 	assert.match(sitemap, /https:\/\/shellbytheshore\.com/)
 	assert.match(middleware, /hostingersite\.com/)
 	assert.match(middleware, /X-Robots-Tag/)
@@ -76,9 +75,41 @@ test("owner routes enforce the configured Clerk owner at the server boundary", (
 	assert.match(middleware, /status: 403/)
 })
 
-test("staging host detection uses proxy headers and serves a universal robots block", () => {
-	const middleware = readFileSync("middleware.ts", "utf8")
-	assert.match(middleware, /x-forwarded-host/)
-	assert.match(middleware, /request\.headers\.get\("host"\)/)
-	assert.match(middleware, /User-agent: \*\\nDisallow: \/\\n/)
+test("staging robots blocks every crawler and emits a noindex response header", async () => {
+	const response = robotsResponse(new Request("https://origin.internal/robots.txt", {
+		headers: {
+			host: "origin.internal",
+			"x-forwarded-host": "dodgerblue-caribou-367252.hostingersite.com"
+		}
+	}))
+	assert.equal(await response.text(), "User-agent: *\nDisallow: /\n")
+	assert.equal(response.headers.get("x-robots-tag"), "noindex, nofollow, noarchive")
+	assert.match(response.headers.get("cache-control") ?? "", /no-store/)
+})
+
+test("a staging Host header cannot be overridden into public robots behavior", async () => {
+	const response = robotsResponse(new Request("https://dodgerblue-caribou-367252.hostingersite.com/robots.txt", {
+		headers: {
+			host: "dodgerblue-caribou-367252.hostingersite.com",
+			"x-forwarded-host": "shellbytheshore.com"
+		}
+	}))
+	assert.equal(await response.text(), "User-agent: *\nDisallow: /\n")
+	assert.equal(response.headers.get("x-robots-tag"), "noindex, nofollow, noarchive")
+})
+
+test("production robots remains publicly indexable with private paths excluded", async () => {
+	const response = robotsResponse(new Request("https://shellbytheshore.com/robots.txt"))
+	const body = await response.text()
+	assert.match(body, /^User-agent: \*\nAllow: \//)
+	for (const path of ["/api/", "/dashboard/", "/guest/"]) assert.match(body, new RegExp(`Disallow: ${path}`))
+	assert.match(body, /Sitemap: https:\/\/shellbytheshore\.com\/sitemap\.xml/)
+	assert.equal(response.headers.get("x-robots-tag"), null)
+})
+
+test("robots has one dynamic route source and no public duplicate", () => {
+	assert.equal(existsSync("app/robots.ts"), false)
+	assert.equal(existsSync("app/robots.txt/route.ts"), true)
+	assert.equal(existsSync("public/robots.txt"), false)
+	assert.match(read("app/robots.txt/route.ts"), /force-dynamic/)
 })

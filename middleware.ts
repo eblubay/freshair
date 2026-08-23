@@ -15,9 +15,6 @@ export default clerkMiddleware(async (auth, request) => {
 	const ownerPath = request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname === "/api/health" || request.nextUrl.pathname.startsWith("/api/chatwoot/conversation/") || request.nextUrl.pathname.startsWith("/api/internal/calendar") || request.nextUrl.pathname.startsWith("/api/internal/cancellations") || request.nextUrl.pathname.startsWith("/api/internal/guest-access/") || request.nextUrl.pathname.startsWith("/api/internal/ota-price-observations") || request.nextUrl.pathname.startsWith("/api/internal/payments/") || request.nextUrl.pathname.startsWith("/api/internal/property-private-defaults") || request.nextUrl.pathname.startsWith("/api/internal/settings") || request.nextUrl.pathname.startsWith("/api/internal/telegram/") || request.nextUrl.pathname === "/api/internal/airbnb-calendar/status"
 	const stagingHost = hostname.endsWith(".hostingersite.com")
 
-	if (stagingHost && request.nextUrl.pathname === "/robots.txt")
-		return new NextResponse("User-agent: *\nDisallow: /\n", { headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow, noarchive" } })
-
 	if (ownerPath) {
 		const { userId } = await auth()
 		const configuredOwnerId = process.env.HOST_OWNER_CLERK_USER_ID?.trim()
