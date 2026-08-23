@@ -7,7 +7,8 @@ Public booking is inquiry-only. Direct booking remains preserved but requires bo
 - `POSTGRES_URL`
 - `AUTOMATION_SECRET`
 - `AIRBNB_ICAL_URL` (private, server only)
-- `TELEGRAM_HOST_BOT_TOKEN`, `TELEGRAM_HOST_CHAT_ID`
+- `TELEGRAM_HOST_BOT_TOKEN`, `TELEGRAM_HOST_CHAT_ID`, `TELEGRAM_HOST_WEBHOOK_SECRET` (random Telegram webhook secret token)
+- `HOST_OWNER_CLERK_USER_ID` (the only Clerk account allowed to provision an operational property)
 - `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USERNAME`, `SMTP_PASSWORD`
 - `SMTP_FROM_EMAIL=stay@shellbytheshore.com`, `SMTP_FROM_NAME=ShellByTheShore`
 - `IMAP_HOST`, `IMAP_PORT`, `IMAP_SECURE`, `IMAP_USERNAME`, `IMAP_PASSWORD`

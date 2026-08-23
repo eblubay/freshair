@@ -8,6 +8,10 @@ if (!connectionString) throw new Error("POSTGRES_URL is required for RLS verific
 
 const admin = postgres(connectionString)
 const protectedTables = [
+	"properties",
+	"scraping_jobs",
+	"booking_settings",
+	"rate_calendar",
 	"reservations",
 	"payments",
 	"guest_access_tokens",

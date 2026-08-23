@@ -25,6 +25,8 @@ export async function createProperty(url: string) {
 	// Get the authenticated user
 	const { userId } = await auth()
 	if (!userId) throw new Error("Unauthorized")
+	const configuredOwnerId = process.env.HOST_OWNER_CLERK_USER_ID?.trim()
+	if (!configuredOwnerId || userId !== configuredOwnerId) throw new Error("Owner access is required")
 
 	// Prepare the new property data
 	const newProperty: NewProperty = {

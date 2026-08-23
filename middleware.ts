@@ -9,6 +9,8 @@ import { NextResponse } from "next/server"
  */
 export default clerkMiddleware((auth, request) => {
 	const response = NextResponse.next()
+	const hostname = request.nextUrl.hostname.toLowerCase()
+	const privatePath = request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/guest") || request.nextUrl.pathname.startsWith("/api")
 
 	/**
 	 * Hostinger's CDN previously retained rendered App Router documents from an
@@ -19,6 +21,11 @@ export default clerkMiddleware((auth, request) => {
 	if (request.method === "GET" || request.method === "HEAD") {
 		response.headers.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate")
 	}
+	if (hostname.endsWith(".hostingersite.com") || privatePath) response.headers.set("X-Robots-Tag", "noindex, nofollow, noarchive")
+	response.headers.set("X-Content-Type-Options", "nosniff")
+	response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin")
+	response.headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+	response.headers.set("X-Frame-Options", "DENY")
 
 	return response
 })

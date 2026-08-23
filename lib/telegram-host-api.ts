@@ -49,8 +49,10 @@ export async function getTelegramWebhookStatus(): Promise<TelegramWebhookStatus>
 
 export async function setupTelegramWebhook(): Promise<TelegramWebhookStatus> {
 	const { webhookUrl } = configuration()
+	const secretToken = process.env.TELEGRAM_HOST_WEBHOOK_SECRET?.trim()
+	if (!secretToken) throw new Error("Telegram webhook secret is not configured")
 	if (!webhookUrl || !webhookUrl.startsWith("https://")) throw new Error("SITE_URL must be configured with an HTTPS URL")
-	await telegramRequest("setWebhook", { url: webhookUrl, allowed_updates: ["callback_query", "message"], drop_pending_updates: false })
+	await telegramRequest("setWebhook", { url: webhookUrl, secret_token: secretToken, allowed_updates: ["callback_query", "message"], drop_pending_updates: false })
 	return getTelegramWebhookStatus()
 }
 

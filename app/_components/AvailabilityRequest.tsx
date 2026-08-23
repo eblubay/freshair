@@ -137,8 +137,8 @@ export function AvailabilityRequest({
 		>
 			<h3 className="font-serif text-2xl text-[#28323b]">Request availability</h3>
 			<p className="mt-2 text-sm leading-relaxed text-[#5d6b78]">
-				This is an availability request only and does not create or confirm a
-				reservation. We will reply with availability and pricing.
+				Request Availability is only an inquiry and does not create a reservation.
+				Availability, terms and acceptance are confirmed manually by the host.
 			</p>
 
 			<div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2">

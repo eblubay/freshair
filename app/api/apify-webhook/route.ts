@@ -12,11 +12,6 @@ if (!process.env.VERCEL_URL) {
 }
 
 export async function POST(request: Request) {
-	logger.info("Received webhook request", {
-		headers: Object.fromEntries(request.headers),
-		url: request.url
-	})
-
 	// Verify the secret token
 	const url = new URL(request.url)
 	const secret = url.searchParams.get("secret")
@@ -27,7 +22,6 @@ export async function POST(request: Request) {
 
 	try {
 		const rawPayload = await request.json()
-		logger.info("Webhook payload received", { payload: rawPayload })
 
 		const payload = ApifyWebhookPayloadSchema.safeParse(rawPayload)
 		if (!payload.success) {
@@ -93,7 +87,7 @@ export async function POST(request: Request) {
 
 You can check out your listing at https://freshair.vercel.app/listing/${job.properties.id}`
 			})
-			logger.info("Notification email sent", { to: userEmails[0] })
+			logger.info("Property processing notification email sent")
 		}
 
 		await db

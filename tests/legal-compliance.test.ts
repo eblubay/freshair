@@ -34,3 +34,36 @@ test("private routes remain noindex and legal base URL is configured", () => {
 	assert.match(read("app/layout.tsx"), /metadataBase/)
 	assert.match(read("app/layout.tsx"), /isProductionCanonical/)
 })
+
+test("staging is blocked from indexing and production has a controlled sitemap", () => {
+	const robots = readFileSync("app/robots.ts", "utf8")
+	const sitemap = readFileSync("app/sitemap.ts", "utf8")
+	const middleware = readFileSync("middleware.ts", "utf8")
+	assert.match(robots, /siteUrl !== productionUrl/)
+	assert.match(robots, /disallow: "\/"/)
+	assert.match(sitemap, /https:\/\/shellbytheshore\.com/)
+	assert.match(middleware, /hostingersite\.com/)
+	assert.match(middleware, /X-Robots-Tag/)
+})
+
+test("privacy policy describes host AI drafts and external transmission truthfully", () => {
+	const policy = readFileSync("app/privacy-policy/page.tsx", "utf8")
+	assert.match(policy, /No external host-draft AI provider is currently configured/)
+	assert.match(policy, /sending always requires a separate owner action/)
+	assert.match(policy, /not automatic/)
+})
+
+test("public inquiry and terms use the required non-reservation disclosure", () => {
+	const inquiry = readFileSync("app/_components/AvailabilityRequest.tsx", "utf8")
+	const terms = readFileSync("app/terms-and-conditions/page.tsx", "utf8")
+	const disclosure = "Request Availability is only an inquiry and does not create a reservation. Availability, terms and acceptance are confirmed manually by the host."
+	assert.match(inquiry.replace(/\s+/g, " "), new RegExp(disclosure.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
+	assert.match(terms.replace(/\s+/g, " "), new RegExp(disclosure.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
+})
+
+test("a generic Clerk account cannot self-provision operational ownership", () => {
+	const properties = readFileSync("lib/properties.ts", "utf8")
+	assert.match(properties, /HOST_OWNER_CLERK_USER_ID/)
+	assert.match(properties, /userId !== configuredOwnerId/)
+	assert.match(properties, /Owner access is required/)
+})

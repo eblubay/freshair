@@ -1,5 +1,28 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { LegalPage, LegalSection } from "@/app/_components/LegalPage"
-export const metadata: Metadata = { title: "Terms & Conditions", description: "Terms for use of Shell By The Shore and direct bookings." }
-export default function TermsPage() { return <LegalPage title="Terms & Conditions" intro="These terms govern use of the Shell By The Shore website and direct bookings for the California property."><LegalSection title="Cancellation Policy"><p>Cancel at least 14 days before scheduled check-in: 100% refund of refundable booking charges. Cancel between 7 and less than 14 days before scheduled check-in: 50% refund of nightly accommodation charges. Cancel less than 7 days before scheduled check-in: nightly accommodation charges are non-refundable.</p><p>For eligible California short-term rental reservations confirmed at least 72 hours before scheduled check-in, cancellation without penalty is honored for at least 24 hours after confirmation where required by applicable law. This greater right overrides the ordinary schedule. Refund treatment for taxes and mandatory fees is applied only when configured by the owner and as required by applicable law.</p></LegalSection><LegalSection title="Bookings, payments, and property use"><p>You must be legally able to enter a booking agreement and provide accurate guest information. Quotes are time-limited; a reservation is confirmed only under the applicable payment flow. Card data is handled by configured processors. Guests must observe maximum occupancy of four, check-in after 3:00 PM, checkout before 10:00 AM, no pets, quiet hours from 10:00 PM to 8:00 AM, no parties/events, no commercial photography, and no indoor smoking.</p><p>One enclosed-garage space is included, with a 74-inch clearance. Larger SUVs, vans, roof racks, lifted vehicles, and oversized tires must be verified before booking; alternative parking is not guaranteed. A cleaning charge of up to $250 may apply if indoor smoking is verified, subject to owner review and applicable payment/authorization rules. It is not automatically charged.</p></LegalSection><LegalSection title="Law, changes, and contact"><p>Website, weather, Local Guide, AI Concierge, and third-party content are general convenience information and may be unavailable. These Terms are governed by California law subject to applicable consumer protections. We may update Terms prospectively; the version accepted for a booking is retained with that reservation. See the <Link className="underline underline-offset-4" href="/privacy-policy">Privacy Policy</Link> or contact us through <Link className="underline underline-offset-4" href="/privacy-choices">Privacy Choices</Link>.</p></LegalSection></LegalPage> }
+
+export const metadata: Metadata = {
+	title: "Terms & Conditions",
+	description: "Terms for use of Shell By The Shore and direct bookings."
+}
+
+export default function TermsPage() {
+	return <LegalPage title="Terms & Conditions" intro="These terms govern use of the Shell By The Shore website and direct bookings for the California property.">
+		<LegalSection title="Availability inquiries">
+			<p>Request Availability is only an inquiry and does not create a reservation. Availability, terms and acceptance are confirmed manually by the host.</p>
+			<p>Submitting an inquiry does not create a confirmed stay, initiate payment, or guarantee that the requested dates are available.</p>
+		</LegalSection>
+		<LegalSection title="Cancellation Policy">
+			<p>Cancel at least 14 days before scheduled check-in: 100% refund of refundable booking charges. Cancel between 7 and less than 14 days before scheduled check-in: 50% refund of nightly accommodation charges. Cancel less than 7 days before scheduled check-in: nightly accommodation charges are non-refundable.</p>
+			<p>For eligible California short-term rental reservations confirmed at least 72 hours before scheduled check-in, cancellation without penalty is honored for at least 24 hours after confirmation where required by applicable law. This greater right overrides the ordinary schedule. Refund treatment for taxes and mandatory fees is applied only when configured by the owner and as required by applicable law.</p>
+		</LegalSection>
+		<LegalSection title="Bookings, payments, and property use">
+			<p>You must be legally able to enter a booking agreement and provide accurate guest information. Quotes are time-limited; a reservation is confirmed only under the applicable payment flow. Card data is handled by configured processors. Guests must observe maximum occupancy of four, check-in after 3:00 PM, checkout before 10:00 AM, no pets, quiet hours from 10:00 PM to 8:00 AM, no parties/events, no commercial photography, and no indoor smoking.</p>
+			<p>One enclosed-garage space is included, with a 74-inch clearance. Larger SUVs, vans, roof racks, lifted vehicles, and oversized tires must be verified before booking; alternative parking is not guaranteed. A cleaning charge of up to $250 may apply if indoor smoking is verified, subject to owner review and applicable payment/authorization rules. It is not automatically charged.</p>
+		</LegalSection>
+		<LegalSection title="Law, changes, and contact">
+			<p>Website, weather, Local Guide, AI Concierge, and third-party content are general convenience information and may be unavailable. These Terms are governed by California law subject to applicable consumer protections. We may update Terms prospectively; the version accepted for a booking is retained with that reservation. See the <Link className="underline underline-offset-4" href="/privacy-policy">Privacy Policy</Link> or contact us through <Link className="underline underline-offset-4" href="/privacy-choices">Privacy Choices</Link>.</p>
+		</LegalSection>
+	</LegalPage>
+}

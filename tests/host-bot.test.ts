@@ -6,6 +6,7 @@ import { authorizedHost, classifyUrgency, dollarsToMinor, hostActions, replyPrev
 test("host authorization rejects unknown chat", () => { const prior = process.env.TELEGRAM_HOST_CHAT_ID; process.env.TELEGRAM_HOST_CHAT_ID = "123"; assert.equal(authorizedHost("123"), true); assert.equal(authorizedHost("999"), false); if (prior === undefined) delete process.env.TELEGRAM_HOST_CHAT_ID; else process.env.TELEGRAM_HOST_CHAT_ID = prior })
 test("price uses integer minor units", () => { assert.equal(dollarsToMinor("1250"), 125000); assert.equal(dollarsToMinor("1250.50"), 125050); assert.equal(dollarsToMinor("12.345"), null) })
 test("required host functions are represented", () => { for (const action of ["REPLY", "REPLY_TEXT", "AI_DRAFT", "SEND_EMAIL", "EDIT", "CANCEL", "SET_PRICE", "AVAILABLE", "NOT_AVAILABLE", "MARK_REPLIED", "GUEST_CONFIRMED", "CREATE_BOOKING"]) assert.ok(hostActions.includes(action as never)) })
+test("enabled AI Draft fails honestly without a configured host provider and never sends", () => { const source = readFileSync("lib/host-bot.ts", "utf8"); const branch = source.slice(source.indexOf('data.action === "AI_DRAFT"'), source.indexOf('data.action === "SET_PRICE"')); assert.match(branch, /no host-draft AI provider is configured/); assert.doesNotMatch(branch, /sendMail|fetch\(|SEND_EMAIL/); assert.match(source, /telegram_state !== "DRAFT_READY"/); assert.match(source, /data.action === "SEND_EMAIL"/) })
 test("urgent guest phrases are classified internally", () => { assert.equal(classifyUrgency("The door code not working and we are locked out"), "HIGH"); assert.equal(classifyUrgency("What time is checkout?"), "NORMAL") })
 test("draft and booking require explicit states and booking remains unpaid", () => { const source = readFileSync("lib/host-bot.ts", "utf8"); assert.match(source, /DRAFT_READY/); assert.match(source, /CONFIRM_GUEST_PENDING/); assert.match(source, /CREATE_BOOKING_PENDING/); assert.match(source, /'UNPAID'/); assert.match(source, /emailSent: false/) })
 test("reply preview is explicit and keeps arbitrary owner text as data", () => {
@@ -36,6 +37,14 @@ test("Telegram webhook uses server environment secrets and exposes only safe sta
 	assert.match(setup, /await auth\(\)/)
 	assert.match(status, /getTelegramWebhookStatus/)
 	assert.doesNotMatch(status, /token:/)
+})
+
+test("Telegram host webhook requires Telegram secret-token authentication", () => {
+	const route = readFileSync("app/api/telegram/host/callback/route.ts", "utf8")
+	const api = readFileSync("lib/telegram-host-api.ts", "utf8")
+	assert.match(route, /x-telegram-bot-api-secret-token/)
+	assert.match(route, /TELEGRAM_HOST_WEBHOOK_SECRET/)
+	assert.match(api, /secret_token: secretToken/)
 })
 
 test("Telegram callback maps real buttons, messages and visible action responses", () => {
