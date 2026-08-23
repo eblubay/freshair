@@ -34,6 +34,12 @@ const privateMiddleware = clerkMiddleware(async (auth, request) => {
 })
 
 export default function middleware(request: NextRequest, event: NextFetchEvent) {
+	if (request.nextUrl.pathname === "/api/telegram/host/callback") {
+		const response = NextResponse.next()
+		response.headers.set("Cache-Control", "private, no-store")
+		response.headers.set("X-Robots-Tag", "noindex, nofollow, noarchive")
+		return applySecurityHeaders(response)
+	}
 	const privatePath = request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/guest") || request.nextUrl.pathname.startsWith("/api") || request.nextUrl.pathname.startsWith("/trpc")
 	if (privatePath) return privateMiddleware(request, event)
 

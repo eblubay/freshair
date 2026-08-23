@@ -45,7 +45,7 @@ test("Telegram host webhook requires Telegram secret-token authentication", () =
 	const api = readFileSync("lib/telegram-host-api.ts", "utf8")
 	const environment = readFileSync("lib/telegram-env.ts", "utf8")
 	assert.match(route, /x-telegram-bot-api-secret-token/)
-	assert.match(route, /resolveHostTelegramEnvironment/)
+	assert.match(route, /validTelegramWebhookSecret/)
 	assert.match(environment, /TELEGRAM_HOST_WEBHOOK_SECRET/)
 	assert.match(api, /secret_token: secretToken/)
 })

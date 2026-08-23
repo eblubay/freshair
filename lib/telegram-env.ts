@@ -17,3 +17,12 @@ export function resolveHostTelegramEnvironment(environment: TelegramEnvironment 
 		siteUrl: firstConfigured(environment, ["SITE_URL", "NEXT_PUBLIC_SITE_URL"])
 	}
 }
+
+export function validTelegramWebhookSecret(provided: string | null, environment: TelegramEnvironment = process.env) {
+	const expected = resolveHostTelegramEnvironment(environment).webhookSecret
+	if (!provided || !expected) return false
+	const providedBytes = Buffer.from(provided)
+	const expectedBytes = Buffer.from(expected)
+	return providedBytes.length === expectedBytes.length && timingSafeEqual(providedBytes, expectedBytes)
+}
+import { timingSafeEqual } from "node:crypto"
