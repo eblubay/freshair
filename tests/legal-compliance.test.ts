@@ -67,3 +67,18 @@ test("a generic Clerk account cannot self-provision operational ownership", () =
 	assert.match(properties, /userId !== configuredOwnerId/)
 	assert.match(properties, /Owner access is required/)
 })
+
+test("owner routes enforce the configured Clerk owner at the server boundary", () => {
+	const middleware = readFileSync("middleware.ts", "utf8")
+	assert.match(middleware, /const ownerPath/)
+	assert.match(middleware, /HOST_OWNER_CLERK_USER_ID/)
+	assert.match(middleware, /userId !== configuredOwnerId/)
+	assert.match(middleware, /status: 403/)
+})
+
+test("staging host detection uses proxy headers and serves a universal robots block", () => {
+	const middleware = readFileSync("middleware.ts", "utf8")
+	assert.match(middleware, /x-forwarded-host/)
+	assert.match(middleware, /request\.headers\.get\("host"\)/)
+	assert.match(middleware, /User-agent: \*\\nDisallow: \/\\n/)
+})

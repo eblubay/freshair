@@ -7,33 +7,8 @@ const connectionString = process.env.POSTGRES_URL
 if (!connectionString) throw new Error("POSTGRES_URL is required for RLS verification.")
 
 const admin = postgres(connectionString)
-const protectedTables = [
-	"properties",
-	"scraping_jobs",
-	"booking_settings",
-	"rate_calendar",
-	"reservations",
-	"payments",
-	"guest_access_tokens",
-	"reservation_private_details",
-	"property_private_defaults",
-	"cleaning_tasks",
-	"coupons",
-	"referrals",
-	"audit_events",
-	"booking_consents",
-	"privacy_requests",
-	"data_retention_settings",
-	"cancellation_requests",
-	"inquiries",
-	"airbnb_shadow_events",
-	"airbnb_calendar_state",
-	"airbnb_sync_history",
-	"availability_reliability_records",
-	"inquiry_messages",
-	"telegram_interactions",
-	"operational_health_alerts"
-]
+const protectedTables = (await admin.unsafe("SELECT tablename FROM pg_tables WHERE schemaname='public' ORDER BY tablename"))
+	.map((row) => row.tablename)
 
 async function scalar(client, statement) {
 	const [row] = await client.unsafe(statement)
@@ -80,11 +55,9 @@ try {
 	for (const name of ["anon", "authenticated"]) {
 		for (const table of protectedTables) {
 			await assertReadDenied(name, table)
-			const [privileges] = await admin.unsafe(`SELECT has_table_privilege('${name}','public.${table}','INSERT') AS ins,has_table_privilege('${name}','public.${table}','UPDATE') AS upd,has_table_privilege('${name}','public.${table}','DELETE') AS del`)
-			if (privileges.ins || privileges.upd || privileges.del) {
-				const policies = await admin.unsafe(`SELECT 1 FROM pg_policies WHERE schemaname='public' AND tablename='${table}' AND (roles @> ARRAY['${name}']::name[] OR roles @> ARRAY['public']::name[]) AND cmd IN ('ALL','INSERT','UPDATE','DELETE') LIMIT 1`)
-				if (policies.length) throw new Error(`${name} has a mutation policy on ${table}.`)
-			}
+			const [privileges] = await admin.unsafe(`SELECT has_table_privilege('${name}','public.${table}','SELECT') AS sel,has_table_privilege('${name}','public.${table}','INSERT') AS ins,has_table_privilege('${name}','public.${table}','UPDATE') AS upd,has_table_privilege('${name}','public.${table}','DELETE') AS del`)
+			if (privileges.sel || privileges.ins || privileges.upd || privileges.del)
+				throw new Error(`${name} retains a direct table privilege on ${table}.`)
 		}
 	}
 

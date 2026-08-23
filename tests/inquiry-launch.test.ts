@@ -58,6 +58,11 @@ test("public email and inquiry-only language are present", () => {
 	assert.doesNotMatch(source, /Dates Available|Instant Book/)
 })
 
+test("guest acknowledgement email uses the exact required inquiry disclosure", () => {
+	const source = readFileSync("lib/bookings.ts", "utf8")
+	assert.match(source, /Request Availability is only an inquiry and does not create a reservation\. Availability, terms and acceptance are confirmed manually by the host\./)
+})
+
 test("direct endpoints are feature-gated and inquiry path creates no reservation/payment", () => {
 	for (const path of ["app/api/bookings/quote/route.ts", "app/api/bookings/hold/route.ts"]) assert.match(readFileSync(path, "utf8"), /isDirectBookingEnabled/)
 	const source = readFileSync("lib/bookings.ts", "utf8")
