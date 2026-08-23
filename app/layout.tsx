@@ -43,6 +43,9 @@ export const metadata: Metadata = {
 			}
 		]
 	},
+	other: {
+		"application-name": "ShellByTheShore"
+	},
 	robots: {
 		index: isProductionCanonical,
 		follow: isProductionCanonical
@@ -78,6 +81,18 @@ export default function RootLayout({
 			<html lang="en">
 				<head>
 					<link rel="stylesheet" href="https://use.typekit.net/gnn8txw.css" />
+					<script
+						type="application/ld+json"
+						dangerouslySetInnerHTML={{
+							__html: JSON.stringify({
+								"@context": "https://schema.org",
+								"@type": "WebSite",
+								name: "ShellByTheShore",
+								url: "https://shellbytheshore.com",
+								description: "A coastal retreat in Manhattan Beach, California."
+							}).replace(/</g, "\\u003c")
+						}}
+					/>
 				</head>
 				<body>
 					{children}

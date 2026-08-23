@@ -113,3 +113,23 @@ test("robots has one dynamic route source and no public duplicate", () => {
 	assert.equal(existsSync("public/robots.txt"), false)
 	assert.match(read("app/robots.txt/route.ts"), /force-dynamic/)
 })
+
+test("production SEO has canonical metadata, truthful WebSite data and a custom 404", () => {
+	const layout = read("app/layout.tsx")
+	const home = read("app/(marketing)/page.tsx")
+	const listing = read("app/listing/[id]/page.tsx")
+	assert.match(layout, /"@type": "WebSite"/)
+	assert.match(layout, /https:\/\/shellbytheshore\.com/)
+	assert.match(home, /alternates: \{ canonical: "https:\/\/shellbytheshore\.com" \}/)
+	assert.match(listing, /generateMetadata/)
+	assert.match(listing, /shellbytheshore\.com\/listing/)
+	assert.match(read("app/not-found.tsx"), /Return home/)
+})
+
+test("production cutover map uses only application-consumed domain variables and preserves safe launch flags", () => {
+	const cutover = read("docs/PRODUCTION-CUTOVER.md")
+	for (const variable of ["SITE_URL", "NEXT_PUBLIC_SITE_URL", "SHELLBYTHESHORE_BASE_URL"]) assert.match(cutover, new RegExp(variable))
+	for (const setting of ["BOOKING_MODE=inquiry", "DIRECT_BOOKING_ENABLED=false", "PAYMENTS_ENABLED=false", "PAYMENTS_LIVE_ENABLED=false"]) assert.match(cutover, new RegExp(setting))
+	assert.match(cutover, /8e69d27/)
+	assert.match(cutover, /www\.shellbytheshore\.com/)
+})

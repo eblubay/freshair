@@ -8,6 +8,10 @@ import { getFeaturedProperty } from "@/lib/view-model"
 import Image from "next/image"
 import Link from "next/link"
 
+export const metadata = {
+	alternates: { canonical: "https://shellbytheshore.com" }
+}
+
 const NAV = [
 	{ label: "Local Guide", href: "/guide" },
 	{ label: "The Stay", href: "#the-stay" },

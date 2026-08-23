@@ -9,6 +9,7 @@ import { isDirectBookingEnabled } from "@/lib/launch-config"
 import { getPropertyView } from "@/lib/view-model"
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 type Params = Promise<{ id: string }>
@@ -23,6 +24,24 @@ const NAV = [
 	{ label: "Reviews", href: "#reviews" },
 	{ label: "Contact", href: "#availability" }
 ]
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+	const { id } = await params
+	const property = await getPropertyView(id)
+	if (!property) return { title: "Property not found", robots: { index: false, follow: false } }
+	const description = `${property.title}, a coastal retreat in ${property.location}. Review the stay and request availability directly with the host.`
+	return {
+		title: property.title,
+		description,
+		alternates: { canonical: `https://shellbytheshore.com/listing/${encodeURIComponent(id)}` },
+		openGraph: {
+			title: property.title,
+			description,
+			url: `https://shellbytheshore.com/listing/${encodeURIComponent(id)}`,
+			images: property.photos[0] ? [{ url: property.photos[0].src, alt: property.photos[0].caption || property.title }] : undefined
+		}
+	}
+}
 
 export default async function ListingPage({ params }: { params: Params }) {
 	const { id } = await params

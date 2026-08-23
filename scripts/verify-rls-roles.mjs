@@ -51,6 +51,23 @@ try {
 		throw new Error("Unexpected anon/authenticated/service_role RLS attributes.")
 	}
 
+	const publicViews = await admin.unsafe("SELECT viewname AS name FROM pg_views WHERE schemaname='public' UNION ALL SELECT matviewname AS name FROM pg_matviews WHERE schemaname='public'")
+	if (publicViews.length) throw new Error(`Unexpected public views: ${publicViews.map((view) => view.name).join(", ")}`)
+
+	const publicRoutines = await admin.unsafe(`
+		SELECT p.oid::regprocedure::text AS signature
+		FROM pg_proc p
+		JOIN pg_namespace n ON n.oid=p.pronamespace
+		WHERE n.nspname='public'
+		AND (
+			p.prosecdef
+			OR has_function_privilege('public',p.oid,'EXECUTE')
+			OR has_function_privilege('anon',p.oid,'EXECUTE')
+			OR has_function_privilege('authenticated',p.oid,'EXECUTE')
+		)
+	`)
+	if (publicRoutines.length) throw new Error(`Unexpected executable public routines: ${publicRoutines.map((routine) => routine.signature).join(", ")}`)
+
 	const target = protectedTables.join(",")
 	for (const name of ["anon", "authenticated"]) {
 		for (const table of protectedTables) {
@@ -65,7 +82,7 @@ try {
 		for (const table of protectedTables) await scalar(transaction, `SELECT count(*)::int AS count FROM ${table}`)
 	})
 
-	console.log(JSON.stringify({ verified: true, protectedTables: target.split(","), roles: ["anon", "authenticated", "service_role"] }))
+	console.log(JSON.stringify({ verified: true, protectedTables: target.split(","), roles: ["anon", "authenticated", "service_role"], publicViews: 0, executablePublicRoutines: 0 }))
 } finally {
 	await admin.end({ timeout: 1 })
 }
