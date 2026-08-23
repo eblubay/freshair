@@ -69,9 +69,11 @@ test("a generic Clerk account cannot self-provision operational ownership", () =
 
 test("owner routes enforce the configured Clerk owner at the server boundary", () => {
 	const middleware = readFileSync("middleware.ts", "utf8")
+	const ownerAuth = readFileSync("lib/owner-auth.ts", "utf8")
 	assert.match(middleware, /const ownerPath/)
-	assert.match(middleware, /HOST_OWNER_CLERK_USER_ID/)
-	assert.match(middleware, /userId !== configuredOwnerId/)
+	assert.match(middleware, /ownerAccess\(userId\)/)
+	assert.match(ownerAuth, /HOST_OWNER_CLERK_USER_ID/)
+	assert.match(ownerAuth, /userId !== configuredOwnerId\.trim\(\)/)
 	assert.match(middleware, /status: 403/)
 })
 

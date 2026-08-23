@@ -1,5 +1,7 @@
 import { SignIn } from "@clerk/nextjs"
 import { auth } from "@clerk/nextjs/server"
+import { ownerAccess, safeOwnerRedirect } from "@/lib/owner-auth"
+import { notFound } from "next/navigation"
 import { Suspense } from "react"
 import { Navbar } from "../_components/Navbar"
 import { AddPropertyForm } from "./_components/add-property-form"
@@ -15,10 +17,12 @@ export const metadata = { robots: { index: false, follow: false } }
  * the middleware 404 that `auth.protect()` produced, because this app ships no
  * dedicated `/sign-in` route.
  */
-export default async function Dashboard() {
+export default async function Dashboard({ searchParams }: { searchParams: Promise<{ redirect_url?: string | string[] }> }) {
 	const { userId } = await auth()
+	const access = ownerAccess(userId)
+	const redirectUrl = safeOwnerRedirect((await searchParams).redirect_url)
 
-	if (!userId) {
+	if (access.status === 401) {
 		return (
 			<div className="min-h-screen bg-[#fdfbf7]">
 				<Navbar />
@@ -27,11 +31,12 @@ export default async function Dashboard() {
 					<p className="mb-10 text-[15px] text-[#5d6b78]">
 						Sign in to manage the property and review guest inquiries.
 					</p>
-					<SignIn routing="hash" />
+					<SignIn routing="hash" fallbackRedirectUrl={redirectUrl} />
 				</main>
 			</div>
 		)
 	}
+	if (!access.allowed) notFound()
 
 	return (
 		<div>

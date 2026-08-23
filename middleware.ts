@@ -1,3 +1,4 @@
+import { ownerAccess } from "@/lib/owner-auth"
 import { clerkMiddleware } from "@clerk/nextjs/server"
 import { type NextFetchEvent, type NextRequest, NextResponse } from "next/server"
 
@@ -19,8 +20,8 @@ const privateMiddleware = clerkMiddleware(async (auth, request) => {
 
 	if (ownerPath) {
 		const { userId } = await auth()
-		const configuredOwnerId = process.env.HOST_OWNER_CLERK_USER_ID?.trim()
-		if (userId && (!configuredOwnerId || userId !== configuredOwnerId))
+		const access = ownerAccess(userId)
+		if (access.status === 403)
 			return NextResponse.json({ error: "Owner access is required." }, { status: 403, headers: { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow, noarchive" } })
 	}
 

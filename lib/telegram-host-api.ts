@@ -1,6 +1,7 @@
 import "server-only"
 
 const CALLBACK_PATH = "/api/telegram/host/callback"
+const PRODUCTION_ORIGIN = "https://shellbytheshore.com"
 
 type TelegramEnvelope<T> = { ok: boolean; result?: T; description?: string }
 export type TelegramWebhookStatus = {
@@ -12,10 +13,18 @@ export type TelegramWebhookStatus = {
 	last_error_message: string | null
 }
 
+export function telegramWebhookUrl(siteUrl = process.env.SITE_URL) {
+	const normalized = siteUrl?.trim().replace(/\/+$/, "")
+	if (!normalized) return ""
+	const parsed = new URL(normalized)
+	if (process.env.NODE_ENV === "production" && parsed.origin !== PRODUCTION_ORIGIN)
+		throw new Error("Production SITE_URL must use the canonical ShellByTheShore origin")
+	return `${parsed.origin}${CALLBACK_PATH}`
+}
+
 function configuration() {
 	const token = process.env.TELEGRAM_HOST_BOT_TOKEN?.trim()
-	const siteUrl = process.env.SITE_URL?.trim().replace(/\/+$/, "")
-	return { token, webhookUrl: siteUrl ? `${siteUrl}${CALLBACK_PATH}` : "" }
+	return { token, webhookUrl: telegramWebhookUrl() }
 }
 
 async function telegramRequest<T>(method: string, body?: Record<string, unknown>): Promise<TelegramEnvelope<T>> {

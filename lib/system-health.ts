@@ -1,12 +1,12 @@
+import { ownerAccess } from "@/lib/owner-auth"
+
 export type HealthStatus = "READY" | "DEGRADED" | "ERROR" | "NOT_CONFIGURED" | "DISABLED_BY_DESIGN" | "NOT_REQUIRED" | "OPTIONAL"
 export type HealthCheck = { status: HealthStatus; detail: string }
 
 export const CALENDAR_FRESHNESS_HOURS = 3
 
 export function ownerHealthAccess(userId: string | null, configuredOwnerId: string | undefined) {
-	if (!userId) return { allowed: false, status: 401 as const }
-	if (!configuredOwnerId?.trim() || userId !== configuredOwnerId.trim()) return { allowed: false, status: 403 as const }
-	return { allowed: true, status: 200 as const }
+	return ownerAccess(userId, configuredOwnerId)
 }
 
 export function smtpHealth(configured: boolean, successfulDeliveries: number): HealthCheck {
