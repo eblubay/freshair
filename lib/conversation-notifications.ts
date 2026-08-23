@@ -1,4 +1,5 @@
 import "server-only"
+import { resolveHostTelegramEnvironment } from "@/lib/telegram-env"
 
 type HandoffNotification = { conversationId: string; reason: "HOST_REQUEST" | "QUESTION_THRESHOLD" }
 
@@ -8,8 +9,7 @@ export async function notifyHostOfChatwootHandoff(input: HandoffNotification) {
 	const baseUrl = chatwootBaseUrl()
 	const accountId = process.env.CHATWOOT_ACCOUNT_ID
 	const chatwootToken = process.env.CHATWOOT_API_ACCESS_TOKEN
-	const telegramToken = process.env.TELEGRAM_BOT_TOKEN
-	const telegramChatId = process.env.TELEGRAM_HOST_CHAT_ID
+	const { token: telegramToken, chatId: telegramChatId } = resolveHostTelegramEnvironment()
 	const conversationUrl = baseUrl && accountId ? `${baseUrl}/app/accounts/${accountId}/conversations/${input.conversationId}` : null
 	const text = `ShellByTheShore guest conversation needs a host (${input.reason === "HOST_REQUEST" ? "requested a person" : "question threshold reached"}).${conversationUrl ? ` ${conversationUrl}` : ""}`
 	const results = { chatwoot: false, telegram: false }

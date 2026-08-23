@@ -28,10 +28,11 @@ test("Telegram text only drafts; delivery requires explicit owner callback and i
 
 test("Telegram webhook uses server environment secrets and exposes only safe status", () => {
 	const api = readFileSync("lib/telegram-host-api.ts", "utf8")
+	const environment = readFileSync("lib/telegram-env.ts", "utf8")
 	const setup = readFileSync("app/api/internal/telegram/setup-webhook/route.ts", "utf8")
 	const status = readFileSync("app/api/internal/telegram/webhook-status/route.ts", "utf8")
-	assert.match(api, /process\.env\.TELEGRAM_HOST_BOT_TOKEN/)
-	assert.match(api, /process\.env\.SITE_URL/)
+	assert.match(environment, /TELEGRAM_HOST_BOT_TOKEN/)
+	assert.match(environment, /SITE_URL/)
 	assert.match(api, /allowed_updates: \["callback_query", "message"\]/)
 	assert.doesNotMatch(setup, /request\.json|searchParams/)
 	assert.match(setup, /await auth\(\)/)
@@ -42,8 +43,10 @@ test("Telegram webhook uses server environment secrets and exposes only safe sta
 test("Telegram host webhook requires Telegram secret-token authentication", () => {
 	const route = readFileSync("app/api/telegram/host/callback/route.ts", "utf8")
 	const api = readFileSync("lib/telegram-host-api.ts", "utf8")
+	const environment = readFileSync("lib/telegram-env.ts", "utf8")
 	assert.match(route, /x-telegram-bot-api-secret-token/)
-	assert.match(route, /TELEGRAM_HOST_WEBHOOK_SECRET/)
+	assert.match(route, /resolveHostTelegramEnvironment/)
+	assert.match(environment, /TELEGRAM_HOST_WEBHOOK_SECRET/)
 	assert.match(api, /secret_token: secretToken/)
 })
 

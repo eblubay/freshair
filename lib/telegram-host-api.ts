@@ -1,4 +1,5 @@
 import "server-only"
+import { resolveHostTelegramEnvironment } from "@/lib/telegram-env"
 
 const CALLBACK_PATH = "/api/telegram/host/callback"
 const PRODUCTION_ORIGIN = "https://shellbytheshore.com"
@@ -13,8 +14,9 @@ export type TelegramWebhookStatus = {
 	last_error_message: string | null
 }
 
-export function telegramWebhookUrl(siteUrl = process.env.SITE_URL) {
+export function telegramWebhookUrl(siteUrl = resolveHostTelegramEnvironment().siteUrl) {
 	const normalized = siteUrl?.trim().replace(/\/+$/, "")
+	if (!normalized && process.env.NODE_ENV === "production") return `${PRODUCTION_ORIGIN}${CALLBACK_PATH}`
 	if (!normalized) return ""
 	const parsed = new URL(normalized)
 	if (process.env.NODE_ENV === "production" && parsed.origin !== PRODUCTION_ORIGIN)
@@ -23,7 +25,7 @@ export function telegramWebhookUrl(siteUrl = process.env.SITE_URL) {
 }
 
 function configuration() {
-	const token = process.env.TELEGRAM_HOST_BOT_TOKEN?.trim()
+	const { token } = resolveHostTelegramEnvironment()
 	return { token, webhookUrl: telegramWebhookUrl() }
 }
 
@@ -58,7 +60,7 @@ export async function getTelegramWebhookStatus(): Promise<TelegramWebhookStatus>
 
 export async function setupTelegramWebhook(): Promise<TelegramWebhookStatus> {
 	const { webhookUrl } = configuration()
-	const secretToken = process.env.TELEGRAM_HOST_WEBHOOK_SECRET?.trim()
+	const secretToken = resolveHostTelegramEnvironment().webhookSecret
 	if (!secretToken) throw new Error("Telegram webhook secret is not configured")
 	if (!webhookUrl || !webhookUrl.startsWith("https://")) throw new Error("SITE_URL must be configured with an HTTPS URL")
 	await telegramRequest("setWebhook", { url: webhookUrl, secret_token: secretToken, allowed_updates: ["callback_query", "message"], drop_pending_updates: false })

@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs/server"
 import { queryClient } from "@/lib/db"
 import { isSmtpConfigured } from "@/lib/postmark"
 import { getTelegramWebhookStatus } from "@/lib/telegram-host-api"
+import { resolveHostTelegramEnvironment } from "@/lib/telegram-env"
 import { calendarHealth, cleaningHealth, cleanerNotificationHealth, disabledPayment, type HealthCheck, optionalProvider, ownerHealthAccess, smtpHealth, telegramHealth } from "@/lib/system-health"
 import { NextResponse } from "next/server"
 
@@ -44,7 +45,8 @@ export async function GET() {
 	}
 
 	let hostTelegram: HealthCheck
-	const telegramConfiguration = { token: Boolean(process.env.TELEGRAM_HOST_BOT_TOKEN?.trim()), chatId: Boolean(process.env.TELEGRAM_HOST_CHAT_ID?.trim()), webhookSecret: Boolean(process.env.TELEGRAM_HOST_WEBHOOK_SECRET?.trim()) }
+	const resolvedTelegram = resolveHostTelegramEnvironment()
+	const telegramConfiguration = { token: Boolean(resolvedTelegram.token), chatId: Boolean(resolvedTelegram.chatId), webhookSecret: Boolean(resolvedTelegram.webhookSecret) }
 	if (!telegramConfiguration.token || !telegramConfiguration.chatId || !telegramConfiguration.webhookSecret) hostTelegram = telegramHealth(telegramConfiguration)
 	else {
 		try { const state = await getTelegramWebhookStatus(); hostTelegram = telegramHealth({ ...telegramConfiguration, webhookConnected: state.webhookConfigured }) }
