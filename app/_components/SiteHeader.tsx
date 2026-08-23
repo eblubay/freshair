@@ -39,12 +39,7 @@ export function SiteHeader({ nav, ctaHref }: SiteHeaderProps) {
 			}`}
 		>
 			<div className="mx-auto flex h-24 max-w-[1400px] items-center justify-between px-5 sm:h-36 sm:px-8 lg:px-14">
-				<div className="sm:hidden">
-					<BrandLogoLink height={80} priority />
-				</div>
-				<div className="hidden sm:block">
-					<BrandLogoLink height={140} priority />
-				</div>
+				<BrandLogoLink height={140} className="h-20 w-auto sm:h-[140px]" />
 
 				<nav className="hidden items-center gap-9 lg:flex">
 					{nav.map((item) => (

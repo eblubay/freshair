@@ -78,7 +78,7 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
 								alt={photo.caption || `Photo ${index + 1}`}
 								fill
 								sizes={wide ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
-								loading={index < 4 ? "eager" : "lazy"}
+								loading="lazy"
 								className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
 							/>
 						</button>

@@ -33,7 +33,7 @@ export function BrandLogo({
 			height={height}
 			priority={priority}
 			className={className}
-			style={{ height, width: "auto" }}
+			style={{ width: "auto" }}
 		/>
 	)
 }

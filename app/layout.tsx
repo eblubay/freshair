@@ -1,5 +1,3 @@
-import { Toaster } from "@/components/ui/toaster"
-import { ClerkProvider } from "@clerk/nextjs"
 import type { Metadata } from "next"
 import "./globals.css"
 
@@ -77,9 +75,10 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<ClerkProvider>
-			<html lang="en">
+		<html lang="en">
 				<head>
+					<link rel="preconnect" href="https://use.typekit.net" />
+					<link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
 					<link rel="stylesheet" href="https://use.typekit.net/gnn8txw.css" />
 					<script
 						type="application/ld+json"
@@ -96,9 +95,7 @@ export default function RootLayout({
 				</head>
 				<body>
 					{children}
-					<Toaster />
 				</body>
 			</html>
-		</ClerkProvider>
 	)
 }

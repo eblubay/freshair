@@ -1,7 +1,7 @@
 import { AmenitiesPanel } from "@/app/_components/AmenitiesPanel"
 import { AvailabilityRequest } from "@/app/_components/AvailabilityRequest"
+import { DeferredPropertyMap } from "@/app/_components/DeferredPropertyMap"
 import { PhotoGallery } from "@/app/_components/PhotoGallery"
-import { PropertyMap } from "@/app/_components/PropertyMap"
 import { SiteFooter } from "@/app/_components/SiteFooter"
 import { SiteHeader } from "@/app/_components/SiteHeader"
 import { getFeaturedProperty } from "@/lib/view-model"
@@ -235,7 +235,7 @@ export default async function HomePage() {
 					</span>
 					<h2 className="mt-4 font-serif text-3xl sm:text-5xl">{property.location}</h2>
 					<div className="mt-12 h-[460px] w-full overflow-hidden border border-[#e6ddcf]">
-						<PropertyMap
+						<DeferredPropertyMap
 							latitude={property.coordinates.lat}
 							longitude={property.coordinates.lng}
 							label={property.location}

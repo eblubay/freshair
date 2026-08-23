@@ -1,6 +1,5 @@
 "use client"
 
-import "maplibre-gl/dist/maplibre-gl.css"
 import { useEffect, useRef, useState } from "react"
 
 type PropertyMapProps = {
@@ -33,8 +32,8 @@ export function PropertyMap({
 
 		const container = containerRef.current
 		if (!container) return
-import("maplibre-gl")
-	.then((mod) => {
+		import("maplibre-gl")
+			.then((mod) => {
 		if (cancelled || !containerRef.current) return
 
 		const maplibregl = (mod as { default?: typeof mod }).default ?? mod

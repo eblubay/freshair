@@ -1,8 +1,8 @@
 import { AmenitiesPanel } from "@/app/_components/AmenitiesPanel"
 import { DirectBooking } from "@/app/_components/DirectBooking"
 import { AvailabilityRequest } from "@/app/_components/AvailabilityRequest"
+import { DeferredPropertyMap } from "@/app/_components/DeferredPropertyMap"
 import { PhotoGallery } from "@/app/_components/PhotoGallery"
-import { PropertyMap } from "@/app/_components/PropertyMap"
 import { SiteFooter } from "@/app/_components/SiteFooter"
 import { SiteHeader } from "@/app/_components/SiteHeader"
 import { isDirectBookingEnabled } from "@/lib/launch-config"
@@ -212,7 +212,7 @@ export default async function ListingPage({ params }: { params: Params }) {
 								{property.location}
 							</h2>
 							<div className="mt-10 h-[420px] w-full overflow-hidden border border-[#e6ddcf]">
-								<PropertyMap
+								<DeferredPropertyMap
 									latitude={property.coordinates.lat}
 									longitude={property.coordinates.lng}
 									label={property.location}
