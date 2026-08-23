@@ -1,0 +1,2425 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-23T19:35:07.932Z",
+  "command": "npm run concierge:quality",
+  "samplePolicy": "first 240 natural alternative questions; canonical wording and QA ids excluded",
+  "criteria": {
+    "GOOD": "grounded + sourced + expected place/content term + live safety when needed + useful length",
+    "WEAK": "grounded + sourced + live-safe + minimally useful",
+    "BAD": "fails grounding, sourcing, live safety, or minimum usefulness"
+  },
+  "totalAvailable": 852,
+  "evaluated": 240,
+  "counts": {
+    "GOOD": 238,
+    "WEAK": 2,
+    "BAD": 0
+  },
+  "percentages": {
+    "GOOD": 99.17,
+    "WEAK": 0.83,
+    "BAD": 0
+  },
+  "rows": [
+    {
+      "question": "Which bathroom amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 256,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under bathroom?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 256,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified bathroom setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 256,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which bedroom and laundry amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 604,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under bedroom and laundry?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 424,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified bedroom and laundry setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 527,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which entertainment amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 192,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under entertainment?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 192,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified entertainment setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 192,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which family amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 191,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under family?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 191,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified family setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 191,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which heating and cooling amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 351,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under heating and cooling?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 351,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified heating and cooling setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 351,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which home safety amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 230,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under home safety?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 230,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified home safety setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 230,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which internet and office amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 416,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under internet and office?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 414,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified internet and office setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 494,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which kitchen and dining amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 794,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under kitchen and dining?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 673,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified kitchen and dining setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 794,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which location features amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 217,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under location features?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 217,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified location features setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 217,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which outdoor amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 297,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under outdoor?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 297,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified outdoor setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 297,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which parking and facilities amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 471,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under parking and facilities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 493,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified parking and facilities setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 548,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Which services amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 241,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under services?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 241,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified services setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 241,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is air conditioning one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 364,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack air conditioning, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 356,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions air conditioning—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 217,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is baking sheet one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 323,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack baking sheet, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 628,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions baking sheet—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 176,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is bathtub one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 318,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack bathtub, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 295,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions bathtub—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 171,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is beach essentials one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 379,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack beach essentials, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 606,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions beach essentials—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 232,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is bed linens one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 321,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack bed linens, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 303,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions bed linens—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 174,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is blender one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 318,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack blender, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 302,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions blender—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 171,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is board games one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 322,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack board games, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 322,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions board games—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 175,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is body soap one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 320,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack body soap, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 297,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions body soap—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 173,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is books and reading material one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 494,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack books and reading material, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 490,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "The listing mentions books and reading material—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 485,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Is carbon monoxide alarm one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 332,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack carbon monoxide alarm, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 380,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions carbon monoxide alarm—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 185,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is ceiling fan one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 322,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack ceiling fan, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 357,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions ceiling fan—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 175,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is cleaning products one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 328,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack cleaning products, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 398,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions cleaning products—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 181,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is clothing storage one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 327,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack clothing storage, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 429,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions clothing storage—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 180,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is coffee one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 317,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack coffee, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 302,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions coffee—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 170,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is coffee maker one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 323,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack coffee maker, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 627,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions coffee maker—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 176,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is conditioner one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 322,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack conditioner, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 352,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions conditioner—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 175,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is cooking basics one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 362,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack cooking basics, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 666,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions cooking basics—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 215,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is dining table one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 323,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack dining table, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 318,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions dining table—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 176,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is dishes and silverware one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 826,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack dishes and silverware, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 679,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions dishes and silverware—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 679,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is dishwasher one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 321,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack dishwasher, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 305,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions dishwasher—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 174,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is essentials one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 358,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack essentials, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 399,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions essentials—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 211,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is exterior security cameras on property one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 385,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack exterior security cameras on property, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 464,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions exterior security cameras on property—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 238,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is extra pillows and blankets one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 592,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack extra pillows and blankets, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 436,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions extra pillows and blankets—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 436,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is fire extinguisher one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 328,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack fire extinguisher, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 331,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions fire extinguisher—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 181,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is fireplace guards one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 327,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack fireplace guards, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 341,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions fireplace guards—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 180,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is first aid kit one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 324,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack first aid kit, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 351,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions first aid kit—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 177,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is free dryer – in building one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 335,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack free dryer – in building, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 442,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions free dryer – in building—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 188,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is free parking on premises one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 368,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack free parking on premises, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 374,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions free parking on premises—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 221,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is freezer one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 318,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack freezer, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 302,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions freezer—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 171,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is hair dryer one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 321,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack hair dryer, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 322,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions hair dryer—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 174,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is hangers one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 318,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack hangers, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 295,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions hangers—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 171,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is heating one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 318,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack heating, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 313,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions heating—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 171,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is hot water one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 320,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack hot water, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 399,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions hot water—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 173,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is hot water kettle one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 327,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack hot water kettle, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 634,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions hot water kettle—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 180,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is indoor fireplace one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 327,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack indoor fireplace, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 318,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions indoor fireplace—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 180,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is iron one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 315,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack iron, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 292,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions iron—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 168,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is keypad one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 317,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack keypad, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 294,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions keypad—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 170,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is kitchen one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 363,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack kitchen, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 343,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions kitchen—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 216,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is long term stays allowed one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 366,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack long term stays allowed, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 416,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions long term stays allowed—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 219,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is microwave one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 320,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack microwave, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 298,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions microwave—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 173,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is outdoor dining area one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 330,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack outdoor dining area, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 446,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions outdoor dining area—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 183,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is outdoor furniture one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 328,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack outdoor furniture, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 386,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions outdoor furniture—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 181,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is oven one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 315,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack oven, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 292,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions oven—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 168,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is portable fans one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 324,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack portable fans, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 309,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions portable fans—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 177,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is private entrance one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 365,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack private entrance, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 362,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions private entrance—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 218,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is private patio or balcony one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 335,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack private patio or balcony, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 493,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions private patio or balcony—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 188,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is refrigerator one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 323,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack refrigerator, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 303,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions refrigerator—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 176,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is room-darkening shades one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 332,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack room-darkening shades, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 436,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions room-darkening shades—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 185,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is self check-in one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 324,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack self check-in, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 303,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions self check-in—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 177,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is shampoo one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 318,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack shampoo, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 296,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions shampoo—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 171,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is shower gel one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 321,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack shower gel, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 386,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions shower gel—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 174,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is smoke alarm one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 322,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack smoke alarm, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 316,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions smoke alarm—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 175,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is stove one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 316,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack stove, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 293,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions stove—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 169,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is toaster one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 318,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack toaster, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 297,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions toaster—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 171,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is tv one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 313,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack tv, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 295,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions tv—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 166,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is washer one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 317,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack washer, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 305,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions washer—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 170,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is wifi one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 315,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack wifi, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 294,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions wifi—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 168,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Is wine glasses one of the confirmed amenities?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 323,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Do we need to pack wine glasses, or is it provided?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 625,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "The listing mentions wine glasses—can we rely on that?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 176,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Could you explain hermosa beach in practical terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 430,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What should we plan for regarding hermosa beach?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 945,
+      "answerType": "itinerary"
+    },
+    {
+      "question": "What has the host actually verified about hermosa beach?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 430,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Could you explain malibu in practical terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 368,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What should we plan for regarding malibu?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 925,
+      "answerType": "itinerary"
+    },
+    {
+      "question": "What has the host actually verified about malibu?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 368,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Could you explain manhattan beach in practical terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 438,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What should we plan for regarding manhattan beach?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 1013,
+      "answerType": "itinerary"
+    },
+    {
+      "question": "What has the host actually verified about manhattan beach?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 438,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Could you explain redondo beach in practical terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 368,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What should we plan for regarding redondo beach?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 883,
+      "answerType": "itinerary"
+    },
+    {
+      "question": "What has the host actually verified about redondo beach?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 368,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Could you explain santa monica in practical terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 386,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What should we plan for regarding santa monica?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 985,
+      "answerType": "itinerary"
+    },
+    {
+      "question": "What has the host actually verified about santa monica?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 386,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Could you explain venice in practical terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 417,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What should we plan for regarding venice?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 1000,
+      "answerType": "itinerary"
+    },
+    {
+      "question": "What has the host actually verified about venice?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 417,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Could you explain published cancellation terms in practical terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 718,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "What should we plan for regarding published cancellation terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 1029,
+      "answerType": "itinerary"
+    },
+    {
+      "question": "What has the host actually verified about published cancellation terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 718,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Could you explain request availability in practical terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 431,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "What should we plan for regarding request availability?",
+      "grade": "WEAK",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": false,
+      "liveSafetyPresent": true,
+      "answerLength": 981,
+      "answerType": "itinerary"
+    },
+    {
+      "question": "What has the host actually verified about request availability?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 431,
+      "answerType": "booking-safe"
+    },
+    {
+      "question": "Which not included: not included amenities are actually included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 268,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What does the listing provide under not included: not included?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 268,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Help us understand the verified not included: not included setup.",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 268,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "Could you explain included garage parking in practical terms?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 378,
+      "answerType": "canonical-qa"
+    },
+    {
+      "question": "What should we plan for regarding included garage parking?",
+      "grade": "WEAK",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": false,
+      "liveSafetyPresent": true,
+      "answerLength": 987,
+      "answerType": "itinerary"
+    },
+    {
+      "question": "What has the host actually verified about included garage parking?",
+      "grade": "GOOD",
+      "grounded": true,
+      "sourced": true,
+      "expectedNamePresent": true,
+      "liveSafetyPresent": true,
+      "answerLength": 378,
+      "answerType": "canonical-qa"
+    }
+  ]
+}
