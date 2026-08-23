@@ -77,9 +77,6 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 				<head>
-					<link rel="preconnect" href="https://use.typekit.net" />
-					<link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
-					<link rel="stylesheet" href="https://use.typekit.net/gnn8txw.css" />
 					<script
 						type="application/ld+json"
 						dangerouslySetInnerHTML={{

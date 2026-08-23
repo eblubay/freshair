@@ -12,6 +12,8 @@ export const metadata = {
 	alternates: { canonical: "https://shellbytheshore.com" }
 }
 
+export const revalidate = 3600
+
 const NAV = [
 	{ label: "Local Guide", href: "/guide" },
 	{ label: "The Stay", href: "#the-stay" },

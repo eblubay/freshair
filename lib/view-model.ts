@@ -2,6 +2,8 @@ import type { Listing } from "@/data/types"
 import { properties } from "@/db/schema"
 import { db } from "@/lib/db"
 import { eq } from "drizzle-orm"
+import { unstable_cache } from "next/cache"
+import { cache } from "react"
 import "server-only"
 
 /**
@@ -205,8 +207,7 @@ function buildView(id: string, listing: Listing): PropertyView {
 	}
 }
 
-/** The single published property (used by the homepage). */
-export async function getFeaturedProperty(): Promise<PropertyView | null> {
+const loadFeaturedProperty = unstable_cache(async (): Promise<PropertyView | null> => {
 	const row = await db
 		.select({ id: properties.id, listingData: properties.listingData })
 		.from(properties)
@@ -216,10 +217,12 @@ export async function getFeaturedProperty(): Promise<PropertyView | null> {
 	if (!row?.listingData) return null
 
 	return buildView(row.id, row.listingData as Listing)
-}
+}, ["public-featured-property"], { revalidate: 3600, tags: ["public-properties"] })
 
-/** A property by id (used by the property page). */
-export async function getPropertyView(id: string): Promise<PropertyView | null> {
+/** The single published property (used by the homepage). */
+export const getFeaturedProperty = cache(loadFeaturedProperty)
+
+const loadPropertyView = unstable_cache(async (id: string): Promise<PropertyView | null> => {
 	const row = await db
 		.select({ id: properties.id, listingData: properties.listingData })
 		.from(properties)
@@ -230,4 +233,7 @@ export async function getPropertyView(id: string): Promise<PropertyView | null> 
 	if (!row?.listingData) return null
 
 	return buildView(row.id, row.listingData as Listing)
-}
+}, ["public-property-view"], { revalidate: 3600, tags: ["public-properties"] })
+
+/** A public property by id, shared by metadata and page rendering. */
+export const getPropertyView = cache(loadPropertyView)

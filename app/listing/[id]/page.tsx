@@ -14,6 +14,8 @@ import { notFound } from "next/navigation"
 
 type Params = Promise<{ id: string }>
 
+export const revalidate = 3600
+
 const NAV = [
 	{ label: "Home", href: "/" },
 	{ label: "Local Guide", href: "/guide" },
