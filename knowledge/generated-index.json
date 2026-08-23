@@ -1,0 +1,2105 @@
+{
+  "version": 1,
+  "digest": "f5db7c472e9756f265d138a3f5bccad95e34e9bcec2d31d0b08cd3ba1744f7a7",
+  "records": [
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-bathroom",
+      "category": "amenities",
+      "title": "Bathroom",
+      "content": "Verified amenities: Bathtub, Hair dryer, Cleaning products, Shampoo, Conditioner, Body soap, Hot water, Shower gel.",
+      "tags": [
+        "bathroom",
+        "bathtub",
+        "hair dryer",
+        "cleaning products",
+        "shampoo",
+        "conditioner",
+        "body soap",
+        "hot water",
+        "shower gel"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-bedroom-and-laundry",
+      "category": "amenities",
+      "title": "Bedroom and laundry",
+      "content": "Verified amenities: Washer, Free dryer – In building, Hangers, Bed linens, Extra pillows and blankets, Room-darkening shades, Iron, Clothing storage.",
+      "tags": [
+        "bedroom and laundry",
+        "washer",
+        "free dryer – in building",
+        "hangers",
+        "bed linens",
+        "extra pillows and blankets",
+        "room-darkening shades",
+        "iron",
+        "clothing storage"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-entertainment",
+      "category": "amenities",
+      "title": "Entertainment",
+      "content": "Verified amenities: TV, Books and reading material.",
+      "tags": [
+        "entertainment",
+        "tv",
+        "books and reading material"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-family",
+      "category": "amenities",
+      "title": "Family",
+      "content": "Verified amenities: Fireplace guards, Board games.",
+      "tags": [
+        "family",
+        "fireplace guards",
+        "board games"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-heating-and-cooling",
+      "category": "amenities",
+      "title": "Heating and cooling",
+      "content": "Verified amenities: Indoor fireplace, Ceiling fan, Portable fans, Heating.",
+      "tags": [
+        "heating and cooling",
+        "indoor fireplace",
+        "ceiling fan",
+        "portable fans",
+        "heating"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-home-safety",
+      "category": "amenities",
+      "title": "Home safety",
+      "content": "Verified amenities: Smoke alarm, Carbon monoxide alarm, Fire extinguisher, First aid kit.",
+      "tags": [
+        "home safety",
+        "smoke alarm",
+        "carbon monoxide alarm",
+        "fire extinguisher",
+        "first aid kit"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-internet-and-office",
+      "category": "amenities",
+      "title": "Internet and office",
+      "content": "Verified amenities: Wifi.",
+      "tags": [
+        "internet and office",
+        "wifi"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-kitchen-and-dining",
+      "category": "amenities",
+      "title": "Kitchen and dining",
+      "content": "Verified amenities: Kitchen (Space where guests can cook their own meals), Refrigerator, Microwave, Cooking basics (Pots and pans, oil, salt and pepper), Dishes and silverware (Bowls, chopsticks, plates, cups, etc.), Freezer, Dishwasher, Stove, Oven, Hot water kettle, Coffee maker, Wine glasses, Toaster, Baking sheet, Blender, Dining table, Coffee.",
+      "tags": [
+        "kitchen and dining",
+        "kitchen (space where guests can cook their own meals)",
+        "refrigerator",
+        "microwave",
+        "cooking basics (pots and pans, oil, salt and pepper)",
+        "dishes and silverware (bowls, chopsticks, plates, cups, etc.)",
+        "freezer",
+        "dishwasher",
+        "stove",
+        "oven",
+        "hot water kettle",
+        "coffee maker",
+        "wine glasses",
+        "toaster",
+        "baking sheet",
+        "blender",
+        "dining table",
+        "coffee"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-location-features",
+      "category": "amenities",
+      "title": "Location features",
+      "content": "Verified amenities: Private entrance (Separate street or building entrance).",
+      "tags": [
+        "location features",
+        "private entrance (separate street or building entrance)"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-outdoor",
+      "category": "amenities",
+      "title": "Outdoor",
+      "content": "Verified amenities: Private patio or balcony, Outdoor furniture, Outdoor dining area, Beach essentials (Beach gear such as towels, chairs, and an umbrella).",
+      "tags": [
+        "outdoor",
+        "private patio or balcony",
+        "outdoor furniture",
+        "outdoor dining area",
+        "beach essentials (beach gear such as towels, chairs, and an umbrella)"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-parking-and-facilities",
+      "category": "amenities",
+      "title": "Parking and facilities",
+      "content": "Verified amenities: Free parking on premises.",
+      "tags": [
+        "parking and facilities",
+        "free parking on premises"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "amenities-services",
+      "category": "amenities",
+      "title": "Services",
+      "content": "Verified amenities: Long term stays allowed (Allow stay for 28 days or more), Self check-in, Keypad.",
+      "tags": [
+        "services",
+        "long term stays allowed (allow stay for 28 days or more)",
+        "self check-in",
+        "keypad"
+      ]
+    },
+    {
+      "id": "area-hermosa-beach",
+      "category": "area",
+      "title": "Hermosa Beach",
+      "content": "Hermosa is directly south along The Strand, reachable by car, bike, or a longer walk from Manhattan Beach. Center a visit on the beach and pier, then choose a nearby restaurant. A relaxed plan is a late-afternoon shoreline walk followed by dinner; the atmosphere can become livelier after dark.",
+      "tags": [
+        "hermosa",
+        "beach",
+        "pier",
+        "strand",
+        "bike",
+        "dinner",
+        "walking"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "evergreen",
+      "source": "Local Guide",
+      "sourcePath": "app/guide/page.tsx"
+    },
+    {
+      "id": "area-malibu",
+      "category": "area",
+      "title": "Malibu",
+      "content": "Treat Malibu as a flexible coastal half- or full-day drive. Pair Malibu Surfrider Beach and Malibu Pier with one or two scenic shoreline stops. Check directly with dining venues. Traffic and parking can change the rhythm of the day.",
+      "tags": [
+        "malibu",
+        "surfrider",
+        "pier",
+        "day trip",
+        "drive",
+        "traffic",
+        "parking"
+      ],
+      "location": "Malibu",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "evergreen",
+      "source": "Local Guide",
+      "sourcePath": "app/guide/page.tsx"
+    },
+    {
+      "id": "area-manhattan-beach",
+      "category": "area",
+      "title": "Manhattan Beach",
+      "content": "Start with beach time, Manhattan Beach Pier, The Strand, and downtown. Downtown has a compact mix of restaurants, coffee, shops, and markets. For families, a beach-and-pier walk is a simple flexible outing. Parking is limited near the sand, so read posted signs and allow extra time on busy beach days.",
+      "tags": [
+        "manhattan beach",
+        "downtown",
+        "pier",
+        "strand",
+        "family",
+        "walking",
+        "shopping"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "evergreen",
+      "source": "Local Guide",
+      "sourcePath": "app/guide/page.tsx"
+    },
+    {
+      "id": "area-redondo-beach",
+      "category": "area",
+      "title": "Redondo Beach",
+      "content": "Redondo offers the pier, waterfront promenades, and marina area. It is an easy family outing: pair a pier stroll with beach time and a casual meal. The waterfront has several parking areas, though availability and posted rules vary.",
+      "tags": [
+        "redondo",
+        "pier",
+        "marina",
+        "waterfront",
+        "family",
+        "parking"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "evergreen",
+      "source": "Local Guide",
+      "sourcePath": "app/guide/page.tsx"
+    },
+    {
+      "id": "area-santa-monica",
+      "category": "area",
+      "title": "Santa Monica",
+      "content": "Santa Monica works after Venice or as its own outing. The pier and beachfront are the landmarks; Third Street Promenade and nearby downtown blocks offer walking and shopping. Drive times vary significantly with traffic, so keep the schedule flexible.",
+      "tags": [
+        "santa monica",
+        "pier",
+        "third street",
+        "promenade",
+        "shopping",
+        "traffic"
+      ],
+      "location": "Santa Monica",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "evergreen",
+      "source": "Local Guide",
+      "sourcePath": "app/guide/page.tsx"
+    },
+    {
+      "id": "area-venice",
+      "category": "area",
+      "title": "Venice",
+      "content": "Venice is north of the South Bay; rideshare or a car is generally simplest. Walk the Venice Beach Boardwalk, slow the pace at the Venice Canals, and browse independent shops, coffee, galleries, and restaurants on Abbot Kinney Boulevard. Venice combines naturally with Santa Monica.",
+      "tags": [
+        "venice",
+        "boardwalk",
+        "canals",
+        "abbot kinney",
+        "shopping",
+        "rideshare"
+      ],
+      "location": "Venice",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "evergreen",
+      "source": "Local Guide",
+      "sourcePath": "app/guide/page.tsx"
+    },
+    {
+      "id": "booking-cancellation-public",
+      "category": "booking",
+      "title": "Published cancellation terms",
+      "content": "For an accepted direct booking, cancel at least 14 days before scheduled check-in for a 100% refund of refundable booking charges; between 7 and less than 14 days for a 50% refund of nightly accommodation charges; less than 7 days before check-in means nightly accommodation charges are non-refundable. Applicable California cancellation rights can override this schedule. The host confirms the terms that apply to an accepted stay.",
+      "tags": [
+        "cancel",
+        "cancellation",
+        "refund",
+        "terms",
+        "policy"
+      ],
+      "location": "ShellByTheShore",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "policy",
+      "source": "Terms and Conditions",
+      "sourcePath": "app/terms-and-conditions/page.tsx"
+    },
+    {
+      "id": "booking-inquiry-only",
+      "category": "booking",
+      "title": "Request Availability",
+      "content": "Request Availability is only an inquiry and does not create a reservation. Availability, terms and acceptance are confirmed manually by the host.",
+      "tags": [
+        "availability",
+        "reservation",
+        "booking",
+        "payment",
+        "inquiry",
+        "confirmation"
+      ],
+      "location": "ShellByTheShore",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "policy",
+      "source": "Public availability form",
+      "sourcePath": "app/_components/AvailabilityRequest.tsx"
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "not-included-not-included",
+      "category": "amenities",
+      "title": "Not included: Not included",
+      "content": "The public listing explicitly marks these as not included: Exterior security cameras on property, Air conditioning, Essentials.",
+      "tags": [
+        "not included",
+        "exterior security cameras on property",
+        "air conditioning",
+        "essentials"
+      ]
+    },
+    {
+      "id": "parking-garage-clearance",
+      "category": "parking",
+      "title": "Included garage parking",
+      "content": "One enclosed-garage space is included and has a 74-inch clearance. Larger SUVs, vans, roof racks, lifted vehicles, and oversized tires must be verified before booking; alternative parking is not guaranteed.",
+      "tags": [
+        "parking",
+        "garage",
+        "car",
+        "suv",
+        "clearance",
+        "vehicle"
+      ],
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Terms and Conditions",
+      "sourcePath": "app/terms-and-conditions/page.tsx"
+    },
+    {
+      "id": "poi-abbot-kinney-boulevard",
+      "category": "shopping",
+      "title": "Abbot Kinney Boulevard",
+      "content": "Independent shops, galleries, coffee, and dining along a walkable corridor.",
+      "tags": [
+        "shopping",
+        "venice",
+        "abbot kinney boulevard"
+      ],
+      "location": "Venice",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "abbot-kinney-boulevard",
+        "lat": 33.9918,
+        "lng": -118.4662,
+        "href": "/guide#poi-abbot-kinney-boulevard"
+      }
+    },
+    {
+      "id": "poi-baran-s-2239",
+      "category": "food",
+      "title": "Baran's 2239",
+      "content": "Small South Bay restaurant known for creative contemporary dishes.",
+      "tags": [
+        "food",
+        "hermosa beach",
+        "baran's 2239",
+        "shellbytheshore pick"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "baran-s-2239",
+        "lat": 33.8573,
+        "lng": -118.3893,
+        "href": "/guide#poi-baran-s-2239"
+      }
+    },
+    {
+      "id": "poi-bettolino-kitchen",
+      "category": "food",
+      "title": "Bettolino Kitchen",
+      "content": "Italian restaurant near Riviera Village.",
+      "tags": [
+        "food",
+        "redondo beach",
+        "bettolino kitchen",
+        "shellbytheshore pick"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "bettolino-kitchen",
+        "lat": 33.826,
+        "lng": -118.3861,
+        "href": "/guide#poi-bettolino-kitchen"
+      }
+    },
+    {
+      "id": "poi-bluestone-lane-manhattan-beach-cafe",
+      "category": "breakfast",
+      "title": "Bluestone Lane Manhattan Beach Café",
+      "content": "Coffee, breakfast and brunch near downtown Manhattan Beach.",
+      "tags": [
+        "breakfast",
+        "manhattan beach",
+        "bluestone lane manhattan beach café"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "bluestone-lane-manhattan-beach-cafe",
+        "lat": 33.8843,
+        "lng": -118.4078,
+        "href": "/guide#poi-bluestone-lane-manhattan-beach-cafe"
+      }
+    },
+    {
+      "id": "poi-bluewater-grill",
+      "category": "food",
+      "title": "Bluewater Grill",
+      "content": "Seafood restaurant near King Harbor and the Redondo waterfront.",
+      "tags": [
+        "food",
+        "redondo beach",
+        "bluewater grill"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "bluewater-grill",
+        "lat": 33.8425,
+        "lng": -118.3914,
+        "href": "/guide#poi-bluewater-grill"
+      }
+    },
+    {
+      "id": "poi-boccato-s-groceries",
+      "category": "groceries",
+      "title": "Boccato's Groceries",
+      "content": "Neighborhood grocery and deli option near the beach.",
+      "tags": [
+        "groceries",
+        "hermosa beach",
+        "boccato's groceries",
+        "local market"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "boccato-s-groceries",
+        "lat": 33.8617,
+        "lng": -118.3982,
+        "href": "/guide#poi-boccato-s-groceries"
+      }
+    },
+    {
+      "id": "poi-bristol-farms",
+      "category": "groceries",
+      "title": "Bristol Farms",
+      "content": "Premium grocery market with prepared foods, produce and specialty items.",
+      "tags": [
+        "groceries",
+        "manhattan beach",
+        "bristol farms",
+        "premium & organic"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "bristol-farms",
+        "lat": 33.8838,
+        "lng": -118.4048,
+        "href": "/guide#poi-bristol-farms"
+      }
+    },
+    {
+      "id": "poi-cafe-minerva",
+      "category": "breakfast",
+      "title": "Cafe Minerva",
+      "content": "Local café with coffee and casual breakfast options.",
+      "tags": [
+        "breakfast",
+        "hermosa beach",
+        "cafe minerva"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "cafe-minerva",
+        "lat": 33.8621,
+        "lng": -118.4,
+        "href": "/guide#poi-cafe-minerva"
+      }
+    },
+    {
+      "id": "poi-dominique-s-kitchen",
+      "category": "food",
+      "title": "Dominique's Kitchen",
+      "content": "Small French-inspired neighborhood restaurant.",
+      "tags": [
+        "food",
+        "redondo beach",
+        "dominique's kitchen"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "dominique-s-kitchen",
+        "lat": 33.826,
+        "lng": -118.384,
+        "href": "/guide#poi-dominique-s-kitchen"
+      }
+    },
+    {
+      "id": "poi-el-porto-beach",
+      "category": "beaches",
+      "title": "El Porto Beach",
+      "content": "North Manhattan Beach surf area and one of the closest beach experiences to Shell By The Shore.",
+      "tags": [
+        "beaches",
+        "manhattan beach",
+        "el porto beach",
+        "shellbytheshore pick"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "el-porto-beach",
+        "lat": 33.9031,
+        "lng": -118.4202,
+        "href": "/guide#poi-el-porto-beach"
+      }
+    },
+    {
+      "id": "poi-erewhon-manhattan-beach",
+      "category": "groceries",
+      "title": "Erewhon Manhattan Beach",
+      "content": "Organic-focused market with prepared foods, smoothies and specialty grocery items.",
+      "tags": [
+        "groceries",
+        "manhattan beach",
+        "erewhon manhattan beach",
+        "premium & organic"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "erewhon-manhattan-beach",
+        "lat": 33.8844,
+        "lng": -118.4043,
+        "href": "/guide#poi-erewhon-manhattan-beach"
+      }
+    },
+    {
+      "id": "poi-fishing-with-dynamite",
+      "category": "food",
+      "title": "Fishing With Dynamite",
+      "content": "Popular downtown Manhattan Beach seafood and oyster spot near the Pier.",
+      "tags": [
+        "food",
+        "manhattan beach",
+        "fishing with dynamite",
+        "shellbytheshore pick"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "fishing-with-dynamite",
+        "lat": 33.8844,
+        "lng": -118.41,
+        "href": "/guide#poi-fishing-with-dynamite"
+      }
+    },
+    {
+      "id": "poi-gelson-s-manhattan-beach",
+      "category": "groceries",
+      "title": "Gelson's Manhattan Beach",
+      "content": "Premium supermarket with groceries, prepared foods and specialty items.",
+      "tags": [
+        "groceries",
+        "manhattan beach",
+        "gelson's manhattan beach",
+        "premium & organic"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "gelson-s-manhattan-beach",
+        "lat": 33.8804,
+        "lng": -118.3945,
+        "href": "/guide#poi-gelson-s-manhattan-beach"
+      }
+    },
+    {
+      "id": "poi-good-stuff-hermosa-beach",
+      "category": "breakfast",
+      "title": "Good Stuff - Hermosa Beach",
+      "content": "Relaxed breakfast and brunch option directly by the beach.",
+      "tags": [
+        "breakfast",
+        "hermosa beach",
+        "good stuff - hermosa beach",
+        "shellbytheshore pick"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "good-stuff-hermosa-beach",
+        "lat": 33.8636,
+        "lng": -118.4021,
+        "href": "/guide#poi-good-stuff-hermosa-beach"
+      }
+    },
+    {
+      "id": "poi-good-stuff-redondo-beach",
+      "category": "breakfast",
+      "title": "Good Stuff - Redondo Beach",
+      "content": "Casual breakfast and brunch option near the coast.",
+      "tags": [
+        "breakfast",
+        "redondo beach",
+        "good stuff - redondo beach"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "good-stuff-redondo-beach",
+        "lat": 33.8384,
+        "lng": -118.3915,
+        "href": "/guide#poi-good-stuff-redondo-beach"
+      }
+    },
+    {
+      "id": "poi-hermosa-beach",
+      "category": "beaches",
+      "title": "Hermosa Beach",
+      "content": "Wide sandy beach with volleyball, the Strand and easy access to Pier Avenue.",
+      "tags": [
+        "beaches",
+        "hermosa beach",
+        "hermosa beach",
+        "shellbytheshore pick"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "hermosa-beach",
+        "lat": 33.8617,
+        "lng": -118.3997,
+        "href": "/guide#poi-hermosa-beach"
+      }
+    },
+    {
+      "id": "poi-hermosa-beach-pier",
+      "category": "attractions",
+      "title": "Hermosa Beach Pier",
+      "content": "Central Hermosa Beach landmark at the end of Pier Avenue.",
+      "tags": [
+        "attractions",
+        "hermosa beach",
+        "hermosa beach pier"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "hermosa-beach-pier",
+        "lat": 33.8621,
+        "lng": -118.4008,
+        "href": "/guide#poi-hermosa-beach-pier"
+      }
+    },
+    {
+      "id": "poi-hi-fi-espresso-hermosa-beach",
+      "category": "coffee",
+      "title": "Hi-Fi Espresso - Hermosa Beach",
+      "content": "Specialty coffee stop serving the South Bay.",
+      "tags": [
+        "coffee",
+        "hermosa beach",
+        "hi-fi espresso - hermosa beach"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "hi-fi-espresso-hermosa-beach",
+        "lat": 33.8608,
+        "lng": -118.3993,
+        "href": "/guide#poi-hi-fi-espresso-hermosa-beach"
+      }
+    },
+    {
+      "id": "poi-hi-fi-espresso-redondo-beach",
+      "category": "coffee",
+      "title": "Hi-Fi Espresso - Redondo Beach",
+      "content": "South Bay specialty coffee option.",
+      "tags": [
+        "coffee",
+        "redondo beach",
+        "hi-fi espresso - redondo beach"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "hi-fi-espresso-redondo-beach",
+        "lat": 33.829,
+        "lng": -118.383,
+        "href": "/guide#poi-hi-fi-espresso-redondo-beach"
+      }
+    },
+    {
+      "id": "poi-jus-poke",
+      "category": "food",
+      "title": "Jus' Poke",
+      "content": "Casual South Bay poke stop well suited to a beach lunch.",
+      "tags": [
+        "food",
+        "redondo beach",
+        "jus' poke",
+        "shellbytheshore pick"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "jus-poke",
+        "lat": 33.8271,
+        "lng": -118.3867,
+        "href": "/guide#poi-jus-poke"
+      }
+    },
+    {
+      "id": "poi-king-harbor",
+      "category": "attractions",
+      "title": "King Harbor",
+      "content": "Marina and waterfront area for harbor walks and coastal views.",
+      "tags": [
+        "attractions",
+        "redondo beach",
+        "king harbor"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "king-harbor",
+        "lat": 33.8442,
+        "lng": -118.3912,
+        "href": "/guide#poi-king-harbor"
+      }
+    },
+    {
+      "id": "poi-la-terraza",
+      "category": "breakfast",
+      "title": "La Terraza",
+      "content": "Local breakfast and coffee option in Redondo Beach.",
+      "tags": [
+        "breakfast",
+        "redondo beach",
+        "la terraza"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "la-terraza",
+        "lat": 33.838,
+        "lng": -118.3911,
+        "href": "/guide#poi-la-terraza"
+      }
+    },
+    {
+      "id": "poi-lazy-acres-market-hermosa-beach",
+      "category": "groceries",
+      "title": "Lazy Acres Market - Hermosa Beach",
+      "content": "Organic and specialty grocery market with prepared foods.",
+      "tags": [
+        "groceries",
+        "hermosa beach",
+        "lazy acres market - hermosa beach",
+        "premium & organic"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "lazy-acres-market-hermosa-beach",
+        "lat": 33.8593,
+        "lng": -118.3926,
+        "href": "/guide#poi-lazy-acres-market-hermosa-beach"
+      }
+    },
+    {
+      "id": "poi-longfellow-beach",
+      "category": "beaches",
+      "title": "Longfellow Beach",
+      "content": "Quieter stretch toward North Hermosa, convenient from Manhattan Beach.",
+      "tags": [
+        "beaches",
+        "hermosa beach",
+        "longfellow beach"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "longfellow-beach",
+        "lat": 33.8786,
+        "lng": -118.4073,
+        "href": "/guide#poi-longfellow-beach"
+      }
+    },
+    {
+      "id": "poi-los-angeles-international-airport",
+      "category": "airports",
+      "title": "Los Angeles International Airport",
+      "content": "The closest major airport for most ShellByTheShore guests.",
+      "tags": [
+        "airports",
+        "lax",
+        "los angeles international airport"
+      ],
+      "location": "LAX",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "los-angeles-international-airport",
+        "lat": 33.9416,
+        "lng": -118.4085,
+        "href": "/guide#poi-los-angeles-international-airport"
+      }
+    },
+    {
+      "id": "poi-malibu-pier",
+      "category": "attractions",
+      "title": "Malibu Pier",
+      "content": "A scenic stop for Pacific views and a stroll over the water.",
+      "tags": [
+        "attractions",
+        "malibu",
+        "malibu pier"
+      ],
+      "location": "Malibu",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "malibu-pier",
+        "lat": 34.0362,
+        "lng": -118.6777,
+        "href": "/guide#poi-malibu-pier"
+      }
+    },
+    {
+      "id": "poi-malibu-surfrider-beach",
+      "category": "beaches",
+      "title": "Malibu Surfrider Beach",
+      "content": "An iconic Malibu shoreline beside the pier and historic lagoon area.",
+      "tags": [
+        "beaches",
+        "malibu",
+        "malibu surfrider beach"
+      ],
+      "location": "Malibu",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "malibu-surfrider-beach",
+        "lat": 34.0356,
+        "lng": -118.677,
+        "href": "/guide#poi-malibu-surfrider-beach"
+      }
+    },
+    {
+      "id": "poi-manhattan-beach",
+      "category": "beaches",
+      "title": "Manhattan Beach",
+      "content": "Classic South Bay beach with the Strand, volleyball, walking and cycling.",
+      "tags": [
+        "beaches",
+        "manhattan beach",
+        "manhattan beach"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "manhattan-beach",
+        "lat": 33.8847,
+        "lng": -118.4109,
+        "href": "/guide#poi-manhattan-beach"
+      }
+    },
+    {
+      "id": "poi-manhattan-beach-farmers-market",
+      "category": "food",
+      "title": "Manhattan Beach Farmers Market",
+      "content": "A local market held in downtown Manhattan Beach; check current information before visiting.",
+      "tags": [
+        "food",
+        "manhattan beach",
+        "manhattan beach farmers market"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "manhattan-beach-farmers-market",
+        "lat": 33.8849,
+        "lng": -118.4101,
+        "href": "/guide#poi-manhattan-beach-farmers-market"
+      }
+    },
+    {
+      "id": "poi-manhattan-beach-pier",
+      "category": "attractions",
+      "title": "Manhattan Beach Pier",
+      "content": "Landmark pier at the center of downtown Manhattan Beach with beach and ocean views.",
+      "tags": [
+        "attractions",
+        "manhattan beach",
+        "manhattan beach pier",
+        "shellbytheshore pick"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "manhattan-beach-pier",
+        "lat": 33.8844,
+        "lng": -118.4114,
+        "href": "/guide#poi-manhattan-beach-pier"
+      }
+    },
+    {
+      "id": "poi-manhattan-beach-post",
+      "category": "food",
+      "title": "Manhattan Beach Post",
+      "content": "Downtown restaurant known for shared plates, brunch and cocktails.",
+      "tags": [
+        "food",
+        "manhattan beach",
+        "manhattan beach post",
+        "shellbytheshore pick"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "manhattan-beach-post",
+        "lat": 33.8847,
+        "lng": -118.41,
+        "href": "/guide#poi-manhattan-beach-post"
+      }
+    },
+    {
+      "id": "poi-manhattan-beach-public-parking",
+      "category": "parking",
+      "title": "Manhattan Beach Public Parking",
+      "content": "Public beach-area parking; check posted rules and availability on arrival.",
+      "tags": [
+        "parking",
+        "manhattan beach",
+        "manhattan beach public parking"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "manhattan-beach-public-parking",
+        "lat": 33.884,
+        "lng": -118.4125,
+        "href": "/guide#poi-manhattan-beach-public-parking"
+      }
+    },
+    {
+      "id": "poi-manhattan-village",
+      "category": "shopping",
+      "title": "Manhattan Village",
+      "content": "An open-air shopping destination with a range of stores and dining.",
+      "tags": [
+        "shopping",
+        "manhattan beach",
+        "manhattan village"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "manhattan-village",
+        "lat": 33.8792,
+        "lng": -118.395,
+        "href": "/guide#poi-manhattan-village"
+      }
+    },
+    {
+      "id": "poi-martha-s-hermosa-beach",
+      "category": "breakfast",
+      "title": "Martha's Hermosa Beach",
+      "content": "Longtime local breakfast and brunch spot close to the Strand.",
+      "tags": [
+        "breakfast",
+        "hermosa beach",
+        "martha's hermosa beach",
+        "shellbytheshore pick"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "martha-s-hermosa-beach",
+        "lat": 33.8628,
+        "lng": -118.4014,
+        "href": "/guide#poi-martha-s-hermosa-beach"
+      }
+    },
+    {
+      "id": "poi-offset-coffee-roasters",
+      "category": "coffee",
+      "title": "Offset Coffee Roasters",
+      "content": "Specialty coffee option near Riviera Village.",
+      "tags": [
+        "coffee",
+        "redondo beach",
+        "offset coffee roasters",
+        "shellbytheshore pick"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "offset-coffee-roasters",
+        "lat": 33.8262,
+        "lng": -118.385,
+        "href": "/guide#poi-offset-coffee-roasters"
+      }
+    },
+    {
+      "id": "poi-pursue-coffee",
+      "category": "coffee",
+      "title": "Pursue Coffee",
+      "content": "Local specialty coffee shop in Redondo Beach.",
+      "tags": [
+        "coffee",
+        "redondo beach",
+        "pursue coffee"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "pursue-coffee",
+        "lat": 33.8354,
+        "lng": -118.3795,
+        "href": "/guide#poi-pursue-coffee"
+      }
+    },
+    {
+      "id": "poi-radici",
+      "category": "food",
+      "title": "Radici",
+      "content": "Italian dining option near the Hermosa Beach Pier area.",
+      "tags": [
+        "food",
+        "hermosa beach",
+        "radici",
+        "shellbytheshore pick"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "radici",
+        "lat": 33.8627,
+        "lng": -118.4001,
+        "href": "/guide#poi-radici"
+      }
+    },
+    {
+      "id": "poi-redondo-beach",
+      "category": "beaches",
+      "title": "Redondo Beach",
+      "content": "South Bay beach area with walking, ocean access and waterfront activities.",
+      "tags": [
+        "beaches",
+        "redondo beach",
+        "redondo beach"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "redondo-beach",
+        "lat": 33.8434,
+        "lng": -118.3929,
+        "href": "/guide#poi-redondo-beach"
+      }
+    },
+    {
+      "id": "poi-redondo-beach-pier",
+      "category": "attractions",
+      "title": "Redondo Beach Pier",
+      "content": "Waterfront pier area with restaurants, harbor views and walking.",
+      "tags": [
+        "attractions",
+        "redondo beach",
+        "redondo beach pier",
+        "shellbytheshore pick"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "redondo-beach-pier",
+        "lat": 33.8367,
+        "lng": -118.3914,
+        "href": "/guide#poi-redondo-beach-pier"
+      }
+    },
+    {
+      "id": "poi-riviera-house",
+      "category": "food",
+      "title": "Riviera House",
+      "content": "Coastal restaurant and cocktail option in the Riviera Village area.",
+      "tags": [
+        "food",
+        "redondo beach",
+        "riviera house"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "riviera-house",
+        "lat": 33.8261,
+        "lng": -118.3851,
+        "href": "/guide#poi-riviera-house"
+      }
+    },
+    {
+      "id": "poi-riviera-village-farmers-market",
+      "category": "shopping",
+      "title": "Riviera Village Farmers Market",
+      "content": "Local market option when operating; check current information before visiting.",
+      "tags": [
+        "shopping",
+        "redondo beach",
+        "riviera village farmers market",
+        "local market"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "riviera-village-farmers-market",
+        "lat": 33.8232,
+        "lng": -118.385,
+        "href": "/guide#poi-riviera-village-farmers-market"
+      }
+    },
+    {
+      "id": "poi-rockefeller-manhattan-beach",
+      "category": "food",
+      "title": "Rockefeller - Manhattan Beach",
+      "content": "Casual gastropub option for brunch, dinner and cocktails.",
+      "tags": [
+        "food",
+        "manhattan beach",
+        "rockefeller - manhattan beach"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "rockefeller-manhattan-beach",
+        "lat": 33.8839,
+        "lng": -118.4096,
+        "href": "/guide#poi-rockefeller-manhattan-beach"
+      }
+    },
+    {
+      "id": "poi-santa-monica-pier",
+      "category": "attractions",
+      "title": "Santa Monica Pier",
+      "content": "A landmark Pacific stop with beach access and ocean views.",
+      "tags": [
+        "attractions",
+        "santa monica",
+        "santa monica pier"
+      ],
+      "location": "Santa Monica",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "santa-monica-pier",
+        "lat": 34.0099,
+        "lng": -118.4962,
+        "href": "/guide#poi-santa-monica-pier"
+      }
+    },
+    {
+      "id": "poi-seaside-lagoon",
+      "category": "beaches",
+      "title": "Seaside Lagoon",
+      "content": "Seasonal family-oriented waterfront swimming area; check current operating information before visiting.",
+      "tags": [
+        "beaches",
+        "redondo beach",
+        "seaside lagoon"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "seaside-lagoon",
+        "lat": 33.8399,
+        "lng": -118.3898,
+        "href": "/guide#poi-seaside-lagoon"
+      }
+    },
+    {
+      "id": "poi-sloopy-s-beach-cafe",
+      "category": "breakfast",
+      "title": "Sloopy's Beach Cafe",
+      "content": "Casual North Manhattan Beach breakfast and lunch option close to the coast.",
+      "tags": [
+        "breakfast",
+        "manhattan beach",
+        "sloopy's beach cafe"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "sloopy-s-beach-cafe",
+        "lat": 33.9048,
+        "lng": -118.4205,
+        "href": "/guide#poi-sloopy-s-beach-cafe"
+      }
+    },
+    {
+      "id": "poi-steak-whisky-american-tavern",
+      "category": "food",
+      "title": "Steak & Whisky American Tavern",
+      "content": "Steakhouse and cocktail destination in Hermosa Beach.",
+      "tags": [
+        "food",
+        "hermosa beach",
+        "steak & whisky american tavern"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "steak-whisky-american-tavern",
+        "lat": 33.8619,
+        "lng": -118.4002,
+        "href": "/guide#poi-steak-whisky-american-tavern"
+      }
+    },
+    {
+      "id": "poi-the-arthur-j",
+      "category": "food",
+      "title": "The Arthur J",
+      "content": "Manhattan Beach steakhouse for a more upscale dinner.",
+      "tags": [
+        "food",
+        "manhattan beach",
+        "the arthur j"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "the-arthur-j",
+        "lat": 33.8848,
+        "lng": -118.4102,
+        "href": "/guide#poi-the-arthur-j"
+      }
+    },
+    {
+      "id": "poi-the-hive",
+      "category": "breakfast",
+      "title": "The Hive",
+      "content": "Healthy café option for bowls, smoothies, coffee and lighter breakfast choices.",
+      "tags": [
+        "breakfast",
+        "manhattan beach",
+        "the hive"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "the-hive",
+        "lat": 33.9024,
+        "lng": -118.4195,
+        "href": "/guide#poi-the-hive"
+      }
+    },
+    {
+      "id": "poi-the-source-cafe",
+      "category": "breakfast",
+      "title": "The Source Café",
+      "content": "Café offering coffee, juices, bakery items and lighter breakfast choices.",
+      "tags": [
+        "breakfast",
+        "hermosa beach",
+        "the source café"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "the-source-cafe",
+        "lat": 33.8611,
+        "lng": -118.3993,
+        "href": "/guide#poi-the-source-cafe"
+      }
+    },
+    {
+      "id": "poi-the-strand",
+      "category": "activities",
+      "title": "The Strand",
+      "content": "The oceanfront path for strolling, running, cycling, and people-watching.",
+      "tags": [
+        "activities",
+        "south bay",
+        "the strand"
+      ],
+      "location": "South Bay",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "the-strand",
+        "lat": 33.8905,
+        "lng": -118.4148,
+        "href": "/guide#poi-the-strand"
+      }
+    },
+    {
+      "id": "poi-the-strand-house",
+      "category": "food",
+      "title": "The Strand House",
+      "content": "Coastal dining near Manhattan Beach Pier with ocean views.",
+      "tags": [
+        "food",
+        "manhattan beach",
+        "the strand house"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "the-strand-house",
+        "lat": 33.8841,
+        "lng": -118.4107,
+        "href": "/guide#poi-the-strand-house"
+      }
+    },
+    {
+      "id": "poi-third-street-promenade",
+      "category": "shopping",
+      "title": "Third Street Promenade",
+      "content": "A pedestrian-oriented downtown shopping and walking area.",
+      "tags": [
+        "shopping",
+        "santa monica",
+        "third street promenade"
+      ],
+      "location": "Santa Monica",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "third-street-promenade",
+        "lat": 34.0172,
+        "lng": -118.4975,
+        "href": "/guide#poi-third-street-promenade"
+      }
+    },
+    {
+      "id": "poi-trader-joe-s",
+      "category": "groceries",
+      "title": "Trader Joe's",
+      "content": "Convenient option for everyday groceries, snacks, prepared foods and beach-trip essentials.",
+      "tags": [
+        "groceries",
+        "manhattan beach",
+        "trader joe's",
+        "everyday grocery"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "trader-joe-s",
+        "lat": 33.8768,
+        "lng": -118.3949,
+        "href": "/guide#poi-trader-joe-s"
+      }
+    },
+    {
+      "id": "poi-trader-joe-s-hermosa-beach",
+      "category": "groceries",
+      "title": "Trader Joe's - Hermosa Beach",
+      "content": "Convenient grocery option along Pacific Coast Highway.",
+      "tags": [
+        "groceries",
+        "hermosa beach",
+        "trader joe's - hermosa beach",
+        "everyday grocery"
+      ],
+      "location": "Hermosa Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "trader-joe-s-hermosa-beach",
+        "lat": 33.8614,
+        "lng": -118.3912,
+        "href": "/guide#poi-trader-joe-s-hermosa-beach"
+      }
+    },
+    {
+      "id": "poi-trader-joe-s-redondo-beach",
+      "category": "groceries",
+      "title": "Trader Joe's - Redondo Beach",
+      "content": "Convenient grocery option serving the Riviera Village area.",
+      "tags": [
+        "groceries",
+        "redondo beach",
+        "trader joe's - redondo beach",
+        "everyday grocery"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "trader-joe-s-redondo-beach",
+        "lat": 33.8264,
+        "lng": -118.3847,
+        "href": "/guide#poi-trader-joe-s-redondo-beach"
+      }
+    },
+    {
+      "id": "poi-two-guns-espresso",
+      "category": "coffee",
+      "title": "Two Guns Espresso",
+      "content": "A local coffee stop near the beach.",
+      "tags": [
+        "coffee",
+        "manhattan beach",
+        "two guns espresso"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "two-guns-espresso",
+        "lat": 33.9031,
+        "lng": -118.4201,
+        "href": "/guide#poi-two-guns-espresso"
+      }
+    },
+    {
+      "id": "poi-uncle-bill-s-pancake-house",
+      "category": "breakfast",
+      "title": "Uncle Bill's Pancake House",
+      "content": "Classic Manhattan Beach breakfast spot near downtown and the beach.",
+      "tags": [
+        "breakfast",
+        "manhattan beach",
+        "uncle bill's pancake house",
+        "shellbytheshore pick"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "uncle-bill-s-pancake-house",
+        "lat": 33.884,
+        "lng": -118.4121,
+        "href": "/guide#poi-uncle-bill-s-pancake-house"
+      }
+    },
+    {
+      "id": "poi-venice-beach-boardwalk",
+      "category": "activities",
+      "title": "Venice Beach Boardwalk",
+      "content": "The lively oceanfront promenade for a distinctly Venice walk.",
+      "tags": [
+        "activities",
+        "venice",
+        "venice beach boardwalk"
+      ],
+      "location": "Venice",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "venice-beach-boardwalk",
+        "lat": 33.985,
+        "lng": -118.4695,
+        "href": "/guide#poi-venice-beach-boardwalk"
+      }
+    },
+    {
+      "id": "poi-venice-canals",
+      "category": "attractions",
+      "title": "Venice Canals",
+      "content": "A quiet residential canal walk a short distance from the beach.",
+      "tags": [
+        "attractions",
+        "venice",
+        "venice canals"
+      ],
+      "location": "Venice",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "venice-canals",
+        "lat": 33.984,
+        "lng": -118.4651,
+        "href": "/guide#poi-venice-canals"
+      }
+    },
+    {
+      "id": "poi-verve-coffee-roasters",
+      "category": "coffee",
+      "title": "Verve Coffee Roasters",
+      "content": "Specialty coffee stop in the downtown and Metlox area.",
+      "tags": [
+        "coffee",
+        "manhattan beach",
+        "verve coffee roasters"
+      ],
+      "location": "Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "verve-coffee-roasters",
+        "lat": 33.8843,
+        "lng": -118.4065,
+        "href": "/guide#poi-verve-coffee-roasters"
+      }
+    },
+    {
+      "id": "poi-vons",
+      "category": "groceries",
+      "title": "Vons",
+      "content": "Full-service supermarket for everyday grocery needs.",
+      "tags": [
+        "groceries",
+        "redondo beach",
+        "vons",
+        "everyday grocery"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "vons",
+        "lat": 33.8257,
+        "lng": -118.3824,
+        "href": "/guide#poi-vons"
+      }
+    },
+    {
+      "id": "poi-whole-foods-market",
+      "category": "groceries",
+      "title": "Whole Foods Market",
+      "content": "Organic and specialty grocery option with prepared foods.",
+      "tags": [
+        "groceries",
+        "redondo beach",
+        "whole foods market",
+        "premium & organic"
+      ],
+      "location": "Redondo Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "venue-live-sensitive",
+      "source": "Local Guide POI",
+      "sourcePath": "app/_components/LocalGuideMap.tsx",
+      "poi": {
+        "id": "whole-foods-market",
+        "lat": 33.8251,
+        "lng": -118.3872,
+        "href": "/guide#poi-whole-foods-market"
+      }
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "property-accessibility-stairs",
+      "category": "accessibility",
+      "title": "Stairs to the home",
+      "content": "The home is the lower unit of a duplex, but reaching it requires going up two short flights of stairs. No step-free access is documented.",
+      "tags": [
+        "stairs",
+        "accessibility",
+        "step free",
+        "mobility",
+        "duplex"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "property-balcony",
+      "category": "property",
+      "title": "Private balcony",
+      "content": "The private balcony has seating, a partial ocean view, and an outdoor dining area.",
+      "tags": [
+        "balcony",
+        "outdoor",
+        "ocean view",
+        "sunset",
+        "dining"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "property-beach-gear",
+      "category": "amenities",
+      "title": "Beach equipment",
+      "content": "Verified beach essentials include beach towels, chairs, and an umbrella. Listing photos also document boogie boards, books, and sand toys in the garage.",
+      "tags": [
+        "beach gear",
+        "chairs",
+        "towels",
+        "umbrella",
+        "boogie boards",
+        "sand toys",
+        "families"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "property-summary",
+      "category": "property",
+      "title": "Shell St Beach Retreat: Bright 2BR Near the Beach",
+      "content": "Entire rental unit for up to 4 guests with 2 bedrooms, 2 beds, 2 baths. It is in El Porto, about a five-minute walk from Manhattan Beach and El Segundo Beach, with The Strand bike path about a block away.",
+      "tags": [
+        "property",
+        "capacity",
+        "guests",
+        "bedrooms",
+        "beds",
+        "bathrooms",
+        "el porto",
+        "neighborhood"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "rules-before-you-leave",
+      "category": "departure",
+      "title": "Before you leave",
+      "content": "Gather used towels; Throw trash away; Turn things off; Return keys; Lock up",
+      "tags": [
+        "house rules",
+        "before you leave",
+        "gather used towels",
+        "throw trash away",
+        "turn things off",
+        "return keys",
+        "lock up"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "rules-checking-in-and-out",
+      "category": "house-rules",
+      "title": "Checking in and out",
+      "content": "Check-in after 3:00 PM; Checkout before 10:00 AM; Self check-in with keypad",
+      "tags": [
+        "house rules",
+        "checking in and out",
+        "check-in after 3:00 pm",
+        "checkout before 10:00 am",
+        "self check-in with keypad"
+      ]
+    },
+    {
+      "location": "El Porto, Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "property",
+      "source": "Verified public listing",
+      "sourcePath": "property-data.json",
+      "id": "rules-during-your-stay",
+      "category": "house-rules",
+      "title": "During your stay",
+      "content": "4 guests maximum; No pets; Quiet hours: 10:00 PM - 8:00 AM; No parties or events; No commercial photography; No smoking; Additional rules",
+      "tags": [
+        "house rules",
+        "during your stay",
+        "4 guests maximum",
+        "no pets",
+        "quiet hours",
+        "no parties or events",
+        "no commercial photography",
+        "no smoking",
+        "additional rules"
+      ]
+    },
+    {
+      "id": "safety-emergency",
+      "category": "safety",
+      "title": "Emergencies and urgent maintenance",
+      "content": "For an immediate threat to life or property in the United States, call 911. For a property issue that is urgent but not an emergency, contact the host through the established guest communication channel. The concierge cannot dispatch emergency help.",
+      "tags": [
+        "emergency",
+        "911",
+        "urgent",
+        "maintenance",
+        "host",
+        "safety"
+      ],
+      "location": "United States",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 1,
+      "freshness": "evergreen",
+      "source": "Public safety guidance",
+      "sourcePath": "knowledge/curated-overrides.json"
+    },
+    {
+      "id": "safety-ocean",
+      "category": "safety",
+      "title": "Ocean safety",
+      "content": "Ocean conditions can change quickly. Swim near a lifeguard when available, follow posted warnings, supervise children closely, and do not enter water beyond your ability. Check current beach conditions directly before swimming or surfing.",
+      "tags": [
+        "ocean",
+        "swim",
+        "surf",
+        "children",
+        "lifeguard",
+        "beach safety"
+      ],
+      "location": "Los Angeles County beaches",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 0.95,
+      "freshness": "live-sensitive",
+      "source": "General public safety guidance",
+      "sourcePath": "knowledge/curated-overrides.json"
+    },
+    {
+      "id": "transport-lax",
+      "category": "transportation",
+      "title": "Arriving from LAX",
+      "content": "Los Angeles International Airport is the closest major airport for most guests. Rideshare or a rental car are the simplest general options. A rental car is useful for Malibu and wider Los Angeles trips; rideshare can suit a beach-focused stay. Traffic and travel times vary, so check live routing before departure.",
+      "tags": [
+        "lax",
+        "airport",
+        "arrival",
+        "uber",
+        "rideshare",
+        "rental car",
+        "transport"
+      ],
+      "location": "LAX / Manhattan Beach",
+      "scope": "PUBLIC_SAFE",
+      "confidence": 0.95,
+      "freshness": "live-sensitive",
+      "source": "Local Guide",
+      "sourcePath": "app/_components/LocalGuideMap.tsx"
+    }
+  ],
+  "sources": [
+    "app/_components/AvailabilityRequest.tsx",
+    "app/_components/LocalGuideMap.tsx",
+    "app/guide/page.tsx",
+    "app/terms-and-conditions/page.tsx",
+    "knowledge/curated-overrides.json",
+    "property-data.json"
+  ]
+}

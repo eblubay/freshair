@@ -1,0 +1,2363 @@
+{
+  "version": 1,
+  "intents": [
+    {
+      "id": "property.capacity",
+      "category": "property",
+      "title": "capacity",
+      "tags": [
+        "capacity"
+      ],
+      "examples": [
+        "Tell me about capacity",
+        "Can you help with capacity?"
+      ]
+    },
+    {
+      "id": "property.bedrooms",
+      "category": "property",
+      "title": "bedrooms",
+      "tags": [
+        "bedrooms"
+      ],
+      "examples": [
+        "Tell me about bedrooms",
+        "Can you help with bedrooms?"
+      ]
+    },
+    {
+      "id": "property.bathrooms",
+      "category": "property",
+      "title": "bathrooms",
+      "tags": [
+        "bathrooms"
+      ],
+      "examples": [
+        "Tell me about bathrooms",
+        "Can you help with bathrooms?"
+      ]
+    },
+    {
+      "id": "property.beds",
+      "category": "property",
+      "title": "beds",
+      "tags": [
+        "beds"
+      ],
+      "examples": [
+        "Tell me about beds",
+        "Can you help with beds?"
+      ]
+    },
+    {
+      "id": "property.kitchen",
+      "category": "property",
+      "title": "kitchen",
+      "tags": [
+        "kitchen"
+      ],
+      "examples": [
+        "Tell me about kitchen",
+        "Can you help with kitchen?"
+      ]
+    },
+    {
+      "id": "property.laundry",
+      "category": "property",
+      "title": "laundry",
+      "tags": [
+        "laundry"
+      ],
+      "examples": [
+        "Tell me about laundry",
+        "Can you help with laundry?"
+      ]
+    },
+    {
+      "id": "property.heating",
+      "category": "property",
+      "title": "heating",
+      "tags": [
+        "heating"
+      ],
+      "examples": [
+        "Tell me about heating",
+        "Can you help with heating?"
+      ]
+    },
+    {
+      "id": "property.air-conditioning",
+      "category": "property",
+      "title": "air conditioning",
+      "tags": [
+        "air",
+        "conditioning"
+      ],
+      "examples": [
+        "Tell me about air conditioning",
+        "Can you help with air conditioning?"
+      ]
+    },
+    {
+      "id": "property.wifi",
+      "category": "property",
+      "title": "wifi",
+      "tags": [
+        "wifi"
+      ],
+      "examples": [
+        "Tell me about wifi",
+        "Can you help with wifi?"
+      ]
+    },
+    {
+      "id": "property.work-from-home",
+      "category": "property",
+      "title": "work from home",
+      "tags": [
+        "work",
+        "from",
+        "home"
+      ],
+      "examples": [
+        "Tell me about work from home",
+        "Can you help with work from home?"
+      ]
+    },
+    {
+      "id": "property.balcony",
+      "category": "property",
+      "title": "balcony",
+      "tags": [
+        "balcony"
+      ],
+      "examples": [
+        "Tell me about balcony",
+        "Can you help with balcony?"
+      ]
+    },
+    {
+      "id": "property.beach-equipment",
+      "category": "property",
+      "title": "beach equipment",
+      "tags": [
+        "beach",
+        "equipment"
+      ],
+      "examples": [
+        "Tell me about beach equipment",
+        "Can you help with beach equipment?"
+      ]
+    },
+    {
+      "id": "property.towels-and-linens",
+      "category": "property",
+      "title": "towels and linens",
+      "tags": [
+        "towels",
+        "and",
+        "linens"
+      ],
+      "examples": [
+        "Tell me about towels and linens",
+        "Can you help with towels and linens?"
+      ]
+    },
+    {
+      "id": "property.appliances",
+      "category": "property",
+      "title": "appliances",
+      "tags": [
+        "appliances"
+      ],
+      "examples": [
+        "Tell me about appliances",
+        "Can you help with appliances?"
+      ]
+    },
+    {
+      "id": "property.stairs",
+      "category": "property",
+      "title": "stairs",
+      "tags": [
+        "stairs"
+      ],
+      "examples": [
+        "Tell me about stairs",
+        "Can you help with stairs?"
+      ]
+    },
+    {
+      "id": "property.accessibility",
+      "category": "property",
+      "title": "accessibility",
+      "tags": [
+        "accessibility"
+      ],
+      "examples": [
+        "Tell me about accessibility",
+        "Can you help with accessibility?"
+      ]
+    },
+    {
+      "id": "property.noise",
+      "category": "property",
+      "title": "noise",
+      "tags": [
+        "noise"
+      ],
+      "examples": [
+        "Tell me about noise",
+        "Can you help with noise?"
+      ]
+    },
+    {
+      "id": "property.neighborhood",
+      "category": "property",
+      "title": "neighborhood",
+      "tags": [
+        "neighborhood"
+      ],
+      "examples": [
+        "Tell me about neighborhood",
+        "Can you help with neighborhood?"
+      ]
+    },
+    {
+      "id": "property.parking",
+      "category": "property",
+      "title": "parking",
+      "tags": [
+        "parking"
+      ],
+      "examples": [
+        "Tell me about parking",
+        "Can you help with parking?"
+      ]
+    },
+    {
+      "id": "property.safety-equipment",
+      "category": "property",
+      "title": "safety equipment",
+      "tags": [
+        "safety",
+        "equipment"
+      ],
+      "examples": [
+        "Tell me about safety equipment",
+        "Can you help with safety equipment?"
+      ]
+    },
+    {
+      "id": "property.coffee-maker",
+      "category": "property",
+      "title": "coffee maker",
+      "tags": [
+        "coffee",
+        "maker"
+      ],
+      "examples": [
+        "Tell me about coffee maker",
+        "Can you help with coffee maker?"
+      ]
+    },
+    {
+      "id": "property.private-entrance",
+      "category": "property",
+      "title": "private entrance",
+      "tags": [
+        "private",
+        "entrance"
+      ],
+      "examples": [
+        "Tell me about private entrance",
+        "Can you help with private entrance?"
+      ]
+    },
+    {
+      "id": "property.television",
+      "category": "property",
+      "title": "television",
+      "tags": [
+        "television"
+      ],
+      "examples": [
+        "Tell me about television",
+        "Can you help with television?"
+      ]
+    },
+    {
+      "id": "property.blackout-shades",
+      "category": "property",
+      "title": "blackout shades",
+      "tags": [
+        "blackout",
+        "shades"
+      ],
+      "examples": [
+        "Tell me about blackout shades",
+        "Can you help with blackout shades?"
+      ]
+    },
+    {
+      "id": "property.long-stay",
+      "category": "property",
+      "title": "long stay",
+      "tags": [
+        "long",
+        "stay"
+      ],
+      "examples": [
+        "Tell me about long stay",
+        "Can you help with long stay?"
+      ]
+    },
+    {
+      "id": "arrival.from-lax",
+      "category": "arrival",
+      "title": "from LAX",
+      "tags": [
+        "from",
+        "lax"
+      ],
+      "examples": [
+        "Tell me about from LAX",
+        "Can you help with from LAX?"
+      ]
+    },
+    {
+      "id": "arrival.from-another-airport",
+      "category": "arrival",
+      "title": "from another airport",
+      "tags": [
+        "from",
+        "another",
+        "airport"
+      ],
+      "examples": [
+        "Tell me about from another airport",
+        "Can you help with from another airport?"
+      ]
+    },
+    {
+      "id": "arrival.rideshare",
+      "category": "arrival",
+      "title": "rideshare",
+      "tags": [
+        "rideshare"
+      ],
+      "examples": [
+        "Tell me about rideshare",
+        "Can you help with rideshare?"
+      ]
+    },
+    {
+      "id": "arrival.rental-car",
+      "category": "arrival",
+      "title": "rental car",
+      "tags": [
+        "rental",
+        "car"
+      ],
+      "examples": [
+        "Tell me about rental car",
+        "Can you help with rental car?"
+      ]
+    },
+    {
+      "id": "arrival.driving",
+      "category": "arrival",
+      "title": "driving",
+      "tags": [
+        "driving"
+      ],
+      "examples": [
+        "Tell me about driving",
+        "Can you help with driving?"
+      ]
+    },
+    {
+      "id": "arrival.late-arrival",
+      "category": "arrival",
+      "title": "late arrival",
+      "tags": [
+        "late",
+        "arrival"
+      ],
+      "examples": [
+        "Tell me about late arrival",
+        "Can you help with late arrival?"
+      ]
+    },
+    {
+      "id": "arrival.early-arrival",
+      "category": "arrival",
+      "title": "early arrival",
+      "tags": [
+        "early",
+        "arrival"
+      ],
+      "examples": [
+        "Tell me about early arrival",
+        "Can you help with early arrival?"
+      ]
+    },
+    {
+      "id": "arrival.luggage-before-check-in",
+      "category": "arrival",
+      "title": "luggage before check-in",
+      "tags": [
+        "luggage",
+        "before",
+        "check-in"
+      ],
+      "examples": [
+        "Tell me about luggage before check-in",
+        "Can you help with luggage before check-in?"
+      ]
+    },
+    {
+      "id": "arrival.garage-parking",
+      "category": "arrival",
+      "title": "garage parking",
+      "tags": [
+        "garage",
+        "parking"
+      ],
+      "examples": [
+        "Tell me about garage parking",
+        "Can you help with garage parking?"
+      ]
+    },
+    {
+      "id": "arrival.neighborhood-orientation",
+      "category": "arrival",
+      "title": "neighborhood orientation",
+      "tags": [
+        "neighborhood",
+        "orientation"
+      ],
+      "examples": [
+        "Tell me about neighborhood orientation",
+        "Can you help with neighborhood orientation?"
+      ]
+    },
+    {
+      "id": "arrival.self-check-in",
+      "category": "arrival",
+      "title": "self check-in",
+      "tags": [
+        "self",
+        "check-in"
+      ],
+      "examples": [
+        "Tell me about self check-in",
+        "Can you help with self check-in?"
+      ]
+    },
+    {
+      "id": "arrival.large-vehicle",
+      "category": "arrival",
+      "title": "large vehicle",
+      "tags": [
+        "large",
+        "vehicle"
+      ],
+      "examples": [
+        "Tell me about large vehicle",
+        "Can you help with large vehicle?"
+      ]
+    },
+    {
+      "id": "departure.checkout-time",
+      "category": "departure",
+      "title": "checkout time",
+      "tags": [
+        "checkout",
+        "time"
+      ],
+      "examples": [
+        "Tell me about checkout time",
+        "Can you help with checkout time?"
+      ]
+    },
+    {
+      "id": "departure.departure-plan",
+      "category": "departure",
+      "title": "departure plan",
+      "tags": [
+        "departure",
+        "plan"
+      ],
+      "examples": [
+        "Tell me about departure plan",
+        "Can you help with departure plan?"
+      ]
+    },
+    {
+      "id": "departure.airport-timing",
+      "category": "departure",
+      "title": "airport timing",
+      "tags": [
+        "airport",
+        "timing"
+      ],
+      "examples": [
+        "Tell me about airport timing",
+        "Can you help with airport timing?"
+      ]
+    },
+    {
+      "id": "departure.luggage-after-checkout",
+      "category": "departure",
+      "title": "luggage after checkout",
+      "tags": [
+        "luggage",
+        "after",
+        "checkout"
+      ],
+      "examples": [
+        "Tell me about luggage after checkout",
+        "Can you help with luggage after checkout?"
+      ]
+    },
+    {
+      "id": "departure.cleaning-expectations",
+      "category": "departure",
+      "title": "cleaning expectations",
+      "tags": [
+        "cleaning",
+        "expectations"
+      ],
+      "examples": [
+        "Tell me about cleaning expectations",
+        "Can you help with cleaning expectations?"
+      ]
+    },
+    {
+      "id": "departure.checkout-process",
+      "category": "departure",
+      "title": "checkout process",
+      "tags": [
+        "checkout",
+        "process"
+      ],
+      "examples": [
+        "Tell me about checkout process",
+        "Can you help with checkout process?"
+      ]
+    },
+    {
+      "id": "departure.used-towels",
+      "category": "departure",
+      "title": "used towels",
+      "tags": [
+        "used",
+        "towels"
+      ],
+      "examples": [
+        "Tell me about used towels",
+        "Can you help with used towels?"
+      ]
+    },
+    {
+      "id": "departure.trash",
+      "category": "departure",
+      "title": "trash",
+      "tags": [
+        "trash"
+      ],
+      "examples": [
+        "Tell me about trash",
+        "Can you help with trash?"
+      ]
+    },
+    {
+      "id": "departure.locking-up",
+      "category": "departure",
+      "title": "locking up",
+      "tags": [
+        "locking",
+        "up"
+      ],
+      "examples": [
+        "Tell me about locking up",
+        "Can you help with locking up?"
+      ]
+    },
+    {
+      "id": "booking.request-availability",
+      "category": "booking",
+      "title": "request availability",
+      "tags": [
+        "request",
+        "availability"
+      ],
+      "examples": [
+        "Tell me about request availability",
+        "Can you help with request availability?"
+      ]
+    },
+    {
+      "id": "booking.date-availability",
+      "category": "booking",
+      "title": "date availability",
+      "tags": [
+        "date",
+        "availability"
+      ],
+      "examples": [
+        "Tell me about date availability",
+        "Can you help with date availability?"
+      ]
+    },
+    {
+      "id": "booking.reservation-confirmation",
+      "category": "booking",
+      "title": "reservation confirmation",
+      "tags": [
+        "reservation",
+        "confirmation"
+      ],
+      "examples": [
+        "Tell me about reservation confirmation",
+        "Can you help with reservation confirmation?"
+      ]
+    },
+    {
+      "id": "booking.payments",
+      "category": "booking",
+      "title": "payments",
+      "tags": [
+        "payments"
+      ],
+      "examples": [
+        "Tell me about payments",
+        "Can you help with payments?"
+      ]
+    },
+    {
+      "id": "booking.cancellation",
+      "category": "booking",
+      "title": "cancellation",
+      "tags": [
+        "cancellation"
+      ],
+      "examples": [
+        "Tell me about cancellation",
+        "Can you help with cancellation?"
+      ]
+    },
+    {
+      "id": "booking.modify-inquiry",
+      "category": "booking",
+      "title": "modify inquiry",
+      "tags": [
+        "modify",
+        "inquiry"
+      ],
+      "examples": [
+        "Tell me about modify inquiry",
+        "Can you help with modify inquiry?"
+      ]
+    },
+    {
+      "id": "booking.extend-stay",
+      "category": "booking",
+      "title": "extend stay",
+      "tags": [
+        "extend",
+        "stay"
+      ],
+      "examples": [
+        "Tell me about extend stay",
+        "Can you help with extend stay?"
+      ]
+    },
+    {
+      "id": "booking.guest-count",
+      "category": "booking",
+      "title": "guest count",
+      "tags": [
+        "guest",
+        "count"
+      ],
+      "examples": [
+        "Tell me about guest count",
+        "Can you help with guest count?"
+      ]
+    },
+    {
+      "id": "booking.prices",
+      "category": "booking",
+      "title": "prices",
+      "tags": [
+        "prices"
+      ],
+      "examples": [
+        "Tell me about prices",
+        "Can you help with prices?"
+      ]
+    },
+    {
+      "id": "booking.discounts",
+      "category": "booking",
+      "title": "discounts",
+      "tags": [
+        "discounts"
+      ],
+      "examples": [
+        "Tell me about discounts",
+        "Can you help with discounts?"
+      ]
+    },
+    {
+      "id": "beaches.manhattan-beach",
+      "category": "beaches",
+      "title": "Manhattan Beach",
+      "tags": [
+        "manhattan",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about Manhattan Beach",
+        "Can you help with Manhattan Beach?"
+      ]
+    },
+    {
+      "id": "beaches.el-porto",
+      "category": "beaches",
+      "title": "El Porto",
+      "tags": [
+        "el",
+        "porto"
+      ],
+      "examples": [
+        "Tell me about El Porto",
+        "Can you help with El Porto?"
+      ]
+    },
+    {
+      "id": "beaches.hermosa-beach",
+      "category": "beaches",
+      "title": "Hermosa Beach",
+      "tags": [
+        "hermosa",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about Hermosa Beach",
+        "Can you help with Hermosa Beach?"
+      ]
+    },
+    {
+      "id": "beaches.redondo-beach",
+      "category": "beaches",
+      "title": "Redondo Beach",
+      "tags": [
+        "redondo",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about Redondo Beach",
+        "Can you help with Redondo Beach?"
+      ]
+    },
+    {
+      "id": "beaches.venice-beach",
+      "category": "beaches",
+      "title": "Venice Beach",
+      "tags": [
+        "venice",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about Venice Beach",
+        "Can you help with Venice Beach?"
+      ]
+    },
+    {
+      "id": "beaches.santa-monica-beach",
+      "category": "beaches",
+      "title": "Santa Monica beach",
+      "tags": [
+        "santa",
+        "monica",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about Santa Monica beach",
+        "Can you help with Santa Monica beach?"
+      ]
+    },
+    {
+      "id": "beaches.malibu-beach",
+      "category": "beaches",
+      "title": "Malibu beach",
+      "tags": [
+        "malibu",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about Malibu beach",
+        "Can you help with Malibu beach?"
+      ]
+    },
+    {
+      "id": "beaches.swimming",
+      "category": "beaches",
+      "title": "swimming",
+      "tags": [
+        "swimming"
+      ],
+      "examples": [
+        "Tell me about swimming",
+        "Can you help with swimming?"
+      ]
+    },
+    {
+      "id": "beaches.walking",
+      "category": "beaches",
+      "title": "walking",
+      "tags": [
+        "walking"
+      ],
+      "examples": [
+        "Tell me about walking",
+        "Can you help with walking?"
+      ]
+    },
+    {
+      "id": "beaches.sunsets",
+      "category": "beaches",
+      "title": "sunsets",
+      "tags": [
+        "sunsets"
+      ],
+      "examples": [
+        "Tell me about sunsets",
+        "Can you help with sunsets?"
+      ]
+    },
+    {
+      "id": "beaches.surfing",
+      "category": "beaches",
+      "title": "surfing",
+      "tags": [
+        "surfing"
+      ],
+      "examples": [
+        "Tell me about surfing",
+        "Can you help with surfing?"
+      ]
+    },
+    {
+      "id": "beaches.beginner-surf",
+      "category": "beaches",
+      "title": "beginner surf",
+      "tags": [
+        "beginner",
+        "surf"
+      ],
+      "examples": [
+        "Tell me about beginner surf",
+        "Can you help with beginner surf?"
+      ]
+    },
+    {
+      "id": "beaches.family-beach",
+      "category": "beaches",
+      "title": "family beach",
+      "tags": [
+        "family",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about family beach",
+        "Can you help with family beach?"
+      ]
+    },
+    {
+      "id": "beaches.beach-preparation",
+      "category": "beaches",
+      "title": "beach preparation",
+      "tags": [
+        "beach",
+        "preparation"
+      ],
+      "examples": [
+        "Tell me about beach preparation",
+        "Can you help with beach preparation?"
+      ]
+    },
+    {
+      "id": "beaches.quiet-beach",
+      "category": "beaches",
+      "title": "quiet beach",
+      "tags": [
+        "quiet",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about quiet beach",
+        "Can you help with quiet beach?"
+      ]
+    },
+    {
+      "id": "beaches.strand",
+      "category": "beaches",
+      "title": "Strand",
+      "tags": [
+        "strand"
+      ],
+      "examples": [
+        "Tell me about Strand",
+        "Can you help with Strand?"
+      ]
+    },
+    {
+      "id": "food.breakfast",
+      "category": "food",
+      "title": "breakfast",
+      "tags": [
+        "breakfast"
+      ],
+      "examples": [
+        "Tell me about breakfast",
+        "Can you help with breakfast?"
+      ]
+    },
+    {
+      "id": "food.brunch",
+      "category": "food",
+      "title": "brunch",
+      "tags": [
+        "brunch"
+      ],
+      "examples": [
+        "Tell me about brunch",
+        "Can you help with brunch?"
+      ]
+    },
+    {
+      "id": "food.coffee",
+      "category": "food",
+      "title": "coffee",
+      "tags": [
+        "coffee"
+      ],
+      "examples": [
+        "Tell me about coffee",
+        "Can you help with coffee?"
+      ]
+    },
+    {
+      "id": "food.lunch",
+      "category": "food",
+      "title": "lunch",
+      "tags": [
+        "lunch"
+      ],
+      "examples": [
+        "Tell me about lunch",
+        "Can you help with lunch?"
+      ]
+    },
+    {
+      "id": "food.dinner",
+      "category": "food",
+      "title": "dinner",
+      "tags": [
+        "dinner"
+      ],
+      "examples": [
+        "Tell me about dinner",
+        "Can you help with dinner?"
+      ]
+    },
+    {
+      "id": "food.seafood",
+      "category": "food",
+      "title": "seafood",
+      "tags": [
+        "seafood"
+      ],
+      "examples": [
+        "Tell me about seafood",
+        "Can you help with seafood?"
+      ]
+    },
+    {
+      "id": "food.sushi",
+      "category": "food",
+      "title": "sushi",
+      "tags": [
+        "sushi"
+      ],
+      "examples": [
+        "Tell me about sushi",
+        "Can you help with sushi?"
+      ]
+    },
+    {
+      "id": "food.casual-meal",
+      "category": "food",
+      "title": "casual meal",
+      "tags": [
+        "casual",
+        "meal"
+      ],
+      "examples": [
+        "Tell me about casual meal",
+        "Can you help with casual meal?"
+      ]
+    },
+    {
+      "id": "food.date-night",
+      "category": "food",
+      "title": "date night",
+      "tags": [
+        "date",
+        "night"
+      ],
+      "examples": [
+        "Tell me about date night",
+        "Can you help with date night?"
+      ]
+    },
+    {
+      "id": "food.family-friendly-dining",
+      "category": "food",
+      "title": "family friendly dining",
+      "tags": [
+        "family",
+        "friendly",
+        "dining"
+      ],
+      "examples": [
+        "Tell me about family friendly dining",
+        "Can you help with family friendly dining?"
+      ]
+    },
+    {
+      "id": "food.vegetarian-food",
+      "category": "food",
+      "title": "vegetarian food",
+      "tags": [
+        "vegetarian",
+        "food"
+      ],
+      "examples": [
+        "Tell me about vegetarian food",
+        "Can you help with vegetarian food?"
+      ]
+    },
+    {
+      "id": "food.vegan-food",
+      "category": "food",
+      "title": "vegan food",
+      "tags": [
+        "vegan",
+        "food"
+      ],
+      "examples": [
+        "Tell me about vegan food",
+        "Can you help with vegan food?"
+      ]
+    },
+    {
+      "id": "food.groceries",
+      "category": "food",
+      "title": "groceries",
+      "tags": [
+        "groceries"
+      ],
+      "examples": [
+        "Tell me about groceries",
+        "Can you help with groceries?"
+      ]
+    },
+    {
+      "id": "food.takeout",
+      "category": "food",
+      "title": "takeout",
+      "tags": [
+        "takeout"
+      ],
+      "examples": [
+        "Tell me about takeout",
+        "Can you help with takeout?"
+      ]
+    },
+    {
+      "id": "food.dessert",
+      "category": "food",
+      "title": "dessert",
+      "tags": [
+        "dessert"
+      ],
+      "examples": [
+        "Tell me about dessert",
+        "Can you help with dessert?"
+      ]
+    },
+    {
+      "id": "food.prepared-food",
+      "category": "food",
+      "title": "prepared food",
+      "tags": [
+        "prepared",
+        "food"
+      ],
+      "examples": [
+        "Tell me about prepared food",
+        "Can you help with prepared food?"
+      ]
+    },
+    {
+      "id": "food.upscale-dinner",
+      "category": "food",
+      "title": "upscale dinner",
+      "tags": [
+        "upscale",
+        "dinner"
+      ],
+      "examples": [
+        "Tell me about upscale dinner",
+        "Can you help with upscale dinner?"
+      ]
+    },
+    {
+      "id": "food.italian-food",
+      "category": "food",
+      "title": "Italian food",
+      "tags": [
+        "italian",
+        "food"
+      ],
+      "examples": [
+        "Tell me about Italian food",
+        "Can you help with Italian food?"
+      ]
+    },
+    {
+      "id": "food.french-food",
+      "category": "food",
+      "title": "French food",
+      "tags": [
+        "french",
+        "food"
+      ],
+      "examples": [
+        "Tell me about French food",
+        "Can you help with French food?"
+      ]
+    },
+    {
+      "id": "food.healthy-breakfast",
+      "category": "food",
+      "title": "healthy breakfast",
+      "tags": [
+        "healthy",
+        "breakfast"
+      ],
+      "examples": [
+        "Tell me about healthy breakfast",
+        "Can you help with healthy breakfast?"
+      ]
+    },
+    {
+      "id": "food.beach-lunch",
+      "category": "food",
+      "title": "beach lunch",
+      "tags": [
+        "beach",
+        "lunch"
+      ],
+      "examples": [
+        "Tell me about beach lunch",
+        "Can you help with beach lunch?"
+      ]
+    },
+    {
+      "id": "areas.manhattan-beach",
+      "category": "areas",
+      "title": "Manhattan Beach",
+      "tags": [
+        "manhattan",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about Manhattan Beach",
+        "Can you help with Manhattan Beach?"
+      ]
+    },
+    {
+      "id": "areas.hermosa-beach",
+      "category": "areas",
+      "title": "Hermosa Beach",
+      "tags": [
+        "hermosa",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about Hermosa Beach",
+        "Can you help with Hermosa Beach?"
+      ]
+    },
+    {
+      "id": "areas.redondo-beach",
+      "category": "areas",
+      "title": "Redondo Beach",
+      "tags": [
+        "redondo",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about Redondo Beach",
+        "Can you help with Redondo Beach?"
+      ]
+    },
+    {
+      "id": "areas.venice",
+      "category": "areas",
+      "title": "Venice",
+      "tags": [
+        "venice"
+      ],
+      "examples": [
+        "Tell me about Venice",
+        "Can you help with Venice?"
+      ]
+    },
+    {
+      "id": "areas.santa-monica",
+      "category": "areas",
+      "title": "Santa Monica",
+      "tags": [
+        "santa",
+        "monica"
+      ],
+      "examples": [
+        "Tell me about Santa Monica",
+        "Can you help with Santa Monica?"
+      ]
+    },
+    {
+      "id": "areas.malibu",
+      "category": "areas",
+      "title": "Malibu",
+      "tags": [
+        "malibu"
+      ],
+      "examples": [
+        "Tell me about Malibu",
+        "Can you help with Malibu?"
+      ]
+    },
+    {
+      "id": "areas.el-porto",
+      "category": "areas",
+      "title": "El Porto",
+      "tags": [
+        "el",
+        "porto"
+      ],
+      "examples": [
+        "Tell me about El Porto",
+        "Can you help with El Porto?"
+      ]
+    },
+    {
+      "id": "areas.south-bay",
+      "category": "areas",
+      "title": "South Bay",
+      "tags": [
+        "south",
+        "bay"
+      ],
+      "examples": [
+        "Tell me about South Bay",
+        "Can you help with South Bay?"
+      ]
+    },
+    {
+      "id": "areas.downtown-manhattan-beach",
+      "category": "areas",
+      "title": "downtown Manhattan Beach",
+      "tags": [
+        "downtown",
+        "manhattan",
+        "beach"
+      ],
+      "examples": [
+        "Tell me about downtown Manhattan Beach",
+        "Can you help with downtown Manhattan Beach?"
+      ]
+    },
+    {
+      "id": "activities.walking",
+      "category": "activities",
+      "title": "walking",
+      "tags": [
+        "walking"
+      ],
+      "examples": [
+        "Tell me about walking",
+        "Can you help with walking?"
+      ]
+    },
+    {
+      "id": "activities.biking",
+      "category": "activities",
+      "title": "biking",
+      "tags": [
+        "biking"
+      ],
+      "examples": [
+        "Tell me about biking",
+        "Can you help with biking?"
+      ]
+    },
+    {
+      "id": "activities.surfing",
+      "category": "activities",
+      "title": "surfing",
+      "tags": [
+        "surfing"
+      ],
+      "examples": [
+        "Tell me about surfing",
+        "Can you help with surfing?"
+      ]
+    },
+    {
+      "id": "activities.shopping",
+      "category": "activities",
+      "title": "shopping",
+      "tags": [
+        "shopping"
+      ],
+      "examples": [
+        "Tell me about shopping",
+        "Can you help with shopping?"
+      ]
+    },
+    {
+      "id": "activities.sightseeing",
+      "category": "activities",
+      "title": "sightseeing",
+      "tags": [
+        "sightseeing"
+      ],
+      "examples": [
+        "Tell me about sightseeing",
+        "Can you help with sightseeing?"
+      ]
+    },
+    {
+      "id": "activities.family-activities",
+      "category": "activities",
+      "title": "family activities",
+      "tags": [
+        "family",
+        "activities"
+      ],
+      "examples": [
+        "Tell me about family activities",
+        "Can you help with family activities?"
+      ]
+    },
+    {
+      "id": "activities.rainy-day",
+      "category": "activities",
+      "title": "rainy day",
+      "tags": [
+        "rainy",
+        "day"
+      ],
+      "examples": [
+        "Tell me about rainy day",
+        "Can you help with rainy day?"
+      ]
+    },
+    {
+      "id": "activities.romantic-activities",
+      "category": "activities",
+      "title": "romantic activities",
+      "tags": [
+        "romantic",
+        "activities"
+      ],
+      "examples": [
+        "Tell me about romantic activities",
+        "Can you help with romantic activities?"
+      ]
+    },
+    {
+      "id": "activities.outdoor-activities",
+      "category": "activities",
+      "title": "outdoor activities",
+      "tags": [
+        "outdoor",
+        "activities"
+      ],
+      "examples": [
+        "Tell me about outdoor activities",
+        "Can you help with outdoor activities?"
+      ]
+    },
+    {
+      "id": "activities.photography",
+      "category": "activities",
+      "title": "photography",
+      "tags": [
+        "photography"
+      ],
+      "examples": [
+        "Tell me about photography",
+        "Can you help with photography?"
+      ]
+    },
+    {
+      "id": "activities.sunset",
+      "category": "activities",
+      "title": "sunset",
+      "tags": [
+        "sunset"
+      ],
+      "examples": [
+        "Tell me about sunset",
+        "Can you help with sunset?"
+      ]
+    },
+    {
+      "id": "activities.short-excursion",
+      "category": "activities",
+      "title": "short excursion",
+      "tags": [
+        "short",
+        "excursion"
+      ],
+      "examples": [
+        "Tell me about short excursion",
+        "Can you help with short excursion?"
+      ]
+    },
+    {
+      "id": "activities.full-day-trip",
+      "category": "activities",
+      "title": "full day trip",
+      "tags": [
+        "full",
+        "day",
+        "trip"
+      ],
+      "examples": [
+        "Tell me about full day trip",
+        "Can you help with full day trip?"
+      ]
+    },
+    {
+      "id": "activities.pier-walk",
+      "category": "activities",
+      "title": "pier walk",
+      "tags": [
+        "pier",
+        "walk"
+      ],
+      "examples": [
+        "Tell me about pier walk",
+        "Can you help with pier walk?"
+      ]
+    },
+    {
+      "id": "activities.boardwalk",
+      "category": "activities",
+      "title": "boardwalk",
+      "tags": [
+        "boardwalk"
+      ],
+      "examples": [
+        "Tell me about boardwalk",
+        "Can you help with boardwalk?"
+      ]
+    },
+    {
+      "id": "activities.marina",
+      "category": "activities",
+      "title": "marina",
+      "tags": [
+        "marina"
+      ],
+      "examples": [
+        "Tell me about marina",
+        "Can you help with marina?"
+      ]
+    },
+    {
+      "id": "activities.volleyball",
+      "category": "activities",
+      "title": "volleyball",
+      "tags": [
+        "volleyball"
+      ],
+      "examples": [
+        "Tell me about volleyball",
+        "Can you help with volleyball?"
+      ]
+    },
+    {
+      "id": "activities.running",
+      "category": "activities",
+      "title": "running",
+      "tags": [
+        "running"
+      ],
+      "examples": [
+        "Tell me about running",
+        "Can you help with running?"
+      ]
+    },
+    {
+      "id": "activities.cycling-the-strand",
+      "category": "activities",
+      "title": "cycling The Strand",
+      "tags": [
+        "cycling",
+        "the",
+        "strand"
+      ],
+      "examples": [
+        "Tell me about cycling The Strand",
+        "Can you help with cycling The Strand?"
+      ]
+    },
+    {
+      "id": "activities.farmers-market",
+      "category": "activities",
+      "title": "farmers market",
+      "tags": [
+        "farmers",
+        "market"
+      ],
+      "examples": [
+        "Tell me about farmers market",
+        "Can you help with farmers market?"
+      ]
+    },
+    {
+      "id": "families.toddlers",
+      "category": "families",
+      "title": "toddlers",
+      "tags": [
+        "toddlers"
+      ],
+      "examples": [
+        "Tell me about toddlers",
+        "Can you help with toddlers?"
+      ]
+    },
+    {
+      "id": "families.young-children",
+      "category": "families",
+      "title": "young children",
+      "tags": [
+        "young",
+        "children"
+      ],
+      "examples": [
+        "Tell me about young children",
+        "Can you help with young children?"
+      ]
+    },
+    {
+      "id": "families.teenagers",
+      "category": "families",
+      "title": "teenagers",
+      "tags": [
+        "teenagers"
+      ],
+      "examples": [
+        "Tell me about teenagers",
+        "Can you help with teenagers?"
+      ]
+    },
+    {
+      "id": "families.family-beaches",
+      "category": "families",
+      "title": "family beaches",
+      "tags": [
+        "family",
+        "beaches"
+      ],
+      "examples": [
+        "Tell me about family beaches",
+        "Can you help with family beaches?"
+      ]
+    },
+    {
+      "id": "families.food-with-kids",
+      "category": "families",
+      "title": "food with kids",
+      "tags": [
+        "food",
+        "with",
+        "kids"
+      ],
+      "examples": [
+        "Tell me about food with kids",
+        "Can you help with food with kids?"
+      ]
+    },
+    {
+      "id": "families.activities-with-kids",
+      "category": "families",
+      "title": "activities with kids",
+      "tags": [
+        "activities",
+        "with",
+        "kids"
+      ],
+      "examples": [
+        "Tell me about activities with kids",
+        "Can you help with activities with kids?"
+      ]
+    },
+    {
+      "id": "families.child-safety",
+      "category": "families",
+      "title": "child safety",
+      "tags": [
+        "child",
+        "safety"
+      ],
+      "examples": [
+        "Tell me about child safety",
+        "Can you help with child safety?"
+      ]
+    },
+    {
+      "id": "families.easy-family-itinerary",
+      "category": "families",
+      "title": "easy family itinerary",
+      "tags": [
+        "easy",
+        "family",
+        "itinerary"
+      ],
+      "examples": [
+        "Tell me about easy family itinerary",
+        "Can you help with easy family itinerary?"
+      ]
+    },
+    {
+      "id": "families.sand-toys",
+      "category": "families",
+      "title": "sand toys",
+      "tags": [
+        "sand",
+        "toys"
+      ],
+      "examples": [
+        "Tell me about sand toys",
+        "Can you help with sand toys?"
+      ]
+    },
+    {
+      "id": "families.board-games",
+      "category": "families",
+      "title": "board games",
+      "tags": [
+        "board",
+        "games"
+      ],
+      "examples": [
+        "Tell me about board games",
+        "Can you help with board games?"
+      ]
+    },
+    {
+      "id": "transportation.rental-car-versus-rideshare",
+      "category": "transportation",
+      "title": "rental car versus rideshare",
+      "tags": [
+        "rental",
+        "car",
+        "versus",
+        "rideshare"
+      ],
+      "examples": [
+        "Tell me about rental car versus rideshare",
+        "Can you help with rental car versus rideshare?"
+      ]
+    },
+    {
+      "id": "transportation.walking",
+      "category": "transportation",
+      "title": "walking",
+      "tags": [
+        "walking"
+      ],
+      "examples": [
+        "Tell me about walking",
+        "Can you help with walking?"
+      ]
+    },
+    {
+      "id": "transportation.biking",
+      "category": "transportation",
+      "title": "biking",
+      "tags": [
+        "biking"
+      ],
+      "examples": [
+        "Tell me about biking",
+        "Can you help with biking?"
+      ]
+    },
+    {
+      "id": "transportation.public-transportation",
+      "category": "transportation",
+      "title": "public transportation",
+      "tags": [
+        "public",
+        "transportation"
+      ],
+      "examples": [
+        "Tell me about public transportation",
+        "Can you help with public transportation?"
+      ]
+    },
+    {
+      "id": "transportation.parking",
+      "category": "transportation",
+      "title": "parking",
+      "tags": [
+        "parking"
+      ],
+      "examples": [
+        "Tell me about parking",
+        "Can you help with parking?"
+      ]
+    },
+    {
+      "id": "transportation.airport-transportation",
+      "category": "transportation",
+      "title": "airport transportation",
+      "tags": [
+        "airport",
+        "transportation"
+      ],
+      "examples": [
+        "Tell me about airport transportation",
+        "Can you help with airport transportation?"
+      ]
+    },
+    {
+      "id": "transportation.santa-monica-transport",
+      "category": "transportation",
+      "title": "Santa Monica transport",
+      "tags": [
+        "santa",
+        "monica",
+        "transport"
+      ],
+      "examples": [
+        "Tell me about Santa Monica transport",
+        "Can you help with Santa Monica transport?"
+      ]
+    },
+    {
+      "id": "transportation.venice-transport",
+      "category": "transportation",
+      "title": "Venice transport",
+      "tags": [
+        "venice",
+        "transport"
+      ],
+      "examples": [
+        "Tell me about Venice transport",
+        "Can you help with Venice transport?"
+      ]
+    },
+    {
+      "id": "transportation.malibu-transport",
+      "category": "transportation",
+      "title": "Malibu transport",
+      "tags": [
+        "malibu",
+        "transport"
+      ],
+      "examples": [
+        "Tell me about Malibu transport",
+        "Can you help with Malibu transport?"
+      ]
+    },
+    {
+      "id": "transportation.downtown-la-transport",
+      "category": "transportation",
+      "title": "downtown LA transport",
+      "tags": [
+        "downtown",
+        "la",
+        "transport"
+      ],
+      "examples": [
+        "Tell me about downtown LA transport",
+        "Can you help with downtown LA transport?"
+      ]
+    },
+    {
+      "id": "transportation.traffic",
+      "category": "transportation",
+      "title": "traffic",
+      "tags": [
+        "traffic"
+      ],
+      "examples": [
+        "Tell me about traffic",
+        "Can you help with traffic?"
+      ]
+    },
+    {
+      "id": "transportation.garage-clearance",
+      "category": "transportation",
+      "title": "garage clearance",
+      "tags": [
+        "garage",
+        "clearance"
+      ],
+      "examples": [
+        "Tell me about garage clearance",
+        "Can you help with garage clearance?"
+      ]
+    },
+    {
+      "id": "itineraries.two-hours",
+      "category": "itineraries",
+      "title": "two hours",
+      "tags": [
+        "two",
+        "hours"
+      ],
+      "examples": [
+        "Tell me about two hours",
+        "Can you help with two hours?"
+      ]
+    },
+    {
+      "id": "itineraries.half-day",
+      "category": "itineraries",
+      "title": "half day",
+      "tags": [
+        "half",
+        "day"
+      ],
+      "examples": [
+        "Tell me about half day",
+        "Can you help with half day?"
+      ]
+    },
+    {
+      "id": "itineraries.full-day",
+      "category": "itineraries",
+      "title": "full day",
+      "tags": [
+        "full",
+        "day"
+      ],
+      "examples": [
+        "Tell me about full day",
+        "Can you help with full day?"
+      ]
+    },
+    {
+      "id": "itineraries.weekend",
+      "category": "itineraries",
+      "title": "weekend",
+      "tags": [
+        "weekend"
+      ],
+      "examples": [
+        "Tell me about weekend",
+        "Can you help with weekend?"
+      ]
+    },
+    {
+      "id": "itineraries.beach-day",
+      "category": "itineraries",
+      "title": "beach day",
+      "tags": [
+        "beach",
+        "day"
+      ],
+      "examples": [
+        "Tell me about beach day",
+        "Can you help with beach day?"
+      ]
+    },
+    {
+      "id": "itineraries.manhattan-beach-day",
+      "category": "itineraries",
+      "title": "Manhattan Beach day",
+      "tags": [
+        "manhattan",
+        "beach",
+        "day"
+      ],
+      "examples": [
+        "Tell me about Manhattan Beach day",
+        "Can you help with Manhattan Beach day?"
+      ]
+    },
+    {
+      "id": "itineraries.hermosa-and-redondo-day",
+      "category": "itineraries",
+      "title": "Hermosa and Redondo day",
+      "tags": [
+        "hermosa",
+        "and",
+        "redondo",
+        "day"
+      ],
+      "examples": [
+        "Tell me about Hermosa and Redondo day",
+        "Can you help with Hermosa and Redondo day?"
+      ]
+    },
+    {
+      "id": "itineraries.santa-monica-and-venice-day",
+      "category": "itineraries",
+      "title": "Santa Monica and Venice day",
+      "tags": [
+        "santa",
+        "monica",
+        "and",
+        "venice",
+        "day"
+      ],
+      "examples": [
+        "Tell me about Santa Monica and Venice day",
+        "Can you help with Santa Monica and Venice day?"
+      ]
+    },
+    {
+      "id": "itineraries.malibu-day",
+      "category": "itineraries",
+      "title": "Malibu day",
+      "tags": [
+        "malibu",
+        "day"
+      ],
+      "examples": [
+        "Tell me about Malibu day",
+        "Can you help with Malibu day?"
+      ]
+    },
+    {
+      "id": "itineraries.family-day",
+      "category": "itineraries",
+      "title": "family day",
+      "tags": [
+        "family",
+        "day"
+      ],
+      "examples": [
+        "Tell me about family day",
+        "Can you help with family day?"
+      ]
+    },
+    {
+      "id": "itineraries.romantic-day",
+      "category": "itineraries",
+      "title": "romantic day",
+      "tags": [
+        "romantic",
+        "day"
+      ],
+      "examples": [
+        "Tell me about romantic day",
+        "Can you help with romantic day?"
+      ]
+    },
+    {
+      "id": "itineraries.food-focused-day",
+      "category": "itineraries",
+      "title": "food focused day",
+      "tags": [
+        "food",
+        "focused",
+        "day"
+      ],
+      "examples": [
+        "Tell me about food focused day",
+        "Can you help with food focused day?"
+      ]
+    },
+    {
+      "id": "itineraries.morning",
+      "category": "itineraries",
+      "title": "morning",
+      "tags": [
+        "morning"
+      ],
+      "examples": [
+        "Tell me about morning",
+        "Can you help with morning?"
+      ]
+    },
+    {
+      "id": "itineraries.three-hours-before-dinner",
+      "category": "itineraries",
+      "title": "three hours before dinner",
+      "tags": [
+        "three",
+        "hours",
+        "before",
+        "dinner"
+      ],
+      "examples": [
+        "Tell me about three hours before dinner",
+        "Can you help with three hours before dinner?"
+      ]
+    },
+    {
+      "id": "practical.groceries",
+      "category": "practical",
+      "title": "groceries",
+      "tags": [
+        "groceries"
+      ],
+      "examples": [
+        "Tell me about groceries",
+        "Can you help with groceries?"
+      ]
+    },
+    {
+      "id": "practical.pharmacy",
+      "category": "practical",
+      "title": "pharmacy",
+      "tags": [
+        "pharmacy"
+      ],
+      "examples": [
+        "Tell me about pharmacy",
+        "Can you help with pharmacy?"
+      ]
+    },
+    {
+      "id": "practical.parking-signs",
+      "category": "practical",
+      "title": "parking signs",
+      "tags": [
+        "parking",
+        "signs"
+      ],
+      "examples": [
+        "Tell me about parking signs",
+        "Can you help with parking signs?"
+      ]
+    },
+    {
+      "id": "practical.laundry",
+      "category": "practical",
+      "title": "laundry",
+      "tags": [
+        "laundry"
+      ],
+      "examples": [
+        "Tell me about laundry",
+        "Can you help with laundry?"
+      ]
+    },
+    {
+      "id": "practical.weather-dependent-ideas",
+      "category": "practical",
+      "title": "weather dependent ideas",
+      "tags": [
+        "weather",
+        "dependent",
+        "ideas"
+      ],
+      "examples": [
+        "Tell me about weather dependent ideas",
+        "Can you help with weather dependent ideas?"
+      ]
+    },
+    {
+      "id": "practical.what-to-pack",
+      "category": "practical",
+      "title": "what to pack",
+      "tags": [
+        "what",
+        "to",
+        "pack"
+      ],
+      "examples": [
+        "Tell me about what to pack",
+        "Can you help with what to pack?"
+      ]
+    },
+    {
+      "id": "practical.beach-gear",
+      "category": "practical",
+      "title": "beach gear",
+      "tags": [
+        "beach",
+        "gear"
+      ],
+      "examples": [
+        "Tell me about beach gear",
+        "Can you help with beach gear?"
+      ]
+    },
+    {
+      "id": "practical.local-etiquette",
+      "category": "practical",
+      "title": "local etiquette",
+      "tags": [
+        "local",
+        "etiquette"
+      ],
+      "examples": [
+        "Tell me about local etiquette",
+        "Can you help with local etiquette?"
+      ]
+    },
+    {
+      "id": "practical.quiet-hours",
+      "category": "practical",
+      "title": "quiet hours",
+      "tags": [
+        "quiet",
+        "hours"
+      ],
+      "examples": [
+        "Tell me about quiet hours",
+        "Can you help with quiet hours?"
+      ]
+    },
+    {
+      "id": "practical.neighborhood-rules",
+      "category": "practical",
+      "title": "neighborhood rules",
+      "tags": [
+        "neighborhood",
+        "rules"
+      ],
+      "examples": [
+        "Tell me about neighborhood rules",
+        "Can you help with neighborhood rules?"
+      ]
+    },
+    {
+      "id": "practical.live-hours",
+      "category": "practical",
+      "title": "live hours",
+      "tags": [
+        "live",
+        "hours"
+      ],
+      "examples": [
+        "Tell me about live hours",
+        "Can you help with live hours?"
+      ]
+    },
+    {
+      "id": "practical.lost-property",
+      "category": "practical",
+      "title": "lost property",
+      "tags": [
+        "lost",
+        "property"
+      ],
+      "examples": [
+        "Tell me about lost property",
+        "Can you help with lost property?"
+      ]
+    },
+    {
+      "id": "practical.no-pets",
+      "category": "practical",
+      "title": "no pets",
+      "tags": [
+        "no",
+        "pets"
+      ],
+      "examples": [
+        "Tell me about no pets",
+        "Can you help with no pets?"
+      ]
+    },
+    {
+      "id": "practical.no-smoking",
+      "category": "practical",
+      "title": "no smoking",
+      "tags": [
+        "no",
+        "smoking"
+      ],
+      "examples": [
+        "Tell me about no smoking",
+        "Can you help with no smoking?"
+      ]
+    },
+    {
+      "id": "practical.no-parties",
+      "category": "practical",
+      "title": "no parties",
+      "tags": [
+        "no",
+        "parties"
+      ],
+      "examples": [
+        "Tell me about no parties",
+        "Can you help with no parties?"
+      ]
+    },
+    {
+      "id": "practical.commercial-photography",
+      "category": "practical",
+      "title": "commercial photography",
+      "tags": [
+        "commercial",
+        "photography"
+      ],
+      "examples": [
+        "Tell me about commercial photography",
+        "Can you help with commercial photography?"
+      ]
+    },
+    {
+      "id": "safety.emergency",
+      "category": "safety",
+      "title": "emergency",
+      "tags": [
+        "emergency"
+      ],
+      "examples": [
+        "Tell me about emergency",
+        "Can you help with emergency?"
+      ]
+    },
+    {
+      "id": "safety.ocean-safety",
+      "category": "safety",
+      "title": "ocean safety",
+      "tags": [
+        "ocean",
+        "safety"
+      ],
+      "examples": [
+        "Tell me about ocean safety",
+        "Can you help with ocean safety?"
+      ]
+    },
+    {
+      "id": "safety.property-safety",
+      "category": "safety",
+      "title": "property safety",
+      "tags": [
+        "property",
+        "safety"
+      ],
+      "examples": [
+        "Tell me about property safety",
+        "Can you help with property safety?"
+      ]
+    },
+    {
+      "id": "safety.contacting-host",
+      "category": "safety",
+      "title": "contacting host",
+      "tags": [
+        "contacting",
+        "host"
+      ],
+      "examples": [
+        "Tell me about contacting host",
+        "Can you help with contacting host?"
+      ]
+    },
+    {
+      "id": "safety.lost-property",
+      "category": "safety",
+      "title": "lost property",
+      "tags": [
+        "lost",
+        "property"
+      ],
+      "examples": [
+        "Tell me about lost property",
+        "Can you help with lost property?"
+      ]
+    },
+    {
+      "id": "safety.urgent-maintenance",
+      "category": "safety",
+      "title": "urgent maintenance",
+      "tags": [
+        "urgent",
+        "maintenance"
+      ],
+      "examples": [
+        "Tell me about urgent maintenance",
+        "Can you help with urgent maintenance?"
+      ]
+    },
+    {
+      "id": "safety.smoke-alarm",
+      "category": "safety",
+      "title": "smoke alarm",
+      "tags": [
+        "smoke",
+        "alarm"
+      ],
+      "examples": [
+        "Tell me about smoke alarm",
+        "Can you help with smoke alarm?"
+      ]
+    },
+    {
+      "id": "safety.first-aid",
+      "category": "safety",
+      "title": "first aid",
+      "tags": [
+        "first",
+        "aid"
+      ],
+      "examples": [
+        "Tell me about first aid",
+        "Can you help with first aid?"
+      ]
+    },
+    {
+      "id": "safety.children-near-ocean",
+      "category": "safety",
+      "title": "children near ocean",
+      "tags": [
+        "children",
+        "near",
+        "ocean"
+      ],
+      "examples": [
+        "Tell me about children near ocean",
+        "Can you help with children near ocean?"
+      ]
+    },
+    {
+      "id": "safety.prompt-injection",
+      "category": "safety",
+      "title": "prompt injection",
+      "tags": [
+        "prompt",
+        "injection"
+      ],
+      "examples": [
+        "Tell me about prompt injection",
+        "Can you help with prompt injection?"
+      ]
+    }
+  ]
+}

@@ -7,6 +7,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
+		"knowledge:build": "tsx scripts/build-concierge-knowledge.ts",
+		"pretest": "npm run knowledge:build",
 		"test:cleaning": "tsx --test tests/cleaning-rules.test.ts",
 		"test:calendar": "tsx --test tests/ical.test.ts",
 		"test": "tsx --test tests/*.test.ts",

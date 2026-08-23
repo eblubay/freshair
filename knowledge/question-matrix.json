@@ -1,0 +1,2180 @@
+{
+  "version": 1,
+  "questions": [
+    {
+      "question": "Can you help us with capacity?",
+      "language": "en",
+      "intentId": "property.capacity"
+    },
+    {
+      "question": "Pls tell me abot capacity",
+      "language": "en",
+      "intentId": "property.capacity"
+    },
+    {
+      "question": "Cosa puoi dirmi di capacity?",
+      "language": "it",
+      "intentId": "property.capacity"
+    },
+    {
+      "question": "Que puedes decirme de capacity?",
+      "language": "es",
+      "intentId": "property.capacity"
+    },
+    {
+      "question": "Que peux-tu me dire sur capacity?",
+      "language": "fr",
+      "intentId": "property.capacity"
+    },
+    {
+      "question": "Was kannst du mir sagen über capacity?",
+      "language": "de",
+      "intentId": "property.capacity"
+    },
+    {
+      "question": "Can you help us with bedrooms?",
+      "language": "en",
+      "intentId": "property.bedrooms"
+    },
+    {
+      "question": "What should I know about bedrooms?",
+      "language": "en",
+      "intentId": "property.bedrooms"
+    },
+    {
+      "question": "Can you help us with bathrooms?",
+      "language": "en",
+      "intentId": "property.bathrooms"
+    },
+    {
+      "question": "What should I know about bathrooms?",
+      "language": "en",
+      "intentId": "property.bathrooms"
+    },
+    {
+      "question": "Can you help us with beds?",
+      "language": "en",
+      "intentId": "property.beds"
+    },
+    {
+      "question": "What should I know about beds?",
+      "language": "en",
+      "intentId": "property.beds"
+    },
+    {
+      "question": "Can you help us with kitchen?",
+      "language": "en",
+      "intentId": "property.kitchen"
+    },
+    {
+      "question": "What should I know about kitchen?",
+      "language": "en",
+      "intentId": "property.kitchen"
+    },
+    {
+      "question": "Can you help us with laundry?",
+      "language": "en",
+      "intentId": "property.laundry"
+    },
+    {
+      "question": "What should I know about laundry?",
+      "language": "en",
+      "intentId": "property.laundry"
+    },
+    {
+      "question": "Can you help us with heating?",
+      "language": "en",
+      "intentId": "property.heating"
+    },
+    {
+      "question": "What should I know about heating?",
+      "language": "en",
+      "intentId": "property.heating"
+    },
+    {
+      "question": "Can you help us with air conditioning?",
+      "language": "en",
+      "intentId": "property.air-conditioning"
+    },
+    {
+      "question": "Pls tell me abot air conditioning",
+      "language": "en",
+      "intentId": "property.air-conditioning"
+    },
+    {
+      "question": "Can you help us with wifi?",
+      "language": "en",
+      "intentId": "property.wifi"
+    },
+    {
+      "question": "What should I know about wifi?",
+      "language": "en",
+      "intentId": "property.wifi"
+    },
+    {
+      "question": "Can you help us with work from home?",
+      "language": "en",
+      "intentId": "property.work-from-home"
+    },
+    {
+      "question": "What should I know about work from home?",
+      "language": "en",
+      "intentId": "property.work-from-home"
+    },
+    {
+      "question": "Cosa puoi dirmi di work from home?",
+      "language": "it",
+      "intentId": "property.work-from-home"
+    },
+    {
+      "question": "Can you help us with balcony?",
+      "language": "en",
+      "intentId": "property.balcony"
+    },
+    {
+      "question": "What should I know about balcony?",
+      "language": "en",
+      "intentId": "property.balcony"
+    },
+    {
+      "question": "Can you help us with beach equipment?",
+      "language": "en",
+      "intentId": "property.beach-equipment"
+    },
+    {
+      "question": "What should I know about beach equipment?",
+      "language": "en",
+      "intentId": "property.beach-equipment"
+    },
+    {
+      "question": "Que puedes decirme de beach equipment?",
+      "language": "es",
+      "intentId": "property.beach-equipment"
+    },
+    {
+      "question": "Can you help us with towels and linens?",
+      "language": "en",
+      "intentId": "property.towels-and-linens"
+    },
+    {
+      "question": "What should I know about towels and linens?",
+      "language": "en",
+      "intentId": "property.towels-and-linens"
+    },
+    {
+      "question": "Can you help us with appliances?",
+      "language": "en",
+      "intentId": "property.appliances"
+    },
+    {
+      "question": "What should I know about appliances?",
+      "language": "en",
+      "intentId": "property.appliances"
+    },
+    {
+      "question": "Que peux-tu me dire sur appliances?",
+      "language": "fr",
+      "intentId": "property.appliances"
+    },
+    {
+      "question": "Can you help us with stairs?",
+      "language": "en",
+      "intentId": "property.stairs"
+    },
+    {
+      "question": "Pls tell me abot stairs",
+      "language": "en",
+      "intentId": "property.stairs"
+    },
+    {
+      "question": "Can you help us with accessibility?",
+      "language": "en",
+      "intentId": "property.accessibility"
+    },
+    {
+      "question": "What should I know about accessibility?",
+      "language": "en",
+      "intentId": "property.accessibility"
+    },
+    {
+      "question": "Was kannst du mir sagen über accessibility?",
+      "language": "de",
+      "intentId": "property.accessibility"
+    },
+    {
+      "question": "Can you help us with noise?",
+      "language": "en",
+      "intentId": "property.noise"
+    },
+    {
+      "question": "What should I know about noise?",
+      "language": "en",
+      "intentId": "property.noise"
+    },
+    {
+      "question": "Can you help us with neighborhood?",
+      "language": "en",
+      "intentId": "property.neighborhood"
+    },
+    {
+      "question": "What should I know about neighborhood?",
+      "language": "en",
+      "intentId": "property.neighborhood"
+    },
+    {
+      "question": "Can you help us with parking?",
+      "language": "en",
+      "intentId": "property.parking"
+    },
+    {
+      "question": "What should I know about parking?",
+      "language": "en",
+      "intentId": "property.parking"
+    },
+    {
+      "question": "Cosa puoi dirmi di parking?",
+      "language": "it",
+      "intentId": "property.parking"
+    },
+    {
+      "question": "Can you help us with safety equipment?",
+      "language": "en",
+      "intentId": "property.safety-equipment"
+    },
+    {
+      "question": "What should I know about safety equipment?",
+      "language": "en",
+      "intentId": "property.safety-equipment"
+    },
+    {
+      "question": "Can you help us with coffee maker?",
+      "language": "en",
+      "intentId": "property.coffee-maker"
+    },
+    {
+      "question": "What should I know about coffee maker?",
+      "language": "en",
+      "intentId": "property.coffee-maker"
+    },
+    {
+      "question": "Can you help us with private entrance?",
+      "language": "en",
+      "intentId": "property.private-entrance"
+    },
+    {
+      "question": "Pls tell me abot private entrance",
+      "language": "en",
+      "intentId": "property.private-entrance"
+    },
+    {
+      "question": "Can you help us with television?",
+      "language": "en",
+      "intentId": "property.television"
+    },
+    {
+      "question": "What should I know about television?",
+      "language": "en",
+      "intentId": "property.television"
+    },
+    {
+      "question": "Que puedes decirme de television?",
+      "language": "es",
+      "intentId": "property.television"
+    },
+    {
+      "question": "Can you help us with blackout shades?",
+      "language": "en",
+      "intentId": "property.blackout-shades"
+    },
+    {
+      "question": "What should I know about blackout shades?",
+      "language": "en",
+      "intentId": "property.blackout-shades"
+    },
+    {
+      "question": "Can you help us with long stay?",
+      "language": "en",
+      "intentId": "property.long-stay"
+    },
+    {
+      "question": "What should I know about long stay?",
+      "language": "en",
+      "intentId": "property.long-stay"
+    },
+    {
+      "question": "Can you help us with from LAX?",
+      "language": "en",
+      "intentId": "arrival.from-lax"
+    },
+    {
+      "question": "What should I know about from LAX?",
+      "language": "en",
+      "intentId": "arrival.from-lax"
+    },
+    {
+      "question": "Can you help us with from another airport?",
+      "language": "en",
+      "intentId": "arrival.from-another-airport"
+    },
+    {
+      "question": "What should I know about from another airport?",
+      "language": "en",
+      "intentId": "arrival.from-another-airport"
+    },
+    {
+      "question": "Que peux-tu me dire sur from another airport?",
+      "language": "fr",
+      "intentId": "arrival.from-another-airport"
+    },
+    {
+      "question": "Can you help us with rideshare?",
+      "language": "en",
+      "intentId": "arrival.rideshare"
+    },
+    {
+      "question": "What should I know about rideshare?",
+      "language": "en",
+      "intentId": "arrival.rideshare"
+    },
+    {
+      "question": "Cosa puoi dirmi di rideshare?",
+      "language": "it",
+      "intentId": "arrival.rideshare"
+    },
+    {
+      "question": "Can you help us with rental car?",
+      "language": "en",
+      "intentId": "arrival.rental-car"
+    },
+    {
+      "question": "Pls tell me abot rental car",
+      "language": "en",
+      "intentId": "arrival.rental-car"
+    },
+    {
+      "question": "Can you help us with driving?",
+      "language": "en",
+      "intentId": "arrival.driving"
+    },
+    {
+      "question": "What should I know about driving?",
+      "language": "en",
+      "intentId": "arrival.driving"
+    },
+    {
+      "question": "Can you help us with late arrival?",
+      "language": "en",
+      "intentId": "arrival.late-arrival"
+    },
+    {
+      "question": "What should I know about late arrival?",
+      "language": "en",
+      "intentId": "arrival.late-arrival"
+    },
+    {
+      "question": "Was kannst du mir sagen über late arrival?",
+      "language": "de",
+      "intentId": "arrival.late-arrival"
+    },
+    {
+      "question": "Can you help us with early arrival?",
+      "language": "en",
+      "intentId": "arrival.early-arrival"
+    },
+    {
+      "question": "What should I know about early arrival?",
+      "language": "en",
+      "intentId": "arrival.early-arrival"
+    },
+    {
+      "question": "Can you help us with luggage before check-in?",
+      "language": "en",
+      "intentId": "arrival.luggage-before-check-in"
+    },
+    {
+      "question": "What should I know about luggage before check-in?",
+      "language": "en",
+      "intentId": "arrival.luggage-before-check-in"
+    },
+    {
+      "question": "Can you help us with garage parking?",
+      "language": "en",
+      "intentId": "arrival.garage-parking"
+    },
+    {
+      "question": "What should I know about garage parking?",
+      "language": "en",
+      "intentId": "arrival.garage-parking"
+    },
+    {
+      "question": "Que puedes decirme de garage parking?",
+      "language": "es",
+      "intentId": "arrival.garage-parking"
+    },
+    {
+      "question": "Can you help us with neighborhood orientation?",
+      "language": "en",
+      "intentId": "arrival.neighborhood-orientation"
+    },
+    {
+      "question": "What should I know about neighborhood orientation?",
+      "language": "en",
+      "intentId": "arrival.neighborhood-orientation"
+    },
+    {
+      "question": "Can you help us with self check-in?",
+      "language": "en",
+      "intentId": "arrival.self-check-in"
+    },
+    {
+      "question": "Pls tell me abot self check-in",
+      "language": "en",
+      "intentId": "arrival.self-check-in"
+    },
+    {
+      "question": "Can you help us with large vehicle?",
+      "language": "en",
+      "intentId": "arrival.large-vehicle"
+    },
+    {
+      "question": "What should I know about large vehicle?",
+      "language": "en",
+      "intentId": "arrival.large-vehicle"
+    },
+    {
+      "question": "Cosa puoi dirmi di large vehicle?",
+      "language": "it",
+      "intentId": "arrival.large-vehicle"
+    },
+    {
+      "question": "Can you help us with checkout time?",
+      "language": "en",
+      "intentId": "departure.checkout-time"
+    },
+    {
+      "question": "What should I know about checkout time?",
+      "language": "en",
+      "intentId": "departure.checkout-time"
+    },
+    {
+      "question": "Can you help us with departure plan?",
+      "language": "en",
+      "intentId": "departure.departure-plan"
+    },
+    {
+      "question": "What should I know about departure plan?",
+      "language": "en",
+      "intentId": "departure.departure-plan"
+    },
+    {
+      "question": "Can you help us with airport timing?",
+      "language": "en",
+      "intentId": "departure.airport-timing"
+    },
+    {
+      "question": "What should I know about airport timing?",
+      "language": "en",
+      "intentId": "departure.airport-timing"
+    },
+    {
+      "question": "Que peux-tu me dire sur airport timing?",
+      "language": "fr",
+      "intentId": "departure.airport-timing"
+    },
+    {
+      "question": "Can you help us with luggage after checkout?",
+      "language": "en",
+      "intentId": "departure.luggage-after-checkout"
+    },
+    {
+      "question": "What should I know about luggage after checkout?",
+      "language": "en",
+      "intentId": "departure.luggage-after-checkout"
+    },
+    {
+      "question": "Can you help us with cleaning expectations?",
+      "language": "en",
+      "intentId": "departure.cleaning-expectations"
+    },
+    {
+      "question": "What should I know about cleaning expectations?",
+      "language": "en",
+      "intentId": "departure.cleaning-expectations"
+    },
+    {
+      "question": "Can you help us with checkout process?",
+      "language": "en",
+      "intentId": "departure.checkout-process"
+    },
+    {
+      "question": "Pls tell me abot checkout process",
+      "language": "en",
+      "intentId": "departure.checkout-process"
+    },
+    {
+      "question": "Can you help us with used towels?",
+      "language": "en",
+      "intentId": "departure.used-towels"
+    },
+    {
+      "question": "What should I know about used towels?",
+      "language": "en",
+      "intentId": "departure.used-towels"
+    },
+    {
+      "question": "Can you help us with trash?",
+      "language": "en",
+      "intentId": "departure.trash"
+    },
+    {
+      "question": "What should I know about trash?",
+      "language": "en",
+      "intentId": "departure.trash"
+    },
+    {
+      "question": "Que puedes decirme de trash?",
+      "language": "es",
+      "intentId": "departure.trash"
+    },
+    {
+      "question": "Can you help us with locking up?",
+      "language": "en",
+      "intentId": "departure.locking-up"
+    },
+    {
+      "question": "What should I know about locking up?",
+      "language": "en",
+      "intentId": "departure.locking-up"
+    },
+    {
+      "question": "Cosa puoi dirmi di locking up?",
+      "language": "it",
+      "intentId": "departure.locking-up"
+    },
+    {
+      "question": "Was kannst du mir sagen über locking up?",
+      "language": "de",
+      "intentId": "departure.locking-up"
+    },
+    {
+      "question": "Can you help us with request availability?",
+      "language": "en",
+      "intentId": "booking.request-availability"
+    },
+    {
+      "question": "What should I know about request availability?",
+      "language": "en",
+      "intentId": "booking.request-availability"
+    },
+    {
+      "question": "Can you help us with date availability?",
+      "language": "en",
+      "intentId": "booking.date-availability"
+    },
+    {
+      "question": "What should I know about date availability?",
+      "language": "en",
+      "intentId": "booking.date-availability"
+    },
+    {
+      "question": "Can you help us with reservation confirmation?",
+      "language": "en",
+      "intentId": "booking.reservation-confirmation"
+    },
+    {
+      "question": "What should I know about reservation confirmation?",
+      "language": "en",
+      "intentId": "booking.reservation-confirmation"
+    },
+    {
+      "question": "Can you help us with payments?",
+      "language": "en",
+      "intentId": "booking.payments"
+    },
+    {
+      "question": "Pls tell me abot payments",
+      "language": "en",
+      "intentId": "booking.payments"
+    },
+    {
+      "question": "Can you help us with cancellation?",
+      "language": "en",
+      "intentId": "booking.cancellation"
+    },
+    {
+      "question": "What should I know about cancellation?",
+      "language": "en",
+      "intentId": "booking.cancellation"
+    },
+    {
+      "question": "Can you help us with modify inquiry?",
+      "language": "en",
+      "intentId": "booking.modify-inquiry"
+    },
+    {
+      "question": "What should I know about modify inquiry?",
+      "language": "en",
+      "intentId": "booking.modify-inquiry"
+    },
+    {
+      "question": "Can you help us with extend stay?",
+      "language": "en",
+      "intentId": "booking.extend-stay"
+    },
+    {
+      "question": "What should I know about extend stay?",
+      "language": "en",
+      "intentId": "booking.extend-stay"
+    },
+    {
+      "question": "Que peux-tu me dire sur extend stay?",
+      "language": "fr",
+      "intentId": "booking.extend-stay"
+    },
+    {
+      "question": "Can you help us with guest count?",
+      "language": "en",
+      "intentId": "booking.guest-count"
+    },
+    {
+      "question": "What should I know about guest count?",
+      "language": "en",
+      "intentId": "booking.guest-count"
+    },
+    {
+      "question": "Can you help us with prices?",
+      "language": "en",
+      "intentId": "booking.prices"
+    },
+    {
+      "question": "What should I know about prices?",
+      "language": "en",
+      "intentId": "booking.prices"
+    },
+    {
+      "question": "Cosa puoi dirmi di prices?",
+      "language": "it",
+      "intentId": "booking.prices"
+    },
+    {
+      "question": "Can you help us with discounts?",
+      "language": "en",
+      "intentId": "booking.discounts"
+    },
+    {
+      "question": "What should I know about discounts?",
+      "language": "en",
+      "intentId": "booking.discounts"
+    },
+    {
+      "question": "Que puedes decirme de discounts?",
+      "language": "es",
+      "intentId": "booking.discounts"
+    },
+    {
+      "question": "Can you help us with Manhattan Beach?",
+      "language": "en",
+      "intentId": "beaches.manhattan-beach"
+    },
+    {
+      "question": "Pls tell me abot Manhattan Beach",
+      "language": "en",
+      "intentId": "beaches.manhattan-beach"
+    },
+    {
+      "question": "Can you help us with El Porto?",
+      "language": "en",
+      "intentId": "beaches.el-porto"
+    },
+    {
+      "question": "What should I know about El Porto?",
+      "language": "en",
+      "intentId": "beaches.el-porto"
+    },
+    {
+      "question": "Can you help us with Hermosa Beach?",
+      "language": "en",
+      "intentId": "beaches.hermosa-beach"
+    },
+    {
+      "question": "What should I know about Hermosa Beach?",
+      "language": "en",
+      "intentId": "beaches.hermosa-beach"
+    },
+    {
+      "question": "Can you help us with Redondo Beach?",
+      "language": "en",
+      "intentId": "beaches.redondo-beach"
+    },
+    {
+      "question": "What should I know about Redondo Beach?",
+      "language": "en",
+      "intentId": "beaches.redondo-beach"
+    },
+    {
+      "question": "Can you help us with Venice Beach?",
+      "language": "en",
+      "intentId": "beaches.venice-beach"
+    },
+    {
+      "question": "What should I know about Venice Beach?",
+      "language": "en",
+      "intentId": "beaches.venice-beach"
+    },
+    {
+      "question": "Was kannst du mir sagen über Venice Beach?",
+      "language": "de",
+      "intentId": "beaches.venice-beach"
+    },
+    {
+      "question": "Can you help us with Santa Monica beach?",
+      "language": "en",
+      "intentId": "beaches.santa-monica-beach"
+    },
+    {
+      "question": "What should I know about Santa Monica beach?",
+      "language": "en",
+      "intentId": "beaches.santa-monica-beach"
+    },
+    {
+      "question": "Can you help us with Malibu beach?",
+      "language": "en",
+      "intentId": "beaches.malibu-beach"
+    },
+    {
+      "question": "What should I know about Malibu beach?",
+      "language": "en",
+      "intentId": "beaches.malibu-beach"
+    },
+    {
+      "question": "Can you help us with swimming?",
+      "language": "en",
+      "intentId": "beaches.swimming"
+    },
+    {
+      "question": "Pls tell me abot swimming",
+      "language": "en",
+      "intentId": "beaches.swimming"
+    },
+    {
+      "question": "Cosa puoi dirmi di swimming?",
+      "language": "it",
+      "intentId": "beaches.swimming"
+    },
+    {
+      "question": "Can you help us with walking?",
+      "language": "en",
+      "intentId": "beaches.walking"
+    },
+    {
+      "question": "What should I know about walking?",
+      "language": "en",
+      "intentId": "beaches.walking"
+    },
+    {
+      "question": "Can you help us with sunsets?",
+      "language": "en",
+      "intentId": "beaches.sunsets"
+    },
+    {
+      "question": "What should I know about sunsets?",
+      "language": "en",
+      "intentId": "beaches.sunsets"
+    },
+    {
+      "question": "Que peux-tu me dire sur sunsets?",
+      "language": "fr",
+      "intentId": "beaches.sunsets"
+    },
+    {
+      "question": "Can you help us with surfing?",
+      "language": "en",
+      "intentId": "beaches.surfing"
+    },
+    {
+      "question": "What should I know about surfing?",
+      "language": "en",
+      "intentId": "beaches.surfing"
+    },
+    {
+      "question": "Que puedes decirme de surfing?",
+      "language": "es",
+      "intentId": "beaches.surfing"
+    },
+    {
+      "question": "Can you help us with beginner surf?",
+      "language": "en",
+      "intentId": "beaches.beginner-surf"
+    },
+    {
+      "question": "What should I know about beginner surf?",
+      "language": "en",
+      "intentId": "beaches.beginner-surf"
+    },
+    {
+      "question": "Can you help us with family beach?",
+      "language": "en",
+      "intentId": "beaches.family-beach"
+    },
+    {
+      "question": "What should I know about family beach?",
+      "language": "en",
+      "intentId": "beaches.family-beach"
+    },
+    {
+      "question": "Can you help us with beach preparation?",
+      "language": "en",
+      "intentId": "beaches.beach-preparation"
+    },
+    {
+      "question": "What should I know about beach preparation?",
+      "language": "en",
+      "intentId": "beaches.beach-preparation"
+    },
+    {
+      "question": "Can you help us with quiet beach?",
+      "language": "en",
+      "intentId": "beaches.quiet-beach"
+    },
+    {
+      "question": "Pls tell me abot quiet beach",
+      "language": "en",
+      "intentId": "beaches.quiet-beach"
+    },
+    {
+      "question": "Can you help us with Strand?",
+      "language": "en",
+      "intentId": "beaches.strand"
+    },
+    {
+      "question": "What should I know about Strand?",
+      "language": "en",
+      "intentId": "beaches.strand"
+    },
+    {
+      "question": "Can you help us with breakfast?",
+      "language": "en",
+      "intentId": "food.breakfast"
+    },
+    {
+      "question": "What should I know about breakfast?",
+      "language": "en",
+      "intentId": "food.breakfast"
+    },
+    {
+      "question": "Cosa puoi dirmi di breakfast?",
+      "language": "it",
+      "intentId": "food.breakfast"
+    },
+    {
+      "question": "Can you help us with brunch?",
+      "language": "en",
+      "intentId": "food.brunch"
+    },
+    {
+      "question": "What should I know about brunch?",
+      "language": "en",
+      "intentId": "food.brunch"
+    },
+    {
+      "question": "Can you help us with coffee?",
+      "language": "en",
+      "intentId": "food.coffee"
+    },
+    {
+      "question": "What should I know about coffee?",
+      "language": "en",
+      "intentId": "food.coffee"
+    },
+    {
+      "question": "Can you help us with lunch?",
+      "language": "en",
+      "intentId": "food.lunch"
+    },
+    {
+      "question": "What should I know about lunch?",
+      "language": "en",
+      "intentId": "food.lunch"
+    },
+    {
+      "question": "Was kannst du mir sagen über lunch?",
+      "language": "de",
+      "intentId": "food.lunch"
+    },
+    {
+      "question": "Can you help us with dinner?",
+      "language": "en",
+      "intentId": "food.dinner"
+    },
+    {
+      "question": "What should I know about dinner?",
+      "language": "en",
+      "intentId": "food.dinner"
+    },
+    {
+      "question": "Can you help us with seafood?",
+      "language": "en",
+      "intentId": "food.seafood"
+    },
+    {
+      "question": "Pls tell me abot seafood",
+      "language": "en",
+      "intentId": "food.seafood"
+    },
+    {
+      "question": "Que puedes decirme de seafood?",
+      "language": "es",
+      "intentId": "food.seafood"
+    },
+    {
+      "question": "Can you help us with sushi?",
+      "language": "en",
+      "intentId": "food.sushi"
+    },
+    {
+      "question": "What should I know about sushi?",
+      "language": "en",
+      "intentId": "food.sushi"
+    },
+    {
+      "question": "Que peux-tu me dire sur sushi?",
+      "language": "fr",
+      "intentId": "food.sushi"
+    },
+    {
+      "question": "Can you help us with casual meal?",
+      "language": "en",
+      "intentId": "food.casual-meal"
+    },
+    {
+      "question": "What should I know about casual meal?",
+      "language": "en",
+      "intentId": "food.casual-meal"
+    },
+    {
+      "question": "Can you help us with date night?",
+      "language": "en",
+      "intentId": "food.date-night"
+    },
+    {
+      "question": "What should I know about date night?",
+      "language": "en",
+      "intentId": "food.date-night"
+    },
+    {
+      "question": "Can you help us with family friendly dining?",
+      "language": "en",
+      "intentId": "food.family-friendly-dining"
+    },
+    {
+      "question": "What should I know about family friendly dining?",
+      "language": "en",
+      "intentId": "food.family-friendly-dining"
+    },
+    {
+      "question": "Cosa puoi dirmi di family friendly dining?",
+      "language": "it",
+      "intentId": "food.family-friendly-dining"
+    },
+    {
+      "question": "Can you help us with vegetarian food?",
+      "language": "en",
+      "intentId": "food.vegetarian-food"
+    },
+    {
+      "question": "What should I know about vegetarian food?",
+      "language": "en",
+      "intentId": "food.vegetarian-food"
+    },
+    {
+      "question": "Can you help us with vegan food?",
+      "language": "en",
+      "intentId": "food.vegan-food"
+    },
+    {
+      "question": "What should I know about vegan food?",
+      "language": "en",
+      "intentId": "food.vegan-food"
+    },
+    {
+      "question": "Can you help us with groceries?",
+      "language": "en",
+      "intentId": "food.groceries"
+    },
+    {
+      "question": "Pls tell me abot groceries",
+      "language": "en",
+      "intentId": "food.groceries"
+    },
+    {
+      "question": "Can you help us with takeout?",
+      "language": "en",
+      "intentId": "food.takeout"
+    },
+    {
+      "question": "What should I know about takeout?",
+      "language": "en",
+      "intentId": "food.takeout"
+    },
+    {
+      "question": "Can you help us with dessert?",
+      "language": "en",
+      "intentId": "food.dessert"
+    },
+    {
+      "question": "What should I know about dessert?",
+      "language": "en",
+      "intentId": "food.dessert"
+    },
+    {
+      "question": "Can you help us with prepared food?",
+      "language": "en",
+      "intentId": "food.prepared-food"
+    },
+    {
+      "question": "What should I know about prepared food?",
+      "language": "en",
+      "intentId": "food.prepared-food"
+    },
+    {
+      "question": "Can you help us with upscale dinner?",
+      "language": "en",
+      "intentId": "food.upscale-dinner"
+    },
+    {
+      "question": "What should I know about upscale dinner?",
+      "language": "en",
+      "intentId": "food.upscale-dinner"
+    },
+    {
+      "question": "Que puedes decirme de upscale dinner?",
+      "language": "es",
+      "intentId": "food.upscale-dinner"
+    },
+    {
+      "question": "Can you help us with Italian food?",
+      "language": "en",
+      "intentId": "food.italian-food"
+    },
+    {
+      "question": "What should I know about Italian food?",
+      "language": "en",
+      "intentId": "food.italian-food"
+    },
+    {
+      "question": "Can you help us with French food?",
+      "language": "en",
+      "intentId": "food.french-food"
+    },
+    {
+      "question": "What should I know about French food?",
+      "language": "en",
+      "intentId": "food.french-food"
+    },
+    {
+      "question": "Cosa puoi dirmi di French food?",
+      "language": "it",
+      "intentId": "food.french-food"
+    },
+    {
+      "question": "Was kannst du mir sagen über French food?",
+      "language": "de",
+      "intentId": "food.french-food"
+    },
+    {
+      "question": "Can you help us with healthy breakfast?",
+      "language": "en",
+      "intentId": "food.healthy-breakfast"
+    },
+    {
+      "question": "Pls tell me abot healthy breakfast",
+      "language": "en",
+      "intentId": "food.healthy-breakfast"
+    },
+    {
+      "question": "Que peux-tu me dire sur healthy breakfast?",
+      "language": "fr",
+      "intentId": "food.healthy-breakfast"
+    },
+    {
+      "question": "Can you help us with beach lunch?",
+      "language": "en",
+      "intentId": "food.beach-lunch"
+    },
+    {
+      "question": "What should I know about beach lunch?",
+      "language": "en",
+      "intentId": "food.beach-lunch"
+    },
+    {
+      "question": "Can you help us with Manhattan Beach?",
+      "language": "en",
+      "intentId": "areas.manhattan-beach"
+    },
+    {
+      "question": "What should I know about Manhattan Beach?",
+      "language": "en",
+      "intentId": "areas.manhattan-beach"
+    },
+    {
+      "question": "Can you help us with Hermosa Beach?",
+      "language": "en",
+      "intentId": "areas.hermosa-beach"
+    },
+    {
+      "question": "What should I know about Hermosa Beach?",
+      "language": "en",
+      "intentId": "areas.hermosa-beach"
+    },
+    {
+      "question": "Can you help us with Redondo Beach?",
+      "language": "en",
+      "intentId": "areas.redondo-beach"
+    },
+    {
+      "question": "What should I know about Redondo Beach?",
+      "language": "en",
+      "intentId": "areas.redondo-beach"
+    },
+    {
+      "question": "Can you help us with Venice?",
+      "language": "en",
+      "intentId": "areas.venice"
+    },
+    {
+      "question": "What should I know about Venice?",
+      "language": "en",
+      "intentId": "areas.venice"
+    },
+    {
+      "question": "Can you help us with Santa Monica?",
+      "language": "en",
+      "intentId": "areas.santa-monica"
+    },
+    {
+      "question": "What should I know about Santa Monica?",
+      "language": "en",
+      "intentId": "areas.santa-monica"
+    },
+    {
+      "question": "Can you help us with Malibu?",
+      "language": "en",
+      "intentId": "areas.malibu"
+    },
+    {
+      "question": "Pls tell me abot Malibu",
+      "language": "en",
+      "intentId": "areas.malibu"
+    },
+    {
+      "question": "Can you help us with El Porto?",
+      "language": "en",
+      "intentId": "areas.el-porto"
+    },
+    {
+      "question": "What should I know about El Porto?",
+      "language": "en",
+      "intentId": "areas.el-porto"
+    },
+    {
+      "question": "Cosa puoi dirmi di El Porto?",
+      "language": "it",
+      "intentId": "areas.el-porto"
+    },
+    {
+      "question": "Que puedes decirme de El Porto?",
+      "language": "es",
+      "intentId": "areas.el-porto"
+    },
+    {
+      "question": "Can you help us with South Bay?",
+      "language": "en",
+      "intentId": "areas.south-bay"
+    },
+    {
+      "question": "What should I know about South Bay?",
+      "language": "en",
+      "intentId": "areas.south-bay"
+    },
+    {
+      "question": "Can you help us with downtown Manhattan Beach?",
+      "language": "en",
+      "intentId": "areas.downtown-manhattan-beach"
+    },
+    {
+      "question": "What should I know about downtown Manhattan Beach?",
+      "language": "en",
+      "intentId": "areas.downtown-manhattan-beach"
+    },
+    {
+      "question": "Can you help us with walking?",
+      "language": "en",
+      "intentId": "activities.walking"
+    },
+    {
+      "question": "What should I know about walking?",
+      "language": "en",
+      "intentId": "activities.walking"
+    },
+    {
+      "question": "Can you help us with biking?",
+      "language": "en",
+      "intentId": "activities.biking"
+    },
+    {
+      "question": "What should I know about biking?",
+      "language": "en",
+      "intentId": "activities.biking"
+    },
+    {
+      "question": "Can you help us with surfing?",
+      "language": "en",
+      "intentId": "activities.surfing"
+    },
+    {
+      "question": "What should I know about surfing?",
+      "language": "en",
+      "intentId": "activities.surfing"
+    },
+    {
+      "question": "Que peux-tu me dire sur surfing?",
+      "language": "fr",
+      "intentId": "activities.surfing"
+    },
+    {
+      "question": "Can you help us with shopping?",
+      "language": "en",
+      "intentId": "activities.shopping"
+    },
+    {
+      "question": "Pls tell me abot shopping",
+      "language": "en",
+      "intentId": "activities.shopping"
+    },
+    {
+      "question": "Was kannst du mir sagen über shopping?",
+      "language": "de",
+      "intentId": "activities.shopping"
+    },
+    {
+      "question": "Can you help us with sightseeing?",
+      "language": "en",
+      "intentId": "activities.sightseeing"
+    },
+    {
+      "question": "What should I know about sightseeing?",
+      "language": "en",
+      "intentId": "activities.sightseeing"
+    },
+    {
+      "question": "Can you help us with family activities?",
+      "language": "en",
+      "intentId": "activities.family-activities"
+    },
+    {
+      "question": "What should I know about family activities?",
+      "language": "en",
+      "intentId": "activities.family-activities"
+    },
+    {
+      "question": "Can you help us with rainy day?",
+      "language": "en",
+      "intentId": "activities.rainy-day"
+    },
+    {
+      "question": "What should I know about rainy day?",
+      "language": "en",
+      "intentId": "activities.rainy-day"
+    },
+    {
+      "question": "Cosa puoi dirmi di rainy day?",
+      "language": "it",
+      "intentId": "activities.rainy-day"
+    },
+    {
+      "question": "Can you help us with romantic activities?",
+      "language": "en",
+      "intentId": "activities.romantic-activities"
+    },
+    {
+      "question": "What should I know about romantic activities?",
+      "language": "en",
+      "intentId": "activities.romantic-activities"
+    },
+    {
+      "question": "Can you help us with outdoor activities?",
+      "language": "en",
+      "intentId": "activities.outdoor-activities"
+    },
+    {
+      "question": "What should I know about outdoor activities?",
+      "language": "en",
+      "intentId": "activities.outdoor-activities"
+    },
+    {
+      "question": "Que puedes decirme de outdoor activities?",
+      "language": "es",
+      "intentId": "activities.outdoor-activities"
+    },
+    {
+      "question": "Can you help us with photography?",
+      "language": "en",
+      "intentId": "activities.photography"
+    },
+    {
+      "question": "What should I know about photography?",
+      "language": "en",
+      "intentId": "activities.photography"
+    },
+    {
+      "question": "Can you help us with sunset?",
+      "language": "en",
+      "intentId": "activities.sunset"
+    },
+    {
+      "question": "Pls tell me abot sunset",
+      "language": "en",
+      "intentId": "activities.sunset"
+    },
+    {
+      "question": "Can you help us with short excursion?",
+      "language": "en",
+      "intentId": "activities.short-excursion"
+    },
+    {
+      "question": "What should I know about short excursion?",
+      "language": "en",
+      "intentId": "activities.short-excursion"
+    },
+    {
+      "question": "Can you help us with full day trip?",
+      "language": "en",
+      "intentId": "activities.full-day-trip"
+    },
+    {
+      "question": "What should I know about full day trip?",
+      "language": "en",
+      "intentId": "activities.full-day-trip"
+    },
+    {
+      "question": "Can you help us with pier walk?",
+      "language": "en",
+      "intentId": "activities.pier-walk"
+    },
+    {
+      "question": "What should I know about pier walk?",
+      "language": "en",
+      "intentId": "activities.pier-walk"
+    },
+    {
+      "question": "Can you help us with boardwalk?",
+      "language": "en",
+      "intentId": "activities.boardwalk"
+    },
+    {
+      "question": "What should I know about boardwalk?",
+      "language": "en",
+      "intentId": "activities.boardwalk"
+    },
+    {
+      "question": "Can you help us with marina?",
+      "language": "en",
+      "intentId": "activities.marina"
+    },
+    {
+      "question": "What should I know about marina?",
+      "language": "en",
+      "intentId": "activities.marina"
+    },
+    {
+      "question": "Cosa puoi dirmi di marina?",
+      "language": "it",
+      "intentId": "activities.marina"
+    },
+    {
+      "question": "Que peux-tu me dire sur marina?",
+      "language": "fr",
+      "intentId": "activities.marina"
+    },
+    {
+      "question": "Can you help us with volleyball?",
+      "language": "en",
+      "intentId": "activities.volleyball"
+    },
+    {
+      "question": "What should I know about volleyball?",
+      "language": "en",
+      "intentId": "activities.volleyball"
+    },
+    {
+      "question": "Can you help us with running?",
+      "language": "en",
+      "intentId": "activities.running"
+    },
+    {
+      "question": "Pls tell me abot running",
+      "language": "en",
+      "intentId": "activities.running"
+    },
+    {
+      "question": "Can you help us with cycling The Strand?",
+      "language": "en",
+      "intentId": "activities.cycling-the-strand"
+    },
+    {
+      "question": "What should I know about cycling The Strand?",
+      "language": "en",
+      "intentId": "activities.cycling-the-strand"
+    },
+    {
+      "question": "Was kannst du mir sagen über cycling The Strand?",
+      "language": "de",
+      "intentId": "activities.cycling-the-strand"
+    },
+    {
+      "question": "Can you help us with farmers market?",
+      "language": "en",
+      "intentId": "activities.farmers-market"
+    },
+    {
+      "question": "What should I know about farmers market?",
+      "language": "en",
+      "intentId": "activities.farmers-market"
+    },
+    {
+      "question": "Que puedes decirme de farmers market?",
+      "language": "es",
+      "intentId": "activities.farmers-market"
+    },
+    {
+      "question": "Can you help us with toddlers?",
+      "language": "en",
+      "intentId": "families.toddlers"
+    },
+    {
+      "question": "What should I know about toddlers?",
+      "language": "en",
+      "intentId": "families.toddlers"
+    },
+    {
+      "question": "Can you help us with young children?",
+      "language": "en",
+      "intentId": "families.young-children"
+    },
+    {
+      "question": "What should I know about young children?",
+      "language": "en",
+      "intentId": "families.young-children"
+    },
+    {
+      "question": "Can you help us with teenagers?",
+      "language": "en",
+      "intentId": "families.teenagers"
+    },
+    {
+      "question": "What should I know about teenagers?",
+      "language": "en",
+      "intentId": "families.teenagers"
+    },
+    {
+      "question": "Can you help us with family beaches?",
+      "language": "en",
+      "intentId": "families.family-beaches"
+    },
+    {
+      "question": "What should I know about family beaches?",
+      "language": "en",
+      "intentId": "families.family-beaches"
+    },
+    {
+      "question": "Can you help us with food with kids?",
+      "language": "en",
+      "intentId": "families.food-with-kids"
+    },
+    {
+      "question": "Pls tell me abot food with kids",
+      "language": "en",
+      "intentId": "families.food-with-kids"
+    },
+    {
+      "question": "Cosa puoi dirmi di food with kids?",
+      "language": "it",
+      "intentId": "families.food-with-kids"
+    },
+    {
+      "question": "Can you help us with activities with kids?",
+      "language": "en",
+      "intentId": "families.activities-with-kids"
+    },
+    {
+      "question": "What should I know about activities with kids?",
+      "language": "en",
+      "intentId": "families.activities-with-kids"
+    },
+    {
+      "question": "Can you help us with child safety?",
+      "language": "en",
+      "intentId": "families.child-safety"
+    },
+    {
+      "question": "What should I know about child safety?",
+      "language": "en",
+      "intentId": "families.child-safety"
+    },
+    {
+      "question": "Can you help us with easy family itinerary?",
+      "language": "en",
+      "intentId": "families.easy-family-itinerary"
+    },
+    {
+      "question": "What should I know about easy family itinerary?",
+      "language": "en",
+      "intentId": "families.easy-family-itinerary"
+    },
+    {
+      "question": "Can you help us with sand toys?",
+      "language": "en",
+      "intentId": "families.sand-toys"
+    },
+    {
+      "question": "What should I know about sand toys?",
+      "language": "en",
+      "intentId": "families.sand-toys"
+    },
+    {
+      "question": "Que peux-tu me dire sur sand toys?",
+      "language": "fr",
+      "intentId": "families.sand-toys"
+    },
+    {
+      "question": "Can you help us with board games?",
+      "language": "en",
+      "intentId": "families.board-games"
+    },
+    {
+      "question": "What should I know about board games?",
+      "language": "en",
+      "intentId": "families.board-games"
+    },
+    {
+      "question": "Can you help us with rental car versus rideshare?",
+      "language": "en",
+      "intentId": "transportation.rental-car-versus-rideshare"
+    },
+    {
+      "question": "What should I know about rental car versus rideshare?",
+      "language": "en",
+      "intentId": "transportation.rental-car-versus-rideshare"
+    },
+    {
+      "question": "Que puedes decirme de rental car versus rideshare?",
+      "language": "es",
+      "intentId": "transportation.rental-car-versus-rideshare"
+    },
+    {
+      "question": "Can you help us with walking?",
+      "language": "en",
+      "intentId": "transportation.walking"
+    },
+    {
+      "question": "Pls tell me abot walking",
+      "language": "en",
+      "intentId": "transportation.walking"
+    },
+    {
+      "question": "Can you help us with biking?",
+      "language": "en",
+      "intentId": "transportation.biking"
+    },
+    {
+      "question": "What should I know about biking?",
+      "language": "en",
+      "intentId": "transportation.biking"
+    },
+    {
+      "question": "Can you help us with public transportation?",
+      "language": "en",
+      "intentId": "transportation.public-transportation"
+    },
+    {
+      "question": "What should I know about public transportation?",
+      "language": "en",
+      "intentId": "transportation.public-transportation"
+    },
+    {
+      "question": "Cosa puoi dirmi di public transportation?",
+      "language": "it",
+      "intentId": "transportation.public-transportation"
+    },
+    {
+      "question": "Was kannst du mir sagen über public transportation?",
+      "language": "de",
+      "intentId": "transportation.public-transportation"
+    },
+    {
+      "question": "Can you help us with parking?",
+      "language": "en",
+      "intentId": "transportation.parking"
+    },
+    {
+      "question": "What should I know about parking?",
+      "language": "en",
+      "intentId": "transportation.parking"
+    },
+    {
+      "question": "Can you help us with airport transportation?",
+      "language": "en",
+      "intentId": "transportation.airport-transportation"
+    },
+    {
+      "question": "What should I know about airport transportation?",
+      "language": "en",
+      "intentId": "transportation.airport-transportation"
+    },
+    {
+      "question": "Can you help us with Santa Monica transport?",
+      "language": "en",
+      "intentId": "transportation.santa-monica-transport"
+    },
+    {
+      "question": "What should I know about Santa Monica transport?",
+      "language": "en",
+      "intentId": "transportation.santa-monica-transport"
+    },
+    {
+      "question": "Can you help us with Venice transport?",
+      "language": "en",
+      "intentId": "transportation.venice-transport"
+    },
+    {
+      "question": "What should I know about Venice transport?",
+      "language": "en",
+      "intentId": "transportation.venice-transport"
+    },
+    {
+      "question": "Can you help us with Malibu transport?",
+      "language": "en",
+      "intentId": "transportation.malibu-transport"
+    },
+    {
+      "question": "Pls tell me abot Malibu transport",
+      "language": "en",
+      "intentId": "transportation.malibu-transport"
+    },
+    {
+      "question": "Can you help us with downtown LA transport?",
+      "language": "en",
+      "intentId": "transportation.downtown-la-transport"
+    },
+    {
+      "question": "What should I know about downtown LA transport?",
+      "language": "en",
+      "intentId": "transportation.downtown-la-transport"
+    },
+    {
+      "question": "Can you help us with traffic?",
+      "language": "en",
+      "intentId": "transportation.traffic"
+    },
+    {
+      "question": "What should I know about traffic?",
+      "language": "en",
+      "intentId": "transportation.traffic"
+    },
+    {
+      "question": "Can you help us with garage clearance?",
+      "language": "en",
+      "intentId": "transportation.garage-clearance"
+    },
+    {
+      "question": "What should I know about garage clearance?",
+      "language": "en",
+      "intentId": "transportation.garage-clearance"
+    },
+    {
+      "question": "Que puedes decirme de garage clearance?",
+      "language": "es",
+      "intentId": "transportation.garage-clearance"
+    },
+    {
+      "question": "Que peux-tu me dire sur garage clearance?",
+      "language": "fr",
+      "intentId": "transportation.garage-clearance"
+    },
+    {
+      "question": "Can you help us with two hours?",
+      "language": "en",
+      "intentId": "itineraries.two-hours"
+    },
+    {
+      "question": "What should I know about two hours?",
+      "language": "en",
+      "intentId": "itineraries.two-hours"
+    },
+    {
+      "question": "Cosa puoi dirmi di two hours?",
+      "language": "it",
+      "intentId": "itineraries.two-hours"
+    },
+    {
+      "question": "Can you help us with half day?",
+      "language": "en",
+      "intentId": "itineraries.half-day"
+    },
+    {
+      "question": "What should I know about half day?",
+      "language": "en",
+      "intentId": "itineraries.half-day"
+    },
+    {
+      "question": "Can you help us with full day?",
+      "language": "en",
+      "intentId": "itineraries.full-day"
+    },
+    {
+      "question": "What should I know about full day?",
+      "language": "en",
+      "intentId": "itineraries.full-day"
+    },
+    {
+      "question": "Can you help us with weekend?",
+      "language": "en",
+      "intentId": "itineraries.weekend"
+    },
+    {
+      "question": "Pls tell me abot weekend",
+      "language": "en",
+      "intentId": "itineraries.weekend"
+    },
+    {
+      "question": "Can you help us with beach day?",
+      "language": "en",
+      "intentId": "itineraries.beach-day"
+    },
+    {
+      "question": "What should I know about beach day?",
+      "language": "en",
+      "intentId": "itineraries.beach-day"
+    },
+    {
+      "question": "Can you help us with Manhattan Beach day?",
+      "language": "en",
+      "intentId": "itineraries.manhattan-beach-day"
+    },
+    {
+      "question": "What should I know about Manhattan Beach day?",
+      "language": "en",
+      "intentId": "itineraries.manhattan-beach-day"
+    },
+    {
+      "question": "Can you help us with Hermosa and Redondo day?",
+      "language": "en",
+      "intentId": "itineraries.hermosa-and-redondo-day"
+    },
+    {
+      "question": "What should I know about Hermosa and Redondo day?",
+      "language": "en",
+      "intentId": "itineraries.hermosa-and-redondo-day"
+    },
+    {
+      "question": "Was kannst du mir sagen über Hermosa and Redondo day?",
+      "language": "de",
+      "intentId": "itineraries.hermosa-and-redondo-day"
+    },
+    {
+      "question": "Can you help us with Santa Monica and Venice day?",
+      "language": "en",
+      "intentId": "itineraries.santa-monica-and-venice-day"
+    },
+    {
+      "question": "What should I know about Santa Monica and Venice day?",
+      "language": "en",
+      "intentId": "itineraries.santa-monica-and-venice-day"
+    },
+    {
+      "question": "Can you help us with Malibu day?",
+      "language": "en",
+      "intentId": "itineraries.malibu-day"
+    },
+    {
+      "question": "What should I know about Malibu day?",
+      "language": "en",
+      "intentId": "itineraries.malibu-day"
+    },
+    {
+      "question": "Can you help us with family day?",
+      "language": "en",
+      "intentId": "itineraries.family-day"
+    },
+    {
+      "question": "What should I know about family day?",
+      "language": "en",
+      "intentId": "itineraries.family-day"
+    },
+    {
+      "question": "Cosa puoi dirmi di family day?",
+      "language": "it",
+      "intentId": "itineraries.family-day"
+    },
+    {
+      "question": "Can you help us with romantic day?",
+      "language": "en",
+      "intentId": "itineraries.romantic-day"
+    },
+    {
+      "question": "Pls tell me abot romantic day",
+      "language": "en",
+      "intentId": "itineraries.romantic-day"
+    },
+    {
+      "question": "Que puedes decirme de romantic day?",
+      "language": "es",
+      "intentId": "itineraries.romantic-day"
+    },
+    {
+      "question": "Can you help us with food focused day?",
+      "language": "en",
+      "intentId": "itineraries.food-focused-day"
+    },
+    {
+      "question": "What should I know about food focused day?",
+      "language": "en",
+      "intentId": "itineraries.food-focused-day"
+    },
+    {
+      "question": "Can you help us with morning?",
+      "language": "en",
+      "intentId": "itineraries.morning"
+    },
+    {
+      "question": "What should I know about morning?",
+      "language": "en",
+      "intentId": "itineraries.morning"
+    },
+    {
+      "question": "Que peux-tu me dire sur morning?",
+      "language": "fr",
+      "intentId": "itineraries.morning"
+    },
+    {
+      "question": "Can you help us with three hours before dinner?",
+      "language": "en",
+      "intentId": "itineraries.three-hours-before-dinner"
+    },
+    {
+      "question": "What should I know about three hours before dinner?",
+      "language": "en",
+      "intentId": "itineraries.three-hours-before-dinner"
+    },
+    {
+      "question": "Can you help us with groceries?",
+      "language": "en",
+      "intentId": "practical.groceries"
+    },
+    {
+      "question": "What should I know about groceries?",
+      "language": "en",
+      "intentId": "practical.groceries"
+    },
+    {
+      "question": "Can you help us with pharmacy?",
+      "language": "en",
+      "intentId": "practical.pharmacy"
+    },
+    {
+      "question": "What should I know about pharmacy?",
+      "language": "en",
+      "intentId": "practical.pharmacy"
+    },
+    {
+      "question": "Can you help us with parking signs?",
+      "language": "en",
+      "intentId": "practical.parking-signs"
+    },
+    {
+      "question": "What should I know about parking signs?",
+      "language": "en",
+      "intentId": "practical.parking-signs"
+    },
+    {
+      "question": "Can you help us with laundry?",
+      "language": "en",
+      "intentId": "practical.laundry"
+    },
+    {
+      "question": "Pls tell me abot laundry",
+      "language": "en",
+      "intentId": "practical.laundry"
+    },
+    {
+      "question": "Can you help us with weather dependent ideas?",
+      "language": "en",
+      "intentId": "practical.weather-dependent-ideas"
+    },
+    {
+      "question": "What should I know about weather dependent ideas?",
+      "language": "en",
+      "intentId": "practical.weather-dependent-ideas"
+    },
+    {
+      "question": "Cosa puoi dirmi di weather dependent ideas?",
+      "language": "it",
+      "intentId": "practical.weather-dependent-ideas"
+    },
+    {
+      "question": "Can you help us with what to pack?",
+      "language": "en",
+      "intentId": "practical.what-to-pack"
+    },
+    {
+      "question": "What should I know about what to pack?",
+      "language": "en",
+      "intentId": "practical.what-to-pack"
+    },
+    {
+      "question": "Can you help us with beach gear?",
+      "language": "en",
+      "intentId": "practical.beach-gear"
+    },
+    {
+      "question": "What should I know about beach gear?",
+      "language": "en",
+      "intentId": "practical.beach-gear"
+    },
+    {
+      "question": "Can you help us with local etiquette?",
+      "language": "en",
+      "intentId": "practical.local-etiquette"
+    },
+    {
+      "question": "What should I know about local etiquette?",
+      "language": "en",
+      "intentId": "practical.local-etiquette"
+    },
+    {
+      "question": "Que puedes decirme de local etiquette?",
+      "language": "es",
+      "intentId": "practical.local-etiquette"
+    },
+    {
+      "question": "Was kannst du mir sagen über local etiquette?",
+      "language": "de",
+      "intentId": "practical.local-etiquette"
+    },
+    {
+      "question": "Can you help us with quiet hours?",
+      "language": "en",
+      "intentId": "practical.quiet-hours"
+    },
+    {
+      "question": "What should I know about quiet hours?",
+      "language": "en",
+      "intentId": "practical.quiet-hours"
+    },
+    {
+      "question": "Can you help us with neighborhood rules?",
+      "language": "en",
+      "intentId": "practical.neighborhood-rules"
+    },
+    {
+      "question": "What should I know about neighborhood rules?",
+      "language": "en",
+      "intentId": "practical.neighborhood-rules"
+    },
+    {
+      "question": "Can you help us with live hours?",
+      "language": "en",
+      "intentId": "practical.live-hours"
+    },
+    {
+      "question": "Pls tell me abot live hours",
+      "language": "en",
+      "intentId": "practical.live-hours"
+    },
+    {
+      "question": "Can you help us with lost property?",
+      "language": "en",
+      "intentId": "practical.lost-property"
+    },
+    {
+      "question": "What should I know about lost property?",
+      "language": "en",
+      "intentId": "practical.lost-property"
+    },
+    {
+      "question": "Que peux-tu me dire sur lost property?",
+      "language": "fr",
+      "intentId": "practical.lost-property"
+    },
+    {
+      "question": "Can you help us with no pets?",
+      "language": "en",
+      "intentId": "practical.no-pets"
+    },
+    {
+      "question": "What should I know about no pets?",
+      "language": "en",
+      "intentId": "practical.no-pets"
+    },
+    {
+      "question": "Can you help us with no smoking?",
+      "language": "en",
+      "intentId": "practical.no-smoking"
+    },
+    {
+      "question": "What should I know about no smoking?",
+      "language": "en",
+      "intentId": "practical.no-smoking"
+    },
+    {
+      "question": "Cosa puoi dirmi di no smoking?",
+      "language": "it",
+      "intentId": "practical.no-smoking"
+    },
+    {
+      "question": "Can you help us with no parties?",
+      "language": "en",
+      "intentId": "practical.no-parties"
+    },
+    {
+      "question": "What should I know about no parties?",
+      "language": "en",
+      "intentId": "practical.no-parties"
+    },
+    {
+      "question": "Can you help us with commercial photography?",
+      "language": "en",
+      "intentId": "practical.commercial-photography"
+    },
+    {
+      "question": "What should I know about commercial photography?",
+      "language": "en",
+      "intentId": "practical.commercial-photography"
+    },
+    {
+      "question": "Can you help us with emergency?",
+      "language": "en",
+      "intentId": "safety.emergency"
+    },
+    {
+      "question": "What should I know about emergency?",
+      "language": "en",
+      "intentId": "safety.emergency"
+    },
+    {
+      "question": "Can you help us with ocean safety?",
+      "language": "en",
+      "intentId": "safety.ocean-safety"
+    },
+    {
+      "question": "Pls tell me abot ocean safety",
+      "language": "en",
+      "intentId": "safety.ocean-safety"
+    },
+    {
+      "question": "Can you help us with property safety?",
+      "language": "en",
+      "intentId": "safety.property-safety"
+    },
+    {
+      "question": "What should I know about property safety?",
+      "language": "en",
+      "intentId": "safety.property-safety"
+    },
+    {
+      "question": "Que puedes decirme de property safety?",
+      "language": "es",
+      "intentId": "safety.property-safety"
+    },
+    {
+      "question": "Can you help us with contacting host?",
+      "language": "en",
+      "intentId": "safety.contacting-host"
+    },
+    {
+      "question": "What should I know about contacting host?",
+      "language": "en",
+      "intentId": "safety.contacting-host"
+    },
+    {
+      "question": "Can you help us with lost property?",
+      "language": "en",
+      "intentId": "safety.lost-property"
+    },
+    {
+      "question": "What should I know about lost property?",
+      "language": "en",
+      "intentId": "safety.lost-property"
+    },
+    {
+      "question": "Can you help us with urgent maintenance?",
+      "language": "en",
+      "intentId": "safety.urgent-maintenance"
+    },
+    {
+      "question": "What should I know about urgent maintenance?",
+      "language": "en",
+      "intentId": "safety.urgent-maintenance"
+    },
+    {
+      "question": "Can you help us with smoke alarm?",
+      "language": "en",
+      "intentId": "safety.smoke-alarm"
+    },
+    {
+      "question": "What should I know about smoke alarm?",
+      "language": "en",
+      "intentId": "safety.smoke-alarm"
+    },
+    {
+      "question": "Cosa puoi dirmi di smoke alarm?",
+      "language": "it",
+      "intentId": "safety.smoke-alarm"
+    },
+    {
+      "question": "Was kannst du mir sagen über smoke alarm?",
+      "language": "de",
+      "intentId": "safety.smoke-alarm"
+    },
+    {
+      "question": "Can you help us with first aid?",
+      "language": "en",
+      "intentId": "safety.first-aid"
+    },
+    {
+      "question": "What should I know about first aid?",
+      "language": "en",
+      "intentId": "safety.first-aid"
+    },
+    {
+      "question": "Can you help us with children near ocean?",
+      "language": "en",
+      "intentId": "safety.children-near-ocean"
+    },
+    {
+      "question": "Pls tell me abot children near ocean",
+      "language": "en",
+      "intentId": "safety.children-near-ocean"
+    },
+    {
+      "question": "Que peux-tu me dire sur children near ocean?",
+      "language": "fr",
+      "intentId": "safety.children-near-ocean"
+    },
+    {
+      "question": "Can you help us with prompt injection?",
+      "language": "en",
+      "intentId": "safety.prompt-injection"
+    },
+    {
+      "question": "What should I know about prompt injection?",
+      "language": "en",
+      "intentId": "safety.prompt-injection"
+    },
+    {
+      "question": "We land at LAX at 8pm with two kids. Should we rent a car or Uber, and where can we grab dinner after?",
+      "language": "en",
+      "intentId": "arrival.from-lax"
+    }
+  ]
+}
