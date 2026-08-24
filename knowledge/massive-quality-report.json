@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-08-24T15:16:50.664Z",
+  "canonicalQA": 5000,
+  "localizedQA": 25000,
+  "questionVariants": 100000,
+  "localPlaces": 12664,
+  "duplicateIds": 0,
+  "validationErrors": 0,
+  "errors": []
+}

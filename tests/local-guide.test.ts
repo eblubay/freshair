@@ -10,11 +10,13 @@ test("Local Guide preserves legacy destinations and adds requested South Bay cit
 	}
 })
 
-test("Local Guide exposes grouped, mobile-friendly cards and coordinate directions", () => {
+test("Local Guide exposes grouped, mobile-friendly cards and internal map actions", () => {
 	assert.match(guide, /groups\[`\$\{poi\.area\} · \$\{poi\.category\}`\]/)
 	assert.match(guide, /overflow-x-auto/)
 	assert.match(guide, /min-h-10/)
-	assert.match(guide, /google\.com\/maps\/dir\/\?api=1/)
+	assert.match(guide, /#guide-map-heading\?poi=/)
+	assert.match(guide, /Show on map/)
+	assert.doesNotMatch(guide, /google\.com\/maps/)
 	assert.match(guide, /No partnership or sponsorship is implied unless specifically stated\./)
 })
 
