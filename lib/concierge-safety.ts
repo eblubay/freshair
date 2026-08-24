@@ -5,9 +5,9 @@ export const UNKNOWN_FALLBACK = "I don't have a verified answer for that yet. Th
 export const LIVE_FALLBACK = "That can change in real time. Check the current information directly before heading out."
 const injection = /ignore (all |any )?(previous|prior|above)|system prompt|developer (message|instructions)|act as (an )?(admin|administrator)|api[ _-]?key|environment variables?|database (password|credentials)|webhook secret|clerk id|telegram (token|config)|owner.?s? database|\bdoor (code|access)\b|\block code\b|\baccess code\b|security code|wifi password|cleaner (contact|phone)|internal notes?|filesystem|read (a |the )?file/i
 const urlRequest = /(fetch|open|request|download|curl|visit)\s+(https?:\/\/|www\.)/i
-const booking = /available|availability|book|booking|reservation|reserved|confirm|payment|pay|price|discount|cancel|refund|extend|modify/i
-const live = /today|tonight|right now|open now|currently|current|latest|traffic|weather|live|availability|hours?/i
-const emergency = /\bemergency\b|call 911|\b(?:there is|there's|active|house|building|kitchen|electrical|wild) fire\b|medical emergency|life.?threat|in danger|drowning/i
+const booking = /available|availability|book|booking|reservation|reserved|confirm|payment|pay|price|discount|cancel|refund|extend|modify|disponibilit|prenot|pagament|prezzo|annull|reserva|pago|precio|réserv|paiement|prix|annul|buch|verfügbar|zahlung|preis|storn/i
+const live = /today|tonight|right now|open now|currently|current|latest|traffic|weather|live|availability|hours?|oggi|stasera|adesso|orari|meteo|traffico|hoy|esta noche|ahora|horario|tiempo|tráfico|aujourd'hui|ce soir|maintenant|horaires|météo|circulation|heute|heute abend|jetzt|öffnungszeiten|wetter|verkehr/i
+const emergency = /\bemergency\b|call 911|\b(?:there is|there's|active|house|building|kitchen|electrical|wild) fire\b|medical emergency|life.?threat|in danger|drowning|emergenza|pericolo|incendio|anneg|emergencia|peligro|incendio|ahog|urgence|danger|incendie|noyade|notfall|gefahr|brand|ertrink/i
 
 export function safetyIntent(question: string) {
 	if (injection.test(question) || urlRequest.test(question)) return "security" as const

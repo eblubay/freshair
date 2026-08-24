@@ -1,7 +1,6 @@
 {
   "version": 1,
-  "digest": "cbd3a670d06abed8b05d4722edbfff4e6a52b5fe0eec9c778d3be5546420944f",
-  "qas": [
+  "entries": [
     {
       "id": "v2-balcony",
       "category": "property",
@@ -48,30 +47,7 @@
             "Gibt es einen Balkon oder einen Außenbereich?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "property",
-        "Private balcony",
-        "balcony",
-        "outdoor",
-        "ocean view",
-        "sunset",
-        "dining",
-        "Is there a balcony or outdoor space?",
-        "Can you tell me more about this: Is there a balcony or outdoor space?",
-        "C’è un balcone o uno spazio esterno?",
-        "Puoi dirmi di più su questo: C’è un balcone o uno spazio esterno?",
-        "¿Hay balcón o espacio al aire libre?",
-        "Y a-t-il un balcon ou un espace extérieur?",
-        "Gibt es einen Balkon oder einen Außenbereich?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-beach-distance",
@@ -119,33 +95,7 @@
             "Wie nah ist der Strand?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "property",
-        "Shell St Beach Retreat: Bright 2BR Near the Beach",
-        "capacity",
-        "guests",
-        "bedrooms",
-        "beds",
-        "bathrooms",
-        "el porto",
-        "neighborhood",
-        "How close is the beach?",
-        "Can you tell me more about this: How close is the beach?",
-        "Quanto è vicina la spiaggia?",
-        "Puoi dirmi di più su questo: Quanto è vicina la spiaggia?",
-        "¿Qué tan cerca está la playa?",
-        "La plage est proche ?",
-        "Pouvez-vous m'en dire plus sur la plage ?",
-        "Wie nah ist der Strand?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-bedrooms-baths",
@@ -193,34 +143,7 @@
             "Wie viele Schlafzimmer, Betten und Badezimmer gibt es?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "property",
-        "Shell St Beach Retreat: Bright 2BR Near the Beach",
-        "capacity",
-        "guests",
-        "bedrooms",
-        "beds",
-        "bathrooms",
-        "el porto",
-        "neighborhood",
-        "How many bedrooms, beds and bathrooms are there?",
-        "Can you tell me more about this: How many bedrooms, beds and bathrooms are there?",
-        "Quante camere, letti e bagni ci sono?",
-        "Puoi dirmi di più su questo: Quante camere, letti e bagni ci sono?",
-        "¿Cuántos dormitorios, camas y baños hay?",
-        "¿Cuántas habitaciones, camas y baños hay?",
-        "Combien y a-t-il de chambres, de lits et de salles de bains ?",
-        "Combien de chambres, de lits et de salles de bains y a-t-il ?",
-        "Wie viele Schlafzimmer, Betten und Badezimmer gibt es?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-capacity",
@@ -268,34 +191,7 @@
             "Wie viele Gäste können bleiben?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "property",
-        "Shell St Beach Retreat: Bright 2BR Near the Beach",
-        "capacity",
-        "guests",
-        "bedrooms",
-        "beds",
-        "bathrooms",
-        "el porto",
-        "neighborhood",
-        "How many guests can stay?",
-        "Can you tell me more about this: How many guests can stay?",
-        "Quanti ospiti possono soggiornare?",
-        "Puoi dirmi di più su questo: Quanti ospiti possono soggiornare?",
-        "¿Cuántos invitados pueden quedarse?",
-        "¿Cuántos huéspedes pueden quedarse?",
-        "Combien d'invités peuvent rester ?",
-        "combien d'invités peuvent rester ?",
-        "Wie viele Gäste können bleiben?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-long-stay",
@@ -343,31 +239,7 @@
             "Sind längere Aufenthalte erlaubt?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "property",
-        "Private balcony",
-        "balcony",
-        "outdoor",
-        "ocean view",
-        "sunset",
-        "dining",
-        "Are long stays allowed?",
-        "Can you tell me more about this: Are long stays allowed?",
-        "Sono consentiti soggiorni lunghi?",
-        "Puoi dirmi di più su questo: Sono consentiti soggiorni lunghi?",
-        "éSe permiten largas estancias?",
-        "Les longs séjours sont-ils autorisés ?",
-        "Sind lange Aufenthalte erlaubt?",
-        "Sind längere Aufenthalte erlaubt?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-property-summary",
@@ -415,33 +287,7 @@
             "Wie ist ShellByTheShore?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "property",
-        "Shell St Beach Retreat: Bright 2BR Near the Beach",
-        "capacity",
-        "guests",
-        "bedrooms",
-        "beds",
-        "bathrooms",
-        "el porto",
-        "neighborhood",
-        "What is ShellByTheShore like?",
-        "Can you tell me more about this: What is ShellByTheShore like?",
-        "Com’è ShellByTheShore?",
-        "Puoi dirmi di più su questo: Com’è ShellByTheShore?",
-        "¿Cómo es ShellByTheShore?",
-        "Comment est ShellByTheShore?",
-        "à quoi ressemble ShellByTheShore ?",
-        "Wie ist ShellByTheShore?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-self-checkin",
@@ -489,33 +335,7 @@
             "Ist der Self Check-in verfügbar?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "property",
-        "Private balcony",
-        "balcony",
-        "outdoor",
-        "ocean view",
-        "sunset",
-        "dining",
-        "Is self check-in available?",
-        "Can you tell me more about this: Is self check-in available?",
-        "È disponibile il self check-in?",
-        "Puoi dirmi di più su questo: È disponibile il self check-in?",
-        "¿Está disponible el auto check-in?",
-        "¿Hay auto check-in disponible?",
-        "L'auto-enregistrement est-il disponible ?",
-        "l'auto-enregistrement est-il disponible ?",
-        "Ist Self Check-in verfügbar?",
-        "Ist der Self Check-in verfügbar?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-stairs",
@@ -563,29 +383,7 @@
             "Ist das Haus schrittfrei?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "accessibility",
-        "Stairs to the home",
-        "stairs",
-        "step free",
-        "mobility",
-        "duplex",
-        "Is the home step-free?",
-        "Can you tell me more about this: Is the home step-free?",
-        "La casa è accessibile senza scale?",
-        "Puoi dirmi di più su questo: La casa è accessibile senza scale?",
-        "¿La casa está libre de pasos?",
-        "La maison est libre ?",
-        "Ist das Haus schrittfrei?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-air-conditioning",
@@ -633,29 +431,7 @@
             "Hat das Haus eine Klimaanlage?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "amenities",
-        "Air conditioning",
-        "not included",
-        "air conditioning",
-        "Does the home have air conditioning?",
-        "Can you tell me more about this: Does the home have air conditioning?",
-        "La casa ha l’aria condizionata?",
-        "Puoi dirmi di più su questo: La casa ha l’aria condizionata?",
-        "¿La casa tiene aire acondicionado?",
-        "¿El hogar tiene aire acondicionado?",
-        "La maison a-t-elle la climatisation ?",
-        "la maison a-t-elle la climatisation ?",
-        "Hat das Haus eine Klimaanlage?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-bathroom",
@@ -703,35 +479,7 @@
             "Welche Badezimmerartikel werden bereitgestellt?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "amenities",
-        "Bathroom",
-        "bathroom",
-        "bathtub",
-        "hair dryer",
-        "cleaning products",
-        "shampoo",
-        "conditioner",
-        "body soap",
-        "hot water",
-        "shower gel",
-        "What bathroom items are provided?",
-        "Can you tell me more about this: What bathroom items are provided?",
-        "Cosa viene fornito in bagno?",
-        "Puoi dirmi di più su questo: Cosa viene fornito in bagno?",
-        "¿Qué artículos de baño se proporcionan?",
-        "Quels articles de toilette sont fournis?",
-        "Quels articles de salle de bains sont fournis?",
-        "Welche Badezimmerartikel werden bereitgestellt?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-beach-gear",
@@ -779,33 +527,7 @@
             "Welche Strandausrüstung wird bereitgestellt?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "amenities",
-        "Beach equipment",
-        "beach gear",
-        "chairs",
-        "towels",
-        "umbrella",
-        "boogie boards",
-        "sand toys",
-        "families",
-        "What beach gear is provided?",
-        "Can you tell me more about this: What beach gear is provided?",
-        "Quale attrezzatura da spiaggia è disponibile?",
-        "Puoi dirmi di più su questo: Quale attrezzatura da spiaggia è disponibile?",
-        "¿Qué equipo de playa se proporciona?",
-        "Quel équipement de plage est fourni?",
-        "Welche Strandausrüstung ist vorgesehen?",
-        "Welche Strandausrüstung wird bereitgestellt?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-heating",
@@ -853,32 +575,7 @@
             "Hat das Haus Heizung?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "amenities",
-        "Heating and cooling",
-        "heating and cooling",
-        "indoor fireplace",
-        "ceiling fan",
-        "portable fans",
-        "heating",
-        "Does the home have heating?",
-        "Can you tell me more about this: Does the home have heating?",
-        "La casa ha il riscaldamento?",
-        "Puoi dirmi di più su questo: La casa ha il riscaldamento?",
-        "¿La casa tiene calefacción?",
-        "¿Tiene calefacción la casa?",
-        "La maison a du chauffage ?",
-        "la maison a-t-elle du chauffage ?",
-        "Hat das Haus Heizung?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-kitchen",
@@ -926,43 +623,7 @@
             "Was gibt es in der Köche?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "amenities",
-        "Kitchen and dining",
-        "kitchen and dining",
-        "kitchen (space where guests can cook their own meals)",
-        "refrigerator",
-        "microwave",
-        "cooking basics (pots and pans, oil, salt and pepper)",
-        "dishes and silverware (bowls, chopsticks, plates, cups, etc.)",
-        "freezer",
-        "dishwasher",
-        "stove",
-        "oven",
-        "hot water kettle",
-        "coffee maker",
-        "wine glasses",
-        "toaster",
-        "baking sheet",
-        "blender",
-        "dining table",
-        "coffee",
-        "What is available in the kitchen?",
-        "Can you tell me more about this: What is available in the kitchen?",
-        "Cosa c’è in cucina?",
-        "Puoi dirmi di più su questo: Cosa c’è in cucina?",
-        "¿Qué hay en la cocina?",
-        "Qu'est-ce qui est disponible dans la cuisine?",
-        "Was gibt es in der Köche?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-laundry",
@@ -1010,35 +671,7 @@
             "Können wir Wäsche waschen?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "amenities",
-        "Bedroom and laundry",
-        "bedroom and laundry",
-        "washer",
-        "free dryer – in building",
-        "hangers",
-        "bed linens",
-        "extra pillows and blankets",
-        "room-darkening shades",
-        "iron",
-        "clothing storage",
-        "Can we do laundry?",
-        "Can you tell me more about this: Can we do laundry?",
-        "Possiamo fare il bucato?",
-        "Puoi dirmi di più su questo: Possiamo fare il bucato?",
-        "¿Podemos lavar la ropa?",
-        "On peut faire la lessive ?",
-        "on peut faire la lessive ?",
-        "Können wir Wäsche waschen?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-wifi",
@@ -1086,29 +719,7 @@
             "Ist Wi-Fi enthalten?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "amenities",
-        "Air conditioning",
-        "not included",
-        "air conditioning",
-        "Is Wi-Fi included?",
-        "Can you tell me more about this: Is Wi-Fi included?",
-        "Il Wi-Fi è incluso?",
-        "Puoi dirmi di più su questo: Il Wi-Fi è incluso?",
-        "¿Está incluido el Wi-Fi?",
-        "Le Wi-Fi est-il inclus?",
-        "le Wi-Fi est-il inclus ?",
-        "Ist Wi-Fi inklusive?",
-        "Ist Wi-Fi enthalten?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-checkin-out",
@@ -1156,32 +767,7 @@
             "Was sind Check-in- und Check-out-Zeiten?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "house-rules",
-        "Checking in and out",
-        "house rules",
-        "checking in and out",
-        "check-in after 3:00 pm",
-        "checkout before 10:00 am",
-        "self check-in with keypad",
-        "What are check-in and checkout times?",
-        "Can you tell me more about this: What are check-in and checkout times?",
-        "Quali sono gli orari di check-in e checkout?",
-        "Puoi dirmi di più su questo: Quali sono gli orari di check-in e checkout?",
-        "¿Qué tiempos de check-in y checkout?",
-        "Quelles sont les heures d'enregistrement et de départ ?",
-        "Quelles sont les heures d'enregistrement et de départ?",
-        "Was sind Check-in- und Checkout-Zeiten?",
-        "Was sind Check-in- und Check-out-Zeiten?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-house-rules",
@@ -1229,35 +815,7 @@
             "Was sind die wichtigsten Hausregeln?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "house-rules",
-        "During your stay",
-        "house rules",
-        "during your stay",
-        "4 guests maximum",
-        "no pets",
-        "quiet hours",
-        "no parties or events",
-        "no commercial photography",
-        "no smoking",
-        "additional rules",
-        "What are the main house rules?",
-        "Can you tell me more about this: What are the main house rules?",
-        "Quali sono le principali regole della casa?",
-        "Puoi dirmi di più su questo: Quali sono le principali regole della casa?",
-        "¿Cuáles son las reglas de la casa principal?",
-        "Quelles sont les règles de la maison principale ?",
-        "Quelles sont les règles de la maison principale?",
-        "Was sind die wichtigsten Hausregeln?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-checkout-tasks",
@@ -1305,33 +863,7 @@
             "Was sollten wir tun, bevor wir gehen?"
           ]
         }
-      },
-      "sourceIds": [
-        "property-data.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "departure",
-        "Before you leave",
-        "house rules",
-        "before you leave",
-        "gather used towels",
-        "throw trash away",
-        "turn things off",
-        "return keys",
-        "lock up",
-        "What should we do before leaving?",
-        "Can you tell me more about this: What should we do before leaving?",
-        "Cosa dobbiamo fare prima di partire?",
-        "Puoi dirmi di più su questo: Cosa dobbiamo fare prima di partire?",
-        "¿Qué debemos hacer antes de irnos?",
-        "Que devons-nous faire avant de partir ?",
-        "que devrions-nous faire avant de partir ?",
-        "Was sollten wir tun, bevor wir gehen?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-cancellation",
@@ -1379,30 +911,7 @@
             "Was sind die veröffentlichten Stornierungsbedingungen für eine akzeptierte Direktbuchung?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/terms-and-conditions/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "booking",
-        "Published cancellation terms",
-        "cancel",
-        "cancellation",
-        "refund",
-        "terms",
-        "policy",
-        "What are the published cancellation terms for an accepted direct booking?",
-        "Can you tell me more about this: What are the published cancellation terms for an accepted direct booking?",
-        "Quali sono i termini di cancellazione pubblicati per una prenotazione diretta accettata?",
-        "Puoi dirmi di più su questo: Quali sono i termini di cancellazione pubblicati per una prenotazione diretta accettata?",
-        "¿Cuáles son los términos de cancelación publicados para una reserva directa aceptada?",
-        "Quelles sont les conditions d'annulation publiées pour une réservation directe acceptée?",
-        "Was sind die veröffentlichten Stornierungsbedingungen für eine akzeptierte Direktbuchung?"
-      ],
-      "locations": [
-        "ShellByTheShore"
-      ]
+      }
     },
     {
       "id": "v2-inquiry",
@@ -1450,31 +959,7 @@
             "Bestätigt die Verfügbarkeit einer Anfrage eine Reservierung?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/AvailabilityRequest.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "booking",
-        "Request Availability",
-        "availability",
-        "reservation",
-        "payment",
-        "inquiry",
-        "confirmation",
-        "Does Request Availability confirm a reservation?",
-        "Can you tell me more about this: Does Request Availability confirm a reservation?",
-        "La richiesta di disponibilità conferma una prenotazione?",
-        "Puoi dirmi di più su questo: La richiesta di disponibilità conferma una prenotazione?",
-        "¿Solicitar disponibilidad confirma una reserva?",
-        "¿Me puede decir más sobre esto: Solicita disponibilidad confirma una reserva?",
-        "La demande de disponibilité confirme-t-elle une réservation?",
-        "Bestätigt die Verfügbarkeit einer Anfrage eine Reservierung?"
-      ],
-      "locations": [
-        "ShellByTheShore"
-      ]
+      }
     },
     {
       "id": "v2-emergency",
@@ -1522,31 +1007,7 @@
             "Was soll ich im Notfall tun?"
           ]
         }
-      },
-      "sourceIds": [
-        "knowledge/curated-overrides.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "safety",
-        "Emergencies and urgent maintenance",
-        "emergency",
-        "911",
-        "urgent",
-        "maintenance",
-        "host",
-        "What should I do in an emergency?",
-        "Can you tell me more about this: What should I do in an emergency?",
-        "Cosa devo fare in caso di emergenza?",
-        "Puoi dirmi di più su questo: Cosa devo fare in caso di emergenza?",
-        "¿Qué debo hacer en una emergencia?",
-        "Que dois-je faire en cas d'urgence?",
-        "que dois-je faire en cas d'urgence ?",
-        "Was soll ich im Notfall tun?"
-      ],
-      "locations": [
-        "United States"
-      ]
+      }
     },
     {
       "id": "v2-ocean-safety",
@@ -1594,31 +1055,7 @@
             "Was sollten wir über die Sicherheit auf See wissen?"
           ]
         }
-      },
-      "sourceIds": [
-        "knowledge/curated-overrides.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "safety",
-        "Ocean safety",
-        "ocean",
-        "swim",
-        "surf",
-        "children",
-        "lifeguard",
-        "beach safety",
-        "What should we know about ocean safety?",
-        "Can you tell me more about this: What should we know about ocean safety?",
-        "Cosa dobbiamo sapere sulla sicurezza in oceano?",
-        "Puoi dirmi di più su questo: Cosa dobbiamo sapere sulla sicurezza in oceano?",
-        "¿Qué deberíamos saber sobre seguridad oceánica?",
-        "Que devons-nous savoir sur la sécurité des océans?",
-        "Was sollten wir über die Sicherheit auf See wissen?"
-      ],
-      "locations": [
-        "Los Angeles County beaches"
-      ]
+      }
     },
     {
       "id": "v2-car-or-rideshare",
@@ -1666,33 +1103,7 @@
             "Brauchen wir einen Mietwagen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "transportation",
-        "Arriving from LAX",
-        "lax",
-        "airport",
-        "arrival",
-        "uber",
-        "rideshare",
-        "rental car",
-        "transport",
-        "Do we need a rental car?",
-        "Can you tell me more about this: Do we need a rental car?",
-        "Serve un’auto a noleggio?",
-        "Puoi dirmi di più su questo: Serve un’auto a noleggio?",
-        "¿Necesitamos un coche de alquiler?",
-        "On a besoin d'une voiture de location ?",
-        "Avons-nous besoin d'une voiture de location ?",
-        "Brauchen wir einen Mietwagen?"
-      ],
-      "locations": [
-        "LAX / Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-lax",
@@ -1740,32 +1151,7 @@
             "Was ist der einfachste Weg, um von LAX hierher zu kommen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "transportation",
-        "Arriving from LAX",
-        "lax",
-        "airport",
-        "arrival",
-        "uber",
-        "rideshare",
-        "rental car",
-        "transport",
-        "What is the easiest way to get here from LAX?",
-        "Can you tell me more about this: What is the easiest way to get here from LAX?",
-        "Qual è il modo più semplice per arrivare da LAX?",
-        "Puoi dirmi di più su questo: Qual è il modo più semplice per arrivare da LAX?",
-        "¿Cuál es la manera más fácil de llegar desde LAX?",
-        "Quel est le moyen le plus facile d'arriver de LAX ?",
-        "Was ist der einfachste Weg, um von LAX hierher zu kommen?"
-      ],
-      "locations": [
-        "LAX / Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-local-without-car",
@@ -1814,33 +1200,7 @@
             "Was können wir in der Nähe tun, ohne viel zu fahren?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx",
-        "knowledge/curated-overrides.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "transportation",
-        "Arriving from LAX",
-        "lax",
-        "airport",
-        "arrival",
-        "uber",
-        "rideshare",
-        "rental car",
-        "transport",
-        "What can we do nearby without driving much?",
-        "Can you tell me more about this: What can we do nearby without driving much?",
-        "Cosa possiamo fare vicino senza guidare molto?",
-        "Puoi dirmi di più su questo: Cosa possiamo fare vicino senza guidare molto?",
-        "¿Qué podemos hacer cerca sin conducir mucho?",
-        "Que pouvons-nous faire à proximité sans conduire beaucoup ?",
-        "Was können wir in der Nähe tun, ohne viel zu fahren?"
-      ],
-      "locations": [
-        "LAX / Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-traffic",
@@ -1888,34 +1248,7 @@
             "Können Sie mir jetzt die genaue Fahrzeit sagen?"
           ]
         }
-      },
-      "sourceIds": [
-        "knowledge/curated-overrides.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "transportation",
-        "Arriving from LAX",
-        "lax",
-        "airport",
-        "arrival",
-        "uber",
-        "rideshare",
-        "rental car",
-        "transport",
-        "Can you tell me the exact drive time right now?",
-        "Can you tell me more about this: Can you tell me the exact drive time right now?",
-        "Puoi dirmi il tempo di guida esatto in questo momento?",
-        "Puoi dirmi di più su questo: Puoi dirmi il tempo di guida esatto in questo momento?",
-        "¿Puedes decirme la hora exacta de la unidad ahora mismo?",
-        "puedes decirme el tiempo exacto de la unidad ahora mismo?",
-        "Pouvez-vous me dire l'heure exacte de conduite en ce moment ?",
-        "Pouvez-vous me dire l'heure exacte de conduite en ce moment?",
-        "Können Sie mir jetzt die genaue Fahrzeit sagen?"
-      ],
-      "locations": [
-        "LAX / Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-manhattan-beach-public-parking",
@@ -1968,35 +1301,7 @@
             "Wann würden Sie Manhattan Beach Public Parking empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "parking",
-        "Manhattan Beach Public Parking",
-        "manhattan beach",
-        "manhattan beach public parking",
-        "What should I know about Manhattan Beach Public Parking?",
-        "Is Manhattan Beach Public Parking a good choice for our day?",
-        "When would you recommend Manhattan Beach Public Parking?",
-        "Cosa dovrei sapere su Manhattan Beach Public Parking?",
-        "Manhattan Beach Public Parking è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Manhattan Beach Public Parking?",
-        "¿Qué debería saber sobre Manhattan Beach Public Parking?",
-        "Es Manhattan Beach Public Estacionamiento una buena elección para nuestro día?",
-        "¿Cuándo recomendaría el estacionamiento público de Manhattan Beach?",
-        "Que dois-je savoir sur Manhattan Beach Public Parking?",
-        "Est Manhattan Beach Public Parking un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Manhattan Beach Public Parking?",
-        "Was sollte ich über öffentliche Parkplätze in Manhattan Beach wissen?",
-        "Ist Manhattan Beach Public Parken eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Manhattan Beach Public Parking empfehlen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-parking-home",
@@ -2044,30 +1349,7 @@
             "Sind Parkplätze zu Hause inbegriffen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/terms-and-conditions/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "parking",
-        "Included garage parking",
-        "garage",
-        "car",
-        "suv",
-        "clearance",
-        "vehicle",
-        "Is parking included at the home?",
-        "Can you tell me more about this: Is parking included at the home?",
-        "Il parcheggio è incluso nella casa?",
-        "Puoi dirmi di più su questo: Il parcheggio è incluso nella casa?",
-        "¿Hay aparcamiento incluido en la casa?",
-        "Est-ce que le stationnement est inclus à la maison?",
-        "Sind Parkplätze zu Hause inbegriffen?"
-      ],
-      "locations": [
-        "El Porto, Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-area-hermosa-beach",
@@ -2115,32 +1397,7 @@
             "Was sollten wir über Hermosa Beach wissen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Hermosa Beach",
-        "hermosa beach",
-        "shellbytheshore pick",
-        "itinerary",
-        "pair",
-        "same area",
-        "nearby",
-        "What should we know about Hermosa Beach?",
-        "Can you tell me more about this: What should we know about Hermosa Beach?",
-        "Cosa dovremmo sapere su Hermosa Beach?",
-        "Puoi dirmi di più su questo: Cosa dovremmo sapere su Hermosa Beach?",
-        "¿Qué deberíamos saber sobre Hermosa Beach?",
-        "Que devrions-nous savoir sur Hermosa Beach ?",
-        "Que devrions-nous savoir sur Hermosa Beach?",
-        "Was sollten wir über Hermosa Beach wissen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-area-malibu",
@@ -2188,32 +1445,7 @@
             "Was sollten wir über Malibu wissen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "area",
-        "Malibu",
-        "malibu",
-        "surfrider",
-        "pier",
-        "day trip",
-        "drive",
-        "traffic",
-        "parking",
-        "What should we know about Malibu?",
-        "Can you tell me more about this: What should we know about Malibu?",
-        "Cosa dovremmo sapere su Malibu?",
-        "Puoi dirmi di più su questo: Cosa dovremmo sapere su Malibu?",
-        "¿Qué deberíamos saber de Malibu?",
-        "Que devrions-nous savoir sur Malibu ?",
-        "Was sollten wir über Malibu wissen?"
-      ],
-      "locations": [
-        "Malibu"
-      ]
+      }
     },
     {
       "id": "v2-area-manhattan-beach",
@@ -2261,31 +1493,7 @@
             "Was sollten wir über Manhattan Beach wissen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Manhattan Beach",
-        "manhattan beach",
-        "itinerary",
-        "pair",
-        "same area",
-        "nearby",
-        "What should we know about Manhattan Beach?",
-        "Can you tell me more about this: What should we know about Manhattan Beach?",
-        "Cosa dovremmo sapere su Manhattan Beach?",
-        "Puoi dirmi di più su questo: Cosa dovremmo sapere su Manhattan Beach?",
-        "¿Qué deberíamos saber sobre Manhattan Beach?",
-        "Que devrions-nous savoir sur Manhattan Beach ?",
-        "Pouvez-vous m'en dire plus sur Manhattan Beach ?",
-        "Was sollten wir über Manhattan Beach wissen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-area-redondo-beach",
@@ -2333,31 +1541,7 @@
             "Was sollten wir über Redondo Beach wissen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Redondo Beach",
-        "redondo beach",
-        "itinerary",
-        "pair",
-        "same area",
-        "nearby",
-        "What should we know about Redondo Beach?",
-        "Can you tell me more about this: What should we know about Redondo Beach?",
-        "Cosa dovremmo sapere su Redondo Beach?",
-        "Puoi dirmi di più su questo: Cosa dovremmo sapere su Redondo Beach?",
-        "¿Qué deberíamos saber sobre Redondo Beach?",
-        "Que devrions-nous savoir sur Redondo Beach ?",
-        "Que devrions-nous savoir sur Redondo Beach?",
-        "Was sollten wir über Redondo Beach wissen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-area-santa-monica",
@@ -2405,31 +1589,7 @@
             "Was sollten wir über Santa Monica wissen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "area",
-        "Santa Monica",
-        "santa monica",
-        "pier",
-        "third street",
-        "promenade",
-        "shopping",
-        "traffic",
-        "What should we know about Santa Monica?",
-        "Can you tell me more about this: What should we know about Santa Monica?",
-        "Cosa dovremmo sapere su Santa Monica?",
-        "Puoi dirmi di più su questo: Cosa dovremmo sapere su Santa Monica?",
-        "¿Qué deberíamos saber de Santa Mónica?",
-        "Que devrions-nous savoir sur Santa Monica ?",
-        "Was sollten wir über Santa Monica wissen?"
-      ],
-      "locations": [
-        "Santa Monica"
-      ]
+      }
     },
     {
       "id": "v2-area-venice",
@@ -2477,31 +1637,7 @@
             "Was sollten wir über Venedig wissen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "area",
-        "Venice",
-        "venice",
-        "boardwalk",
-        "canals",
-        "abbot kinney",
-        "shopping",
-        "rideshare",
-        "What should we know about Venice?",
-        "Can you tell me more about this: What should we know about Venice?",
-        "Cosa dovremmo sapere su Venice?",
-        "Puoi dirmi di più su questo: Cosa dovremmo sapere su Venice?",
-        "¿Qué deberíamos saber de Venecia?",
-        "Que devrions-nous savoir sur Venise ?",
-        "Was sollten wir über Venedig wissen?"
-      ],
-      "locations": [
-        "Venice"
-      ]
+      }
     },
     {
       "id": "v2-hermosa-evening",
@@ -2550,33 +1686,7 @@
             "Was ist ein entspannter Hermosa Beach Nachmittags- und Abendplan?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx",
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "area",
-        "Hermosa Beach",
-        "hermosa",
-        "beach",
-        "pier",
-        "strand",
-        "bike",
-        "dinner",
-        "walking",
-        "What is a relaxed Hermosa Beach afternoon and evening plan?",
-        "Can you tell me more about this: What is a relaxed Hermosa Beach afternoon and evening plan?",
-        "Qual è un programma rilassato per pomeriggio e sera a Hermosa Beach?",
-        "Puoi dirmi di più su questo: Qual è un programma rilassato per pomeriggio e sera a Hermosa Beach?",
-        "¿Qué es un relajado plan de la tarde y la noche de Hermosa Beach?",
-        "Qu'est-ce qu'un plan détendue d'Hermosa Beach après-midi et soir?",
-        "Was ist ein entspannter Hermosa Beach Nachmittags- und Abendplan?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-malibu-day",
@@ -2624,34 +1734,7 @@
             "Wie sollten wir einen Malibu-Tag planen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "area",
-        "Malibu",
-        "malibu",
-        "surfrider",
-        "pier",
-        "day trip",
-        "drive",
-        "traffic",
-        "parking",
-        "How should we plan a Malibu day?",
-        "Can you tell me more about this: How should we plan a Malibu day?",
-        "Come organizziamo una giornata a Malibu?",
-        "Puoi dirmi di più su questo: Come organizziamo una giornata a Malibu?",
-        "¿Cómo planeamos un día Malibu?",
-        "Comment prévoir une journée de Malibu ?",
-        "comment devrions-nous prévoir une journée de Malibu ?",
-        "Wie planen wir einen Malibu-Tag?",
-        "Wie sollten wir einen Malibu-Tag planen?"
-      ],
-      "locations": [
-        "Malibu"
-      ]
+      }
     },
     {
       "id": "v2-one-day-local",
@@ -2699,32 +1782,7 @@
             "Wie sollten wir einen einfachen Tag in Manhattan Beach verbringen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "area",
-        "Hermosa Beach",
-        "hermosa",
-        "beach",
-        "pier",
-        "strand",
-        "bike",
-        "dinner",
-        "walking",
-        "How should we spend one easy day around Manhattan Beach?",
-        "Can you tell me more about this: How should we spend one easy day around Manhattan Beach?",
-        "Come possiamo passare una giornata tranquilla tra El Porto e Manhattan Beach?",
-        "Puoi dirmi di più su questo: Come possiamo passare una giornata tranquilla tra El Porto e Manhattan Beach?",
-        "¿Cómo pasar un día fácil en Manhattan Beach?",
-        "Comment passer une journée facile autour de Manhattan Beach ?",
-        "Wie sollten wir einen einfachen Tag in Manhattan Beach verbringen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-three-days",
@@ -2772,40 +1830,7 @@
             "Können Sie eine ausgewogene dreitägige Küstenroute erstellen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Hermosa Beach",
-        "hermosa beach",
-        "shellbytheshore pick",
-        "experience",
-        "wide",
-        "sandy",
-        "beach",
-        "with",
-        "volleyball",
-        "strand",
-        "easy",
-        "access",
-        "pier",
-        "avenue",
-        "Can you build a balanced three-day coastal itinerary?",
-        "Can you tell me more about this: Can you build a balanced three-day coastal itinerary?",
-        "Puoi organizzare un itinerario costiero equilibrato di tre giorni?",
-        "Puoi dirmi di più su questo: Puoi organizzare un itinerario costiero equilibrato di tre giorni?",
-        "¿Puedes construir un itinerario costero equilibrado de tres días?",
-        "¿Puedes contarme más sobre esto: puedes construir un itinerario costero equilibrado de tres días?",
-        "Pouvez-vous construire un itinéraire côtier équilibré de trois jours?",
-        "pouvez-vous construire un itinéraire côtier équilibré de trois jours?",
-        "Können Sie eine ausgewogene dreitägige Küstenroute erstellen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-two-days",
@@ -2853,30 +1878,7 @@
             "Wie sollten wir zwei Tage ohne übermäßiges Fahren verbringen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Fishing With Dynamite",
-        "manhattan beach",
-        "fishing with dynamite",
-        "shellbytheshore pick",
-        "How should we spend two days without excessive driving?",
-        "Can you tell me more about this: How should we spend two days without excessive driving?",
-        "Come possiamo organizzare due giorni senza guidare troppo?",
-        "Puoi dirmi di più su questo: Come possiamo organizzare due giorni senza guidare troppo?",
-        "¿Cómo deberíamos pasar dos días sin conducir demasiado?",
-        "¿Cómo pasar dos días sin conducir excesivamente?",
-        "Comment passer deux jours sans conduire trop ?",
-        "Comment devrions-nous passer deux jours sans conduire trop?",
-        "Wie sollten wir zwei Tage ohne übermäßiges Fahren verbringen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-venice-santa-monica",
@@ -2925,34 +1927,7 @@
             "Wie sollten wir Venedig und Santa Monica an einem Tag kombinieren?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx",
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "area",
-        "Santa Monica",
-        "santa monica",
-        "pier",
-        "third street",
-        "promenade",
-        "shopping",
-        "traffic",
-        "How should we combine Venice and Santa Monica in one day?",
-        "Can you tell me more about this: How should we combine Venice and Santa Monica in one day?",
-        "Come possiamo combinare Venice e Santa Monica in un giorno?",
-        "Puoi dirmi di più su questo: Come possiamo combinare Venice e Santa Monica in un giorno?",
-        "¿Cómo combinar Venecia y Santa Mónica en un día?",
-        "Comment combiner Venise et Santa Monica en une journée ?",
-        "comment combiner Venise et Santa Monica en une journée ?",
-        "Wie sollen wir Venedig und Santa Monica an einem Tag kombinieren?",
-        "Wie sollten wir Venedig und Santa Monica an einem Tag kombinieren?"
-      ],
-      "locations": [
-        "Santa Monica"
-      ]
+      }
     },
     {
       "id": "v2-breakfast-shortlist",
@@ -3000,36 +1975,7 @@
             "Wo sollten wir in der Nähe des Strandes frühstücken?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "Sloopy's Beach Cafe",
-        "manhattan beach",
-        "sloopy's beach cafe",
-        "experience",
-        "casual",
-        "north",
-        "manhattan",
-        "beach",
-        "lunch",
-        "option",
-        "close",
-        "coast",
-        "Where should we have breakfast near the beach?",
-        "Can you tell me more about this: Where should we have breakfast near the beach?",
-        "Dove ci consigli di fare colazione vicino alla spiaggia?",
-        "Puoi dirmi di più su questo: Dove ci consigli di fare colazione vicino alla spiaggia?",
-        "¿Dónde deberíamos desayunar cerca de la playa?",
-        "Où devrions-nous prendre le petit-déjeuner près de la plage ?",
-        "Wo sollten wir in der Nähe des Strandes frühstücken?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-coffee-mb",
@@ -3077,33 +2023,7 @@
             "Wo können wir in Manhattan Beach guten Kaffee bekommen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "coffee",
-        "Two Guns Espresso",
-        "manhattan beach",
-        "two guns espresso",
-        "itinerary",
-        "pair",
-        "same area",
-        "nearby",
-        "Where can we get good coffee in Manhattan Beach?",
-        "Can you tell me more about this: Where can we get good coffee in Manhattan Beach?",
-        "Dove possiamo prendere un buon caffè a Manhattan Beach?",
-        "Puoi dirmi di più su questo: Dove possiamo prendere un buon caffè a Manhattan Beach?",
-        "¿Dónde podemos conseguir un buen café en Manhattan Beach?",
-        "OÙ trouver du bon café à Manhattan Beach ?",
-        "où peut-on trouver un bon café à Manhattan Beach ?",
-        "Wo kann man guten Kaffee in Manhattan Beach bekommen?",
-        "Wo können wir in Manhattan Beach guten Kaffee bekommen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-date-night",
@@ -3151,37 +2071,7 @@
             "Wo sollte ein Paar zum Abendessen in der Nähe von Manhattan Beach gehen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "The Strand House",
-        "manhattan beach",
-        "the strand house",
-        "experience",
-        "coastal",
-        "dining",
-        "near",
-        "manhattan",
-        "beach",
-        "pier",
-        "with",
-        "ocean",
-        "views",
-        "Where should a couple go for dinner near Manhattan Beach?",
-        "Can you tell me more about this: Where should a couple go for dinner near Manhattan Beach?",
-        "Dove consigli una cena di coppia vicino a Manhattan Beach?",
-        "Puoi dirmi di più su questo: Dove consigli una cena di coppia vicino a Manhattan Beach?",
-        "¿Dónde debería ir una pareja a cenar cerca de Manhattan Beach?",
-        "OÙ un couple devrait-il aller dîner prés de Manhattan Beach ?",
-        "Wo sollte ein Paar zum Abendessen in der Nähe von Manhattan Beach gehen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-family-local",
@@ -3230,32 +2120,7 @@
             "Was können wir in der Nähe des Hauses mit Kindern tun?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx",
-        "knowledge/curated-overrides.json"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "coffee",
-        "Two Guns Espresso",
-        "manhattan beach",
-        "two guns espresso",
-        "itinerary",
-        "pair",
-        "same area",
-        "nearby",
-        "What can we do close to the house with kids?",
-        "Can you tell me more about this: What can we do close to the house with kids?",
-        "Cosa possiamo fare vicino alla casa con i bambini?",
-        "Puoi dirmi di più su questo: Cosa possiamo fare vicino alla casa con i bambini?",
-        "¿Qué podemos hacer cerca de la casa con niños?",
-        "Que pouvons-nous faire prés de la maison avec des enfants ?",
-        "Was können wir in der Nähe des Hauses mit Kindern tun?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-family-redondo",
@@ -3303,41 +2168,7 @@
             "Was ist ein einfacher Redondo Beach Plan mit Kindern?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Seaside Lagoon",
-        "redondo beach",
-        "seaside lagoon",
-        "experience",
-        "seasonal",
-        "family",
-        "oriented",
-        "waterfront",
-        "swimming",
-        "area",
-        "check",
-        "current",
-        "operating",
-        "information",
-        "before",
-        "visiting",
-        "What is an easy Redondo Beach plan with children?",
-        "Can you tell me more about this: What is an easy Redondo Beach plan with children?",
-        "Qual è un programma semplice a Redondo Beach con bambini?",
-        "Puoi dirmi di più su questo: Qual è un programma semplice a Redondo Beach con bambini?",
-        "¿Qué es un plan fácil de Redondo Beach con niños?",
-        "¿Me puedes decir más sobre esto: ¿Qué es un plan de Redondo Beach fácil con niños?",
-        "Qu'est-ce qu'un plan facile Redondo Beach avec des enfants?",
-        "Was ist ein einfacher Redondo Beach Plan mit Kindern?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-groceries-mb",
@@ -3385,39 +2216,7 @@
             "Wo sollten wir Lebensmittel in Manhattan Beach kaufen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Trader Joe's",
-        "manhattan beach",
-        "trader joe's",
-        "everyday grocery",
-        "experience",
-        "convenient",
-        "option",
-        "everyday",
-        "snacks",
-        "prepared",
-        "foods",
-        "beach",
-        "trip",
-        "essentials",
-        "Where should we buy groceries in Manhattan Beach?",
-        "Can you tell me more about this: Where should we buy groceries in Manhattan Beach?",
-        "Dove conviene fare la spesa a Manhattan Beach?",
-        "Puoi dirmi di più su questo: Dove conviene fare la spesa a Manhattan Beach?",
-        "¿Dónde deberíamos comprar comestibles en Manhattan Beach?",
-        "OÙ acheter des courses à Manhattan Beach ?",
-        "où acheter des courses à Manhattan Beach ?",
-        "Wo sollten wir Lebensmittel in Manhattan Beach kaufen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-nightlife",
@@ -3466,33 +2265,7 @@
             "Wo können wir für Getränke oder einen lebhafteren Abend gehen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx",
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "area",
-        "Hermosa Beach",
-        "hermosa",
-        "beach",
-        "pier",
-        "strand",
-        "bike",
-        "dinner",
-        "walking",
-        "Where can we go for drinks or a livelier evening?",
-        "Can you tell me more about this: Where can we go for drinks or a livelier evening?",
-        "Dove possiamo andare per un drink o una serata più vivace?",
-        "Puoi dirmi di più su questo: Dove possiamo andare per un drink o una serata più vivace?",
-        "¿Dónde podemos ir a tomar bebidas o a una velada más animada?",
-        "OÙ pouvons-nous aller boire ou une soirée plus animée?",
-        "Wo können wir für Getränke oder einen lebhafteren Abend gehen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-seafood",
@@ -3540,29 +2313,7 @@
             "Wohin sollten wir für Meeresfrüchte gehen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Fishing With Dynamite",
-        "manhattan beach",
-        "fishing with dynamite",
-        "shellbytheshore pick",
-        "Where should we go for seafood?",
-        "Can you tell me more about this: Where should we go for seafood?",
-        "Dove consigli di andare per mangiare pesce?",
-        "Puoi dirmi di più su questo: Dove consigli di andare per mangiare pesce?",
-        "¿Dónde deberíamos ir a comer mariscos?",
-        "OÙ devrions-nous aller pour les fruits de mer ?",
-        "OÙ devrions-nous aller pour les fruits de mer?",
-        "Wohin sollten wir für Meeresfrüchte gehen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-sushi",
@@ -3610,33 +2361,7 @@
             "Können Sie ein verifiziertes Sushi-Restaurant empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/guide/page.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "area",
-        "Hermosa Beach",
-        "hermosa",
-        "beach",
-        "pier",
-        "strand",
-        "bike",
-        "dinner",
-        "walking",
-        "Can you recommend a verified sushi restaurant?",
-        "Can you tell me more about this: Can you recommend a verified sushi restaurant?",
-        "Puoi consigliarmi un ristorante sushi verificato?",
-        "Puoi dirmi di più su questo: Puoi consigliarmi un ristorante sushi verificato?",
-        "¿Puede recomendar un restaurante sushi verificado?",
-        "¿Me puede decir más sobre esto: ¿Puede recomendar un restaurante sushi verificado?",
-        "Pouvez-vous recommander un restaurant de sushi vérifié?",
-        "Können Sie ein verifiziertes Sushi-Restaurant empfehlen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-the-strand",
@@ -3689,35 +2414,7 @@
             "Wann würden Sie The Strand empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "activities",
-        "The Strand",
-        "south bay",
-        "the strand",
-        "What should I know about The Strand?",
-        "Is The Strand a good choice for our day?",
-        "When would you recommend The Strand?",
-        "Cosa dovrei sapere su The Strand?",
-        "The Strand è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti The Strand?",
-        "¿Qué debería saber sobre The Strand?",
-        "¿El Strand es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías el Strand?",
-        "Que dois-je savoir sur le Strand ?",
-        "Le Strand est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous le Strand ?",
-        "Was sollte ich über The Strand wissen?",
-        "Ist The Strand eine gute Wahl für unseren Tag?",
-        "Wann würden Sie The Strand empfehlen?"
-      ],
-      "locations": [
-        "South Bay"
-      ]
+      }
     },
     {
       "id": "v2-venice-beach-boardwalk",
@@ -3770,35 +2467,7 @@
             "Wann empfehlen Sie Venice Beach Boardwalk?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "activities",
-        "Venice Beach Boardwalk",
-        "venice",
-        "venice beach boardwalk",
-        "What should I know about Venice Beach Boardwalk?",
-        "Is Venice Beach Boardwalk a good choice for our day?",
-        "When would you recommend Venice Beach Boardwalk?",
-        "Cosa dovrei sapere su Venice Beach Boardwalk?",
-        "Venice Beach Boardwalk è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Venice Beach Boardwalk?",
-        "¿Qué debería saber sobre Venice Beach Boardwalk?",
-        "íEs Venice Beach Boardwalk una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Venice Beach Boardwalk?",
-        "Que dois-je savoir sur Venice Beach Boardwalk ?",
-        "Venice Beach Boardwalk est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Venice Beach Boardwalk?",
-        "Was sollte ich über Venice Beach Boardwalk wissen?",
-        "Ist Venice Beach Boardwalk eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Venice Beach Boardwalk?"
-      ],
-      "locations": [
-        "Venice"
-      ]
+      }
     },
     {
       "id": "v2-los-angeles-international-airport",
@@ -3851,35 +2520,7 @@
             "Wann empfehlen Sie den Los Angeles International Airport?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "airports",
-        "Los Angeles International Airport",
-        "lax",
-        "los angeles international airport",
-        "What should I know about Los Angeles International Airport?",
-        "Is Los Angeles International Airport a good choice for our day?",
-        "When would you recommend Los Angeles International Airport?",
-        "Cosa dovrei sapere su Los Angeles International Airport?",
-        "Los Angeles International Airport è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Los Angeles International Airport?",
-        "¿Qué debería saber sobre el aeropuerto internacional de Los ángeles?",
-        "íEs el Aeropuerto Internacional de Los ángeles una buena opción para nuestro día?",
-        "¿Cuándo recomendaría el Aeropuerto Internacional de Los ángeles?",
-        "Que dois-je savoir sur l'aéroport international de Los Angeles ?",
-        "L'aéroport international de Los Angeles est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous l'aéroport international de Los Angeles ?",
-        "Was sollte ich über den internationalen Flughafen Los Angeles wissen?",
-        "Ist Los Angeles International Airport eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie den Los Angeles International Airport?"
-      ],
-      "locations": [
-        "LAX"
-      ]
+      }
     },
     {
       "id": "v2-hermosa-beach-pier",
@@ -3932,35 +2573,7 @@
             "Wann würden Sie Hermosa Beach Pier empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "attractions",
-        "Hermosa Beach Pier",
-        "hermosa beach",
-        "hermosa beach pier",
-        "What should I know about Hermosa Beach Pier?",
-        "Is Hermosa Beach Pier a good choice for our day?",
-        "When would you recommend Hermosa Beach Pier?",
-        "Cosa dovrei sapere su Hermosa Beach Pier?",
-        "Hermosa Beach Pier è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Hermosa Beach Pier?",
-        "¿Qué debería saber sobre Hermosa Beach Pier?",
-        "íEs Hermosa Beach Pier una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Hermosa Beach Pier?",
-        "Que dois-je savoir sur Hermosa Beach Pier ?",
-        "Hermosa Beach Pier est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Hermosa Beach Pier ?",
-        "Was sollte ich über Hermosa Beach Pier wissen?",
-        "Ist Hermosa Beach Pier eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Hermosa Beach Pier empfehlen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-king-harbor",
@@ -4013,35 +2626,7 @@
             "Wann empfehlen Sie King Harbor?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "attractions",
-        "King Harbor",
-        "redondo beach",
-        "king harbor",
-        "What should I know about King Harbor?",
-        "Is King Harbor a good choice for our day?",
-        "When would you recommend King Harbor?",
-        "Cosa dovrei sapere su King Harbor?",
-        "King Harbor è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti King Harbor?",
-        "¿Qué debería saber sobre King Harbor?",
-        "íEs King Harbor una buena opción para nuestro día?",
-        "¿Cuándo recomendarías King Harbor?",
-        "Que devrais-je savoir sur King Harbor ?",
-        "Le roi Harbor est-il un bon choix pour notre époque ?",
-        "Quand recommanderiez-vous le roi Harbor ?",
-        "Was sollte ich über King Harbor wissen?",
-        "Ist King Harbor eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie King Harbor?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-malibu-pier",
@@ -4094,35 +2679,7 @@
             "Wann empfehlen Sie den Malibu Pier?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "attractions",
-        "Malibu Pier",
-        "malibu",
-        "malibu pier",
-        "What should I know about Malibu Pier?",
-        "Is Malibu Pier a good choice for our day?",
-        "When would you recommend Malibu Pier?",
-        "Cosa dovrei sapere su Malibu Pier?",
-        "Malibu Pier è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Malibu Pier?",
-        "¿Qué debería saber sobre Malibu Pier?",
-        "íEs Malibu Pier una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Malibu Pier?",
-        "Que dois-je savoir sur Malibu Pier ?",
-        "Malibu Pier est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Malibu Pier ?",
-        "Was sollte ich über Malibu Pier wissen?",
-        "Ist Malibu Pier eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie den Malibu Pier?"
-      ],
-      "locations": [
-        "Malibu"
-      ]
+      }
     },
     {
       "id": "v2-manhattan-beach-pier",
@@ -4175,36 +2732,7 @@
             "Wann empfehlen Sie den Manhattan Beach Pier?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "attractions",
-        "Manhattan Beach Pier",
-        "manhattan beach",
-        "manhattan beach pier",
-        "shellbytheshore pick",
-        "What should I know about Manhattan Beach Pier?",
-        "Is Manhattan Beach Pier a good choice for our day?",
-        "When would you recommend Manhattan Beach Pier?",
-        "Cosa dovrei sapere su Manhattan Beach Pier?",
-        "Manhattan Beach Pier è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Manhattan Beach Pier?",
-        "¿Qué debería saber sobre Manhattan Beach Pier?",
-        "íEs Manhattan Beach Pier una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Manhattan Beach Pier?",
-        "Que devrais-je savoir sur Manhattan Beach Pier ?",
-        "Manhattan Beach Pier est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Manhattan Beach Pier ?",
-        "Was sollte ich über den Manhattan Beach Pier wissen?",
-        "Ist Manhattan Beach Pier eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie den Manhattan Beach Pier?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-redondo-beach-pier",
@@ -4257,36 +2785,7 @@
             "Wann empfehlen Sie den Redondo Beach Pier?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "attractions",
-        "Redondo Beach Pier",
-        "redondo beach",
-        "redondo beach pier",
-        "shellbytheshore pick",
-        "What should I know about Redondo Beach Pier?",
-        "Is Redondo Beach Pier a good choice for our day?",
-        "When would you recommend Redondo Beach Pier?",
-        "Cosa dovrei sapere su Redondo Beach Pier?",
-        "Redondo Beach Pier è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Redondo Beach Pier?",
-        "¿Qué debería saber sobre Redondo Beach Pier?",
-        "íEs Redondo Beach Pier una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Redondo Beach Pier?",
-        "Que dois-je savoir sur Redondo Beach Pier ?",
-        "Redondo Beach Pier est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Redondo Beach Pier ?",
-        "Was sollte ich über Redondo Beach Pier wissen?",
-        "Ist Redondo Beach Pier eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie den Redondo Beach Pier?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-santa-monica-pier",
@@ -4339,35 +2838,7 @@
             "Wann empfehlen Sie den Santa Monica Pier?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "attractions",
-        "Santa Monica Pier",
-        "santa monica",
-        "santa monica pier",
-        "What should I know about Santa Monica Pier?",
-        "Is Santa Monica Pier a good choice for our day?",
-        "When would you recommend Santa Monica Pier?",
-        "Cosa dovrei sapere su Santa Monica Pier?",
-        "Santa Monica Pier è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Santa Monica Pier?",
-        "¿Qué debería saber sobre Santa Monica Pier?",
-        "Es Santa Mónica Pier una buena elección para nuestro día?",
-        "¿Cuándo recomendarías Santa Monica Pier?",
-        "Que dois-je savoir sur Santa Monica Pier ?",
-        "Est Santa Monica Pier un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Santa Monica Pier ?",
-        "Was sollte ich über Santa Monica Pier wissen?",
-        "Ist Santa Monica Pier eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie den Santa Monica Pier?"
-      ],
-      "locations": [
-        "Santa Monica"
-      ]
+      }
     },
     {
       "id": "v2-venice-canals",
@@ -4420,35 +2891,7 @@
             "Wann würden Sie Venedig-Kanäle empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "attractions",
-        "Venice Canals",
-        "venice",
-        "venice canals",
-        "What should I know about Venice Canals?",
-        "Is Venice Canals a good choice for our day?",
-        "When would you recommend Venice Canals?",
-        "Cosa dovrei sapere su Venice Canals?",
-        "Venice Canals è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Venice Canals?",
-        "¿Qué debería saber sobre los Canales de Venecia?",
-        "¿Los Canales de Venecia son una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Canales de Venecia?",
-        "Que dois-je savoir sur les canaux de Venise ?",
-        "Les canaux de Venise sont-ils un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous les canaux de Venise ?",
-        "Was sollte ich über die Kanäle von Venedig wissen?",
-        "Sind die Kanäle von Venedig eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Venedig-Kanäle empfehlen?"
-      ],
-      "locations": [
-        "Venice"
-      ]
+      }
     },
     {
       "id": "v2-el-porto-beach",
@@ -4501,36 +2944,7 @@
             "Wann empfehlen Sie El Porto Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "El Porto Beach",
-        "manhattan beach",
-        "el porto beach",
-        "shellbytheshore pick",
-        "What should I know about El Porto Beach?",
-        "Is El Porto Beach a good choice for our day?",
-        "When would you recommend El Porto Beach?",
-        "Cosa dovrei sapere su El Porto Beach?",
-        "El Porto Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti El Porto Beach?",
-        "¿Qué debería saber sobre El Porto Beach?",
-        "¿El Porto Beach es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías El Porto Beach?",
-        "Que dois-je savoir sur El Porto Beach ?",
-        "El Porto Beach est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous El Porto Beach ?",
-        "Was sollte ich über El Porto Beach wissen?",
-        "Ist El Porto Beach eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie El Porto Beach?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-hermosa-beach",
@@ -4583,35 +2997,7 @@
             "Wann empfehlen Sie Hermosa Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Hermosa Beach",
-        "hermosa beach",
-        "shellbytheshore pick",
-        "What should I know about Hermosa Beach?",
-        "Is Hermosa Beach a good choice for our day?",
-        "When would you recommend Hermosa Beach?",
-        "Cosa dovrei sapere su Hermosa Beach?",
-        "Hermosa Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Hermosa Beach?",
-        "¿Qué debería saber sobre Hermosa Beach?",
-        "íEs Hermosa Beach una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Hermosa Beach?",
-        "Que dois-je savoir sur Hermosa Beach ?",
-        "Hermosa Beach est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Hermosa Beach ?",
-        "Was sollte ich über Hermosa Beach wissen?",
-        "Ist Hermosa Beach eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Hermosa Beach?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-longfellow-beach",
@@ -4664,35 +3050,7 @@
             "Wann empfehlen Sie Longfellow Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Longfellow Beach",
-        "hermosa beach",
-        "longfellow beach",
-        "What should I know about Longfellow Beach?",
-        "Is Longfellow Beach a good choice for our day?",
-        "When would you recommend Longfellow Beach?",
-        "Cosa dovrei sapere su Longfellow Beach?",
-        "Longfellow Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Longfellow Beach?",
-        "¿Qué debería saber sobre Longfellow Beach?",
-        "¿La playa Longfellow es una buena opción para nuestro día?",
-        "¿Cuándo recomendaría Longfellow Beach?",
-        "Que dois-je savoir sur Longfellow Beach ?",
-        "Longfellow Beach est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Longfellow Beach?",
-        "Was sollte ich über Longfellow Beach wissen?",
-        "Ist Longfellow Beach eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Longfellow Beach?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-malibu-surfrider-beach",
@@ -4745,35 +3103,7 @@
             "Wann empfehlen Sie Malibu Surfrider Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Malibu Surfrider Beach",
-        "malibu",
-        "malibu surfrider beach",
-        "What should I know about Malibu Surfrider Beach?",
-        "Is Malibu Surfrider Beach a good choice for our day?",
-        "When would you recommend Malibu Surfrider Beach?",
-        "Cosa dovrei sapere su Malibu Surfrider Beach?",
-        "Malibu Surfrider Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Malibu Surfrider Beach?",
-        "¿Qué debería saber sobre Malibu Surfrider Beach?",
-        "íEs Malibu Surfrider Beach una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Malibu Surfrider Beach?",
-        "Que dois-je savoir sur Malibu Surfrider Beach ?",
-        "Malibu Surfrider Beach est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Malibu Surfrider Beach ?",
-        "Was sollte ich über Malibu Surfrider Beach wissen?",
-        "Ist Malibu Surfrider Beach eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Malibu Surfrider Beach?"
-      ],
-      "locations": [
-        "Malibu"
-      ]
+      }
     },
     {
       "id": "v2-manhattan-beach",
@@ -4826,34 +3156,7 @@
             "Wann empfehlen Sie Manhattan Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Manhattan Beach",
-        "manhattan beach",
-        "What should I know about Manhattan Beach?",
-        "Is Manhattan Beach a good choice for our day?",
-        "When would you recommend Manhattan Beach?",
-        "Cosa dovrei sapere su Manhattan Beach?",
-        "Manhattan Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Manhattan Beach?",
-        "¿Qué debería saber sobre Manhattan Beach?",
-        "Es Manhattan Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Manhattan Beach?",
-        "Que dois-je savoir sur Manhattan Beach ?",
-        "Est Manhattan Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Manhattan Beach ?",
-        "Was sollte ich über Manhattan Beach wissen?",
-        "Ist Manhattan Strand eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Manhattan Beach?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-redondo-beach",
@@ -4906,34 +3209,7 @@
             "Wann empfehlen Sie Redondo Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Redondo Beach",
-        "redondo beach",
-        "What should I know about Redondo Beach?",
-        "Is Redondo Beach a good choice for our day?",
-        "When would you recommend Redondo Beach?",
-        "Cosa dovrei sapere su Redondo Beach?",
-        "Redondo Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Redondo Beach?",
-        "¿Qué debería saber sobre Redondo Beach?",
-        "íEs Redondo Beach una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Redondo Beach?",
-        "Que dois-je savoir sur Redondo Beach ?",
-        "Redondo Beach est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Redondo Beach ?",
-        "Was sollte ich über Redondo Beach wissen?",
-        "Ist Redondo Beach eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Redondo Beach?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-seaside-lagoon",
@@ -4986,35 +3262,7 @@
             "Wann würden Sie Seaside Lagoon empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "beaches",
-        "Seaside Lagoon",
-        "redondo beach",
-        "seaside lagoon",
-        "What should I know about Seaside Lagoon?",
-        "Is Seaside Lagoon a good choice for our day?",
-        "When would you recommend Seaside Lagoon?",
-        "Cosa dovrei sapere su Seaside Lagoon?",
-        "Seaside Lagoon è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Seaside Lagoon?",
-        "¿Qué debería saber sobre Seaside Lagoon?",
-        "íEs Seaside Lagoon una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Seaside Lagoon?",
-        "Que dois-je savoir sur Seaside Lagoon ?",
-        "Seaside Lagoon est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Seaside Lagoon ?",
-        "Was sollte ich über Seaside Lagoon wissen?",
-        "Ist Seaside Lagoon eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Seaside Lagoon empfehlen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-bluestone-lane-manhattan-beach-cafe",
@@ -5067,35 +3315,7 @@
             "Wann würden Sie Bluestone Lane Manhattan Beach Café empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "Bluestone Lane Manhattan Beach Café",
-        "manhattan beach",
-        "bluestone lane manhattan beach café",
-        "What should I know about Bluestone Lane Manhattan Beach Café?",
-        "Is Bluestone Lane Manhattan Beach Café a good choice for our day?",
-        "When would you recommend Bluestone Lane Manhattan Beach Café?",
-        "Cosa dovrei sapere su Bluestone Lane Manhattan Beach Café?",
-        "Bluestone Lane Manhattan Beach Café è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Bluestone Lane Manhattan Beach Café?",
-        "¿Qué debería saber sobre Bluestone Lane Manhattan Beach Café?",
-        "íEs Bluestone Lane Manhattan Beach Café una buena opción para nuestro día?",
-        "¿Cuándo recomendaría Bluestone Lane Manhattan Beach Café?",
-        "Que dois-je savoir sur Bluestone Lane Manhattan Beach Café?",
-        "Bluestone Lane Manhattan Beach Café est-il un bon choix pour notre jour?",
-        "Quand recommanderiez-vous Bluestone Lane Manhattan Beach Café?",
-        "Was sollte ich über Bluestone Lane Manhattan Beach Café wissen?",
-        "Ist Bluestone Lane Manhattan Beach Café eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Bluestone Lane Manhattan Beach Café empfehlen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-cafe-minerva",
@@ -5148,35 +3368,7 @@
             "Wann empfehlen Sie Cafe Minerva?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "Cafe Minerva",
-        "hermosa beach",
-        "cafe minerva",
-        "What should I know about Cafe Minerva?",
-        "Is Cafe Minerva a good choice for our day?",
-        "When would you recommend Cafe Minerva?",
-        "Cosa dovrei sapere su Cafe Minerva?",
-        "Cafe Minerva è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Cafe Minerva?",
-        "¿Qué debería saber sobre Café Minerva?",
-        "íEs Café Minerva una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Café Minerva?",
-        "Que dois-je savoir sur le Café Minerva ?",
-        "Le Café Minerva est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous le Café Minerva ?",
-        "Was sollte ich über Cafe Minerva wissen?",
-        "Ist Cafe Minerva eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Cafe Minerva?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-good-stuff-hermosa-beach",
@@ -5229,36 +3421,7 @@
             "Wann empfehlen Sie Good Stuff - Hermosa Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "Good Stuff - Hermosa Beach",
-        "hermosa beach",
-        "good stuff - hermosa beach",
-        "shellbytheshore pick",
-        "What should I know about Good Stuff - Hermosa Beach?",
-        "Is Good Stuff - Hermosa Beach a good choice for our day?",
-        "When would you recommend Good Stuff - Hermosa Beach?",
-        "Cosa dovrei sapere su Good Stuff - Hermosa Beach?",
-        "Good Stuff - Hermosa Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Good Stuff - Hermosa Beach?",
-        "¿Qué debería saber sobre Good Stuff - Hermosa Beach?",
-        "Es buena cosa - Hermosa Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Good Stuff - Hermosa Beach?",
-        "Que dois-je savoir sur Good Stuff - Hermosa Beach?",
-        "Bonnes choses - Hermosa Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Good Stuff - Hermosa Beach?",
-        "Was sollte ich über Good Stuff - Hermosa Beach wissen?",
-        "Ist ein gutes Zeug - Hermosa Strand eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Good Stuff - Hermosa Beach?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-good-stuff-redondo-beach",
@@ -5311,35 +3474,7 @@
             "Wann empfehlen Sie Good Stuff - Redondo Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "Good Stuff - Redondo Beach",
-        "redondo beach",
-        "good stuff - redondo beach",
-        "What should I know about Good Stuff - Redondo Beach?",
-        "Is Good Stuff - Redondo Beach a good choice for our day?",
-        "When would you recommend Good Stuff - Redondo Beach?",
-        "Cosa dovrei sapere su Good Stuff - Redondo Beach?",
-        "Good Stuff - Redondo Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Good Stuff - Redondo Beach?",
-        "¿Qué debería saber sobre Good Stuff - Redondo Beach?",
-        "Es buena cosa - Redondo Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Good Stuff - Redondo Beach?",
-        "Que dois-je savoir sur Good Stuff - Redondo Beach?",
-        "Bonnes choses - Redondo Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Good Stuff - Redondo Beach?",
-        "Was sollte ich über Good Stuff - Redondo Beach wissen?",
-        "Is Good Stuff, bekannt geworden durch Redondo Strand eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Good Stuff - Redondo Beach?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-la-terraza",
@@ -5392,35 +3527,7 @@
             "Wann empfehlen Sie La Terraza?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "La Terraza",
-        "redondo beach",
-        "la terraza",
-        "What should I know about La Terraza?",
-        "Is La Terraza a good choice for our day?",
-        "When would you recommend La Terraza?",
-        "Cosa dovrei sapere su La Terraza?",
-        "La Terraza è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti La Terraza?",
-        "¿Qué debería saber sobre La Terraza?",
-        "¿La Terraza es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías La Terraza?",
-        "Que dois-je savoir sur La Terraza ?",
-        "La Terraza est-elle un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous La Terraza ?",
-        "Was sollte ich über La Terraza wissen?",
-        "Ist La Terraza eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie La Terraza?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-martha-s-hermosa-beach",
@@ -5473,36 +3580,7 @@
             "Wann empfehlen Sie Martha's Hermosa Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "Martha's Hermosa Beach",
-        "hermosa beach",
-        "martha's hermosa beach",
-        "shellbytheshore pick",
-        "What should I know about Martha's Hermosa Beach?",
-        "Is Martha's Hermosa Beach a good choice for our day?",
-        "When would you recommend Martha's Hermosa Beach?",
-        "Cosa dovrei sapere su Martha's Hermosa Beach?",
-        "Martha's Hermosa Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Martha's Hermosa Beach?",
-        "¿Qué debería saber sobre la playa Hermosa de Martha?",
-        "¿La playa Hermosa de Martha es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías la playa Hermosa de Martha?",
-        "Que devrais-je savoir sur Martha's Hermosa Beach ?",
-        "Martha's Hermosa Beach est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Martha's Hermosa Beach ?",
-        "Was sollte ich über Martha's Hermosa Beach wissen?",
-        "Ist Martha's Hermosa Beach eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Martha's Hermosa Beach?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-sloopy-s-beach-cafe",
@@ -5555,35 +3633,7 @@
             "Wann empfehlen Sie Sloopy's Beach Cafe?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "Sloopy's Beach Cafe",
-        "manhattan beach",
-        "sloopy's beach cafe",
-        "What should I know about Sloopy's Beach Cafe?",
-        "Is Sloopy's Beach Cafe a good choice for our day?",
-        "When would you recommend Sloopy's Beach Cafe?",
-        "Cosa dovrei sapere su Sloopy's Beach Cafe?",
-        "Sloopy's Beach Cafe è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Sloopy's Beach Cafe?",
-        "¿Qué debería saber sobre Sloopy's Beach Cafe?",
-        "íEs el Café de Playa de Sloopy una buena opción para nuestro día?",
-        "¿Cuándo recomendarías el café de playa de Sloopy?",
-        "Que devrais-je savoir sur Sloopy's Beach Cafe ?",
-        "Le Sloopy's Beach Cafe est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Sloopy's Beach Cafe ?",
-        "Was sollte ich über Sloopy's Beach Cafe wissen?",
-        "Ist Sloopy's Beach Cafe eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Sloopy's Beach Cafe?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-the-hive",
@@ -5636,35 +3686,7 @@
             "Wann würden Sie The Hive empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "The Hive",
-        "manhattan beach",
-        "the hive",
-        "What should I know about The Hive?",
-        "Is The Hive a good choice for our day?",
-        "When would you recommend The Hive?",
-        "Cosa dovrei sapere su The Hive?",
-        "The Hive è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti The Hive?",
-        "¿Qué debería saber sobre The Hive?",
-        "¿The Hive es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías The Hive?",
-        "Que dois-je savoir sur The Hive ?",
-        "The Hive est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous The Hive ?",
-        "Was sollte ich über The Hive wissen?",
-        "Ist The Hive eine gute Wahl für unseren Tag?",
-        "Wann würden Sie The Hive empfehlen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-the-source-cafe",
@@ -5717,35 +3739,7 @@
             "Wann würden Sie The Source Café empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "The Source Café",
-        "hermosa beach",
-        "the source café",
-        "What should I know about The Source Café?",
-        "Is The Source Café a good choice for our day?",
-        "When would you recommend The Source Café?",
-        "Cosa dovrei sapere su The Source Café?",
-        "The Source Café è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti The Source Café?",
-        "¿Qué debería saber de The Source Café?",
-        "¿La Fuente Café es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías La Fuente Café?",
-        "Que dois-je savoir sur la Source Café?",
-        "La Source Café est-elle un bon choix pour notre jour?",
-        "Quand recommanderiez-vous la Source Café?",
-        "Was sollte ich über The Source Café wissen?",
-        "Ist The Source Café eine gute Wahl für unseren Tag?",
-        "Wann würden Sie The Source Café empfehlen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-uncle-bill-s-pancake-house",
@@ -5798,36 +3792,7 @@
             "Wann würden Sie Uncle Bill's Pancake House empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "breakfast",
-        "Uncle Bill's Pancake House",
-        "manhattan beach",
-        "uncle bill's pancake house",
-        "shellbytheshore pick",
-        "What should I know about Uncle Bill's Pancake House?",
-        "Is Uncle Bill's Pancake House a good choice for our day?",
-        "When would you recommend Uncle Bill's Pancake House?",
-        "Cosa dovrei sapere su Uncle Bill's Pancake House?",
-        "Uncle Bill's Pancake House è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Uncle Bill's Pancake House?",
-        "¿Qué debería saber sobre Uncle Bill's Pancake House?",
-        "¿Uncle Bill's Pancake House es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Uncle Bill's Pancake House?",
-        "Que devrais-je savoir sur Uncle Bill's Pancake House ?",
-        "Uncle Bill's Pancake House est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Uncle Bill's Pancake House ?",
-        "Was sollte ich über Uncle Bill's Pancake House wissen?",
-        "Ist Uncle Bill's Pancake House eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Uncle Bill's Pancake House empfehlen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-hi-fi-espresso-hermosa-beach",
@@ -5880,35 +3845,7 @@
             "Wann würden Sie Hi-Fi Espresso - Hermosa Beach empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "coffee",
-        "Hi-Fi Espresso - Hermosa Beach",
-        "hermosa beach",
-        "hi-fi espresso - hermosa beach",
-        "What should I know about Hi-Fi Espresso - Hermosa Beach?",
-        "Is Hi-Fi Espresso - Hermosa Beach a good choice for our day?",
-        "When would you recommend Hi-Fi Espresso - Hermosa Beach?",
-        "Cosa dovrei sapere su Hi-Fi Espresso - Hermosa Beach?",
-        "Hi-Fi Espresso - Hermosa Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Hi-Fi Espresso - Hermosa Beach?",
-        "¿Qué debería saber sobre Hi-Fi Espresso - Hermosa Beach?",
-        "Espresso Hi-Fi - Hermosa Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Hi-Fi Espresso - Hermosa Beach?",
-        "Que dois-je savoir sur Hi-Fi Espresso - Hermosa Beach?",
-        "Est Hi-Fi Espresso - Hermosa Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Hi-Fi Espresso - Hermosa Beach?",
-        "Was sollte ich über Hi-Fi Espresso - Hermosa Beach wissen?",
-        "Ist Hi-Fi Espresso - Hermosa Strand eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Hi-Fi Espresso - Hermosa Beach empfehlen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-hi-fi-espresso-redondo-beach",
@@ -5961,35 +3898,7 @@
             "Wann würden Sie Hi-Fi Espresso - Redondo Beach empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "coffee",
-        "Hi-Fi Espresso - Redondo Beach",
-        "redondo beach",
-        "hi-fi espresso - redondo beach",
-        "What should I know about Hi-Fi Espresso - Redondo Beach?",
-        "Is Hi-Fi Espresso - Redondo Beach a good choice for our day?",
-        "When would you recommend Hi-Fi Espresso - Redondo Beach?",
-        "Cosa dovrei sapere su Hi-Fi Espresso - Redondo Beach?",
-        "Hi-Fi Espresso - Redondo Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Hi-Fi Espresso - Redondo Beach?",
-        "¿Qué debería saber sobre Hi-Fi Espresso - Redondo Beach?",
-        "Espresso Hi-Fi - Redondo Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Hi-Fi Espresso - Redondo Beach?",
-        "Que dois-je savoir sur Hi-Fi Espresso - Redondo Beach?",
-        "Est Hi-Fi Espresso - Redondo Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Hi-Fi Espresso - Redondo Beach?",
-        "Was sollte ich über Hi-Fi Espresso - Redondo Beach wissen?",
-        "Ist Hi-Fi Espresso - Redondo Strand eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Hi-Fi Espresso - Redondo Beach empfehlen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-offset-coffee-roasters",
@@ -6042,36 +3951,7 @@
             "Wann empfehlen Sie Offset Coffee Roasters?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "coffee",
-        "Offset Coffee Roasters",
-        "redondo beach",
-        "offset coffee roasters",
-        "shellbytheshore pick",
-        "What should I know about Offset Coffee Roasters?",
-        "Is Offset Coffee Roasters a good choice for our day?",
-        "When would you recommend Offset Coffee Roasters?",
-        "Cosa dovrei sapere su Offset Coffee Roasters?",
-        "Offset Coffee Roasters è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Offset Coffee Roasters?",
-        "¿Qué debería saber sobre los pantalones de café Offset?",
-        "íEs una buena elección para nuestro día?",
-        "¿Cuándo recomendaría los Aspersores de Café Offset?",
-        "Que dois-je savoir sur Offset Coffee Roasters?",
-        "Offset Coffee Roasters est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous des grille-pains offset?",
-        "Was sollte ich über Offset Coffee Roasters wissen?",
-        "Ist Offset Coffee Roasters eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Offset Coffee Roasters?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-pursue-coffee",
@@ -6124,35 +4004,7 @@
             "Wann empfehlen Sie Pursue Coffee?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "coffee",
-        "Pursue Coffee",
-        "redondo beach",
-        "pursue coffee",
-        "What should I know about Pursue Coffee?",
-        "Is Pursue Coffee a good choice for our day?",
-        "When would you recommend Pursue Coffee?",
-        "Cosa dovrei sapere su Pursue Coffee?",
-        "Pursue Coffee è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Pursue Coffee?",
-        "¿Qué debería saber sobre el café puro?",
-        "¿El café es una buena opción para nuestro día?",
-        "¿Cuándo recomendaría el café?",
-        "Que dois-je savoir sur Pursue Coffee?",
-        "Le café Pursue est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous le café Pursue ?",
-        "Was sollte ich über Pursue Coffee wissen?",
-        "Ist Pursue Coffee eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Pursue Coffee?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-two-guns-espresso",
@@ -6205,35 +4057,7 @@
             "Wann empfehlen Sie Two Guns Espresso?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "coffee",
-        "Two Guns Espresso",
-        "manhattan beach",
-        "two guns espresso",
-        "What should I know about Two Guns Espresso?",
-        "Is Two Guns Espresso a good choice for our day?",
-        "When would you recommend Two Guns Espresso?",
-        "Cosa dovrei sapere su Two Guns Espresso?",
-        "Two Guns Espresso è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Two Guns Espresso?",
-        "¿Qué debería saber sobre Dos Guns Espresso?",
-        "¿Son dos pistolas Espresso una buena opción para nuestro día?",
-        "¿Cuándo recomendarías dos pistolas Espresso?",
-        "Que dois-je savoir sur Two Guns Espresso ?",
-        "Deux pistolets Espresso est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous deux pistolets expresso ?",
-        "Was sollte ich über Two Guns Espresso wissen?",
-        "Ist Two Guns Espresso eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Two Guns Espresso?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-verve-coffee-roasters",
@@ -6286,35 +4110,7 @@
             "Wann würden Sie Verve Coffee Roasters empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "coffee",
-        "Verve Coffee Roasters",
-        "manhattan beach",
-        "verve coffee roasters",
-        "What should I know about Verve Coffee Roasters?",
-        "Is Verve Coffee Roasters a good choice for our day?",
-        "When would you recommend Verve Coffee Roasters?",
-        "Cosa dovrei sapere su Verve Coffee Roasters?",
-        "Verve Coffee Roasters è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Verve Coffee Roasters?",
-        "¿Qué debería saber sobre los pantalones de café Verve?",
-        "íEs una buena elección para nuestro día?",
-        "¿Cuándo recomendarías los Asadores de Café Verve?",
-        "Que dois-je savoir sur Verve Coffee Roasters ?",
-        "Verve Coffee Roasters est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Verve Coffee Roasters?",
-        "Was sollte ich über Verve Coffee Roasters wissen?",
-        "Ist Verve Coffee Roasters eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Verve Coffee Roasters empfehlen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-baran-s-2239",
@@ -6367,36 +4163,7 @@
             "Wann würden Sie Baran's 2239 empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Baran's 2239",
-        "hermosa beach",
-        "baran's 2239",
-        "shellbytheshore pick",
-        "What should I know about Baran's 2239?",
-        "Is Baran's 2239 a good choice for our day?",
-        "When would you recommend Baran's 2239?",
-        "Cosa dovrei sapere su Baran's 2239?",
-        "Baran's 2239 è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Baran's 2239?",
-        "¿Qué debería saber sobre el 2239 de Baran?",
-        "íEs el 2239 de Baran una buena elección para nuestro día?",
-        "¿Cuándo recomendarías el 2239 de Baran?",
-        "Que dois-je savoir sur le 2239 de Baran ?",
-        "Baran est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous le 2239 de Baran ?",
-        "Was sollte ich über Barans 2239 wissen?",
-        "Ist Barans 2239 eine gute Wahl für unsere Zeit?",
-        "Wann würden Sie Baran's 2239 empfehlen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-bettolino-kitchen",
@@ -6449,36 +4216,7 @@
             "Wann empfehlen Sie Bettolino Kitchen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Bettolino Kitchen",
-        "redondo beach",
-        "bettolino kitchen",
-        "shellbytheshore pick",
-        "What should I know about Bettolino Kitchen?",
-        "Is Bettolino Kitchen a good choice for our day?",
-        "When would you recommend Bettolino Kitchen?",
-        "Cosa dovrei sapere su Bettolino Kitchen?",
-        "Bettolino Kitchen è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Bettolino Kitchen?",
-        "¿Qué debería saber sobre la cocina Bettolino?",
-        "íEs Bettolino Kitchen una buena opción para nuestro día?",
-        "¿Cuándo recomendarías la cocina Bettolino?",
-        "Que dois-je savoir sur Bettolino Kitchen ?",
-        "Bettolino Kitchen est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Bettolino Kitchen ?",
-        "Was sollte ich über Bettolino Kitchen wissen?",
-        "Ist Bettolino Kitchen eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Bettolino Kitchen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-bluewater-grill",
@@ -6531,35 +4269,7 @@
             "Wann empfehlen Sie Bluewater Grill?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Bluewater Grill",
-        "redondo beach",
-        "bluewater grill",
-        "What should I know about Bluewater Grill?",
-        "Is Bluewater Grill a good choice for our day?",
-        "When would you recommend Bluewater Grill?",
-        "Cosa dovrei sapere su Bluewater Grill?",
-        "Bluewater Grill è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Bluewater Grill?",
-        "¿Qué debería saber sobre Bluewater Grill?",
-        "íEs Bluewater Grill una buena opción para nuestro día?",
-        "¿Cuándo recomendaría Bluewater Grill?",
-        "Que dois-je savoir sur Bluewater Grill ?",
-        "Bluewater Grill est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Bluewater Grill?",
-        "Was sollte ich über Bluewater Grill wissen?",
-        "Ist Bluewater Grill eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Bluewater Grill?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-dominique-s-kitchen",
@@ -6612,35 +4322,7 @@
             "Wann empfehlen Sie Dominique's Kitchen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Dominique's Kitchen",
-        "redondo beach",
-        "dominique's kitchen",
-        "What should I know about Dominique's Kitchen?",
-        "Is Dominique's Kitchen a good choice for our day?",
-        "When would you recommend Dominique's Kitchen?",
-        "Cosa dovrei sapere su Dominique's Kitchen?",
-        "Dominique's Kitchen è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Dominique's Kitchen?",
-        "¿Qué debería saber sobre la cocina de Dominique?",
-        "¿La cocina de Dominique es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías la cocina de Dominique?",
-        "Que devrais-je savoir sur la cuisine de Dominique ?",
-        "La cuisine de Dominique est-elle un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous la cuisine de Dominique ?",
-        "Was sollte ich über Dominique's Kitchen wissen?",
-        "Ist Dominique's Kitchen eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Dominique's Kitchen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-fishing-with-dynamite",
@@ -6693,36 +4375,7 @@
             "Wann empfehlen Sie Angeln mit Dynamit?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Fishing With Dynamite",
-        "manhattan beach",
-        "fishing with dynamite",
-        "shellbytheshore pick",
-        "What should I know about Fishing With Dynamite?",
-        "Is Fishing With Dynamite a good choice for our day?",
-        "When would you recommend Fishing With Dynamite?",
-        "Cosa dovrei sapere su Fishing With Dynamite?",
-        "Fishing With Dynamite è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Fishing With Dynamite?",
-        "¿Qué debería saber sobre pescar con Dynamite?",
-        "íEs la pesca con Dynamite una buena opción para nuestro día?",
-        "¿Cuándo recomendarías pescar con Dynamite?",
-        "Que dois-je savoir sur la pèche avec Dynamite?",
-        "La pèche avec Dynamite est-elle un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Pécher avec Dynamite?",
-        "Was sollte ich über Angeln mit Dynamit wissen?",
-        "Ist Angeln mit Dynamit eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Angeln mit Dynamit?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-jus-poke",
@@ -6775,36 +4428,7 @@
             "Wann würden Sie Jus' Poke empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Jus' Poke",
-        "redondo beach",
-        "jus' poke",
-        "shellbytheshore pick",
-        "What should I know about Jus' Poke?",
-        "Is Jus' Poke a good choice for our day?",
-        "When would you recommend Jus' Poke?",
-        "Cosa dovrei sapere su Jus' Poke?",
-        "Jus' Poke è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Jus' Poke?",
-        "¿Qué debería saber sobre Jus' Poke?",
-        "íEs el Poke de Jus una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Jus' Poke?",
-        "Que devrais-je savoir sur le Poke de Jus ?",
-        "Jus' Poke est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Jus' Poke ?",
-        "Was sollte ich über Jus' Poke wissen?",
-        "Ist Jus' Poke eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Jus' Poke empfehlen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-manhattan-beach-farmers-market",
@@ -6857,35 +4481,7 @@
             "Wann empfehlen Sie den Manhattan Beach Farmers Market?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Manhattan Beach Farmers Market",
-        "manhattan beach",
-        "manhattan beach farmers market",
-        "What should I know about Manhattan Beach Farmers Market?",
-        "Is Manhattan Beach Farmers Market a good choice for our day?",
-        "When would you recommend Manhattan Beach Farmers Market?",
-        "Cosa dovrei sapere su Manhattan Beach Farmers Market?",
-        "Manhattan Beach Farmers Market è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Manhattan Beach Farmers Market?",
-        "¿Qué debería saber sobre Manhattan Beach Farmers Market?",
-        "íEs Manhattan Beach Farmers Market una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Manhattan Beach Farmers Market?",
-        "Que dois-je savoir sur Manhattan Beach Farmers Market ?",
-        "Manhattan Beach Farmers Market est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Manhattan Beach Farmers Market?",
-        "Was sollte ich über den Manhattan Beach Farmers Market wissen?",
-        "Ist Manhattan Beach Farmers Market eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie den Manhattan Beach Farmers Market?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-manhattan-beach-post",
@@ -6938,36 +4534,7 @@
             "Wann empfehlen Sie die Manhattan Beach Post?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Manhattan Beach Post",
-        "manhattan beach",
-        "manhattan beach post",
-        "shellbytheshore pick",
-        "What should I know about Manhattan Beach Post?",
-        "Is Manhattan Beach Post a good choice for our day?",
-        "When would you recommend Manhattan Beach Post?",
-        "Cosa dovrei sapere su Manhattan Beach Post?",
-        "Manhattan Beach Post è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Manhattan Beach Post?",
-        "¿Qué debería saber sobre Manhattan Beach Post?",
-        "Es Manhattan Beach Post es una buena elección para nuestro día?",
-        "¿Cuándo recomendarías Manhattan Beach Post?",
-        "Que dois-je savoir sur Manhattan Beach Post ?",
-        "Est Manhattan Beach Proposer un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Manhattan Beach Post ?",
-        "Was sollte ich über Manhattan Beach Post wissen?",
-        "Ist Manhattan Beach Eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie die Manhattan Beach Post?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-radici",
@@ -7020,36 +4587,7 @@
             "Wann empfehlen Sie Radici?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Radici",
-        "hermosa beach",
-        "radici",
-        "shellbytheshore pick",
-        "What should I know about Radici?",
-        "Is Radici a good choice for our day?",
-        "When would you recommend Radici?",
-        "Cosa dovrei sapere su Radici?",
-        "Radici è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Radici?",
-        "¿Qué debería saber sobre Radici?",
-        "íEs Radici una buena opción para nuestro día?",
-        "¿Cuándo recomendarías a Radici?",
-        "Que dois-je savoir sur Radici ?",
-        "Radici est-il un bon choix pour notre époque ?",
-        "Quand recommanderiez-vous Radici ?",
-        "Was sollte ich über Radici wissen?",
-        "Ist Radici eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Radici?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-riviera-house",
@@ -7102,35 +4640,7 @@
             "Wann empfehlen Sie Riviera House?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Riviera House",
-        "redondo beach",
-        "riviera house",
-        "What should I know about Riviera House?",
-        "Is Riviera House a good choice for our day?",
-        "When would you recommend Riviera House?",
-        "Cosa dovrei sapere su Riviera House?",
-        "Riviera House è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Riviera House?",
-        "¿Qué debería saber sobre Riviera House?",
-        "íEs Riviera House una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Riviera House?",
-        "Que dois-je savoir sur Riviera House ?",
-        "Riviera House est-elle un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Riviera House ?",
-        "Was sollte ich über Riviera House wissen?",
-        "Ist Riviera House eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Riviera House?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-rockefeller-manhattan-beach",
@@ -7183,35 +4693,7 @@
             "Wann empfehlen Sie Rockefeller - Manhattan Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Rockefeller - Manhattan Beach",
-        "manhattan beach",
-        "rockefeller - manhattan beach",
-        "What should I know about Rockefeller - Manhattan Beach?",
-        "Is Rockefeller - Manhattan Beach a good choice for our day?",
-        "When would you recommend Rockefeller - Manhattan Beach?",
-        "Cosa dovrei sapere su Rockefeller - Manhattan Beach?",
-        "Rockefeller - Manhattan Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Rockefeller - Manhattan Beach?",
-        "¿Qué debería saber sobre Rockefeller - Manhattan Beach?",
-        "Es Rockefeller - Manhattan Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Rockefeller - Manhattan Beach?",
-        "Que dois-je savoir sur Rockefeller - Manhattan Beach ?",
-        "Est Rockefeller - Manhattan Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Rockefeller - Manhattan Beach ?",
-        "Was sollte ich über Rockefeller - Manhattan Beach wissen?",
-        "Ist Rockefeller - Manhattan Strand eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Rockefeller - Manhattan Beach?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-steak-whisky-american-tavern",
@@ -7264,35 +4746,7 @@
             "Wann würden Sie Steak & Whisky American Tavern empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "Steak & Whisky American Tavern",
-        "hermosa beach",
-        "steak & whisky american tavern",
-        "What should I know about Steak & Whisky American Tavern?",
-        "Is Steak & Whisky American Tavern a good choice for our day?",
-        "When would you recommend Steak & Whisky American Tavern?",
-        "Cosa dovrei sapere su Steak & Whisky American Tavern?",
-        "Steak & Whisky American Tavern è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Steak & Whisky American Tavern?",
-        "¿Qué debería saber sobre Steak & Whisky American Tavern?",
-        "íEs Steak & Whisky American Tavern una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Steak & Whisky American Tavern?",
-        "Que dois-je savoir sur Steak & Whisky American Tavern?",
-        "Steak & Whisky American Tavern est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Steak & Whisky American Tavern?",
-        "Was sollte ich über Steak & Whisky American Tavern wissen?",
-        "Ist Steak & Whisky American Tavern eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Steak & Whisky American Tavern empfehlen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-the-arthur-j",
@@ -7345,35 +4799,7 @@
             "Wann würden Sie The Arthur J empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "The Arthur J",
-        "manhattan beach",
-        "the arthur j",
-        "What should I know about The Arthur J?",
-        "Is The Arthur J a good choice for our day?",
-        "When would you recommend The Arthur J?",
-        "Cosa dovrei sapere su The Arthur J?",
-        "The Arthur J è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti The Arthur J?",
-        "¿Qué debería saber sobre The Arthur J?",
-        "¿El Arthur J es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías The Arthur J?",
-        "Que dois-je savoir sur le Arthur J ?",
-        "Le Arthur J est-il un bon choix pour notre époque ?",
-        "Quand recommanderiez-vous le Arthur J ?",
-        "Was sollte ich über The Arthur J wissen?",
-        "Ist der Arthur J eine gute Wahl für unseren Tag?",
-        "Wann würden Sie The Arthur J empfehlen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-the-strand-house",
@@ -7426,35 +4852,7 @@
             "Wann empfehlen Sie The Strand House?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "food",
-        "The Strand House",
-        "manhattan beach",
-        "the strand house",
-        "What should I know about The Strand House?",
-        "Is The Strand House a good choice for our day?",
-        "When would you recommend The Strand House?",
-        "Cosa dovrei sapere su The Strand House?",
-        "The Strand House è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti The Strand House?",
-        "¿Qué debería saber sobre The Strand House?",
-        "¿La Strand House es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías The Strand House?",
-        "Que dois-je savoir sur la maison Strand ?",
-        "Le Strand House est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous la maison Strand ?",
-        "Was sollte ich über The Strand House wissen?",
-        "Ist The Strand House eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie The Strand House?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-boccato-s-groceries",
@@ -7507,36 +4905,7 @@
             "Wann würden Sie Boccato's Groceries empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Boccato's Groceries",
-        "hermosa beach",
-        "boccato's groceries",
-        "local market",
-        "What should I know about Boccato's Groceries?",
-        "Is Boccato's Groceries a good choice for our day?",
-        "When would you recommend Boccato's Groceries?",
-        "Cosa dovrei sapere su Boccato's Groceries?",
-        "Boccato's Groceries è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Boccato's Groceries?",
-        "¿Qué debería saber sobre las grutas de Boccato?",
-        "íEs la Groceries de Boccato una buena opción para nuestro día?",
-        "¿Cuándo recomendarías las grutas de Boccato?",
-        "Que dois-je savoir sur l'épicerie de Boccato ?",
-        "L'épicerie de Boccato est-elle un bon choix pour notre journée?",
-        "Quand recommanderiez-vous l'épicerie de Boccato ?",
-        "Was sollte ich über Boccato's Lebensmittel wissen?",
-        "Ist Boccato's Groceries eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Boccato's Groceries empfehlen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-bristol-farms",
@@ -7589,36 +4958,7 @@
             "Wann empfehlen Sie Bristol Farms?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Bristol Farms",
-        "manhattan beach",
-        "bristol farms",
-        "premium & organic",
-        "What should I know about Bristol Farms?",
-        "Is Bristol Farms a good choice for our day?",
-        "When would you recommend Bristol Farms?",
-        "Cosa dovrei sapere su Bristol Farms?",
-        "Bristol Farms è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Bristol Farms?",
-        "¿Qué debería saber sobre Bristol Farms?",
-        "íEs una buena opción para nuestros días Bristol Farms?",
-        "¿Cuándo recomendarías Bristol Farms?",
-        "Que dois-je savoir sur Bristol Farms ?",
-        "Bristol Farms est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Bristol Farms ?",
-        "Was sollte ich über Bristol Farms wissen?",
-        "Ist Bristol Farms eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Bristol Farms?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-erewhon-manhattan-beach",
@@ -7671,36 +5011,7 @@
             "Wann würden Sie Erewhon Manhattan Beach empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Erewhon Manhattan Beach",
-        "manhattan beach",
-        "erewhon manhattan beach",
-        "premium & organic",
-        "What should I know about Erewhon Manhattan Beach?",
-        "Is Erewhon Manhattan Beach a good choice for our day?",
-        "When would you recommend Erewhon Manhattan Beach?",
-        "Cosa dovrei sapere su Erewhon Manhattan Beach?",
-        "Erewhon Manhattan Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Erewhon Manhattan Beach?",
-        "¿Qué debería saber sobre Erewhon Manhattan Beach?",
-        "Es Erewhon Manhattan Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Erewhon Manhattan Beach?",
-        "Que dois-je savoir sur Erewhon Manhattan Beach ?",
-        "Est Erewhon Manhattan Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Erewhon Manhattan Beach ?",
-        "Was sollte ich über Erewhon Manhattan Beach wissen?",
-        "Ist Erewhon Manhattan Strand eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Erewhon Manhattan Beach empfehlen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-gelson-s-manhattan-beach",
@@ -7753,36 +5064,7 @@
             "Wann empfehlen Sie Gelson's Manhattan Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Gelson's Manhattan Beach",
-        "manhattan beach",
-        "gelson's manhattan beach",
-        "premium & organic",
-        "What should I know about Gelson's Manhattan Beach?",
-        "Is Gelson's Manhattan Beach a good choice for our day?",
-        "When would you recommend Gelson's Manhattan Beach?",
-        "Cosa dovrei sapere su Gelson's Manhattan Beach?",
-        "Gelson's Manhattan Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Gelson's Manhattan Beach?",
-        "¿Qué debería saber sobre la playa de Manhattan de Gelson?",
-        "Es Manhattan de Gelson Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías la playa de Manhattan de Gelson?",
-        "Que devrais-je savoir sur la plage de Manhattan de Gelson ?",
-        "Est-ce que Gelson est Manhattan Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous la plage de Manhattan de Gelson ?",
-        "Was sollte ich über Gelson's Manhattan Beach wissen?",
-        "Ist Gelsons Manhattan Strand eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Gelson's Manhattan Beach?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-lazy-acres-market-hermosa-beach",
@@ -7835,36 +5117,7 @@
             "Wann empfehlen Sie Lazy Acres Market - Hermosa Beach?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Lazy Acres Market - Hermosa Beach",
-        "hermosa beach",
-        "lazy acres market - hermosa beach",
-        "premium & organic",
-        "What should I know about Lazy Acres Market - Hermosa Beach?",
-        "Is Lazy Acres Market - Hermosa Beach a good choice for our day?",
-        "When would you recommend Lazy Acres Market - Hermosa Beach?",
-        "Cosa dovrei sapere su Lazy Acres Market - Hermosa Beach?",
-        "Lazy Acres Market - Hermosa Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Lazy Acres Market - Hermosa Beach?",
-        "¿Qué debería saber sobre el Mercado de Acres Lazy - Hermosa Beach?",
-        "Es Mercado de Acres Lazy - Hermosa Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Mercado de Acres Lazy - Hermosa Beach?",
-        "Que dois-je savoir sur Lazy Acres Market - Hermosa Beach?",
-        "Est Lazy Acres Market - Hermosa Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Lazy Acres Market - Hermosa Beach?",
-        "Was sollte ich über Lazy Acres Market - Hermosa Beach wissen?",
-        "Ist Lazy Acres Market - Hermosa Strand eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Lazy Acres Market - Hermosa Beach?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-trader-joe-s",
@@ -7917,36 +5170,7 @@
             "Wann würden Sie Trader Joe's empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Trader Joe's",
-        "manhattan beach",
-        "trader joe's",
-        "everyday grocery",
-        "What should I know about Trader Joe's?",
-        "Is Trader Joe's a good choice for our day?",
-        "When would you recommend Trader Joe's?",
-        "Cosa dovrei sapere su Trader Joe's?",
-        "Trader Joe's è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Trader Joe's?",
-        "¿Qué debería saber de Trader Joe's?",
-        "¿El comerciante Joe es una buena opción para nuestro día?",
-        "¿Cuándo recomendarías el de Trader Joe?",
-        "Que dois-je savoir sur Trader Joe ?",
-        "Trader Joe est un bon choix pour notre époque ?",
-        "Quand recommanderiez-vous Trader Joe ?",
-        "Was sollte ich über Trader Joe wissen?",
-        "Ist Trader Joe eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Trader Joe's empfehlen?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-trader-joe-s-hermosa-beach",
@@ -7999,36 +5223,7 @@
             "Wann würden Sie Trader Joe's - Hermosa Beach empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Trader Joe's - Hermosa Beach",
-        "hermosa beach",
-        "trader joe's - hermosa beach",
-        "everyday grocery",
-        "What should I know about Trader Joe's - Hermosa Beach?",
-        "Is Trader Joe's - Hermosa Beach a good choice for our day?",
-        "When would you recommend Trader Joe's - Hermosa Beach?",
-        "Cosa dovrei sapere su Trader Joe's - Hermosa Beach?",
-        "Trader Joe's - Hermosa Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Trader Joe's - Hermosa Beach?",
-        "¿Qué debería saber sobre Trader Joe's - Hermosa Beach?",
-        "Es Trader Joe's - Hermosa Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Trader Joe's - Hermosa Beach?",
-        "Que dois-je savoir sur Trader Joe's - Hermosa Beach ?",
-        "Est Trader Joe's - Hermosa Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Trader Joe's - Hermosa Beach ?",
-        "Was sollte ich über Trader Joe's - Hermosa Beach wissen?",
-        "Ist Trader Joe's - Hermosa Strand eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Trader Joe's - Hermosa Beach empfehlen?"
-      ],
-      "locations": [
-        "Hermosa Beach"
-      ]
+      }
     },
     {
       "id": "v2-trader-joe-s-redondo-beach",
@@ -8081,36 +5276,7 @@
             "Wann würden Sie Trader Joe's - Redondo Beach empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Trader Joe's - Redondo Beach",
-        "redondo beach",
-        "trader joe's - redondo beach",
-        "everyday grocery",
-        "What should I know about Trader Joe's - Redondo Beach?",
-        "Is Trader Joe's - Redondo Beach a good choice for our day?",
-        "When would you recommend Trader Joe's - Redondo Beach?",
-        "Cosa dovrei sapere su Trader Joe's - Redondo Beach?",
-        "Trader Joe's - Redondo Beach è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Trader Joe's - Redondo Beach?",
-        "¿Qué debería saber sobre el Trader Joe's - Redondo Beach?",
-        "Es Trader Joe's - Redondo Playa una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Trader Joe's - Redondo Beach?",
-        "Que dois-je savoir sur Trader Joe's - Redondo Beach ?",
-        "Est Trader Joe's - Redondo Plager un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Trader Joe's - Redondo Beach?",
-        "Was sollte ich über Trader Joe's - Redondo Beach wissen?",
-        "Ist Trader Joe's - Redondo Strand eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Trader Joe's - Redondo Beach empfehlen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-vons",
@@ -8163,36 +5329,7 @@
             "Wann würden Sie Vons empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Vons",
-        "redondo beach",
-        "vons",
-        "everyday grocery",
-        "What should I know about Vons?",
-        "Is Vons a good choice for our day?",
-        "When would you recommend Vons?",
-        "Cosa dovrei sapere su Vons?",
-        "Vons è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Vons?",
-        "¿Qué debería saber de Vons?",
-        "íEs Vons una buena opción para nuestro día?",
-        "¿Cuándo recomendarías a Vons?",
-        "Que dois-je savoir sur Vons ?",
-        "Vons est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Vons ?",
-        "Was sollte ich über Vons wissen?",
-        "Ist Vons eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Vons empfehlen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-whole-foods-market",
@@ -8245,36 +5382,7 @@
             "Wann würden Sie Whole Foods Market empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "groceries",
-        "Whole Foods Market",
-        "redondo beach",
-        "whole foods market",
-        "premium & organic",
-        "What should I know about Whole Foods Market?",
-        "Is Whole Foods Market a good choice for our day?",
-        "When would you recommend Whole Foods Market?",
-        "Cosa dovrei sapere su Whole Foods Market?",
-        "Whole Foods Market è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Whole Foods Market?",
-        "¿Qué debería saber sobre Whole Foods Market?",
-        "íEs todo el mercado de alimentos una buena opción para nuestro día?",
-        "¿Cuándo recomendaría Whole Foods Market?",
-        "Que dois-je savoir sur le marché des aliments entiers?",
-        "Le marché des aliments entiers est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous le marché des aliments entiers?",
-        "Was sollte ich über Whole Foods Market wissen?",
-        "Ist Whole Foods Market eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Whole Foods Market empfehlen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-abbot-kinney-boulevard",
@@ -8327,35 +5435,7 @@
             "Wann würden Sie Abbot Kinney Boulevard empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "shopping",
-        "Abbot Kinney Boulevard",
-        "venice",
-        "abbot kinney boulevard",
-        "What should I know about Abbot Kinney Boulevard?",
-        "Is Abbot Kinney Boulevard a good choice for our day?",
-        "When would you recommend Abbot Kinney Boulevard?",
-        "Cosa dovrei sapere su Abbot Kinney Boulevard?",
-        "Abbot Kinney Boulevard è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Abbot Kinney Boulevard?",
-        "¿Qué debería saber sobre Abbot Kinney Boulevard?",
-        "íEs el Abbot Kinney Boulevard una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Abbot Kinney Boulevard?",
-        "Que dois-je savoir sur Abbo Kinney Boulevard ?",
-        "Le boulevard Abbot's Pizza Kinney est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Abbot Kinney Boulevard ?",
-        "Was sollte ich über Abbot Kinney Boulevard wissen?",
-        "Ist Abbot Kinney Boulevard eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Abbot Kinney Boulevard empfehlen?"
-      ],
-      "locations": [
-        "Venice"
-      ]
+      }
     },
     {
       "id": "v2-manhattan-village",
@@ -8408,35 +5488,7 @@
             "Wann empfehlen Sie Manhattan Village?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "shopping",
-        "Manhattan Village",
-        "manhattan beach",
-        "manhattan village",
-        "What should I know about Manhattan Village?",
-        "Is Manhattan Village a good choice for our day?",
-        "When would you recommend Manhattan Village?",
-        "Cosa dovrei sapere su Manhattan Village?",
-        "Manhattan Village è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Manhattan Village?",
-        "¿Qué debería saber sobre Manhattan Village?",
-        "íEs Manhattan Village una buena opción para nuestro día?",
-        "¿Cuándo recomendarías Manhattan Village?",
-        "Que dois-je savoir sur Manhattan Village ?",
-        "Manhattan Village est-il un bon choix pour notre journée ?",
-        "Quand recommanderiez-vous Manhattan Village ?",
-        "Was sollte ich über Manhattan Village wissen?",
-        "Ist Manhattan Village eine gute Wahl für unseren Tag?",
-        "Wann empfehlen Sie Manhattan Village?"
-      ],
-      "locations": [
-        "Manhattan Beach"
-      ]
+      }
     },
     {
       "id": "v2-riviera-village-farmers-market",
@@ -8489,36 +5541,7 @@
             "Wann würden Sie den Riviera Village Farmers Market empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "shopping",
-        "Riviera Village Farmers Market",
-        "redondo beach",
-        "riviera village farmers market",
-        "local market",
-        "What should I know about Riviera Village Farmers Market?",
-        "Is Riviera Village Farmers Market a good choice for our day?",
-        "When would you recommend Riviera Village Farmers Market?",
-        "Cosa dovrei sapere su Riviera Village Farmers Market?",
-        "Riviera Village Farmers Market è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Riviera Village Farmers Market?",
-        "¿Qué debería saber sobre el mercado de agricultores de Riviera Village?",
-        "íEs el mercado de agricultores Riviera Village una buena opción para nuestro día?",
-        "¿Cuándo recomendaría el mercado de agricultores de Riviera Village?",
-        "Que dois-je savoir sur Riviera Village Farmers Market?",
-        "Riviera Village Farmers Market est-il un bon choix pour notre journée?",
-        "Quand recommanderiez-vous Riviera Village Farmers Market?",
-        "Was sollte ich über den Riviera Village Farmers Market wissen?",
-        "Ist Riviera Village Farmers Market eine gute Wahl für unseren Tag?",
-        "Wann würden Sie den Riviera Village Farmers Market empfehlen?"
-      ],
-      "locations": [
-        "Redondo Beach"
-      ]
+      }
     },
     {
       "id": "v2-third-street-promenade",
@@ -8571,35 +5594,7 @@
             "Wann würden Sie Third Street Promenade empfehlen?"
           ]
         }
-      },
-      "sourceIds": [
-        "app/_components/LocalGuideMap.tsx"
-      ],
-      "publicSafe": true,
-      "tags": [
-        "shopping",
-        "Third Street Promenade",
-        "santa monica",
-        "third street promenade",
-        "What should I know about Third Street Promenade?",
-        "Is Third Street Promenade a good choice for our day?",
-        "When would you recommend Third Street Promenade?",
-        "Cosa dovrei sapere su Third Street Promenade?",
-        "Third Street Promenade è una buona scelta per la nostra giornata?",
-        "Quando consiglieresti Third Street Promenade?",
-        "¿Qué debería saber sobre el Paseo de la Tercera Calle?",
-        "íEs una buena elección para nuestro día?",
-        "¿Cuándo recomendarías el paseo de la calle Tercera?",
-        "Que dois-je savoir sur la promenade de la 3e rue ?",
-        "La promenade de Third Street est-elle un bon choix pour notre journée?",
-        "Quand recommanderiez-vous la promenade de la Troisième Rue ?",
-        "Was sollte ich über Third Street Promenade wissen?",
-        "Ist Third Street Promenade eine gute Wahl für unseren Tag?",
-        "Wann würden Sie Third Street Promenade empfehlen?"
-      ],
-      "locations": [
-        "Santa Monica"
-      ]
+      }
     }
   ]
 }

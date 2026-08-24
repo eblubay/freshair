@@ -4,7 +4,10 @@ import path from "node:path"
 
 type Scope = "PUBLIC_SAFE" | "GUEST_ONLY" | "OWNER_ONLY"
 type RecordShape = { id: string; category: string; title: string; content: string; tags: string[]; location: string; scope: Scope; confidence: number; freshness: string; source: string; sourcePath: string; parentId?: string; facet?: string; poi?: { id: string; lat: number; lng: number; href: string } }
-type CanonicalQA = { id: string; category: string; canonicalQuestion: string; answer: string; alternativeQuestions: string[]; tags: string[]; locations: string[]; sourceIds: string[]; publicSafe: true; liveDataDependent: boolean; knowledgeIds: string[] }
+type Language = "en" | "it" | "es" | "fr" | "de"
+type Localization = { question: string; answer: string; alternativeQuestions: string[] }
+type ReviewedEntry = { id: string; category: string; sources: string[]; liveDataDependent: boolean; knowledgeIds: string[]; localizations: Record<Language, Localization> }
+type CanonicalQA = ReviewedEntry & { tags: string[]; locations: string[]; sourceIds: string[]; publicSafe: true }
 type QualityCase = { question: string; expectedKnowledgeIds: string[]; expectedSourceIds: string[]; expectedTerms: string[]; liveDataDependent: boolean; safety: "grounded" | "live" }
 const root = process.cwd()
 const readJson = async <T>(file: string) => JSON.parse(await readFile(path.join(root, file), "utf8")) as T
@@ -104,76 +107,10 @@ function buildIntents() {
 	return { intents, questions }
 }
 
-function questionFor(record: RecordShape) {
-	if (record.facet === "pairing") return `How would ${record.title} fit into a day in ${record.location}?`
-	if (record.facet === "experience") return `What kind of experience is ${record.title} best for?`
-	if (record.category === "amenities") return `What does the listing confirm about ${record.title.toLowerCase()}?`
-	if (record.category === "house-rules" || record.category === "departure") return `What should guests know about ${record.title.toLowerCase()}?`
-	if (record.category === "booking") return `What should I know about ${record.title.toLowerCase()}?`
-	if (record.poi) return `Would ${record.title} suit the kind of outing we are planning?`
-	return `What should guests know about ${record.title}?`
-}
-
-function canonicalQAs(records: RecordShape[]): CanonicalQA[] {
-	const recordQas: CanonicalQA[] = records.map((record, index): CanonicalQA => {
-		const canonicalQuestion = questionFor(record)
-		const subject = record.title
-		const alternatives = record.facet === "pairing"
-			? [`We're visiting ${record.location}; what could we combine with ${subject}?`, `Can ${subject} be part of a low-backtracking route?`, `Where would you place ${subject} in our itinerary?`]
-			: record.facet === "experience"
-				? [`Who would enjoy ${subject} most?`, `What would make us choose ${subject}?`, `Does ${subject} match a ${record.tags[index % record.tags.length] ?? record.category} outing?`]
-				: record.category === "amenities" && !record.facet
-					? [`Which ${subject.toLowerCase()} amenities are actually included?`, `What does the listing provide under ${subject.toLowerCase()}?`, `Help us understand the verified ${subject.toLowerCase()} setup.`]
-					: record.category === "amenities"
-						? [`Is ${subject.toLowerCase()} one of the confirmed amenities?`, `Do we need to pack ${subject.toLowerCase()}, or is it provided?`, `The listing mentions ${subject.toLowerCase()}—can we rely on that?`]
-					: record.poi
-						? [`We're considering ${subject}; what is it like?`, `Is ${subject} one of the places in the verified guide?`, `Give us the practical reason to choose ${subject}.`]
-						: [`Could you explain ${subject.toLowerCase()} in practical terms?`, `What should we plan for regarding ${subject.toLowerCase()}?`, `What has the host actually verified about ${subject.toLowerCase()}?`]
-		return {
-			id: `qa-${record.id}`,
-			category: record.category,
-			canonicalQuestion,
-			answer: record.content,
-			alternativeQuestions: alternatives,
-			tags: [...new Set([record.category, subject.toLowerCase(), ...record.tags])],
-			locations: [record.location],
-			sourceIds: [record.sourcePath],
-			publicSafe: true,
-			liveDataDependent: /live-sensitive|venue-live-sensitive/.test(record.freshness),
-			knowledgeIds: [record.id]
-		}
-	})
-	const find = (id: string) => records.find((record) => record.id === id)
-	const transverse: CanonicalQA[] = []
-	const add = (id: string, category: string, question: string, answer: string, alternatives: string[], ids: string[], tags: string[], locations: string[] = ["South Bay"], live = false) => {
-		const selected = ids.map(find).filter((record): record is RecordShape => Boolean(record))
-		if (selected.length !== ids.length) throw new Error(`Missing knowledge for ${id}`)
-		transverse.push({ id: `qa-guide-${id}`, category, canonicalQuestion: question, answer, alternativeQuestions: alternatives, tags, locations, sourceIds: [...new Set(selected.map((record) => record.sourcePath))], publicSafe: true, liveDataDependent: live, knowledgeIds: ids })
-	}
-	add("breakfast-ranking", "recommendations", "Which verified breakfast spots should we shortlist?", "For a classic breakfast near downtown and the beach, start with Uncle Bill's Pancake House. For a casual North Manhattan Beach option close to the coast, choose Sloopy's Beach Cafe; for lighter bowls or smoothies, The Hive is the better fit. Check current hours directly.", ["Where would you send us for breakfast near the beach?", "Rank three breakfast choices for classic, casual and healthy tastes.", "We want breakfast, but not three identical suggestions—what are the trade-offs?"], ["poi-uncle-bill-s-pancake-house", "poi-sloopy-s-beach-cafe", "poi-the-hive"], ["breakfast", "ranking", "healthy", "classic", "beach"], ["Manhattan Beach"], true)
-	add("family-redondo", "recommendations", "What is a simple verified Redondo outing with children?", "Walk the Redondo Beach Pier and King Harbor waterfront, then choose Jus' Poke for a casual beach lunch. Seaside Lagoon is seasonal, so confirm current operating information before making it the centerpiece.", ["Plan an easy Redondo afternoon for our family.", "What can we combine in Redondo without dragging the kids all over town?", "Give us a pier, harbor and casual lunch plan in Redondo."], ["poi-redondo-beach-pier", "poi-king-harbor", "poi-jus-poke", "poi-seaside-lagoon"], ["family", "kids", "redondo", "pier", "casual lunch"], ["Redondo Beach"], true)
-	add("date-night", "recommendations", "Which verified places fit a date night near Manhattan Beach?", "The Strand House is the verified choice for coastal dining and ocean views; The Arthur J fits a more upscale steakhouse dinner; Fishing With Dynamite is the seafood-and-oyster option near the Pier. Choose by atmosphere and cuisine, then verify hours and reservations directly.", ["Compare the best verified Manhattan Beach dinner options for a couple.", "Where should we go for ocean views, steak or seafood on date night?", "Can you rank romantic dinner choices without inventing availability?"], ["poi-the-strand-house", "poi-the-arthur-j", "poi-fishing-with-dynamite"], ["date night", "romantic", "dinner", "ocean view", "seafood"], ["Manhattan Beach"], true)
-	add("sushi-gap", "recommendations", "Can you recommend a verified sushi restaurant?", "The current verified Local Guide does not include a sushi restaurant, so I cannot responsibly name one. Ask the host to confirm a current recommendation before you go.", ["What's your best sushi pick nearby?", "Where can we get sushi tonight?", "Is there a sushi place in the verified guide?"], ["area-manhattan-beach"], ["sushi", "japanese", "verified recommendation"], ["Manhattan Beach"], true)
-	add("nightlife-verified", "recommendations", "What verified options work for drinks or a livelier evening?", "For a livelier verified evening, Hermosa Beach's pier area is the clearest area-level choice. Specific verified venues with cocktails include Manhattan Beach Post, Rockefeller Manhattan Beach, Steak & Whisky, and Riviera House. These are dining venues, not a promise of nightclub entertainment; verify hours and events directly.", ["Where can we go out at night using only verified places?", "Any verified cocktail spots or lively areas?", "Plan drinks without making up bars that are not in the guide."], ["area-hermosa-beach", "poi-manhattan-beach-post", "poi-rockefeller-manhattan-beach", "poi-steak-whisky-american-tavern", "poi-riviera-house"], ["nightlife", "cocktails", "drinks", "evening", "verified"], ["South Bay"], true)
-	add("two-days", "itineraries", "How should we spend two days without excessive driving?", "Day 1: stay local with El Porto Beach, The Strand and Manhattan Beach Pier, then dinner downtown. Day 2: follow the coast south to Hermosa Beach Pier, Redondo Beach Pier and King Harbor. Keep each day geographically grouped and check live traffic, hours and beach conditions.", ["Build us a practical two-day South Bay itinerary.", "We have a weekend—can you group verified stops by area?", "What is a low-backtracking 2 day plan from the house?"], ["poi-el-porto-beach", "poi-the-strand", "poi-manhattan-beach-pier", "poi-hermosa-beach-pier", "poi-redondo-beach-pier", "poi-king-harbor"], ["two days", "weekend", "itinerary", "low backtracking"], ["South Bay"], true)
-	add("three-days", "itineraries", "Can you build a balanced three-day coastal itinerary?", "Day 1: El Porto Beach, The Strand and Manhattan Beach Pier. Day 2: Hermosa Beach Pier, Redondo Beach Pier and King Harbor. Day 3: pair Venice Beach Boardwalk and Venice Canals with Santa Monica Pier. This keeps each day clustered; check live traffic and venue conditions.", ["Plan 3 days with local beaches plus Venice and Santa Monica.", "How do we divide the verified coastal sights across three days?", "Give us a three day itinerary that avoids zig-zagging."], ["poi-el-porto-beach", "poi-the-strand", "poi-manhattan-beach-pier", "poi-hermosa-beach-pier", "poi-redondo-beach-pier", "poi-king-harbor", "poi-venice-beach-boardwalk", "poi-venice-canals", "poi-santa-monica-pier"], ["three days", "itinerary", "venice", "santa monica", "south bay"], ["Los Angeles coast"], true)
-	add("family-coffee-beach", "recommendations", "Where can a family combine a nearby beach walk, coffee and an easy meal?", "Start at El Porto Beach for the closest verified beach experience, use The Strand for an easy walk, stop at Two Guns Espresso for coffee, and choose Sloopy's Beach Cafe for a casual nearby breakfast or lunch. Supervise children at the ocean and check current hours.", ["We have kids and want coffee, a beach walk and casual food nearby.", "Make us an easy family route near El Porto with minimal driving.", "Which verified stops satisfy beach, coffee and kid-friendly pacing?"], ["poi-el-porto-beach", "poi-the-strand", "poi-two-guns-espresso", "poi-sloopy-s-beach-cafe", "safety-ocean"], ["family", "kids", "coffee", "beach", "casual", "nearby"], ["El Porto", "Manhattan Beach"], true)
-	return [...recordQas, ...transverse]
-}
-
-function qaDocument(qas: CanonicalQA[]) {
-	const groups = new Map<string, CanonicalQA[]>()
-	for (const qa of qas) groups.set(qa.category, [...(groups.get(qa.category) ?? []), qa])
-	const sections = [...groups.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([category, entries]) => {
-		const body = entries.map((qa) => `### ${qa.id}\n\n**QUESTION**\n\n${qa.canonicalQuestion}\n\n**ANSWER**\n\n${qa.answer}\n\n**ALTERNATIVE QUESTIONS**\n\n${qa.alternativeQuestions.map((question) => `- ${question}`).join("\n")}\n\n**SOURCES:** ${qa.sourceIds.join(", ")}\n\n**LIVE DATA DEPENDENT:** ${qa.liveDataDependent ? "Yes" : "No"}`).join("\n\n---\n\n")
-		return `## ${category}\n\n${body}`
-	}).join("\n\n")
-	return `# ShellByTheShore Guest Q&A\n\nGenerated curated guest library. Every answer is derived only from the public property listing, Local Guide, curated public overrides, or an existing public page. Venue hours, prices, traffic, weather, and availability must be checked live.\n\n**Canonical entries:** ${qas.length}\n\n${sections}\n`
-}
-
 async function main() {
 	const property = await readJson<any>("property-data.json")
 	const curated = await readJson<{ records: RecordShape[] }>("knowledge/curated-overrides.json")
+	const reviewed = await readJson<{ version: number; entries: ReviewedEntry[] }>("knowledge/reviewed-v2-localized.json")
 	const guideSource = await readFile(path.join(root, "app/_components/LocalGuideMap.tsx"), "utf8")
 	const byId = new Map<string, RecordShape>()
 	for (const item of [...propertyRecords(property), ...poiRecords(guideSource)]) byId.set(item.id, item)
@@ -181,22 +118,31 @@ async function main() {
 	const records = [...byId.values()].sort((a, b) => a.id.localeCompare(b.id))
 	validate(records)
 	const publicRecords = records.filter((item) => item.scope === "PUBLIC_SAFE")
-	const qas = canonicalQAs(publicRecords)
-	if (qas.length < 250 || qas.some((qa) => qa.alternativeQuestions.length < 3)) throw new Error(`Canonical Q&A requirements failed: ${qas.length}`)
+	const recordById = new Map(records.map((record) => [record.id, record]))
+	const languages: Language[] = ["en", "it", "es", "fr", "de"]
+	if (reviewed.entries.length !== 110) throw new Error(`Reviewed V2 must contain exactly 110 Q&A entries; found ${reviewed.entries.length}`)
+	const qas: CanonicalQA[] = reviewed.entries.map((entry) => {
+		for (const language of languages) {
+			const localized = entry.localizations[language]
+			if (!localized?.question?.trim() || !localized.answer?.trim() || !Array.isArray(localized.alternativeQuestions)) throw new Error(`Missing ${language} localization for ${entry.id}`)
+		}
+		const grounded = entry.knowledgeIds.map((id) => recordById.get(id)).filter((record): record is RecordShape => Boolean(record))
+		if (grounded.length !== entry.knowledgeIds.length) throw new Error(`Missing grounding record for ${entry.id}`)
+		const editorialTags = languages.flatMap((language) => [entry.localizations[language].question, ...entry.localizations[language].alternativeQuestions])
+		return { ...entry, sourceIds: entry.sources, publicSafe: true, tags: [...new Set([...grounded.flatMap((record) => [record.category, record.title, ...record.tags]), ...editorialTags])], locations: [...new Set(grounded.map((record) => record.location))] }
+	})
 	const { intents, questions } = buildIntents()
 	const sources = [...new Set(records.map((item) => item.sourcePath))].sort()
 	const digest = createHash("sha256").update(JSON.stringify({ records, qas, intents, questions })).digest("hex")
 	await writeFile(path.join(root, "knowledge/generated-index.json"), `${JSON.stringify({ version: 2, digest, records: publicRecords, qas, sources }, null, 2)}\n`)
 	await writeFile(path.join(root, "knowledge/canonical-guest-qa.json"), `${JSON.stringify({ version: 1, digest, qas }, null, 2)}\n`)
 	await writeFile(path.join(root, "knowledge/intent-catalog.json"), `${JSON.stringify({ version: 1, intents }, null, 2)}\n`)
-	const recordById = new Map(records.map((record) => [record.id, record]))
 	const answerTerm = (record: RecordShape) => record.poi ? record.title : record.content.match(/(?:amenities:|included:|expectations:)?\s*([^,.;:]{3,60})/i)?.[1]?.trim() || record.title
 	const qualityCase = (qa: CanonicalQA, question: string): QualityCase => ({ question, expectedKnowledgeIds: qa.knowledgeIds, expectedSourceIds: qa.sourceIds, expectedTerms: qa.knowledgeIds.map((id) => recordById.get(id)).filter((record): record is RecordShape => Boolean(record)).map(answerTerm).slice(0, 2), liveDataDependent: qa.liveDataDependent, safety: qa.liveDataDependent ? "live" : "grounded" })
 	// Only natural variants are graded: no canonical wording, QA id, or answer text is exposed to the harness.
-	const qualityQuestions = qas.flatMap((qa) => qa.alternativeQuestions.map((question) => qualityCase(qa, question)))
+	const qualityQuestions = qas.flatMap((qa) => languages.flatMap((language) => qa.localizations[language].alternativeQuestions.map((question) => qualityCase(qa, question))))
 	await writeFile(path.join(root, "knowledge/question-matrix.json"), `${JSON.stringify({ version: 2, questions, qualityQuestions }, null, 2)}\n`)
-	await writeFile(path.join(root, "docs/SHELLBYTHESHORE-GUEST-QA.md"), qaDocument(qas))
-	console.log(`Concierge knowledge: ${publicRecords.length} records, ${qas.length} canonical Q&A, ${qas.reduce((count, qa) => count + qa.alternativeQuestions.length, 0)} alternatives, ${qualityQuestions.length} quality questions, ${digest.slice(0, 12)}`)
+	console.log(`Concierge knowledge: ${publicRecords.length} grounding records, ${qas.length} reviewed localized Q&A, ${qualityQuestions.length} localized alternatives, ${digest.slice(0, 12)}`)
 }
 
 main().catch((error) => { console.error(error instanceof Error ? error.message : error); process.exitCode = 1 })
