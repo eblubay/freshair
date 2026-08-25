@@ -38,7 +38,9 @@ function deterministic(question: string, history: ConversationTurn[]): Concierge
 	// with a category (e.g. "cosa fare a redondo beach"). Without the area guard the gate
 	// would require navigation keywords even for clearly geographic queries, causing the
 	// correct Redondo Beach results to fall through to the unfiltered canonical QA pool.
-	const placeSearchTriggered = placeSearch.results.length > 0 && (placeSearch.intent.directions || (Boolean(placeSearch.intent.area) && placeSearch.intent.categories.length > 0))
+	const placeSearchTriggered = placeSearch.results.length > 0 && (placeSearch.intent.directions
+		|| (placeSearch.intent.explicitCategory && placeSearch.intent.localProximity && !placeSearch.intent.area)
+		|| (Boolean(placeSearch.intent.area) && placeSearch.intent.categories.includes("attraction")))
 	if (placeSearchTriggered) {
 		const copy = placeCopy[language]
 		const lines = placeSearch.results.map(({ place, distanceKm }, index) => `${index + 1}. **${place.name}**${place.curated ? ` — ${copy.curated}` : ""}${place.address ? `\n${place.address}` : ""}\n${copy.distance(distanceKm ?? 0)}`)
