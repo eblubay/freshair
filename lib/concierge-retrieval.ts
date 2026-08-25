@@ -29,7 +29,7 @@ const primaryIntents: Record<PrimaryIntent, IntentDefinition> = {
 	transport: { patterns: [/\b(airport|lax|lyft|taxi|rideshare|rental car|public transport|bus)\b/i, /\b(aeroporto|taxi|trasporto|autobus|noleggio auto)\b/i, /\b(aeropuerto|taxi|transporte|autob[uú]s|coche de alquiler)\b/i, /\b(a[eé]roport|taxi|transport|bus|voiture de location)\b/i, /\b(flughafen|taxi|verkehrsmittel|bus|mietwagen)\b/i], categories: ["transportation", "airports"], preferredIds: ["v2-lax", "v2-car-or-rideshare"], priority: 92 },
 	food: { patterns: [/\b(restaurants?|dinner|lunch|seafood|sushi|where (?:can|should) (?:we|i) eat|place to eat|dining)\b/i, /\b(ristorant[ei]|cena|pranzo|pesce|sushi|mangiare)\b/i, /\b(restaurantes?|cena|almuerzo|mariscos|sushi|comer)\b/i, /\b(restaurants?|d[iî]ner|d[eé]jeuner|fruits de mer|sushi|manger)\b/i, /\b(restaurants?|abendessen|mittagessen|meeresfr[uü]chte|sushi|essen)\b/i], categories: ["food", "recommendations"], preferredIds: ["v2-sushi", "v2-seafood", "v2-date-night"], priority: 90 },
 	beach: { patterns: [/\b(which|best|recommend|go to|visit|safe|swim(?:ming)?|surf(?:ing)?)\s+(?:[a-z]+\s+){0,2}beach\b|\bbeaches\b/i, /\b(quale|migliore|consigli|andare|visitare|sicura|nuotare|fare surf)\s+(?:\w+\s+){0,2}spiaggi[ae]\b/i, /\b(qu[eé]|cu[aá]l|mejor|recomiend|ir|visitar|segura|nadar|surfear)\s+(?:\w+\s+){0,2}playa\b|\bplayas\b/i, /\b(quelle|meilleure|conseill|aller|visiter|s[uû]re|nager|surfer)\s+(?:\w+\s+){0,2}plage\b|\bplages\b/i, /\b(welche(?:n)?|beste(?:n)?|empfiehl|gehen|besuchen|sicher|schwimmen|surfen)\s+(?:\w+\s+){0,2}strand\b|\bstr[aä]nde\b/i], categories: ["beaches", "safety"], preferredIds: ["v2-el-porto-beach", "v2-ocean-safety"], priority: 80 },
-	itinerary: { patterns: [/\b(plan|itinerary|day trip|half day|full day|what (?:can|should) we do|things to do|explore)\b/i, /\b(organizza|itinerario|cosa possiamo fare|cose da fare|esplorare)\b/i, /\b(itinerario|plan(?:ea|ear|ifica|ificar)|qu[eé] podemos hacer|cosas que hacer|explorar)\b/i, /\b(pr[eé]parez|itin[eé]raire|que pouvons-nous faire|choses [aà] faire|explorer)\b/i, /\b(planen|reiseplan|tagesausflug|was k[oö]nnen wir machen|unternehmungen|erkunden)\b/i], categories: ["itineraries", "area", "activities", "attractions"], preferredIds: ["v2-one-day-local", "v2-family-local", "v2-family-redondo"], priority: 97 },
+	itinerary: { patterns: [/\b(plan|itinerary|day trip|half day|full day|what (?:can|should) we do|what should (?:a )?couple do|things to do|explore)\b/i, /\b(fammi|organizza(?:mi)?|programma(?:mi|re)?|itinerario|giornata|pomeriggio|cosa possiamo fare|cosa fare|cose da fare|esplorare)\b/i, /\b(itinerario|plan(?:ea|ear|ifica|ificar)|qu[eé] podemos hacer|cosas que hacer|explorar)\b/i, /\b(pr[eé]parez|itin[eé]raire|que pouvons-nous faire|choses [aà] faire|explorer)\b/i, /\b(planen|reiseplan|tagesausflug|was k[oö]nnen wir machen|unternehmungen|erkunden)\b/i], categories: ["itineraries", "area", "activities", "attractions"], preferredIds: ["v2-one-day-local", "v2-family-local", "v2-family-redondo"], priority: 97 },
 	family: { patterns: [/\b(family activities|activities (?:for|can) (?:kids|children)|what (?:can|should) (?:we|kids|children) do)\b/i, /\b(attivit[aà].{0,30}bambini|cosa (?:possiamo|possono) fare (?:i bambini|con i bambini))\b/i, /\b(actividades.{0,30}ni[nñ]os|qu[eé] (?:podemos|pueden) hacer (?:los ni[nñ]os|con ni[nñ]os))\b/i, /\b(activit[eé]s.{0,30}enfants|que (?:pouvons-nous|peuvent) faire (?:les enfants|avec des enfants))\b/i, /\b(aktivit[aä]ten.{0,30}kinder|familienaktivit[aä]ten|was k[oö]nnen (?:wir|kinder) machen)\b/i], categories: ["recommendations", "activities", "beaches"], preferredIds: ["v2-family-local", "v2-family-redondo"], priority: 60 }
 }
 
@@ -79,6 +79,13 @@ export function retrieveCanonicalQAs(question: string, language: ConciergeLangua
 	const currentQuery = normalize(question)
 	const queryTokens = tokens(context)
 	const detection = detectPrimaryIntent(question)
+	const requestedLocations = [...new Set(qas.flatMap((qa) => qa.locations).filter((location) => {
+		const normalizedLocation = normalize(location)
+		return normalizedLocation.split(/[\/]/).some((part) => {
+			const candidate = part.trim()
+			return candidate.length >= 4 && currentQuery.includes(candidate)
+		})
+	}))]
 	const isCuratedExact = qas.some((qa) => {
 		const localized = qa.localizations[language]
 		return localized && [localized.question, ...localized.alternativeQuestions].some((candidate) => normalize(candidate) === currentQuery)
@@ -101,7 +108,17 @@ export function retrieveCanonicalQAs(question: string, language: ConciergeLangua
 		return { qa, localized, score: overlap + phrase + curatedWording + currentOverlap + location + intentPreference + fuzzy(currentQuery, localized.question) * 8, primaryIntent: detection.intent }
 	}).filter((result): result is { qa: CanonicalGuestQA; localized: NonNullable<typeof result.localized>; score: number; primaryIntent: PrimaryIntent | undefined } => Boolean(result.localized) && result.score >= 6).sort((a, b) => b.score - a.score || a.qa.id.localeCompare(b.qa.id))
 	if (detection.intent && !isCuratedExact) {
-		const compatible = rank(qas.filter((qa) => compatibleWithIntent(qa, detection.intent!)))
+		const intentCompatible = qas.filter((qa) => compatibleWithIntent(qa, detection.intent!))
+		const geographicallyCompatible = requestedLocations.length
+			? intentCompatible.filter((qa) => qa.locations.some((location) => requestedLocations.some((requested) => normalize(location).includes(normalize(requested)) || normalize(requested).includes(normalize(location)))))
+			: []
+		const scoped = geographicallyCompatible.length ? geographicallyCompatible : intentCompatible
+		// Planning requests need an itinerary/area answer as the primary canonical. Individual
+		// attractions remain supporting content and must not outrank the requested plan merely
+		// through place-name token overlap.
+		const itineraryPrimary = detection.intent === "itinerary" ? scoped.filter((qa) => qa.category === "itineraries") : []
+		const areaPrimary = detection.intent === "itinerary" && !itineraryPrimary.length ? scoped.filter((qa) => qa.category === "area") : []
+		const compatible = rank(itineraryPrimary.length ? itineraryPrimary : areaPrimary.length ? areaPrimary : scoped)
 		if (compatible.length) return compatible.slice(0, limit)
 	}
 	// Controlled fallback: the global pool is considered only when no intent-compatible QA

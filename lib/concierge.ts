@@ -1,11 +1,12 @@
 import { detectLanguage, languageBookingFallback, languageEmergencyFallback, languageLead, languageLiveFallback, languageUnknown, languageVerifiedLabel } from "@/lib/concierge-language"
+import { renderItinerary } from "@/lib/concierge-itinerary"
 import { detectKnowledgeLanguage, detectPrimaryIntent, knowledgeByIds, retrieveCanonicalQAs } from "@/lib/concierge-retrieval"
 import { safetyIntent } from "@/lib/concierge-safety"
 import type { ConciergeAnswer, ConciergeLanguage, ConciergeMetadata, ConciergeRecord, ConversationTurn } from "@/lib/concierge-types"
 import { searchPlaces } from "@/lib/local-place-search"
 import { LOCAL_PLACES_ATTRIBUTION } from "@/lib/local-places"
 
-const itinerary = /\b(plan|itinerary|day trip|half day|full day|morning|afternoon|evening|weekend|giornata|itinerario|mattina|pomeriggio|sera|planificar|itinerario|mañana|tarde|journée|itinéraire|matin|après-midi|soirée|tagesausflug|reiseplan|morgen|nachmittag|abend|2 days|3 days|two days|three days)\b/i
+const itinerary = /\b(plan|itinerary|day trip|half day|full day|morning|afternoon|evening|weekend|fammi|organizzami|programma|programmare|giornata|itinerario|mattina|pomeriggio|sera|planificar|itinerario|mañana|tarde|journée|itinéraire|matin|après-midi|soirée|tagesausflug|reiseplan|morgen|nachmittag|abend|2 days|3 days|two days|three days)\b/i
 const conjunction: Record<ConciergeLanguage, RegExp> = {
 	en: /\band\b|,|\bwith\b/i, it: /\be\b|,|\bcon\b/i, es: /\by\b|,|\bcon\b/i, fr: /\bet\b|,|\bavec\b/i, de: /\bund\b|,|\bmit\b/i
 }
@@ -34,13 +35,14 @@ function deterministic(question: string, history: ConversationTurn[]): Concierge
 	if (safety === "security") return { answer: languageUnknown(language), metadata: metadata("security", language, []) }
 	if (safety === "emergency") return { answer: languageEmergencyFallback(language), metadata: metadata("emergency", language, knowledgeByIds(["safety-emergency"])) }
 	const placeSearch = searchPlaces(question, language, 5)
+	const primaryIntent = detectPrimaryIntent(question).intent
 	// Use place-search when the user asks for directions OR explicitly names a geographic area
 	// with a category (e.g. "cosa fare a redondo beach"). Without the area guard the gate
 	// would require navigation keywords even for clearly geographic queries, causing the
 	// correct Redondo Beach results to fall through to the unfiltered canonical QA pool.
 	const placeSearchTriggered = placeSearch.results.length > 0 && (placeSearch.intent.directions
 		|| (placeSearch.intent.explicitCategory && placeSearch.intent.localProximity && !placeSearch.intent.area)
-		|| (Boolean(placeSearch.intent.area) && placeSearch.intent.categories.includes("attraction")))
+		|| (Boolean(placeSearch.intent.area) && placeSearch.intent.categories.includes("attraction") && !placeSearch.intent.audience))
 	if (placeSearchTriggered) {
 		const copy = placeCopy[language]
 		const lines = placeSearch.results.map(({ place, distanceKm }, index) => `${index + 1}. **${place.name}**${place.curated ? ` — ${copy.curated}` : ""}${place.address ? `\n${place.address}` : ""}\n${copy.distance(distanceKm ?? 0)}`)
@@ -59,14 +61,15 @@ function deterministic(question: string, history: ConversationTurn[]): Concierge
 	}
 	const selected = canonical.slice(0, conjunction[language].test(question) ? 3 : 1)
 	const used = knowledgeByIds([...new Set(selected.flatMap((match) => match.qa.knowledgeIds))])
-	const primaryIntent = detectPrimaryIntent(question).intent
 	// Category identifiers are internal English taxonomy keys. Never render them: doing so
 	// would violate the public single-language contract for non-English conversations.
-	const body = [languageLead(language), ...selected.map((match) => `**${languageVerifiedLabel(language)}**\n${match.localized.answer}`)].join("\n\n")
+	const answerType = primaryIntent === "itinerary" || itinerary.test(question) ? "itinerary" : safety === "booking" ? "booking-safe" : safety === "live" ? "live-safe" : "canonical-qa"
+	const body = answerType === "itinerary"
+		? renderItinerary(question, language, placeSearch.intent, selected.map((match) => match.localized.answer), placeSearch.results)
+		: [languageLead(language), ...selected.map((match) => `**${languageVerifiedLabel(language)}**\n${match.localized.answer}`)].join("\n\n")
 	const booking = safety === "booking" ? `\n\n${languageBookingFallback(language)}` : ""
 	const liveNeeded = safety === "live" || selected.some((match) => match.qa.liveDataDependent)
 	const live = liveNeeded ? `\n\n${languageLiveFallback(language)}` : ""
-	const answerType = itinerary.test(question) ? "itinerary" : safety === "booking" ? "booking-safe" : safety === "live" ? "live-safe" : "canonical-qa"
 	const mapDestinations = placeSearch.results.map((result) => result.destination)
 	const answerMetadata = metadata(answerType, language, used, liveNeeded, selected.map((match) => match.qa.id), primaryIntent)
 	// Canonical Q&A sourceIds are the reviewed editorial provenance for the answer. A grounding

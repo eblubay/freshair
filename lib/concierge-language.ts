@@ -3,7 +3,7 @@ import type { ConciergeLanguage, ConversationTurn } from "@/lib/concierge-types"
 const languages: ConciergeLanguage[] = ["en", "it", "es", "fr", "de"]
 const clearHints: Record<ConciergeLanguage, RegExp> = {
 	en: /\b(what|where|when|which|how|can you|could you|please|breakfast|children|thanks|near|nearby|closest|hospital|coffee|with|for us|recommend|our family)\b/i,
-	it: /\b(cosa|dove|quando|quale|come|possiamo|potete|colazione|spiaggia|bambini|grazie|aeroporto|parcheggio|vorrei|vicino|panetteria|farmacia|ospedale|bancomat|supermercato|ristorante|con|consigli|famiglia|c['’]e|quanto)\b/i,
+	it: /\b(cosa|dove|quando|quale|come|fammi|organizzami|programma|programmare|giornata|pomeriggio|coppia|moglie|marito|possiamo|potete|colazione|spiaggia|bambini|grazie|aeroporto|parcheggio|vorrei|vicino|panetteria|farmacia|ospedale|bancomat|supermercato|ristorante|con|consigli|famiglia|c['’]e|quanto)\b/i,
 	es: /\b(qué|dónde|donde|cómo|como|podemos|puede|desayuno|playa|niños|ninos|gracias|aeropuerto|aparcamiento|quisiera|cerca|cercana|cercano|más|panadería|farmacia|hospital|cajero|supermercado|restaurante|recomiendas|familia|hay)\b/i,
 	fr: /\b(quoi|que|où|ou|quand|quel|quelle|comment|pouvons|pouvez|petit déjeuner|plage|enfants|merci|aéroport|aeroport|stationnement|voudrais|près|proximité|plus proche|boulangerie|pharmacie|hôpital|distributeur|supermarché|avec|conseillez|famille|combien)\b/i,
 	de: /\b(was|wo|wann|welche|wie|können|konnen|frühstück|fruhstuck|strand|kinder|danke|flughafen|parken|möchte|mochte|nähe|nahe|nächste|nächster|nächstes|apotheke|krankenhaus|geldautomat|bäckerei|supermarkt|kaffee|mit|empfehlen|familie|gibt es)\b/i
@@ -13,7 +13,7 @@ const clearHints: Record<ConciergeLanguage, RegExp> = {
 // and guest vocabulary, so "Uncle Bill's Pancake House vicino alla spiaggia" remains Italian.
 const weightedHints: Record<ConciergeLanguage, string[]> = {
 	en: ["what", "where", "which", "should", "near", "nearby", "closest", "hospital", "coffee", "with", "breakfast", "parking", "airport", "groceries", "kids"],
-	it: ["dove", "quale", "consigli", "vicino", "panetteria", "farmacia", "ospedale", "bancomat", "supermercato", "ristorante", "alla", "con", "colazione", "parcheggio", "aeroporto", "spesa", "bambini", "famiglia"],
+	it: ["dove", "quale", "fammi", "organizzami", "programma", "programmare", "giornata", "pomeriggio", "coppia", "moglie", "marito", "consigli", "vicino", "panetteria", "farmacia", "ospedale", "bancomat", "supermercato", "ristorante", "alla", "con", "colazione", "parcheggio", "aeroporto", "spesa", "bambini", "famiglia"],
 	es: ["donde", "cuál", "cual", "recomiendas", "cerca", "cercana", "cercano", "más", "panadería", "farmacia", "cajero", "restaurante", "con", "desayuno", "aparcamiento", "aeropuerto", "supermercado", "niños", "ninos", "familia"],
 	fr: ["où", "ou", "quelle", "conseillez", "près", "proximité", "plus proche", "boulangerie", "pharmacie", "hôpital", "distributeur", "avec", "déjeuner", "dejeuner", "stationnement", "aéroport", "aeroport", "supermarché", "enfants", "famille"],
 	de: ["wo", "welche", "empfehlen", "nähe", "nahe", "nächste", "nächster", "nächstes", "apotheke", "krankenhaus", "geldautomat", "bäckerei", "kaffee", "mit", "frühstück", "fruhstuck", "parken", "flughafen", "supermarkt", "kinder", "familie"]
