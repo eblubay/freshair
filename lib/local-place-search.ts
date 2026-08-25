@@ -58,7 +58,8 @@ const words = (value: string) => normalize(value).split(" ").filter((word) => wo
 
 export function searchPlaces(question: string, _language: ConciergeLanguage, limit = 5): { intent: PlaceIntent; results: PlaceSearchResult[] } {
 	const intent = extractPlaceIntent(question); const query = normalize(question); const origin = intent.area ? areaCenters[intent.area] : areaCenters["el porto"]
-	const pool = [...curatedPlaces(), ...allLocalPlaces()]
+	// Filter out corrupted entries (e.g. single-character names from malformed OSM imports)
+	const pool = [...curatedPlaces(), ...allLocalPlaces()].filter((place) => place.name.trim().length >= 3)
 	const results = pool.map((place) => {
 		const searchable = normalize(`${place.name} ${place.category} ${place.subcategory || ""} ${place.city || ""} ${place.cuisine || ""} ${Object.values(place.tags).join(" ")}`)
 		const exactName = query.includes(normalize(place.name)) ? 120 : 0

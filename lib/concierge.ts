@@ -34,7 +34,12 @@ function deterministic(question: string, history: ConversationTurn[]): Concierge
 	if (safety === "security") return { answer: languageUnknown(language), metadata: metadata("security", language, []) }
 	if (safety === "emergency") return { answer: languageEmergencyFallback(language), metadata: metadata("emergency", language, knowledgeByIds(["safety-emergency"])) }
 	const placeSearch = searchPlaces(question, language, 5)
-	if (placeSearch.results.length && placeSearch.intent.directions) {
+	// Use place-search when the user asks for directions OR explicitly names a geographic area
+	// with a category (e.g. "cosa fare a redondo beach"). Without the area guard the gate
+	// would require navigation keywords even for clearly geographic queries, causing the
+	// correct Redondo Beach results to fall through to the unfiltered canonical QA pool.
+	const placeSearchTriggered = placeSearch.results.length > 0 && (placeSearch.intent.directions || (Boolean(placeSearch.intent.area) && placeSearch.intent.categories.length > 0))
+	if (placeSearchTriggered) {
 		const copy = placeCopy[language]
 		const lines = placeSearch.results.map(({ place, distanceKm }, index) => `${index + 1}. **${place.name}**${place.curated ? ` — ${copy.curated}` : ""}${place.address ? `\n${place.address}` : ""}\n${copy.distance(distanceKm ?? 0)}`)
 		const destinations = placeSearch.results.map((result) => result.destination)
