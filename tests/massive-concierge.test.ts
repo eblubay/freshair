@@ -26,8 +26,8 @@ test("Haversine gives a geodesic straight-line result", () => {
 })
 
 const intentCases = [
-	["breakfast near the beach", "restaurant", "beach"], ["pharmacy near Manhattan Beach", "pharmacy", "manhattan beach"],
-	["restaurant near Hermosa Pier", "restaurant", "hermosa beach"], ["breakfast in El Segundo", "restaurant", "el segundo"],
+	["breakfast near the beach", "breakfast", "beach"], ["pharmacy near Manhattan Beach", "pharmacy", "manhattan beach"],
+	["restaurant near Hermosa Pier", "restaurant", "hermosa beach"], ["breakfast in El Segundo", "breakfast", "el segundo"],
 	["Dove trovo una farmacia a Manhattan Beach?", "pharmacy", "manhattan beach"], ["¿Dónde puedo aparcar en Santa Monica?", "parking", "santa monica"],
 	["Un café en Venice", "cafe", "venice"], ["Eine Apotheke in Redondo Beach", "pharmacy", "redondo beach"]
 ] as const

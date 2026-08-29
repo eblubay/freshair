@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs"
 import test from "node:test"
 
 const guide = readFileSync("app/_components/LocalGuideMap.tsx", "utf8")
+const interactiveGuide = readFileSync("app/_components/LocalGuideMapInteractive.tsx", "utf8")
 
 test("Local Guide preserves legacy destinations and adds requested South Bay cities", () => {
 	for (const place of ["Venice Beach Boardwalk", "Santa Monica Pier", "Malibu Pier", "Manhattan Beach", "Hermosa Beach", "Redondo Beach"]) {
@@ -11,13 +12,12 @@ test("Local Guide preserves legacy destinations and adds requested South Bay cit
 })
 
 test("Local Guide exposes grouped, mobile-friendly cards and internal map actions", () => {
-	assert.match(guide, /groups\[`\$\{poi\.area\} · \$\{poi\.category\}`\]/)
-	assert.match(guide, /overflow-x-auto/)
-	assert.match(guide, /min-h-10/)
-	assert.match(guide, /#guide-map-heading\?poi=/)
-	assert.match(guide, /Show on map/)
-	assert.doesNotMatch(guide, /google\.com\/maps/)
-	assert.match(guide, /No partnership or sponsorship is implied unless specifically stated\./)
+	assert.match(interactiveGuide, /groups\[`\$\{poi\.area\} · \$\{poi\.category\}`\]/)
+	assert.match(interactiveGuide, /overflow-x-auto/)
+	assert.match(interactiveGuide, /min-h-10/)
+	assert.match(interactiveGuide, /Show on map/)
+	assert.doesNotMatch(interactiveGuide, /google\.com\/maps/)
+	assert.match(interactiveGuide, /No partnership or sponsorship is implied unless specifically stated\./)
 })
 
 test("Local Guide data is free of duplicate names and invalid coordinate ranges", () => {

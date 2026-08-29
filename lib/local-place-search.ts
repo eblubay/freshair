@@ -1,4 +1,5 @@
 import { allLocalPlaces, haversineKm, toMapDestination } from "@/lib/local-places"
+import { placeMatchesCategoryFamily } from "@/lib/local-place-categories"
 import { normalize, publicKnowledge } from "@/lib/concierge-retrieval"
 import type { ConciergeLanguage } from "@/lib/concierge-types"
 import type { LocalPlace, MapDestination } from "@/lib/local-places-types"
@@ -27,7 +28,8 @@ const areaCenters: Record<string, { latitude: number; longitude: number }> = {
 	lax: { latitude: 33.9416, longitude: -118.4085 }, "south bay": { latitude: 33.8844, longitude: -118.4114 }
 }
 const categoryTerms: Record<string, string[]> = {
-	restaurant: ["restaurant", "ristorante", "restaurante", "essen", "dinner", "cena", "dîner", "abendessen", "lunch", "pranzo", "almuerzo", "déjeuner", "breakfast", "brunch", "colazione", "desayuno", "petit déjeuner", "frühstück", "sushi"],
+	restaurant: ["restaurant", "ristorante", "restaurante", "essen", "dinner", "cena", "dîner", "abendessen", "lunch", "pranzo", "almuerzo", "déjeuner", "sushi"],
+	breakfast: ["breakfast", "brunch", "colazione", "desayuno", "petit déjeuner", "frühstück"],
 	cafe: ["coffee", "cafe", "caffè", "café", "kaffee", "espresso"], bakery: ["bakery", "panetteria", "panadería", "boulangerie", "bäckerei"],
 	fast_food: ["quick meal", "fast food", "pasto veloce", "comida rápida", "repas rapide", "schnelles essen"], ice_cream: ["ice cream", "gelato", "helado", "glace", "eis"],
 	supermarket: ["supermarket", "groceries", "grocery", "supermercato", "spesa", "supermercado", "supermarché", "supermarkt", "lebensmittel"], convenience: ["convenience", "water", "acqua", "agua", "wasser", "sunscreen", "crema solare"],
@@ -61,7 +63,7 @@ function categoriesWithoutBeach(question: string) { const query = normalize(ques
 function normalizeCuratedCategory(category: string, content: string) {
 	const searchable = normalize(content)
 	if (category === "food") return /\b(market|farmers market)\b/.test(searchable) ? "shopping" : /\b(restaurant|dining|steakhouse|seafood|oyster|cafe|breakfast|brunch|lunch|dinner|meal|pizza|sushi)\b/.test(searchable) ? "restaurant" : category
-	if (category === "breakfast") return "restaurant"
+	if (category === "breakfast") return "breakfast"
 	if (category === "coffee") return "cafe"
 	if (category === "groceries") return "supermarket"
 	return category
@@ -72,16 +74,8 @@ function curatedPlaces(): LocalPlace[] {
 }
 const words = (value: string) => normalize(value).split(" ").filter((word) => word.length > 2)
 
-const categoryFamilies: Record<string, string[]> = {
-	restaurant: ["restaurant", "fast_food", "food_court"], cafe: ["cafe", "coffee"], bakery: ["bakery"], supermarket: ["supermarket", "grocery", "groceries"], convenience: ["convenience"],
-	pharmacy: ["pharmacy", "chemist"], clinic: ["clinic", "urgent_care", "doctors"], hospital: ["hospital"], parking: ["parking"], ev_charging: ["ev_charging", "charging_station"], fuel: ["fuel", "gas_station"],
-	atm: ["atm"], bank: ["bank"], bar: ["bar", "pub", "biergarten"], beach: ["beach", "beaches"], park: ["park"], playground: ["playground"],
-	attraction: ["attraction", "attractions", "museum", "park", "playground", "beach", "beaches"], museum: ["museum"], shopping: ["shopping", "mall"], bicycle_rental: ["bicycle_rental"], surf_shop: ["surf_shop"], restroom: ["restroom", "toilets"], post_office: ["post_office"]
-}
-
-export function placeMatchesRequestedCategories(place: Pick<LocalPlace, "category" | "subcategory">, requested: string[]) {
-	const actual = [normalize(place.category), normalize(place.subcategory || "")]
-	return requested.some((category) => (categoryFamilies[category] ?? [category]).some((accepted) => actual.includes(normalize(accepted))))
+export function placeMatchesRequestedCategories(place: Pick<LocalPlace, "category"> & Partial<Pick<LocalPlace, "name" | "subcategory" | "cuisine" | "tags">>, requested: string[]) {
+	return placeMatchesCategoryFamily(place, requested)
 }
 
 export function searchPlaces(question: string, _language: ConciergeLanguage, limit = 5): { intent: PlaceIntent; results: PlaceSearchResult[] } {
